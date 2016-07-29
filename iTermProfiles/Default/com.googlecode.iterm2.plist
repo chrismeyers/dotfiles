@@ -6,6 +6,8 @@
 	<true/>
 	<key>AllowClipboardAccess</key>
 	<false/>
+	<key>AlternateMouseScroll</key>
+	<true/>
 	<key>AnimateDimming</key>
 	<false/>
 	<key>AppleAntiAliasingThreshold</key>
@@ -17,7 +19,7 @@
 	<key>AutoHideTmuxClientSession</key>
 	<false/>
 	<key>CheckTestRelease</key>
-	<true/>
+	<false/>
 	<key>ClosingHotkeySwitchesSpaces</key>
 	<true/>
 	<key>CommandSelection</key>
@@ -266,7 +268,7 @@
 	<key>HideMenuBarInFullscreen</key>
 	<true/>
 	<key>HideScrollbar</key>
-	<false/>
+	<true/>
 	<key>HideTab</key>
 	<false/>
 	<key>HideTabCloseButton</key>
@@ -326,16 +328,23 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>322</string>
+		<string>307</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
+	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
+	<dict>
+		<key>TB Is Shown</key>
+		<integer>1</integer>
+	</dict>
 	<key>NSWindow Frame Preferences</key>
 	<string>689 554 606 456 0 0 1680 1027 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>556 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>59 31 794 426 0 0 1680 1027 </string>
+	<string>59 31 809 426 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>62 485 794 426 0 0 1680 1027 </string>
 	<key>NeverWarnAboutShortLivedSessions_3127A694-5EB3-4F20-A97F-A007AF3E7FCE</key>
@@ -1070,14 +1079,26 @@
 			<string>/Users/chris</string>
 		</dict>
 	</array>
+	<key>NoSyncConfirmBeta</key>
+	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>04CE80E8-309A-4734-9526-C8DC5680A206</string>
+	<key>NoSyncLastTipTime</key>
+	<real>487561697.68850601</real>
+	<key>NoSyncPermissionToShowTip</key>
+	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>486771792.54338801</real>
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>478919622.89749402</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
 	<real>486347489.43566698</real>
+	<key>NoSyncTipsDisabled</key>
+	<true/>
+	<key>NoSyncTipsToNotShow</key>
+	<array>
+		<string>000</string>
+	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -1140,11 +1161,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing.xml?shard=19</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=19</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-06-04T22:17:56Z</date>
+	<date>2016-07-02T17:50:23Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -1189,8 +1210,12 @@
 	<integer>0</integer>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>findIgnoreCase_iTerm</key>
+	<true/>
+	<key>findRegex_iTerm</key>
+	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.0</string>
+	<string>3.0.2</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

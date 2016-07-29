@@ -23,12 +23,13 @@ export HISTTIMEFORMAT='%m-%d-%Y %H:%M:%S  '
 export HISTFILESIZE=0
 export HISTSIZE=500
 
-shopt -s checkwinsize
-export EDITOR='subl -w'
-export GCC_COLORS "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
-
 ### Use GNU command line tools
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
+shopt -s checkwinsize
+export EDITOR='subl -w'
+export GCC_COLORS "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
+export JAVA_HOME=`/usr/libexec/java_home -v '1.8*'`
 
 source ~/.aliases

@@ -73,6 +73,7 @@ alias scripts='cd ~/scripts'
 alias bare='make clean'
 alias py=python3
 alias glade='/usr/local/Cellar/glade/3.8.5_1/bin/glade-3'
+alias jre='/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java'
 
 #============= Localhost ============
 # Controls for built in Mac apache server
