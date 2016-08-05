@@ -11,11 +11,13 @@ BLUE="\[\033[0;34m\]"
 
 ### Prompt format:
 ### 	user on hostname in [pwd]
-###  	 DATE TIME >
+###  	 >
 if [[ $EUID -ne 0 ]]; then
-	export PS1="\n\u on ${RED}\h${NORMAL} in [\w] \n ${BOLD}\D{%m/%d/%Y} \t${NORMAL} > "
+	# Normal user prompt
+	export PS1="\n\u on ${RED}\h${NORMAL} in [\w] ${NORMAL} \n > "
 else
-	export PS1="\n${GREEN}\u${NORMAL} on ${RED}\h${NORMAL} in [\w] \n ${BOLD}\D{%m/%d/%Y} \t${NORMAL} # "	
+	# Root user prompt
+	export PS1="\n${GREEN}\u${NORMAL} on ${RED}\h${NORMAL} in [\w] ${NORMAL} \n # "	
 fi
 
 export CLICOLOR=1
