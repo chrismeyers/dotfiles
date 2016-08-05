@@ -86,7 +86,7 @@ alias hosts='sudo subl /etc/hosts'
 alias httpd='subl /Applications/MAMP/conf/apache/httpd.conf'
 
 #============= Editors ==============
-alias e='open -e'
+alias edit='open -e'
 
 #============= Scripts ==============
 alias backupdots='~/scripts/backupdots.sh'

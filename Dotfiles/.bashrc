@@ -12,7 +12,12 @@ BLUE="\[\033[0;34m\]"
 ### Prompt format:
 ### 	user on hostname in [pwd]
 ###  	 DATE TIME >
-export PS1="\n\u on ${RED}\h${NORMAL} in [\w] \n ${BOLD}\D{%m/%d/%Y} \t${NORMAL} > "
+if [[ $EUID -ne 0 ]]; then
+	export PS1="\n\u on ${RED}\h${NORMAL} in [\w] \n ${BOLD}\D{%m/%d/%Y} \t${NORMAL} > "
+else
+	export PS1="\n${GREEN}\u${NORMAL} on ${RED}\h${NORMAL} in [\w] \n ${BOLD}\D{%m/%d/%Y} \t${NORMAL} # "	
+fi
+
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
@@ -28,7 +33,7 @@ export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 shopt -s checkwinsize
-export EDITOR='subl -w'
+export EDITOR='subl'
 export GCC_COLORS "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 export JAVA_HOME=`/usr/libexec/java_home -v '1.8*'`
 
