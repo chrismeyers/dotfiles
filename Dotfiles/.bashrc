@@ -26,8 +26,8 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 ### History Settings
 shopt -s histappend
 export HISTCONTROL=ignoredups:ignorespace
-export HISTTIMEFORMAT='%m-%d-%Y %H:%M:%S  '
-export HISTFILESIZE=0
+export HISTTIMEFORMAT='%Y-%m-%dT%H:%M:%S  '
+export HISTFILESIZE=500
 export HISTSIZE=500
 
 ### Use GNU command line tools

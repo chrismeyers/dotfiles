@@ -1,10 +1,10 @@
 {
 	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"hot_exit": false,
 	"ignored_packages":
 	[
 		"Anaconda",
 		"Vintage"
 	],
-	"hot_exit": false,
-    "remember_open_files": false
+	"remember_open_files": false
 }

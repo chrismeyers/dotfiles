@@ -4,89 +4,105 @@
 # Detect which `ls` is being used
 if ls --color > /dev/null 2>&1; then 
 	# GNU 'ls'
-	colorflag="--color"
+	colorflag='--color'
 else 
 	# OS X (BSD) 'ls'
-	colorflag="-G"
+	colorflag='-G'
 fi
 
-#============= General ==============
-# Colorize ls and ls shortcuts
-alias ls="command ls ${colorflag}"
+#========== Built-in Mods ===========
+# Colorize ls
+alias ls='command ls ${colorflag}'
+
+# ls variations
 alias l='ls -l'
 alias la='ls -la'
 alias ltr='ls -ltr'
-
-# Edit main dotfiles
-alias aliases='subl ~/.aliases'
-alias bashrc='subl ~/.bashrc'
-
-# Lock computer
-alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
-
-# Print IP addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en0"
 
 # Always show grep colors
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-# Simulate signing out of shell session
-alias reload="exec $SHELL -l"
+alias h='history'
 
-# Show/hide hidden files in Finder
-alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+#============= General ==============
+# Lock computer
+alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
+
+# Simulate signing out of shell session
+alias reload='exec $SHELL -l'
 
 # Merge PDF files
 # Usage: `mergepdf -o output.pdf input1.pdf ... inputN.pdf`
 alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
 
 # Command line volume control
-alias stfu="osascript -e 'set volume output muted true'"
-alias dontstfu="osascript -e 'set volume output muted false'"
-alias turndownforwhat="osascript -e 'set volume 7'"
+alias stfu='osascript -e "set volume output muted true"'
+alias dontstfu='osascript -e "set volume output muted false"'
+alias turndownforwhat='osascript -e "set volume 7"'
 
-# URL encode/decode
-alias urlencode='python -c "import urllib, sys; print urllib.quote(sys.argv[1])"'
-alias urldecode='python -c "import urllib, sys; print urllib.unquote(sys.argv[1])"'
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+
+
+#=============== Admin ==============
+alias root='su -'
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
 
-alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
-alias h='history'
+# Show/hide hidden files in Finder
+alias show='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
+alias hide='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'
+
 
 #============ Navigation ============
-alias docs='cd ~/Documents'
-alias dev='cd ~/Documents/Development'
-alias drop='cd ~/Dropbox'
-alias site='cd ~/Dropbox/website/CM_WEBSITE/public_html/v4'
-alias mov='cd ~/Movies'
-alias pics='cd ~/Pictures'
-alias dtop='cd ~/Desktop'
-alias scripts='cd ~/scripts'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias docs='cd /Users/chris/Documents'
+alias dev='cd /Users/chris/Documents/Development'
+alias drop='cd /Users/chris/Dropbox'
+alias site='cd /Users/chris/Dropbox/website/CM_WEBSITE/public_html/v4'
+alias mov='cd /Users/chris/Movies'
+alias pics='cd /Users/chris/Pictures'
+alias dtop='cd /Users/chris/Desktop'
+alias scripts='cd /Users/chris/scripts'
+
 
 #============ Programming ===========
 alias bare='make clean'
-alias py=python3
+alias py2='/usr/local/bin/python'
+alias py3='/usr/local/bin/python3'
 alias glade='/usr/local/Cellar/glade/3.8.5_1/bin/glade-3'
 alias jre='/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java'
 
-#============= Localhost ============
-# Controls for built in Mac apache server
-alias localon="sudo apachectl start"
-alias localoff="sudo apachectl stop"
-alias localre="sudo apachectl restart"
 
+#============= Web stuff ============
+# Controls for built in Mac apache server
+alias localon='sudo apachectl start'
+alias localoff='sudo apachectl stop'
+alias localre='sudo apachectl restart'
+
+# Config files
 alias vhosts='subl /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf'
 alias hosts='sudo subl /etc/hosts'
 alias httpd='subl /Applications/MAMP/conf/apache/httpd.conf'
 
+# Print IP addresses
+alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias localip='ipconfig getifaddr en0'
+
+# URL utils
+alias urlencode='python -c "import urllib, sys; print urllib.quote(sys.argv[1])"'
+alias urldecode='python -c "import urllib, sys; print urllib.unquote(sys.argv[1])"'
+
+
 #============= Editors ==============
-alias edit='open -e'
+alias e='open -e'
+
 
 #============= Scripts ==============
 alias backupdots='~/scripts/backupdots.sh'
