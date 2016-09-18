@@ -40,7 +40,7 @@ alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Re
 
 # Command line volume control
 alias stfu='osascript -e "set volume output muted true"'
-alias dontstfu='osascript -e "set volume output muted false"'
+alias speak='osascript -e "set volume output muted false"'
 alias turndownforwhat='osascript -e "set volume 7"'
 
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
