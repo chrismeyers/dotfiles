@@ -8,4 +8,5 @@
 	],
 	"remember_open_files": false,
 	"rulers": [80],
+	"ensure_newline_at_eof_on_save": true,
 }
