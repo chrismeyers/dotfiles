@@ -14,10 +14,10 @@ BLUE="\[\033[0;34m\]"
 ###  	 >
 if [[ $EUID -ne 0 ]]; then
 	# Normal user prompt
-	export PS1="\n\u on ${RED}\h${NORMAL} in [\w] ${NORMAL} \n > "
+	export PS1="\u on ${RED}\h${NORMAL} in [\w] ${NORMAL} \n > "
 else
 	# Root user prompt
-	export PS1="\n${GREEN}\u${NORMAL} on ${RED}\h${NORMAL} in [\w] ${NORMAL} \n # "	
+	export PS1="${GREEN}\u${NORMAL} on ${RED}\h${NORMAL} in [\w] ${NORMAL} \n # "	
 fi
 
 export CLICOLOR=1
