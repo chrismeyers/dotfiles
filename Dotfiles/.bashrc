@@ -30,9 +30,10 @@ export HISTTIMEFORMAT='%Y-%m-%dT%H:%M:%S  '
 export HISTFILESIZE=500
 export HISTSIZE=500
 
-### Use GNU command line tools
+### Set path variables
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export PYTHONPATH="/Users/chris/Documents/Development/python-dev:$PYTHONPATH"
 
 shopt -s checkwinsize
 export EDITOR='subl'
