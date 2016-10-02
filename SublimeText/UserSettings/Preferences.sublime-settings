@@ -1,7 +1,7 @@
 {
 	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
 	"ensure_newline_at_eof_on_save": true,
-	"hot_exit": false,
+	"hot_exit": true,
 	"ignored_packages":
 	[
 		"Anaconda",
