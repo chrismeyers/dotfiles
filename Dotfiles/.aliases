@@ -105,4 +105,4 @@ alias e='open -e'
 
 
 #============= Scripts ==============
-alias backupdots='cd /Users/chris/Documents/Development/python-dev/python_scripts/; python3 backupdots.py'
+alias backupdots='(cd /Users/chris/Documents/Development/python-dev/python_scripts/; python3 backupdots.py)'
