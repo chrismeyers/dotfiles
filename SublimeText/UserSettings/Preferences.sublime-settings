@@ -1,7 +1,8 @@
 {
 	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
 	"ensure_newline_at_eof_on_save": true,
-	"hot_exit": true,
+	"font_size": 12,
+	"hot_exit": false,
 	"ignored_packages":
 	[
 		"Anaconda",
@@ -11,5 +12,6 @@
 	"rulers":
 	[
 		80
-	]
+	],
+	"tab_size": 2
 }
