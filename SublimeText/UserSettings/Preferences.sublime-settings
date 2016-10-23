@@ -1,17 +1,35 @@
 {
+	"always_show_minimap_viewport": true,
+	"bold_folder_labels": true,
+	"caret_extra_bottom": 1,
+	"caret_extra_top": 1,
+	"caret_extra_width": 1,
+	"caret_style": "blink",
 	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
 	"ensure_newline_at_eof_on_save": true,
+	"fade_fold_buttons": false,
 	"font_size": 12,
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Anaconda",
 		"Vintage"
 	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"line_padding_bottom": 2,
+	"line_padding_top": 2,
+	"overlay_scroll_bars": "enabled",
 	"remember_open_files": false,
 	"rulers":
 	[
 		80
 	],
-	"tab_size": 2
+	"show_encoding": true,
+	"show_line_endings": true,
+	"tab_size": 2,
+	"theme": "Boxy Tomorrow.sublime-theme",
+	"word_wrap": false
 }
