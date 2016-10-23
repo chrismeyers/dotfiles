@@ -50,11 +50,15 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 alias root='su -'
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
 
 # Show/hide hidden files in Finder
 alias show='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
 alias hide='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'
+
+# Rebuild Launch Services database
+# Use if icons in Finder are incorrect or there are duplicates in "Open With"
+alias lsdb="/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain system -domain user"
 
 
 #============ Navigation ============
@@ -70,6 +74,7 @@ alias mov='cd /Users/chris/Movies'
 alias pics='cd /Users/chris/Pictures'
 alias dtop='cd /Users/chris/Desktop'
 alias scripts='cd /Users/chris/scripts'
+alias dots='cd /Users/chris/Dropbox/misc/dotfiles'
 
 
 #============ Programming ===========
