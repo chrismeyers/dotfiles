@@ -72,7 +72,7 @@ alias drop='cd /Users/chris/Dropbox'
 alias site='cd /Users/chris/Dropbox/website/CM_WEBSITE/public_html/v4'
 alias mov='cd /Users/chris/Movies'
 alias pics='cd /Users/chris/Pictures'
-alias dtop='cd /Users/chris/Desktop'
+alias dt='cd /Users/chris/Desktop'
 alias scripts='cd /Users/chris/scripts'
 alias dots='cd /Users/chris/Dropbox/misc/dotfiles'
 
@@ -90,6 +90,9 @@ alias jre='/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin
 alias localon='sudo apachectl start'
 alias localoff='sudo apachectl stop'
 alias localre='sudo apachectl restart'
+
+# Node.js
+alias nodeserver='http-server'
 
 # Config files
 alias vhosts='subl /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf'
