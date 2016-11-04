@@ -107,6 +107,8 @@ alias localip='ipconfig getifaddr en0'
 alias urlencode='python -c "import urllib, sys; print urllib.quote(sys.argv[1])"'
 alias urldecode='python -c "import urllib, sys; print urllib.unquote(sys.argv[1])"'
 
+alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+
 
 #============= Editors ==============
 alias e='open -e'
