@@ -30,6 +30,7 @@
 	"show_encoding": true,
 	"show_line_endings": true,
 	"tab_size": 2,
+	"translate_tabs_to_spaces": true,
 	"theme": "Boxy Tomorrow.sublime-theme",
 	"theme_accent_tangerine": true,
 	"theme_autocomplete_item_selected_colored": true,
