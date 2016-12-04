@@ -31,7 +31,7 @@ export HISTFILESIZE=500
 export HISTSIZE=500
 
 ### Set path variables
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/opt/apache-maven-3.3.9/bin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PYTHONPATH="/Users/chris/Documents/Development/python-dev:$PYTHONPATH"
 
