@@ -5,14 +5,15 @@
 	],
 	"installed_packages":
 	[
+		"A File Icon",
 		"All Autocomplete",
 		"Boxy Theme",
 		"Colorsublime",
 		"Git",
 		"GitGutter",
+		"LaTeXTools",
 		"Package Control",
 		"SideBarEnhancements",
-		"SideBarGit",
-		"zz File Icons"
+		"SideBarGit"
 	]
 }
