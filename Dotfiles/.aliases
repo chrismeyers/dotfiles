@@ -45,6 +45,9 @@ alias turndownforwhat='osascript -e "set volume 7"'
 
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
+alias sb='source /Users/chris/.bashrc'
+alias sa='source /Users/chris/.aliases'
+
 
 #=============== Admin ==============
 alias root='su -'
@@ -69,7 +72,7 @@ alias .....='cd ../../../..'
 alias docs='cd /Users/chris/Documents'
 alias dev='cd /Users/chris/Documents/Development'
 alias drop='cd /Users/chris/Dropbox'
-alias site='cd /Users/chris/Dropbox/website/CM_WEBSITE/public_html/v4'
+alias site='cd /Users/chris/Dropbox/website/CM_WEBSITE/public_html/v5'
 alias mov='cd /Users/chris/Movies'
 alias pics='cd /Users/chris/Pictures'
 alias dt='cd /Users/chris/Desktop'
