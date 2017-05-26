@@ -1,0 +1,37 @@
+# ~/.astylerc - Artistic Style configuration file
+# http://astyle.sourceforge.net/
+
+# Tab Options
+indent=spaces=2
+
+# Brace Style Options
+style=java
+
+# Brace Modify Options
+attach-namespaces
+attach-classes
+attach-inlines
+attach-extern-c
+attach-closing-while 
+
+# Indentation Options
+indent-classes
+indent-modifiers
+indent-switches
+indent-namespaces
+indent-after-parens
+indent-labels
+indent-col1-comments
+
+# Padding Options
+break-blocks
+pad-oper
+pad-comma
+unpad-paren
+align-pointer=name
+align-reference=name
+
+# Formatting Options
+break-closing-braces
+break-one-line-headers
+add-braces

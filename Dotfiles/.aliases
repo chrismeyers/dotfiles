@@ -112,6 +112,8 @@ alias urldecode='python -c "import urllib, sys; print urllib.unquote(sys.argv[1]
 
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 
+alias phpbroke='open /Applications/MAMP/logs/php_error.log'
+
 
 #============= Editors ==============
 alias e='open -e'
