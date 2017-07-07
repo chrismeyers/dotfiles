@@ -26,6 +26,8 @@ alias egrep='egrep --color=auto'
 
 alias h='history'
 
+alias fnd='find . -iname'
+
 
 #============= General ==============
 # Lock computer
@@ -45,8 +47,9 @@ alias turndownforwhat='osascript -e "set volume 7"'
 
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
-alias sb='source /Users/chris/.bashrc'
-alias sa='source /Users/chris/.aliases'
+# Update shell config files
+alias sb='source /Users/$USER/.bashrc'
+alias sa='source /Users/$USER/.aliases'
 
 
 #=============== Admin ==============
@@ -69,15 +72,16 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-alias docs='cd /Users/chris/Documents'
-alias dev='cd /Users/chris/Documents/Development'
-alias drop='cd /Users/chris/Dropbox'
-alias site='cd /Users/chris/Dropbox/website/CM_WEBSITE/public_html/v5'
-alias mov='cd /Users/chris/Movies'
-alias pics='cd /Users/chris/Pictures'
-alias dt='cd /Users/chris/Desktop'
-alias scripts='cd /Users/chris/scripts'
-alias dots='cd /Users/chris/Dropbox/misc/dotfiles'
+alias docs='cd /Users/$USER/Documents'
+alias dev='cd /Users/$USER/Documents/Development'
+alias drop='cd /Users/$USER/Dropbox'
+alias site='cd /Users/$USER/Dropbox/website/CM_WEBSITE/public_html/v5'
+alias mov='cd /Users/$USER/Movies'
+alias pics='cd /Users/$USER/Pictures'
+alias dt='cd /Users/$USER/Desktop'
+alias scripts='cd /Users/$USER/scripts'
+alias dots='cd /Users/$USER/Dropbox/misc/dotfiles'
+alias dl='cd /Users/$USER/Downloads'
 
 
 #============ Programming ===========
@@ -89,6 +93,9 @@ alias jre='/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin
 
 
 #============= Web stuff ============
+# MAMP
+alias mysql='/Applications/MAMP/Library/bin/mysql'
+
 # Controls for built in Mac apache server
 alias localon='sudo apachectl start'
 alias localoff='sudo apachectl stop'
@@ -120,4 +127,4 @@ alias e='open -e'
 
 
 #============= Scripts ==============
-alias backupdots='python3 /Users/chris/Documents/Development/python-dev/python_scripts/backupdots.py'
+alias backupdots='python3 /Users/$USER/Documents/Development/python-dev/python_scripts/backupdots.py'
