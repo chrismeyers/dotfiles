@@ -31,13 +31,13 @@ export HISTFILESIZE=500
 export HISTSIZE=500
 
 ### Set path variables
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/Users/$USER/Library/Android/sdk/platform-tools:/Users/$USER/Library/Android/sdk/tools:/opt/apache-maven-3.3.9/bin:$HOME/.composer/vendor/bin:$PATH"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/tools:/opt/apache-maven-3.3.9/bin:$HOME/.composer/vendor/bin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-export PYTHONPATH="/Users/$USER/Documents/Development/python-dev:$PYTHONPATH"
+export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
 
 shopt -s checkwinsize
 export EDITOR='subl'
 export GCC_COLORS "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 export JAVA_HOME=`/usr/libexec/java_home -v '1.8*'`
 
-source /Users/$USER/.aliases
+source $HOME/.aliases

@@ -48,8 +48,8 @@ alias turndownforwhat='osascript -e "set volume 7"'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
 # Update shell config files
-alias sb='source /Users/$USER/.bashrc'
-alias sa='source /Users/$USER/.aliases'
+alias sb='source $HOME/.bashrc'
+alias sa='source $HOME/.aliases'
 
 
 #=============== Admin ==============
@@ -72,16 +72,16 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-alias docs='cd /Users/$USER/Documents'
-alias dev='cd /Users/$USER/Documents/Development'
-alias drop='cd /Users/$USER/Dropbox'
-alias site='cd /Users/$USER/Dropbox/website/CM_WEBSITE/public_html/v5'
-alias mov='cd /Users/$USER/Movies'
-alias pics='cd /Users/$USER/Pictures'
-alias dt='cd /Users/$USER/Desktop'
-alias scripts='cd /Users/$USER/scripts'
-alias dots='cd /Users/$USER/Dropbox/misc/dotfiles'
-alias dl='cd /Users/$USER/Downloads'
+alias docs='cd $HOME/Documents'
+alias dev='cd $HOME/Documents/Development'
+alias drop='cd $HOME/Dropbox'
+alias site='cd $HOME/Dropbox/website/CM_WEBSITE/public_html/v5'
+alias mov='cd $HOME/Movies'
+alias pics='cd $HOME/Pictures'
+alias dt='cd $HOME/Desktop'
+alias scripts='cd $HOME/scripts'
+alias dots='cd $HOME/Dropbox/misc/dotfiles'
+alias dl='cd $HOME/Downloads'
 
 
 #============ Programming ===========
@@ -127,4 +127,4 @@ alias e='open -e'
 
 
 #============= Scripts ==============
-alias backupdots='python3 /Users/$USER/Documents/Development/python-dev/python_scripts/backupdots.py'
+alias backupdots='python3 $HOME/Documents/Development/python-dev/python_scripts/backupdots.py'
