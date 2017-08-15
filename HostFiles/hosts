@@ -9,4 +9,7 @@
 ::1             localhost 
 
 # VirtualHost mappings
-127.0.0.1 *.localhost
+127.0.0.1 chrismeyers.localhost
+127.0.0.1 lolplayerdata.localhost
+127.0.0.1 pltours.localhost
+127.0.0.1 facebook-forwarder.localhost
