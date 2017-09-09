@@ -94,7 +94,7 @@ alias jre='/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin
 
 #============= Web stuff ============
 # MAMP
-alias mysql='/Applications/MAMP/Library/bin/mysql'
+#alias mysql='/Applications/MAMP/Library/bin/mysql'
 
 # Controls for built in Mac apache server
 alias localon='sudo apachectl start'
@@ -105,7 +105,8 @@ alias localre='sudo apachectl restart'
 alias nodeserver='http-server'
 
 # Config files
-alias vhosts='subl /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf'
+#alias vhosts='subl /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf'
+alias vhosts='subl /usr/local/etc/apache2/2.4/extra/httpd-vhosts.conf'
 alias hosts='sudo subl /etc/hosts'
 alias httpd='subl /Applications/MAMP/conf/apache/httpd.conf'
 

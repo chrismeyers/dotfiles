@@ -8,3 +8,5 @@ PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
 export PATH
 
 test -e "/Users/chris/.iterm2_shell_integration.bash" && source "/Users/chris/.iterm2_shell_integration.bash"
+
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion

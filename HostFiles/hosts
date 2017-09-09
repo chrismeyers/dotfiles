@@ -9,6 +9,8 @@
 ::1             localhost 
 
 # VirtualHost mappings
+127.0.0.1 php56.apache.localhost
+127.0.0.1 php71.apache.localhost
 127.0.0.1 chrismeyers.localhost
 127.0.0.1 lolplayerdata.localhost
 127.0.0.1 pltours.localhost
