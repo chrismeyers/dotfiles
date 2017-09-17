@@ -4,14 +4,17 @@
 # localhost is used to configure the loopback interface
 # when the system is booting.  Do not change this entry.
 ##
+127.0.0.1       cmeyers-macbookpro.local
 127.0.0.1       localhost
 255.255.255.255 broadcasthost
 ::1             localhost 
 
 # VirtualHost mappings
+127.0.0.1 phpmyadmin.localhost
 127.0.0.1 php56.apache.localhost
 127.0.0.1 php71.apache.localhost
 127.0.0.1 chrismeyers.localhost
 127.0.0.1 lolplayerdata.localhost
 127.0.0.1 pltours.localhost
 127.0.0.1 facebook-forwarder.localhost
+127.0.0.1 syslogizer.localhost

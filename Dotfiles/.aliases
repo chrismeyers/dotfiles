@@ -106,7 +106,7 @@ alias nodeserver='http-server'
 
 # Config files
 #alias vhosts='subl /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf'
-alias vhosts='subl /usr/local/etc/apache2/2.4/extra/httpd-vhosts.conf'
+alias vhosts='subl /usr/local/etc/apache2/2.4/extra/httpd-vhosts-homebrew.conf'
 alias hosts='sudo subl /etc/hosts'
 alias httpd='subl /Applications/MAMP/conf/apache/httpd.conf'
 

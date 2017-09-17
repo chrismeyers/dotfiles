@@ -35,9 +35,12 @@ export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$HOME/Libr
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
 
-shopt -s checkwinsize
+## Set environment varibales
 export EDITOR='subl'
 export GCC_COLORS "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 export JAVA_HOME=`/usr/libexec/java_home -v '1.8*'`
+export PHP_VERSION="71"
+
+shopt -s checkwinsize
 
 source $HOME/.aliases
