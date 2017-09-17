@@ -39,8 +39,8 @@ export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
 export EDITOR='subl'
 export GCC_COLORS "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 export JAVA_HOME=`/usr/libexec/java_home -v '1.8*'`
-export PHP_VERSION="71"
 
 shopt -s checkwinsize
 
 source $HOME/.aliases
+source $HOME/.PHP_VERSION
