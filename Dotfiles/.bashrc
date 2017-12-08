@@ -8,7 +8,6 @@ GREEN_BOLD="\[\033[1;32m\]"
 GREEN="\[\033[0;32m\]"
 BLUE_BOLD="\[\033[1;34m\]"
 BLUE="\[\033[0;34m\]"
-
 ### Prompt format:
 ### 	user on hostname in [pwd]
 ###  	 >
@@ -19,7 +18,6 @@ else
 	# Root user prompt
 	export PS1="${GREEN}\u${NORMAL} on ${RED}\h${NORMAL} in [\w] ${NORMAL} \n # "	
 fi
-
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
@@ -31,7 +29,7 @@ export HISTFILESIZE=500
 export HISTSIZE=500
 
 ### Set path variables
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/tools:/opt/apache-maven-3.3.9/bin:$HOME/.composer/vendor/bin:$PATH"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/tools:/opt/apache-maven-3.3.9/bin:$HOME/.composer/vendor/bin:$HOME/Library/Python/3.6/bin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
 

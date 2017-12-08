@@ -1,3 +1,4 @@
+source ~/.profile
 if [ -f /Users/chris/.bashrc ]; then
    source /Users/chris/.bashrc
 fi
