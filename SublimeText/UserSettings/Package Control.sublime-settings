@@ -10,12 +10,14 @@
 		"Better CoffeeScript",
 		"Boxy Theme",
 		"Colorsublime",
+		"EditorConfig",
 		"Git",
 		"GitGutter",
 		"LaTeXTools",
 		"Markdown Preview",
 		"Package Control",
 		"SideBarEnhancements",
-		"SideBarGit"
+		"SideBarGit",
+		"TypeScript"
 	]
 }
