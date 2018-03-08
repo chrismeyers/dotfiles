@@ -1,0 +1,134 @@
+#!/usr/bin/env bash
+# Some aliases taken from: https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
+
+# Detect which `ls` is being used
+if ls --color > /dev/null 2>&1; then 
+	# GNU 'ls'
+	colorflag='--color'
+else 
+	# OS X (BSD) 'ls'
+	colorflag='-G'
+fi
+
+#========== Built-in Mods ===========
+# Colorize ls
+alias ls='command ls ${colorflag}'
+
+# ls variations
+alias l='ls -l'
+alias la='ls -la'
+alias ltr='ls -ltr'
+alias lad='ls -lad */' # only list directories in current directory
+
+# Always show grep colors
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+alias h='history'
+
+alias fnd='find . -iname'
+
+
+#============= General ==============
+# Lock computer
+alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
+
+# Simulate signing out of shell session
+alias reload='exec $SHELL -l'
+
+# Merge PDF files
+# Usage: `mergepdf -o output.pdf input1.pdf ... inputN.pdf`
+alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
+
+# Command line volume control
+alias stfu='osascript -e "set volume output muted true"'
+alias speak='osascript -e "set volume output muted false"'
+alias turndownforwhat='osascript -e "set volume 7"'
+
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+
+# Update shell config files
+alias sb='source $HOME/.bashrc'
+alias sa='source $HOME/.aliases'
+
+
+#=============== Admin ==============
+alias root='su -'
+
+# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
+
+# Show/hide hidden files in Finder
+alias show='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
+alias hide='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'
+
+# Rebuild Launch Services database
+# Use if icons in Finder are incorrect or there are duplicates in "Open With"
+alias lsdb="/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain system -domain user"
+
+alias sshconfig='subl $HOME/.ssh/config'
+
+
+#============ Navigation ============
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias docs='cd $HOME/Documents'
+alias dev='cd $HOME/Documents/Development'
+alias mov='cd $HOME/Movies'
+alias pics='cd $HOME/Pictures'
+alias dt='cd $HOME/Desktop'
+alias dl='cd $HOME/Downloads'
+alias sublbuild='cd "$HOME/Library/Application Support/Sublime Text 3/Packages/User"'
+
+
+#============ Programming ===========
+alias bare='make clean'
+alias py2='/usr/local/bin/python'
+alias py3='/usr/local/bin/python3'
+alias glade='/usr/local/Cellar/glade/3.8.5_1/bin/glade-3'
+alias jre='/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java'
+alias pypaths='/usr/bin/env python3 -c "import sys; import os; print(os.linesep.join(sys.path))"'
+alias pypibuild='rm -rf dist/*; rm -rf build/*; /usr/bin/env python3 setup.py bdist_wheel sdist'
+alias pypiupload='twine upload dist/*'
+alias pyutilsdev='export PYTHONPATH="$HOME/Documents/Development/MCGStrategic/mcgpyutils:$PYTHONPATH"'
+alias pyutilsprod='export PYTHONPATH=""'
+
+
+#============= Web stuff ============
+# MAMP
+alias mysql='/Applications/MAMP/Library/bin/mysql'
+alias mysqldump='/Applications/MAMP/Library/bin/mysqldump'
+
+# Controls for built in Mac apache server
+alias localon='sudo apachectl start'
+alias localoff='sudo apachectl stop'
+alias localre='sudo apachectl restart'
+
+# Node.js
+alias nodeserver='http-server'
+
+# Config files
+alias vhosts='subl /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf'
+alias hosts='sudo subl /etc/hosts'
+alias httpd='subl /Applications/MAMP/conf/apache/httpd.conf'
+alias php56ini='subl /Applications/MAMP/bin/php/php5.6.30/conf/php.ini'
+alias php71ini='subl /Applications/MAMP/bin/php/php7.1.6/conf/php.ini'
+
+# Print IP addresses
+alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias localip='ipconfig getifaddr en1'
+
+# URL utils
+alias urlencode='python -c "import urllib, sys; print urllib.quote(sys.argv[1])"'
+alias urldecode='python -c "import urllib, sys; print urllib.unquote(sys.argv[1])"'
+
+alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+
+alias phpbroke='open /Applications/MAMP/logs/php_error.log'
+
+
+#============= Editors ==============
+alias e='open -e'
