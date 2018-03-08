@@ -52,6 +52,9 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 alias sb='source $HOME/.bashrc'
 alias sa='source $HOME/.aliases'
 
+# Recursively get all the file extensions in the current directory.
+alias filetypes='find . -type f | perl -ne '"'"'print $1 if m/\.([^.\/]+)$/'"'"' | sort -u'
+
 
 #=============== Admin ==============
 alias root='su -'
@@ -118,7 +121,7 @@ alias php56ini='subl /Applications/MAMP/bin/php/php5.6.30/conf/php.ini'
 alias php71ini='subl /Applications/MAMP/bin/php/php7.1.6/conf/php.ini'
 
 # Print IP addresses
-alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias localip='ipconfig getifaddr en1'
 
 # URL utils
