@@ -33,7 +33,7 @@ export HISTSIZE=500
 ### Set path variables
 export GOPATH="$HOME/Documents/Development/Go"
 export GOROOT="/usr/local/opt/go/libexec"
-export PATH="$HOME/Library/Python/3.6/bin:$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/tools:/opt/apache-maven-3.3.9/bin:$HOME/.composer/vendor/bin:$HOME/Documents/Development/flutter/bin:/usr/local/opt/python@2/bin:$GOPATH/bin:$GOROOT/bin:$PATH"
+export PATH="$HOME/Library/Python/3.6/bin:$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/tools:/opt/apache-maven-3.3.9/bin:$HOME/.composer/vendor/bin:$HOME/Documents/Development/flutter/bin:/usr/local/opt/python@2/bin:$GOPATH/bin:$GOROOT/bin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 #export PYTHONPATH="$HOME/Documents/Development/Sandbox/mcgpyutils:$PYTHONPATH"
 
