@@ -1,0 +1,26 @@
+{
+    ".aliases": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Dotfiles"],
+    ".bashrc": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Dotfiles"],
+    ".vimrc": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Dotfiles"],
+    ".bash_profile": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Dotfiles"],
+    ".astylerc": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Dotfiles"],
+
+    "'Package Control.sublime-settings'": ["/Users/chris/Library/'Application Support'/'Sublime Text 3'/Packages/User", "/Users/chris/Dropbox/misc/dotfiles/SublimeText/UserSettings"],
+    "Preferences.sublime-settings": ["/Users/chris/Library/'Application Support'/'Sublime Text 3'/Packages/User", "/Users/chris/Dropbox/misc/dotfiles/SublimeText/UserSettings"],
+    "Python3.sublime-build": ["/Users/chris/Library/'Application Support'/'Sublime Text 3'/Packages/User", "/Users/chris/Dropbox/misc/dotfiles/SublimeText/UserSettings"],
+    "Python.sublime-settings": ["/Users/chris/Library/'Application Support'/'Sublime Text 3'/Packages/User", "/Users/chris/Dropbox/misc/dotfiles/SublimeText/UserSettings"],
+
+    "httpd_MAMP_PRO_TEMPLATE.conf": ["/Users/chris/Documents/Development/config/MAMP/templates", "/Users/chris/Dropbox/misc/dotfiles/HostFiles/MAMP/templates"],
+    "nginx_MAMP_PRO_TEMPLATE.conf": ["/Users/chris/Documents/Development/config/MAMP/templates", "/Users/chris/Dropbox/misc/dotfiles/HostFiles/MAMP/templates"],
+    "php7.1.8_MAMP_PRO_TEMPLATE.ini": ["/Users/chris/Documents/Development/config/MAMP/templates", "/Users/chris/Dropbox/misc/dotfiles/HostFiles/MAMP/templates"],
+    "my56_MAMP_PRO_TEMPLATE.cnf": ["/Users/chris/Documents/Development/config/MAMP/templates", "/Users/chris/Dropbox/misc/dotfiles/HostFiles/MAMP/templates"],
+    "main_MAMP_PRO_TEMPLATE.cf": ["/Users/chris/Documents/Development/config/MAMP/templates", "/Users/chris/Dropbox/misc/dotfiles/HostFiles/MAMP/templates"],
+    "httpd-vhosts-homebrew.conf": ["/usr/local/etc/apache2/2.4/extra", "/Users/chris/Dropbox/misc/dotfiles/HostFiles/Homebrew/usr/local/etc/apache2/2.4/extra"],
+    "httpd.conf": ["/usr/local/etc/apache2/2.4", "/Users/chris/Dropbox/misc/dotfiles/HostFiles/Homebrew/usr/local/etc/apache2/2.4"],
+
+    "com.googlecode.iterm2.plist": ["/Users/chris/Documents/TerminalProfiles/iTerm2/Default", "/Users/chris/Dropbox/misc/dotfiles/iTermProfiles/Default"],
+    "iterm2_default.itermcolors": ["/Users/chris/Documents/TerminalProfiles/iTerm2/Default", "/Users/chris/Dropbox/misc/dotfiles/iTermProfiles/Default"],
+
+    ".gitconfig": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Git/Mac"],
+    ".gitignore_global": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Git/Mac"]
+}

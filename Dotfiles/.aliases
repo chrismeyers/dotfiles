@@ -140,5 +140,5 @@ alias e='open -e'
 
 
 #============= Scripts ==============
-alias backupdots='python3 $HOME/Documents/Development/python-dev/python_scripts/backupdots.py'
+alias backupdots='python3 $HOME/Dropbox/misc/dotfiles/backupdots.py'
 alias phpv='. /Users/chris/Documents/Development/python-dev/python_scripts/setPHPVersionWrapper.sh'
