@@ -46,9 +46,10 @@ def perform_restore():
 
         if os.path.exists(orig_file.replace("'", "")):
             os.system(f'mv {orig_file} {orig_file}{_backup_file_ext}')
-
-        os.system(f'cp {backup_file} {orig_file}')
-        print(f'{str(file_num).rjust(3)} Restored: {file} to {_backup_data[file][0]}')
+            os.system(f'cp {backup_file} {orig_file}')
+            print(f'{str(file_num).rjust(3)} Restored: {file} to {_backup_data[file][0]}')
+        else:
+            print(f'{str(file_num).rjust(3)}  WARNING: {orig_file} does not exist, skipping...')
         file_num += 1
 
 
