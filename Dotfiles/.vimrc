@@ -78,10 +78,20 @@ set cmdheight=2
 
 
 " Netrw File Browser =========================================================
-let g:netrw_banner=0       " Disable banner
-let g:netrw_browse_split=4 " Open in a prior window
-let g:netrw_altv=1         " Open splits to the right
-let g:netrw_liststyle=3    " Tree view
+"" Disable banner
+let g:netrw_banner=0
+
+"" Pressing <CR> on a file will open it in a new vertical split
+let g:netrw_browse_split=2
+
+"" Open splits to the right
+let g:netrw_altv=1
+
+"" Tree view
+let g:netrw_liststyle=3
+
+"" Make the browser narrower by default
+let g:netrw_winsize=25
 
 
 " Indentation ================================================================
