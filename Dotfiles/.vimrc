@@ -5,6 +5,9 @@
 "" ===========================================================================
 
 " General ====================================================================
+"" Enable pathogen.vim
+execute pathogen#infect()
+
 "" Set 'nocompatible' to ward off unexpected things that your distro might
 "" have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
@@ -48,6 +51,13 @@ set smartcase
 "" Always display the status line
 set laststatus=2
 
+set statusline=%F\                            " Full path to the file
+set statusline+=%y                            " Filetype of the file
+set statusline+=%r                            " Read-only flag
+set statusline+=%m                            " Modified flag
+set statusline+=%=                            " Switch to the right side
+set statusline+=\ Line\ %l:%c\ of\ %L\ (%p%%) " Location in file
+
 
 " Command Window =============================================================
 "" Better command-line completion
@@ -66,6 +76,9 @@ set cmdheight=2
 "" and for plugins that are filetype specific.
 filetype indent plugin on
 
+"" Always enable smarttab
+set smarttab
+
 "" Indentation settings for using 2 spaces instead of tabs.
 "" Do not change 'tabstop' from its default value of 8 with this setup.
 set shiftwidth=2
@@ -73,9 +86,9 @@ set softtabstop=2
 set expandtab
  
 "" Indentation settings for using hard tabs for indent. Display tabs as
-"" four characters wide.
-"set shiftwidth=4
-"set tabstop=4
+"" 2 characters wide.
+"set shiftwidth=2
+"set tabstop=2
 
 
 " Mouse ======================================================================
@@ -85,10 +98,19 @@ set mouse=a
 
 " Key Mappings ===============================================================
 "" <F1> opens Explorer (in current split)
-map <F1> :Ex<CR>
+nnoremap <F1> :Ex<CR>
 
 "" <F2> opens Vexplorer (left of current split)
-map <F2> :Vex<CR>
+nnoremap <F2> :Vex<CR>
 
 "" <C-L> (redraw) also turns off search highlighting until the next search
 nnoremap <C-L> :nohl<CR><C-L>
+
+"" Simplified split movement
+nnoremap <C-Up> <C-w><Up>
+nnoremap <C-Down> <C-w><Down>
+nnoremap <C-Left> <C-w><Left>
+nnoremap <C-Right> <C-w><Right>
+
+"" Select all
+nnoremap <C-A> ggVG<CR>
