@@ -51,12 +51,12 @@ set smartcase
 "" Always display the status line
 set laststatus=2
 
-set statusline=%F\                            " Full path to the file
-set statusline+=%y                            " Filetype of the file
-set statusline+=%r                            " Read-only flag
-set statusline+=%m                            " Modified flag
-set statusline+=%=                            " Switch to the right side
-set statusline+=\ Line\ %l:%c\ of\ %L\ (%p%%) " Location in file
+set statusline=%F\                          " Full path to the file
+set statusline+=%y                          " Filetype of the file
+set statusline+=%r                          " Read-only flag
+set statusline+=%m                          " Modified flag
+set statusline+=%=                          " Switch to the right side
+set statusline+=\ Line\ %l:%c\ of\ %L\ (%P) " Location in file
 
 
 " Command Window =============================================================
@@ -97,11 +97,11 @@ set mouse=a
 
 
 " Key Mappings ===============================================================
-"" <F1> opens Explorer (in current split)
-nnoremap <F1> :Ex<CR>
+"" <F1> opens Vexplorer (left of current split)
+nnoremap <F1> :Vex<CR>
 
-"" <F2> opens Vexplorer (left of current split)
-nnoremap <F2> :Vex<CR>
+"" <F2> opens Explorer (in current split)
+nnoremap <F2> :Ex<CR>
 
 "" <C-L> (redraw) also turns off search highlighting until the next search
 nnoremap <C-L> :nohl<CR><C-L>
