@@ -77,6 +77,13 @@ set showcmd
 set cmdheight=2
 
 
+" Netrw File Browser =========================================================
+let g:netrw_banner=0       " Disable banner
+let g:netrw_browse_split=4 " Open in a prior window
+let g:netrw_altv=1         " Open splits to the right
+let g:netrw_liststyle=3    " Tree view
+
+
 " Indentation ================================================================
 "" Always enable smarttab
 set smarttab
