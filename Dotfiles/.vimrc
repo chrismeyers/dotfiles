@@ -60,6 +60,7 @@ set laststatus=2
 
 set statusline=%F\                          " Full path to the file
 set statusline+=%y                          " Filetype of the file
+set statusline+=[%{&ff}]                    " Fileformat [unix]/[dos] etc...
 set statusline+=%r                          " Read-only flag
 set statusline+=%m                          " Modified flag
 set statusline+=%=                          " Switch to the right side
@@ -113,6 +114,11 @@ set expandtab
 " Mouse ======================================================================
 "" Enable the mouse everywhere
 set mouse=a
+
+
+" Filetype Bindings ==========================================================
+"" Use tab characters in Makefiles
+autocmd FileType make setlocal noexpandtab
 
 
 " Key Mappings ===============================================================
