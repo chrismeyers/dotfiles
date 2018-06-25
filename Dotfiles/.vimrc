@@ -17,7 +17,12 @@ set nocompatible
 "" Attempt to determine the type of a file based on its name and possibly its
 "" contents. Use this to allow intelligent auto-indenting for each filetype,
 "" and for plugins that are filetype specific.
-filetype indent plugin on
+filetype on
+filetype plugin on
+filetype indent on
+
+"" Use tab characters in Makefiles
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
 "" Enable syntax highlighting
 syntax on
@@ -114,11 +119,6 @@ set expandtab
 " Mouse ======================================================================
 "" Enable the mouse everywhere
 set mouse=a
-
-
-" Filetype Bindings ==========================================================
-"" Use tab characters in Makefiles
-autocmd FileType make setlocal noexpandtab
 
 
 " Key Mappings ===============================================================
