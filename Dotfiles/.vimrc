@@ -21,9 +21,6 @@ filetype on
 filetype plugin on
 filetype indent on
 
-"" Use tab characters in Makefiles
-autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
-
 "" Enable syntax highlighting
 syntax on
 
@@ -115,6 +112,11 @@ set expandtab
 "set shiftwidth=2
 "set tabstop=2
 
+"" All filetypes should use spaces by default
+autocmd FileType * set expandtab shiftwidth=2 softtabstop=2
+"" Use tab characters in Makefiles
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
+
 
 " Mouse ======================================================================
 "" Enable the mouse everywhere
@@ -139,3 +141,4 @@ nnoremap <C-Right> <C-w><Right>
 
 "" Select all
 nnoremap <C-A> ggVG<CR>
+
