@@ -30,9 +30,6 @@ set confirm
 "" Disable beep and flash
 set noeb vb t_vb=
 
-"" Keep the same indent level as the current line
-set autoindent
-
 "" Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
 
@@ -105,6 +102,9 @@ let g:netrw_winsize=25
 
 
 " Indentation ================================================================
+"" Keep the same indent level as the current line
+set autoindent
+
 "" Always enable smarttab
 set smarttab
 
