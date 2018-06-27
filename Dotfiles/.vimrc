@@ -56,6 +56,13 @@ set ignorecase
 set smartcase
 
 
+" Splits/Tabs ================================================================
+"" Open new vertical splits to the right of the current split and new 
+"" horizontal splits below the current split
+set splitright
+set splitbelow
+
+
 " Statusline =================================================================
 "" Always display the status line
 set laststatus=2
