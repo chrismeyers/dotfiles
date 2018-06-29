@@ -59,6 +59,10 @@ set smartcase
 set splitright
 set splitbelow
 
+"" Always display the tabline. This allows for easy tab management and ensures
+"" the command window remains in the same place.
+set showtabline=2
+
 
 " Statusline =================================================================
 "" Always display the status line
@@ -137,15 +141,18 @@ nnoremap <F1> :Vex<CR>
 "" <F2> opens Explorer (in current split)
 nnoremap <F2> :Ex<CR>
 
+"" <F6> toggles spell check
+nnoremap <F6> :set spell!<CR><Bar>:echo "Spell Check: " . strpart("OffOn", 3 * &spell, 3)<CR>
+
 "" <C-L> (redraw) also turns off search highlighting until the next search
 nnoremap <C-L> :nohl<CR><C-L>
 
-"" Simplified split movement
+"" <C-A> selects all
+nnoremap <C-A> ggVG<CR>
+
+"" <C-Up|Down|Left|Right> provide simplified split movement
 nnoremap <C-Up> <C-w><Up>
 nnoremap <C-Down> <C-w><Down>
 nnoremap <C-Left> <C-w><Left>
 nnoremap <C-Right> <C-w><Right>
-
-"" Select all
-nnoremap <C-A> ggVG<CR>
 
