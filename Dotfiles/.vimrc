@@ -79,6 +79,7 @@ set statusline+=\ Line\ %l:%c\ of\ %L\ (%P) " Location in file
 
 " Command Window =============================================================
 "" Better command-line completion
+set wildmode=longest:full,full
 set wildmenu
 
 "" Show partial commands in the last line of the screen
