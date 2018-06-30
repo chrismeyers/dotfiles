@@ -2,6 +2,7 @@
     ".aliases": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Dotfiles"],
     ".bashrc": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Dotfiles"],
     ".vimrc": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Dotfiles"],
+    ".gvimrc": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Dotfiles"],
     ".bash_profile": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Dotfiles"],
     ".astylerc": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Dotfiles"],
 
