@@ -23,3 +23,6 @@ else
   endif
 endif
 
+"" Remove the toolbar
+set guioptions-=T
+
