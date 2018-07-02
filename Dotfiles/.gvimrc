@@ -26,3 +26,9 @@ endif
 "" Remove the toolbar
 set guioptions-=T
 
+
+" Key Mappings ===============================================================
+"" <C-Tab> and <C-S-Tab> move between tabs
+nnoremap <C-Tab> :tabnext<CR>
+nnoremap <C-S-Tab> :tabNext<CR>
+
