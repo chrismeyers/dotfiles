@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
 
 '''
-usage: backupdots.py [-h] [-b] [-r] [-c]
+usage: backupdots.py [-h] -p PLATFORM [-b] [-r] [-c]
 
 Backup or restore configuration files.
 
 optional arguments:
-  -h, --help     show this help message and exit
-  -b, --backup   perform a backup based on files in backupdots.json
-  -r, --restore  perform a restore based on files in backupdots.json
-  -c, --cleanup  removes *.orig files
+  -h, --help            show this help message and exit
+  -p PLATFORM, --platform PLATFORM
+                        specifies which set of files to use (Mac, Linux,
+                        Windows)
+  -b, --backup          perform a backup based on files in backupdots.json
+  -r, --restore         perform a restore based on files in backupdots.json
+  -c, --cleanup         removes *.orig files
 '''
 
 import os
@@ -32,8 +35,13 @@ def perform_backup():
             print(f'{str(file_num).rjust(3)} Copied: {file} to {_backup_data[file][1]}')
             file_num += 1
 
-    os.system(f'{_backup_dir_root}/Homebrew/dump.sh')
-    print('Updated brew bundle dump...')
+    if file_num == 1:
+        print("Nothing to backup...")
+
+    if (_args.platform).lower() == "mac":
+        print('Dumping installed homebrew packages...')
+        os.system(f'{_backup_dir_root}/Mac/Homebrew/dump.sh')
+        print('...brew bundle dump complete!')
 
 
 def perform_restore():
@@ -94,6 +102,7 @@ if __name__ == "__main__":
     _backup_file_ext = ".orig"
 
     arg_parser = argparse.ArgumentParser(description='Backup or restore configuration files.')
+    arg_parser.add_argument('-p', '--platform', help='specifies which set of files to use (Mac, Linux, Windows)', required=True)
     arg_parser.add_argument('-b', '--backup', help='perform a backup based on files in backupdots.json', action='store_true')
     arg_parser.add_argument('-r', '--restore', help='perform a restore based on files in backupdots.json', action='store_true')
     arg_parser.add_argument('-c', '--cleanup', help=f'removes *{_backup_file_ext} files', action='store_true')
@@ -104,7 +113,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     with open(_backup_config_file) as f:
-        _backup_data = json.load(f)
+        _backup_data = json.load(f)[(_args.platform).capitalize()]
 
     if _args.backup:
         perform_backup()
