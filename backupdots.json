@@ -2,15 +2,15 @@
     "Mac": {
         ".aliases": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Mac/Dotfiles"],
         ".bashrc": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Mac/Dotfiles"],
-        ".vimrc": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Mac/Dotfiles"],
-        ".gvimrc": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Mac/Dotfiles"],
+        ".vimrc": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Common/Dotfiles"],
+        ".gvimrc": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Common/Dotfiles"],
         ".bash_profile": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Mac/Dotfiles"],
-        ".astylerc": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Mac/Dotfiles"],
+        ".astylerc": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Common/Dotfiles"],
 
-        "'Package Control.sublime-settings'": ["/Users/chris/Library/'Application Support'/'Sublime Text 3'/Packages/User", "/Users/chris/Dropbox/misc/dotfiles/Mac/SublimeText/UserSettings"],
-        "Preferences.sublime-settings": ["/Users/chris/Library/'Application Support'/'Sublime Text 3'/Packages/User", "/Users/chris/Dropbox/misc/dotfiles/Mac/SublimeText/UserSettings"],
+        "'Package Control.sublime-settings'": ["/Users/chris/Library/'Application Support'/'Sublime Text 3'/Packages/User", "/Users/chris/Dropbox/misc/dotfiles/Common/SublimeText/UserSettings"],
+        "Preferences.sublime-settings": ["/Users/chris/Library/'Application Support'/'Sublime Text 3'/Packages/User", "/Users/chris/Dropbox/misc/dotfiles/Common/SublimeText/UserSettings"],
         "Python3.sublime-build": ["/Users/chris/Library/'Application Support'/'Sublime Text 3'/Packages/User", "/Users/chris/Dropbox/misc/dotfiles/Mac/SublimeText/UserSettings"],
-        "Python.sublime-settings": ["/Users/chris/Library/'Application Support'/'Sublime Text 3'/Packages/User", "/Users/chris/Dropbox/misc/dotfiles/Mac/SublimeText/UserSettings"],
+        "Python.sublime-settings": ["/Users/chris/Library/'Application Support'/'Sublime Text 3'/Packages/User", "/Users/chris/Dropbox/misc/dotfiles/Common/SublimeText/UserSettings"],
 
         "httpd_MAMP_PRO_TEMPLATE.conf": ["/Users/chris/Documents/Development/config/MAMP/templates", "/Users/chris/Dropbox/misc/dotfiles/Mac/HostFiles/MAMP/templates"],
         "nginx_MAMP_PRO_TEMPLATE.conf": ["/Users/chris/Documents/Development/config/MAMP/templates", "/Users/chris/Dropbox/misc/dotfiles/Mac/HostFiles/MAMP/templates"],
