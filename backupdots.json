@@ -7,10 +7,10 @@
         ".bash_profile": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Mac/Dotfiles"],
         ".astylerc": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Common/Dotfiles"],
 
-        "'Package Control.sublime-settings'": ["/Users/chris/Library/'Application Support'/'Sublime Text 3'/Packages/User", "/Users/chris/Dropbox/misc/dotfiles/Common/SublimeText/UserSettings"],
-        "Preferences.sublime-settings": ["/Users/chris/Library/'Application Support'/'Sublime Text 3'/Packages/User", "/Users/chris/Dropbox/misc/dotfiles/Common/SublimeText/UserSettings"],
-        "Python3.sublime-build": ["/Users/chris/Library/'Application Support'/'Sublime Text 3'/Packages/User", "/Users/chris/Dropbox/misc/dotfiles/Mac/SublimeText/UserSettings"],
-        "Python.sublime-settings": ["/Users/chris/Library/'Application Support'/'Sublime Text 3'/Packages/User", "/Users/chris/Dropbox/misc/dotfiles/Common/SublimeText/UserSettings"],
+        "Package Control.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/Dropbox/misc/dotfiles/Common/SublimeText/UserSettings"],
+        "Preferences.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/Dropbox/misc/dotfiles/Common/SublimeText/UserSettings"],
+        "Python3.sublime-build": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/Dropbox/misc/dotfiles/Mac/SublimeText/UserSettings"],
+        "Python.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/Dropbox/misc/dotfiles/Common/SublimeText/UserSettings"],
 
         "httpd_MAMP_PRO_TEMPLATE.conf": ["/Users/chris/Documents/Development/config/MAMP/templates", "/Users/chris/Dropbox/misc/dotfiles/Mac/HostFiles/MAMP/templates"],
         "nginx_MAMP_PRO_TEMPLATE.conf": ["/Users/chris/Documents/Development/config/MAMP/templates", "/Users/chris/Dropbox/misc/dotfiles/Mac/HostFiles/MAMP/templates"],
@@ -27,5 +27,7 @@
         ".gitignore_global": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Mac/Git"]
     },
     "Linux": {},
-    "Windows": {}
+    "Windows": {
+        ".gitconfig": ["C:\\Users\\Chris", "C:\\Users\\Chris\\Dropbox\\misc\\dotfiles\\Windows\\Git"]
+    }
 }

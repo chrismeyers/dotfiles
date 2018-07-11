@@ -20,6 +20,7 @@ import sys
 import json
 import argparse
 import filecmp
+import shutil
 
 def perform_backup():
     # Copies files from original location to dotfiles/...
@@ -30,8 +31,8 @@ def perform_backup():
         if not os.path.exists(backup_file.replace("'", "")) or not filecmp.cmp(orig_file.replace("'", ""), backup_file.replace("'", "")):
             if not os.path.exists(_backup_data[file][1]):
                 # Create the directory if it does not exist.
-                os.system(f'mkdir -p {_backup_data[file][1]}')
-            os.system(f'cp {_backup_data[file][0]}/{file} {_backup_data[file][1]}')
+                os.makedirs(_backup_data[file][1], mode=0o755)
+            shutil.copy(f'{_backup_data[file][0]}/{file}', _backup_data[file][1])
             print(f'{str(file_num).rjust(3)} Copied: {file} to {_backup_data[file][1]}')
             file_num += 1
 
@@ -52,9 +53,9 @@ def perform_restore():
         orig_file = f'{_backup_data[file][0]}/{file}'
         backup_file = f'{_backup_data[file][1]}/{file}'
 
-        if os.path.exists(orig_file.replace("'", "")):
-            os.system(f'mv {orig_file} {orig_file}{_backup_file_ext}')
-            os.system(f'cp {backup_file} {orig_file}')
+        if os.path.exists(orig_file):
+            shutil.move(orig_file, f'{orig_file}{_backup_file_ext}')
+            shutil.copy(backup_file, orig_file)
             print(f'{str(file_num).rjust(3)} Restored: {file} to {_backup_data[file][0]}')
         else:
             print(f'{str(file_num).rjust(3)}  WARNING: {orig_file} does not exist, skipping...')
@@ -65,19 +66,12 @@ def perform_cleanup():
     # Removes all *{_backup_file_ext} files generated from perform_restore().
     file_num = 1
     for file in _backup_data:
-        current_file = handle_files_with_spaces(f'{_backup_data[file][0]}/{file}')
+        current_file = f'{_backup_data[file][0]}/{file}{_backup_file_ext}'
 
-        if os.path.exists(current_file.replace("'", "")):
-            os.system(f'rm -f {current_file}')
+        if os.path.exists(current_file):
+            os.remove(current_file)
             print(f'{str(file_num).rjust(3)} Removed: {current_file}')
             file_num += 1
-
-
-def handle_files_with_spaces(file_name):
-    if file_name.endswith("'"):
-        return f'{file_name[:-1]}{_backup_file_ext}\''
-    else:
-        return f'{file_name}{_backup_file_ext}'
 
 
 class FileUtils:
