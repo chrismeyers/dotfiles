@@ -10,6 +10,8 @@
   editor = 'subl' --wait
   excludesfile = /home/chris/.gitignore_global
   autocrlf = input
+[credentials]
+  helper = store
 [user]
   name = Chris Meyers
   email = cm.02.93@gmail.com
