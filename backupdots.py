@@ -44,6 +44,10 @@ def perform_backup():
         os.system(f'{_backup_dir_root}/Mac/Homebrew/dump.sh')
         print('...brew bundle dump complete!')
 
+    if (_args.platform).lower() == "linux":
+        print('Dumping GNOME Terminal default profile...')
+        os.system(f'{_backup_dir_root}/Linux/GNOMETerminal/dump.sh')
+        print('...profile dump complete!')
 
 def perform_restore():
     # Copies files from dotfiles/... to original location.
