@@ -10,7 +10,7 @@
   editor = 'subl' --wait
   excludesfile = /home/chris/.gitignore_global
   autocrlf = input
-[credentials]
+[credential]
   helper = store
 [user]
   name = Chris Meyers
