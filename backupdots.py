@@ -19,7 +19,6 @@ import os
 import sys
 import json
 import argparse
-import filecmp
 import shutil
 
 def perform_backup():
@@ -28,9 +27,9 @@ def perform_backup():
     for file in _backup_data:
         orig_file = f'{_backup_data[file][0]}/{file}'
         backup_file = f'{_backup_data[file][1]}/{file}'
-        if not os.path.exists(backup_file.replace("'", "")) or not filecmp.cmp(orig_file.replace("'", ""), backup_file.replace("'", "")):
+
+        if not os.path.exists(backup_file.replace("'", "")) and not os.path.islink(orig_file):
             if not os.path.exists(_backup_data[file][1]):
-                # Create the directory if it does not exist.
                 os.makedirs(_backup_data[file][1], mode=0o755)
             shutil.copy(f'{_backup_data[file][0]}/{file}', _backup_data[file][1])
             print(f'{str(file_num).rjust(3)} Copied: {file} to {_backup_data[file][1]}')
@@ -50,20 +49,27 @@ def perform_backup():
         print('...profile dump complete!')
 
 def perform_restore():
-    # Copies files from dotfiles/... to original location.
-    # Is the file exists, the current file is renamed to *{_backup_file_ext}.
+    # Symlinks files from dotfiles/... to original location.
     file_num = 1
     for file in _backup_data:
         orig_file = f'{_backup_data[file][0]}/{file}'
         backup_file = f'{_backup_data[file][1]}/{file}'
 
-        if os.path.exists(orig_file):
-            shutil.move(orig_file, f'{orig_file}{_backup_file_ext}')
-            shutil.copy(backup_file, orig_file)
-            print(f'{str(file_num).rjust(3)} Restored: {file} to {_backup_data[file][0]}')
+        # Assume that the program isn't installed or the configuration file is
+        # not needed if the original path doesn't exist.
+        if os.path.exists(_backup_data[file][0]):
+            # Make a backup of the file before creating a symlink.
+            if os.path.exists(orig_file) and not os.path.islink(orig_file):
+                shutil.move(orig_file, f'{orig_file}{_backup_file_ext}')
+            if not os.path.exists(orig_file):
+                os.symlink(backup_file, orig_file)
+                print(f'{str(file_num).rjust(3)} Linked: {file} to {_backup_data[file][0]}')
+                file_num += 1
         else:
-            print(f'{str(file_num).rjust(3)}  WARNING: {orig_file} does not exist, skipping...')
-        file_num += 1
+            print(f'{str(file_num).rjust(3)}  WARNING: {_backup_data[file][0]} does not exist, skipping...')
+
+    if file_num == 1:
+        print("Nothing to restore...")
 
 
 def perform_cleanup():
@@ -78,25 +84,22 @@ def perform_cleanup():
             file_num += 1
 
 
-class FileUtils:
-    def sanitized_full_path(self, dir_location, file_name):
-        sanitized_dir_location = dir_location
-        sanitized_file_name = file_name
+def sanitized_full_path(dir_location, file_name):
+    sanitized_dir_location = dir_location
+    sanitized_file_name = file_name
 
-        if dir_location.endswith("/"):
-            sanitized_dir_location = dir_location[:-1]
+    if dir_location.endswith("/"):
+        sanitized_dir_location = dir_location[:-1]
 
-        if file_name.startswith("/"):
-            sanitized_file_name = file_name[1:]
+    if file_name.startswith("/"):
+        sanitized_file_name = file_name[1:]
 
-        return f'{sanitized_dir_location}/{sanitized_file_name}'
+    return f'{sanitized_dir_location}/{sanitized_file_name}'
 
 
 if __name__ == "__main__":
-    _fu = FileUtils()
-
     _backup_dir_root = os.path.dirname(os.path.abspath(__file__))
-    _backup_config_file = _fu.sanitized_full_path(_backup_dir_root, 'backupdots.json')
+    _backup_config_file = sanitized_full_path(_backup_dir_root, 'backupdots.json')
     _backup_file_ext = ".orig"
 
     arg_parser = argparse.ArgumentParser(description='Backup or restore configuration files.')
