@@ -196,6 +196,17 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 bindsym XF86AudioPlay exec playerctl play-pause
 
+# xinput help
+#   - Determine available devices by running `xinput list`, get the id
+#   - List properties by running `xinput list-props {id}`, get the prop_id
+#   - Set property by running `xinput set-prop {id} {prop_id} {state}`
+
+# Enable tap-to-click
+exec --no-startup-id xinput set-prop 12 271 1
+
+# Enable natural scrolling
+exec --no-startup-id xinput set-prop 12 279 1
+
 #=====================================================
 #   Startup settings
 #=====================================================
