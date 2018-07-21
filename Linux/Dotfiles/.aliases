@@ -39,6 +39,7 @@ alias power='xfce4-power-manager -c'
 alias svc="systemctl list-unit-files"
 alias svcrun="systemctl | grep running"
 alias sound="alsamixer"
+alias wifimgr="nm-applet"
 
 
 #============ Navigation ============
