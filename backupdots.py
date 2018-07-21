@@ -31,8 +31,13 @@ def perform_backup():
         if not os.path.exists(backup_file.replace("'", "")) and not os.path.islink(orig_file):
             if not os.path.exists(_backup_data[file][1]):
                 os.makedirs(_backup_data[file][1], mode=0o755)
-            shutil.copy(f'{_backup_data[file][0]}/{file}', _backup_data[file][1])
-            print(f'{str(file_num).rjust(3)} Copied: {file} to {_backup_data[file][1]}')
+            if not os.path.isdir(orig_file):
+                backup_type = "file"
+                shutil.copy(f'{_backup_data[file][0]}/{file}', _backup_data[file][1])
+            else:
+                backup_type = "directory"
+                shutil.copytree(f'{_backup_data[file][0]}/{file}', f'{_backup_data[file][1]}/{file}')
+            print(f'{str(file_num).rjust(3)} Copied {backup_type}: {file} to {_backup_data[file][1]}')
             file_num += 1
 
     if file_num == 1:
@@ -79,10 +84,17 @@ def perform_cleanup():
         current_file = f'{_backup_data[file][0]}/{file}{_backup_file_ext}'
 
         if os.path.exists(current_file):
-            os.remove(current_file)
-            print(f'{str(file_num).rjust(3)} Removed: {current_file}')
+            if not os.path.isdir(current_file):
+                cleanup_type = "file"
+                os.remove(current_file)
+            else:
+                cleanup_type = "directory"
+                shutil.rmtree(current_file)
+            print(f'{str(file_num).rjust(3)} Removed {cleanup_type}: {current_file}')
             file_num += 1
 
+    if file_num == 1:
+        print("Nothing to cleanup...")
 
 def sanitized_full_path(dir_location, file_name):
     sanitized_dir_location = dir_location

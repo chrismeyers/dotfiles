@@ -34,8 +34,10 @@ alias filetypes='find . -type f | perl -ne '"'"'print $1 if m/\.([^.\/]+)$/'"'"'
 
 #=============== Admin ==============
 alias root='sudo -i'
-
 alias sshconfig='subl $HOME/.ssh/config'
+alias power='xfce4-power-manager -c'
+alias svc="systemctl list-unit-files"
+alias svcrun="systemctl | grep running"
 
 
 #============ Navigation ============
