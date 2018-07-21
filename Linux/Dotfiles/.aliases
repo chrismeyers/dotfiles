@@ -54,7 +54,7 @@ alias vid='cd $HOME/Videos'
 alias pics='cd $HOME/Pictures'
 alias dt='cd $HOME/Desktop'
 alias scripts='cd $HOME/scripts'
-alias dots='cd $HOME/Dropbox/misc/dotfiles'
+alias dots='cd $HOME/dotfiles'
 alias dl='cd $HOME/Downloads'
 alias sublconfig='cd "$HOME/.config/sublime-text-3/Packages/User"'
 
@@ -87,4 +87,4 @@ alias chrome='/usr/bin/google-chrome-stable'
 
 
 #============= Scripts ==============
-alias backupdots='python3 $HOME/Dropbox/misc/dotfiles/backupdots.py'
+alias backupdots='python3 $HOME/dotfiles/backupdots.py'

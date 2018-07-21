@@ -86,7 +86,7 @@ alias mov='cd $HOME/Movies'
 alias pics='cd $HOME/Pictures'
 alias dt='cd $HOME/Desktop'
 alias scripts='cd $HOME/scripts'
-alias dots='cd $HOME/Dropbox/misc/dotfiles'
+alias dots='cd $HOME/dotfiles'
 alias dl='cd $HOME/Downloads'
 alias sublconfig='cd "$HOME/Library/Application Support/Sublime Text 3/Packages/User"'
 
@@ -140,5 +140,5 @@ alias e='open -e'
 
 
 #============= Scripts ==============
-alias backupdots='python3 $HOME/Dropbox/misc/dotfiles/backupdots.py'
+alias backupdots='python3 $HOME/dotfiles/backupdots.py'
 alias phpv='. /Users/chris/Documents/Development/python-dev/python_scripts/setPHPVersionWrapper.sh'
