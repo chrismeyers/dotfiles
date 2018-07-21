@@ -1,0 +1,63 @@
+# This configuration is based on:
+#   github.com/rafi i3status config
+
+# i3status configuration file
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+  colors = true
+  color_good = "#BBBBBB"
+  color_bad = "#CC1616"
+  color_degraded = "#55858E"
+  interval = 2
+}
+
+order += "volume master"
+order += "cpu_usage"
+order += "disk /"
+order += "wireless _first_"
+order += "battery 0"
+order += "tztime local"
+
+volume master {
+  device = "default"
+  mixer = "Master"
+  mixer_idx = 0
+  format = "♪: %volume "
+}
+
+cpu_usage {
+  format = " %usage "
+}
+
+disk "/" {
+  format = " %avail " 
+}
+
+wireless _first_ {
+  format_up = " %quality on %essid@%frequency [%ip] "
+  format_down = " No WiFi "
+}
+
+battery 0 {
+  format = " %status %percentage "
+  format_down = " No Battery "
+  status_chr = "⚡ CHR"
+  status_bat = "🔋 BAT"
+  status_full = "FULL"
+  last_full_capacity = true
+  hide_seconds = true
+  integer_battery_capacity = true
+  low_threshold = 10
+  threshold_type = percentage
+  path = "/sys/class/power_supply/BAT%d/uevent"
+}
+
+tztime local {
+  format = " %a %D %R "
+}

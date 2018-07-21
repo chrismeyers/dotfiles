@@ -38,6 +38,7 @@
         "Python.sublime-settings": ["/home/chris/.config/sublime-text-3/Packages/User", "/home/chris/dotfiles/Common/SublimeText/UserSettings"],
 
         "i3": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
+        "i3status": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
         "rofi": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
 
         ".gitconfig": ["/home/chris", "/home/chris/dotfiles/Linux/Git"],
