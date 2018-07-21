@@ -44,6 +44,9 @@
         ".gitignore_global": ["/home/chris", "/home/chris/Dropbox/misc/dotfiles/Linux/Git"]
     },
     "Windows": {
+        ".vimrc": ["C:\\Users\\Chris", "C:\\Users\\Chris\\Dropbox\\misc\\dotfiles\\Common\\Dotfiles"],
+        ".gvimrc": ["C:\\Users\\Chris", "C:\\Users\\Chris\\Dropbox\\misc\\dotfiles\\Common\\Dotfiles"],
+
         "Preferences.sublime-settings": ["C:\\Users\\Chris\\AppData\\Roaming\\Sublime Text 3\\Packages\\User", "C:\\Users\\Chris\\Dropbox\\misc\\dotfiles\\Windows\\SublimeText\\UserSettings"],
 
         ".gitconfig": ["C:\\Users\\Chris", "C:\\Users\\Chris\\Dropbox\\misc\\dotfiles\\Windows\\Git"]
