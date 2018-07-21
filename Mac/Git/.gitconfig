@@ -1,17 +1,19 @@
 [alias]
-  aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
-  all = add . --all
-  amend = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
-  st = status
-  details = log -n1 -p --format=fuller
-  untracked = ls-files --others --exclude-standard
-  updatesubs = submodule foreach git pull origin master
+	aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
+	all = add . --all
+	amend = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
+	st = status
+	details = log -n1 -p --format=fuller
+	untracked = ls-files --others --exclude-standard
+	updatesubs = submodule foreach git pull origin master
 [core]
-  editor = 'subl' --wait
-  excludesfile = /Users/chris/.gitignore_global
-  autocrlf = input
+	editor = 'subl' --wait
+	excludesfile = /Users/chris/.gitignore_global
+	autocrlf = input
 [credential]
-  helper = osxkeychain
+	helper = osxkeychain
 [user]
-  name = Chris Meyers
-  email = cm.02.93@gmail.com
+	name = Chris Meyers
+	email = cm.02.93@gmail.com
+[push]
+	default = simple
