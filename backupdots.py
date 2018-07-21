@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 '''
-usage: backupdots.py [-h] -p PLATFORM [-b] [-r] [-c]
+usage: backupdots.py [-h] -p PLATFORM [-b] [-r] [-c] [-u]
 
 Backup or restore configuration files.
 
@@ -13,6 +13,7 @@ optional arguments:
   -b, --backup          perform a backup based on files in backupdots.json
   -r, --restore         perform a restore based on files in backupdots.json
   -c, --cleanup         removes *.orig files
+  -u, --unlink          removes all symlinks for the given platform
 '''
 
 import os
@@ -53,6 +54,7 @@ def perform_backup():
         os.system(f'{_backup_dir_root}/Linux/GNOMETerminal/dump.sh')
         print('...profile dump complete!')
 
+
 def perform_restore():
     # Symlinks files from dotfiles/... to original location.
     file_num = 1
@@ -68,10 +70,10 @@ def perform_restore():
                 shutil.move(orig_file, f'{orig_file}{_backup_file_ext}')
             if not os.path.exists(orig_file):
                 os.symlink(backup_file, orig_file)
-                print(f'{str(file_num).rjust(3)} Linked: {file} to {_backup_data[file][0]}')
+                print(f'{str(file_num).rjust(3)} Linked {"directory" if os.path.isdir(backup_file) else "file"}: {file} to {_backup_data[file][0]}')
                 file_num += 1
         else:
-            print(f'{str(file_num).rjust(3)}  WARNING: {_backup_data[file][0]} does not exist, skipping...')
+            print(f'    WARNING: {_backup_data[file][0]} does not exist, skipping...')
 
     if file_num == 1:
         print("Nothing to restore...")
@@ -96,6 +98,22 @@ def perform_cleanup():
     if file_num == 1:
         print("Nothing to cleanup...")
 
+
+def perform_unlink():
+    # Removes all symlinks for the given platform.
+    file_num = 1
+    for file in _backup_data:
+        current_file = f'{_backup_data[file][0]}/{file}'
+
+        if os.path.exists(current_file):
+            os.unlink(current_file)
+            print(f'{str(file_num).rjust(3)} Unlinked {"directory" if os.path.isdir(current_file) else "file"}: {current_file}')
+            file_num += 1
+
+    if file_num == 1:
+        print("Nothing to unlink...")
+
+
 def sanitized_full_path(dir_location, file_name):
     sanitized_dir_location = dir_location
     sanitized_file_name = file_name
@@ -119,6 +137,7 @@ if __name__ == "__main__":
     arg_parser.add_argument('-b', '--backup', help='perform a backup based on files in backupdots.json', action='store_true')
     arg_parser.add_argument('-r', '--restore', help='perform a restore based on files in backupdots.json', action='store_true')
     arg_parser.add_argument('-c', '--cleanup', help=f'removes *{_backup_file_ext} files', action='store_true')
+    arg_parser.add_argument('-u', '--unlink', help=f'removes all symlinks for the given platform', action='store_true')
     _args = arg_parser.parse_args()
 
     if not os.path.exists(_backup_config_file):
@@ -134,5 +153,7 @@ if __name__ == "__main__":
         perform_restore()
     elif _args.cleanup:
         perform_cleanup()
+    elif _args.unlink:
+        perform_unlink()
     else:
         perform_backup()
