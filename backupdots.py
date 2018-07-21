@@ -103,11 +103,12 @@ def perform_unlink():
     # Removes all symlinks for the given platform.
     file_num = 1
     for file in _backup_data:
+        is_dir = os.path.isdir(f'{_backup_data[file][1]}/{file}')
         current_file = f'{_backup_data[file][0]}/{file}'
 
         if os.path.exists(current_file):
             os.unlink(current_file)
-            print(f'{str(file_num).rjust(3)} Unlinked {"directory" if os.path.isdir(current_file) else "file"}: {current_file}')
+            print(f'{str(file_num).rjust(3)} Unlinked {"directory" if is_dir else "file"}: {current_file}')
             file_num += 1
 
     if file_num == 1:
