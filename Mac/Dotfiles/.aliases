@@ -88,7 +88,7 @@ alias dt='cd $HOME/Desktop'
 alias scripts='cd $HOME/scripts'
 alias dots='cd $HOME/Dropbox/misc/dotfiles'
 alias dl='cd $HOME/Downloads'
-alias sublbuild='cd "$HOME/Library/Application Support/Sublime Text 3/Packages/User"'
+alias sublconfig='cd "$HOME/Library/Application Support/Sublime Text 3/Packages/User"'
 
 
 #============ Programming ===========
