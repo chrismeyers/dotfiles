@@ -8,7 +8,7 @@
         ".astylerc": ["/Users/chris", "/Users/chris/Dropbox/misc/dotfiles/Common/Dotfiles"],
 
         "Package Control.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/Dropbox/misc/dotfiles/Common/SublimeText/UserSettings"],
-        "Preferences.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/Dropbox/misc/dotfiles/Common/SublimeText/UserSettings"],
+        "Preferences.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/Dropbox/misc/dotfiles/Mac/SublimeText/UserSettings"],
         "Python3.sublime-build": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/Dropbox/misc/dotfiles/Mac/SublimeText/UserSettings"],
         "Python.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/Dropbox/misc/dotfiles/Common/SublimeText/UserSettings"],
 
@@ -34,7 +34,7 @@
         ".astylerc": ["/home/chris", "/home/chris/Dropbox/misc/dotfiles/Common/Dotfiles"],
 
         "Package Control.sublime-settings": ["/home/chris/.config/sublime-text-3/Packages/User", "/home/chris/Dropbox/misc/dotfiles/Common/SublimeText/UserSettings"],
-        "Preferences.sublime-settings": ["/home/chris/.config/sublime-text-3/Packages/User", "/home/chris/Dropbox/misc/dotfiles/Common/SublimeText/UserSettings"],
+        "Preferences.sublime-settings": ["/home/chris/.config/sublime-text-3/Packages/User", "/home/chris/Dropbox/misc/dotfiles/Linux/SublimeText/UserSettings"],
         "Python.sublime-settings": ["/home/chris/.config/sublime-text-3/Packages/User", "/home/chris/Dropbox/misc/dotfiles/Common/SublimeText/UserSettings"],
 
         "i3": ["/home/chris/.config", "/home/chris/Dropbox/misc/dotfiles/Linux"],
@@ -44,6 +44,8 @@
         ".gitignore_global": ["/home/chris", "/home/chris/Dropbox/misc/dotfiles/Linux/Git"]
     },
     "Windows": {
+        "Preferences.sublime-settings": ["C:\\Users\\Chris\\AppData\\Roaming\\Sublime Text 3\\Packages\\User", "C:\\Users\\Chris\\Dropbox\\misc\\dotfiles\\Windows\\SublimeText\\UserSettings"],
+
         ".gitconfig": ["C:\\Users\\Chris", "C:\\Users\\Chris\\Dropbox\\misc\\dotfiles\\Windows\\Git"]
     }
 }
