@@ -64,6 +64,12 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Take a screenshot of the focused window
+bindsym Print exec scrot -u '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/Screenshots/'
+
+# Take a screenshot of the entire screen
+bindsym $mod+Print exec scrot '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/Screenshots/'
+
 #=====================================================
 #   Keybindings - Window Manipulation
 #=====================================================
