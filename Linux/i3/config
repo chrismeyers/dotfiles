@@ -24,7 +24,7 @@ set $term gnome-terminal
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 10
+#font pango:DejaVu Sans Mono 10
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -32,6 +32,12 @@ font pango:DejaVu Sans Mono 10
 # clear in small sizes. However, its unicode glyph coverage is limited, the old
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
+
+# In order for font awesome to fully work in i3status, the file:
+#   ~/.config/fontconfig/conf.d/10-symbols.conf
+# needs to exist for the font awesome symbols to have priority over conflicting
+# system fonts. Be sure to reload the font cache (`fc-cache -rfv`)!
+font pango:Hack 10
 
 #=====================================================
 #   Keybindings - General

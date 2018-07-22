@@ -8,6 +8,12 @@
 # The following line should contain a sharp s:
 # ß
 # If the above line is not correctly displayed, fix your editor first!
+#
+# There are also font awesome icons used in this configuration.
+# To install font awesome on Ubuntu: 
+#   - Download the fonts from https://fontawesome.com
+#   - Copy the files in the otfs directory into /usr/share/fonts/fontawesome
+#   - Reload the font cache by running `fc-cache -rfv`
 
 general {
   colors = true
@@ -28,28 +34,43 @@ volume master {
   device = "default"
   mixer = "Master"
   mixer_idx = 0
-  format = "♪: %volume "
+  # These symbols may conflict with system fonts and appear different, but they
+  # should display as the font awesome symbols:
+  #   volume-up: f028
+  #   volume-off: f026
+  format = "  %volume "
+  format_muted = "  (%volume) "
 }
 
 cpu_usage {
-  format = " %usage "
+  # font awesome symbol:
+  #   tachometer-alt: f3fd
+  format = "  %usage "
 }
 
 disk "/" {
-  format = " %avail " 
+  # font awesome symbol:
+  #   hdd: f0a0
+  format = "  %avail " 
 }
 
 wireless _first_ {
-  format_up = " %quality on %essid@%frequency (%ip) "
+  # font awesome symbol:
+  #   wifi: f1eb
+  format_up = "  %quality on %essid@%frequency (%ip) "
   format_down = " No WiFi "
 }
 
 battery 0 {
   format = " %status %percentage "
   format_down = " No Battery "
-  status_chr = "⚡ CHR"
-  status_bat = "🔋 BAT"
-  status_full = "🗸 FULL"
+  # font awesome symbols:
+  #   bolt: f0e7
+  #   battery-three-quarters: f241
+  #   battery-full: f240
+  status_chr = ""
+  status_bat = ""
+  status_full = ""
   last_full_capacity = true
   hide_seconds = true
   integer_battery_capacity = true
@@ -59,5 +80,7 @@ battery 0 {
 }
 
 tztime local {
-  format = " %a %D %R "
+  # font awesome symbol:
+  #   calendar-alt: f073
+  format = "  %a %D %R "
 }

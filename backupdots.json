@@ -40,6 +40,7 @@
         "i3": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
         "i3status": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
         "rofi": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
+        "fontconfig": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
 
         ".gitconfig": ["/home/chris", "/home/chris/dotfiles/Linux/Git"],
         ".gitignore_global": ["/home/chris", "/home/chris/dotfiles/Linux/Git"]
