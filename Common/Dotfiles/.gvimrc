@@ -19,6 +19,8 @@ else
     let s:uname = system("uname")
     if s:uname == "Darwin\n"
       set guifont=Menlo\ Regular:h11
+    elseif s:uname == "Linux\n"
+      set guifont=Hack\ 11
     endif
   endif
 endif
