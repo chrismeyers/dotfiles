@@ -43,6 +43,20 @@ set background=dark
 "" Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
 
+"" Set font based on OS
+if has('win32')
+  set guifont=Consolas:h9:cANSI:qDRAFT
+else
+  if has('unix')
+    let s:uname = system("uname")
+    if s:uname == "Darwin\n"
+      set guifont=Menlo\ Regular:h11
+    elseif s:uname == "Linux\n"
+      set guifont=Hack\ 11
+    endif
+  endif
+endif
+
 
 " Searching ==================================================================
 "" Highlight searches
