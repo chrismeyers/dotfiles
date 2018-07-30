@@ -11,6 +11,9 @@ set vb t_vb=
 set lines=35
 set columns=140
 
+"" Remove the toolbar
+set guioptions-=T
+
 
 " Key Mappings ===============================================================
 "" <C-Tab> and <C-S-Tab> move between tabs
