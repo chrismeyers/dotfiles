@@ -220,6 +220,14 @@ exec --no-startup-id xinput set-prop "DELL07E6:00 06CB:76AF Touchpad" 271 1
 exec --no-startup-id xinput set-prop "DELL07E6:00 06CB:76AF Touchpad" 279 1
 
 #=====================================================
+#   i3-gaps
+#=====================================================
+for_window [class="^.*"] border pixel 1
+smart_gaps on
+gaps inner 10
+gaps outer 0
+
+#=====================================================
 #   Startup settings
 #=====================================================
 exec --no-startup-id feh --bg-fill ~/Pictures/ruby_beach.jpg
