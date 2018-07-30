@@ -57,7 +57,7 @@ disk "/" {
 wireless _first_ {
   # font awesome symbol:
   #   wifi: f1eb
-  format_up = "  %quality on %essid@%frequency (%ip) "
+  format_up = "  %quality "
   format_down = " No WiFi "
 }
 
