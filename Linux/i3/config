@@ -33,10 +33,10 @@ set $term gnome-terminal
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-# In order for font awesome to fully work in i3status, the file:
-#   ~/.config/fontconfig/conf.d/10-symbols.conf
-# needs to exist for the font awesome symbols to have priority over conflicting
-# system fonts. Be sure to reload the font cache (`fc-cache -rfv`)!
+# The Hack font needs to be installed. To install Hack on Ubuntu:
+#   - Download the font from https://github.com/source-foundry/Hack/releases
+#   - Copy the files in the ttf directory into /usr/share/fonts/hack
+#   - Reload the font cache by running `fc-cache -rfv`
 font pango:Hack 10
 
 #=====================================================

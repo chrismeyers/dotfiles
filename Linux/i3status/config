@@ -9,11 +9,15 @@
 # ß
 # If the above line is not correctly displayed, fix your editor first!
 #
-# There are also font awesome icons used in this configuration.
-# To install font awesome on Ubuntu: 
-#   - Download the fonts from https://fontawesome.com
+# There are also Font Awesome icons used in this configuration.
+# To install Font Awesome on Ubuntu: 
+#   - Download the font from https://fontawesome.com
 #   - Copy the files in the otfs directory into /usr/share/fonts/fontawesome
 #   - Reload the font cache by running `fc-cache -rfv`
+# In order for Font Awesome to fully work in i3status, the file:
+#   ~/.config/fontconfig/conf.d/10-symbols.conf
+# needs to exist for the Font Awesome symbols to have priority over conflicting
+# system fonts. Be sure to reload the font cache (`fc-cache -rfv`)!
 
 general {
   colors = true
@@ -35,7 +39,7 @@ volume master {
   mixer = "Master"
   mixer_idx = 0
   # These symbols may conflict with system fonts and appear different, but they
-  # should display as the font awesome symbols:
+  # should display as the Font Awesome symbols:
   #   volume-up: f028
   #   volume-off: f026
   format = "  %volume "
@@ -43,19 +47,19 @@ volume master {
 }
 
 cpu_usage {
-  # font awesome symbol:
+  # Font Awesome symbol:
   #   tachometer-alt: f3fd
   format = "  %usage "
 }
 
 disk "/" {
-  # font awesome symbol:
+  # Font Awesome symbol:
   #   hdd: f0a0
   format = "  %avail " 
 }
 
 wireless _first_ {
-  # font awesome symbol:
+  # Font Awesome symbol:
   #   wifi: f1eb
   format_up = "  %quality "
   format_down = " No WiFi "
@@ -64,7 +68,7 @@ wireless _first_ {
 battery 0 {
   format = " %status %percentage "
   format_down = " No Battery "
-  # font awesome symbols:
+  # Font Awesome symbols:
   #   bolt: f0e7
   #   battery-three-quarters: f241
   #   battery-full: f240
@@ -80,7 +84,7 @@ battery 0 {
 }
 
 tztime local {
-  # font awesome symbol:
+  # Font Awesome symbol:
   #   calendar-alt: f073
   format = "  %a %D %R "
 }
