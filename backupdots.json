@@ -41,6 +41,7 @@
         "i3status": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
         "rofi": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
         "fontconfig": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
+        "compton": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
 
         ".gitconfig": ["/home/chris", "/home/chris/dotfiles/Linux/Git"],
         ".gitignore_global": ["/home/chris", "/home/chris/dotfiles/Linux/Git"]

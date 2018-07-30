@@ -222,6 +222,8 @@ exec --no-startup-id xinput set-prop "DELL07E6:00 06CB:76AF Touchpad" 279 1
 #=====================================================
 #   Startup settings
 #=====================================================
+exec --no-startup-id feh --bg-fill ~/Pictures/ruby_beach.jpg
 exec --no-startup-id dropbox start
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id nm-applet
+exec --no-startup-id compton --config ~/.config/compton/compton.conf -b
