@@ -1,3 +1,4 @@
 ## Linux configuration files
-  + GTK theme: https://github.com/horst3180/Arc-theme
-    * Configured with LXAppearance
+  + GTK appearance configured with LXAppearance:
+    * GTK widget theme: [Ark-Dark](https://github.com/horst3180/Arc-theme)
+    * GTK icon theme: Ubuntu-Mono Dark
