@@ -8,8 +8,8 @@
 	"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
 	"ensure_newline_at_eof_on_save": true,
 	"fade_fold_buttons": false,
-	"font_size": 10,
 	"font_face": "Hack",
+	"font_size": 10,
 	"hot_exit": false,
 	"ignored_packages":
 	[
