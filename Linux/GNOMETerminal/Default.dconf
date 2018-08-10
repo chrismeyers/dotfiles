@@ -10,5 +10,5 @@ use-theme-colors=false
 use-theme-transparency=false
 allow-bold=true
 background-color='rgb(0,0,0)'
-background-transparency-percent=15
+background-transparency-percent=10
 audible-bell=false
