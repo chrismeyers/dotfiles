@@ -209,15 +209,15 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 bindsym XF86AudioPlay exec playerctl play-pause
 
 # xinput help
-#   - Determine available devices by running `xinput list`, get the name
-#   - List properties by running `xinput list-props {name}`, get the prop_id
-#   - Set property by running `xinput set-prop {name} {prop_id} {state}`
+#   - Determine available devices by running `xinput list`, get the device_name
+#   - List properties by running `xinput list-props {device_name}`, get the prop_name
+#   - Set property by running `xinput set-prop {device_name} {prop_name} {state}`
 
 # Enable tap-to-click
-exec --no-startup-id xinput set-prop "DELL07E6:00 06CB:76AF Touchpad" 271 1
+exec --no-startup-id xinput set-prop "DELL07E6:00 06CB:76AF Touchpad" "libinput Tapping Enabled" 1
 
 # Enable natural scrolling
-exec --no-startup-id xinput set-prop "DELL07E6:00 06CB:76AF Touchpad" 279 1
+exec --no-startup-id xinput set-prop "DELL07E6:00 06CB:76AF Touchpad" "libinput Natural Scrolling Enabled" 1
 
 #=====================================================
 #   i3-gaps
