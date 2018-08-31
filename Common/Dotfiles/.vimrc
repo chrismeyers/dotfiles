@@ -57,6 +57,9 @@ else
   endif
 endif
 
+"" Hide buffers instead of closing them
+set hidden
+
 
 " Searching ==================================================================
 "" Highlight searches
