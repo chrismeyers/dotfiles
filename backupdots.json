@@ -1,11 +1,11 @@
 {
     "Mac": {
-        ".aliases": ["/Users/chris", "/Users/chris/dotfiles/Mac/Dotfiles"],
-        ".bashrc": ["/Users/chris", "/Users/chris/dotfiles/Mac/Dotfiles"],
-        ".vimrc": ["/Users/chris", "/Users/chris/dotfiles/Common/Dotfiles"],
-        ".gvimrc": ["/Users/chris", "/Users/chris/dotfiles/Common/Dotfiles"],
-        ".bash_profile": ["/Users/chris", "/Users/chris/dotfiles/Mac/Dotfiles"],
-        ".astylerc": ["/Users/chris", "/Users/chris/dotfiles/Common/Dotfiles"],
+        ".aliases": ["/Users/chris", "/Users/chris/dotfiles/Mac/bash"],
+        ".bashrc": ["/Users/chris", "/Users/chris/dotfiles/Mac/bash"],
+        ".vimrc": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
+        ".gvimrc": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
+        ".bash_profile": ["/Users/chris", "/Users/chris/dotfiles/Mac/bash"],
+        ".astylerc": ["/Users/chris", "/Users/chris/dotfiles/Common/misc"],
 
         "Package Control.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Common/SublimeText/UserSettings"],
         "Preferences.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Mac/SublimeText/UserSettings"],
@@ -27,11 +27,11 @@
         ".gitignore_global": ["/Users/chris", "/Users/chris/dotfiles/Mac/Git"]
     },
     "Linux": {
-        ".aliases": ["/home/chris", "/home/chris/dotfiles/Linux/Dotfiles"],
-        ".bashrc": ["/home/chris", "/home/chris/dotfiles/Linux/Dotfiles"],
-        ".vimrc": ["/home/chris", "/home/chris/dotfiles/Common/Dotfiles"],
-        ".gvimrc": ["/home/chris", "/home/chris/dotfiles/Common/Dotfiles"],
-        ".astylerc": ["/home/chris", "/home/chris/dotfiles/Common/Dotfiles"],
+        ".aliases": ["/home/chris", "/home/chris/dotfiles/Linux/bash"],
+        ".bashrc": ["/home/chris", "/home/chris/dotfiles/Linux/bash"],
+        ".vimrc": ["/home/chris", "/home/chris/dotfiles/Common/vim"],
+        ".gvimrc": ["/home/chris", "/home/chris/dotfiles/Common/vim"],
+        ".astylerc": ["/home/chris", "/home/chris/dotfiles/Common/misc"],
 
         "Package Control.sublime-settings": ["/home/chris/.config/sublime-text-3/Packages/User", "/home/chris/dotfiles/Common/SublimeText/UserSettings"],
         "Preferences.sublime-settings": ["/home/chris/.config/sublime-text-3/Packages/User", "/home/chris/dotfiles/Linux/SublimeText/UserSettings"],
@@ -47,8 +47,8 @@
         ".gitignore_global": ["/home/chris", "/home/chris/dotfiles/Linux/Git"]
     },
     "Windows": {
-        ".vimrc": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\Dotfiles"],
-        ".gvimrc": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\Dotfiles"],
+        ".vimrc": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\vim"],
+        ".gvimrc": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\vim"],
 
         "Preferences.sublime-settings": ["C:\\Users\\Chris\\AppData\\Roaming\\Sublime Text 3\\Packages\\User", "C:\\Users\\Chris\\dotfiles\\Windows\\SublimeText\\UserSettings"],
 
