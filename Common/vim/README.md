@@ -6,3 +6,8 @@ From a Windows command prompt:
 > mklink /D bundle C:\Users\Chris\.vim\bundle
 ```
 
+## Native Vim 8 Package Manager
+  * Create the `~/.vim/pack/plugins/start` and `~/.vim/pack/plugins/opt` directories.
+  * Put plugins that should be loaded on startup in  `~/.vim/pack/plugins/start`.
+
+See [this article](https://shapeshed.com/vim-packages/) for more information.

@@ -7,9 +7,6 @@
 "" ===========================================================================
 
 " General ====================================================================
-"" Enable pathogen.vim
-execute pathogen#infect()
-
 "" Set 'nocompatible' to ward off unexpected things that your distro might
 "" have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
@@ -173,4 +170,3 @@ nnoremap <C-Up> <C-w><Up>
 nnoremap <C-Down> <C-w><Down>
 nnoremap <C-Left> <C-w><Left>
 nnoremap <C-Right> <C-w><Right>
-
