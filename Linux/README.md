@@ -8,3 +8,4 @@
       * Applications: Adwaita-dark
       * Cursor: DMZ-White
       * Icons: LoginIcons
+    * Notifications can be handled using `notify-osd`
