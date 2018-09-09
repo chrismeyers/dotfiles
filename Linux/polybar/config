@@ -117,7 +117,7 @@ type = internal/network
 interface = wlp2s0
 interval = 3.0
 
-format-connected = <label-connected>
+format-connected = %{A:nm-connection-editor&:}<label-connected>%{A}
 format-connected-underline = ${colors.primary}
 label-connected =  %essid%
 label-connected-foreground = ${colors.primary}
