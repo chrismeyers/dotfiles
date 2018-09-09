@@ -170,6 +170,8 @@ assign [class="Sublime_text"] $ws2
 assign [class="Google-chrome"] $ws3
 assign [class="Firefox"] $ws3
 
+for_window [class="Spotify"] move to workspace $ws10
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
