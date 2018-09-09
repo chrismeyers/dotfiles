@@ -44,6 +44,8 @@
         "compton": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
         "polybar": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
 
+        "i3lock.service": ["/etc/systemd/system", "/home/chris/dotfiles/Linux/systemd"],
+
         ".gitconfig": ["/home/chris", "/home/chris/dotfiles/Linux/Git"],
         ".gitignore_global": ["/home/chris", "/home/chris/dotfiles/Linux/Git"]
     },
