@@ -34,7 +34,7 @@ export HISTSIZE=500
 export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
 
 ## Set environment varibales
-export EDITOR='subl'
+export EDITOR='vim'
 export GCC_COLORS "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 
 shopt -s checkwinsize
