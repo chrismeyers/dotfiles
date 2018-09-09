@@ -69,7 +69,11 @@ def perform_restore():
             if os.path.exists(orig_file) and not os.path.islink(orig_file):
                 shutil.move(orig_file, f'{orig_file}.{_backup_file_ext}')
             if not os.path.exists(orig_file):
-                os.symlink(backup_file, orig_file)
+                try:
+                    os.symlink(backup_file, orig_file)
+                except PermissionError:
+                    if not sudo_command(f'sudo ln -s {backup_file} {orig_file}'):
+                        continue
                 print(f'{str(file_num).rjust(3)} Linked {"directory" if os.path.isdir(backup_file) else "file"}: {file} to {_backup_data[file][0]}')
                 file_num += 1
         else:
@@ -88,10 +92,18 @@ def perform_cleanup():
         if os.path.exists(current_file):
             if not os.path.isdir(current_file):
                 cleanup_type = "file"
-                os.remove(current_file)
+                try:
+                    os.remove(current_file)
+                except PermissionError:
+                    if not sudo_command(f'sudo rm {current_file}'):
+                        continue
             else:
                 cleanup_type = "directory"
-                shutil.rmtree(current_file)
+                try:
+                    shutil.rmtree(current_file)
+                except PermissionError:
+                    if not sudo_command(f'sudo rm -rf {current_file}'):
+                        continue
             print(f'{str(file_num).rjust(3)} Removed {cleanup_type}: {current_file}')
             file_num += 1
 
@@ -107,7 +119,11 @@ def perform_unlink():
         current_file = os.path.join(_backup_data[file][0], file)
 
         if os.path.exists(current_file):
-            os.unlink(current_file)
+            try:
+                os.unlink(current_file)
+            except PermissionError:
+                if not sudo_command(f'sudo rm {current_file}'):
+                    continue
             print(f'{str(file_num).rjust(3)} Unlinked {"directory" if is_dir else "file"}: {current_file}')
             file_num += 1
 
@@ -126,6 +142,19 @@ def sanitized_full_path(dir_location, file_name):
         sanitized_file_name = file_name[1:]
 
     return os.path.join(sanitized_dir_location, sanitized_file_name)
+
+
+def sudo_command(cmd):
+    success = False
+
+    # TODO: Handle permissions error on windows
+    if (_args.platform).lower() == "linux" or (_args.platform).lower() == "mac": 
+        exit_code = os.system(cmd)
+        success = True if exit_code == 0 else False
+    else:
+        print(f'    WARNING: Unable to symlink {backup_file} to {orig_file}, skipping...')
+
+    return success
 
 
 if __name__ == "__main__":
