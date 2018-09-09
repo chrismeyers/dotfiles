@@ -35,9 +35,10 @@ module-margin-right = 2
 font-0 = fixed:pixelsize=11.5;1
 font-1 = FontAwesome:size=11;0
 font-2 = FontAwesome5Brands:size=11;0
+font-3 = FontAwesome5FreeSolid:size=11;0
 
 modules-left = i3
-modules-right = volume wlan battery date
+modules-right = backlight volume wlan battery date menu0
 
 ;=====================================================
 ;   Creating Modules
@@ -159,6 +160,24 @@ animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-foreground = ${colors.primary}
 animation-charging-framerate = 750
+
+[module/menu0]
+type = custom/menu
+
+format = <label-toggle> <menu>
+format-underline = ${colors.primary}
+format-padding = 1
+
+menu-0-0 = " logout  "
+menu-0-0-exec = i3-msg exit
+menu-0-1 = " shutdown  "
+menu-0-1-exec = shutdown now
+menu-0-2 = " restart  "
+menu-0-2-exec = shutdown -r now
+menu-0-3 = " cancel"
+
+label-open = 
+label-close =
 
 ;=====================================================
 ;   Extra Settings
