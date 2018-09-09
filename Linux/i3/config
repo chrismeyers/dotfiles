@@ -228,7 +228,7 @@ gaps outer 0
 #=====================================================
 #   Startup settings
 #=====================================================
-exec_always --no-startup-id feh --bg-fill ~/Pictures/ruby_beach.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/ruby_beach.jpg
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id dropbox start
 exec --no-startup-id xfce4-power-manager

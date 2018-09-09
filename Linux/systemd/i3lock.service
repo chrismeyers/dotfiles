@@ -6,7 +6,7 @@ Before=sleep.target
 User=chris
 Type=forking
 Environment=DISPLAY=:0
-ExecStart=/usr/bin/i3lock --ignore-empty-password --show-failed-attempts --color 808080
+ExecStart=/usr/bin/i3lock --ignore-empty-password --show-failed-attempts --image /home/chris/Pictures/Wallpapers/moon_mower.png
 
 [Install]
 WantedBy=sleep.target
