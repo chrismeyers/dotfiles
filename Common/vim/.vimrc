@@ -142,6 +142,8 @@ set expandtab
 autocmd FileType * set expandtab shiftwidth=2 softtabstop=2
 "" Use tab characters in Makefiles
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
+"" Use 4 spaces in Python files
+autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
 
 
 " Mouse ======================================================================
