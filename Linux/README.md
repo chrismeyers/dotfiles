@@ -3,7 +3,7 @@
     + i3 configured with LXAppearance:
       * Applications: Adwaita-dark
       * Cursor: DMZ-White
-      * Icons: LoginIcons
+      * Icons: [Moka](https://snwh.org/moka)
     + GNOME configured with gnome-tweak-tool (`gnome-tweaks`):
       * Applications: Adwaita-dark
       * Cursor: DMZ-White
