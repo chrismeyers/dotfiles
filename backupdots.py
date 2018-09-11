@@ -170,7 +170,7 @@ def inject_tree(tree):
         print(f'ERROR: {readme_path} does not exist!')
         sys.exit(1)
 
-    with open(readme_path, 'r') as f_in, open(f'{readme_path}.tmp', 'w+') as f_out:
+    with open(readme_path, 'r') as f_in:
         readme_lines = f_in.readlines()
         begin_index = -1
         end_index = -1
@@ -186,17 +186,15 @@ def inject_tree(tree):
             # with the new tree.
             del readme_lines[begin_index + 1:end_index]
             readme_lines.insert(begin_index + 1, f'```\n{tree}```\n')
-
-            # TODO: Can this be done with one file (README.md)?
-            for line in readme_lines:
-                f_out.write(line)
-            os.remove(readme_path)
-            os.rename(f'{readme_path}.tmp', readme_path)
-
-            print('Updated directory tree in README.md...')
         else:
             print('ERROR: BEGIN and END tags are likely missing from README.md')
             sys.exit(1)
+
+    with open(readme_path, 'w') as f_out:
+        for line in readme_lines:
+            f_out.write(line)
+
+        print('Updated directory tree in README.md...')
 
 
 def sanitized_full_path(dir_location, file_name):
