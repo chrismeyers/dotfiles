@@ -164,7 +164,7 @@ def generate_tree():
 
 
 def inject_tree(tree):
-    readme_path = os.path.join(_path_to_this_script, 'README.md')
+    readme_path = os.path.join(_backup_dir_root, 'README.md')
 
     if not os.path.exists(readme_path):
         print(f'ERROR: {readme_path} does not exist!')
@@ -228,7 +228,6 @@ if __name__ == '__main__':
     _backup_config_file = sanitized_full_path(_backup_dir_root, 'backupdots.json')
     _backup_file_ext = 'orig'
     _tree_modes = ['print', 'inject']
-    _path_to_this_script = os.path.dirname(os.path.abspath(__file__))
 
     with open(_backup_config_file) as f:
         _all_backup_data = json.load(f)
