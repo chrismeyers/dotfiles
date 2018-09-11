@@ -37,23 +37,23 @@ def perform_backup():
             if not os.path.exists(_backup_data[file][1]):
                 os.makedirs(_backup_data[file][1], mode=0o755)
             if not os.path.isdir(orig_file):
-                backup_type = "file"
+                backup_type = 'file'
                 shutil.copy(os.path.join(_backup_data[file][0], file), _backup_data[file][1])
             else:
-                backup_type = "directory"
+                backup_type = 'directory'
                 shutil.copytree(os.path.join(_backup_data[file][0], file), os.path.join(_backup_data[file][1], file))
             print(f'{str(file_num).rjust(3)} Copied {backup_type}: {file} to {_backup_data[file][1]}')
             file_num += 1
 
     if file_num == 1:
-        print("Nothing to backup...")
+        print('Nothing to backup...')
 
-    if (_args.platform).lower() == "mac":
+    if (_args.platform).lower() == 'mac':
         print('Dumping installed homebrew packages...')
         os.system(os.path.join(_backup_dir_root, 'Mac/Homebrew/dump.sh'))
         print('...brew bundle dump complete!')
 
-    if (_args.platform).lower() == "linux":
+    if (_args.platform).lower() == 'linux':
         print('Dumping GNOME Terminal default profile...')
         os.system(os.path.join(_backup_dir_root, 'Linux/GNOMETerminal/dump.sh'))
         print('...profile dump complete!')
@@ -84,7 +84,7 @@ def perform_restore():
             print(f'    WARNING: {_backup_data[file][0]} does not exist, skipping...')
 
     if file_num == 1:
-        print("Nothing to restore...")
+        print('Nothing to restore...')
 
 
 def perform_cleanup():
@@ -95,14 +95,14 @@ def perform_cleanup():
 
         if os.path.exists(current_file):
             if not os.path.isdir(current_file):
-                cleanup_type = "file"
+                cleanup_type = 'file'
                 try:
                     os.remove(current_file)
                 except PermissionError:
                     if not sudo_command(f'sudo rm {current_file}'):
                         continue
             else:
-                cleanup_type = "directory"
+                cleanup_type = 'directory'
                 try:
                     shutil.rmtree(current_file)
                 except PermissionError:
@@ -112,7 +112,7 @@ def perform_cleanup():
             file_num += 1
 
     if file_num == 1:
-        print("Nothing to cleanup...")
+        print('Nothing to cleanup...')
 
 
 def perform_unlink():
@@ -132,7 +132,7 @@ def perform_unlink():
             file_num += 1
 
     if file_num == 1:
-        print("Nothing to unlink...")
+        print('Nothing to unlink...')
 
 
 def perform_tree():
@@ -203,10 +203,10 @@ def sanitized_full_path(dir_location, file_name):
     sanitized_dir_location = dir_location
     sanitized_file_name = file_name
 
-    if dir_location.endswith("/"):
+    if dir_location.endswith('/'):
         sanitized_dir_location = dir_location[:-1]
 
-    if file_name.startswith("/"):
+    if file_name.startswith('/'):
         sanitized_file_name = file_name[1:]
 
     return os.path.join(sanitized_dir_location, sanitized_file_name)
@@ -216,7 +216,7 @@ def sudo_command(cmd):
     success = False
 
     # TODO: Handle permissions error on windows
-    if (_args.platform).lower() == "linux" or (_args.platform).lower() == "mac": 
+    if (_args.platform).lower() == 'linux' or (_args.platform).lower() == 'mac': 
         exit_code = os.system(cmd)
         success = True if exit_code == 0 else False
     else:
@@ -225,10 +225,10 @@ def sudo_command(cmd):
     return success
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     _backup_dir_root = os.path.dirname(os.path.abspath(__file__))
     _backup_config_file = sanitized_full_path(_backup_dir_root, 'backupdots.json')
-    _backup_file_ext = "orig"
+    _backup_file_ext = 'orig'
     _tree_modes = ['print', 'inject']
     _path_to_this_script = os.path.dirname(os.path.abspath(__file__))
 
