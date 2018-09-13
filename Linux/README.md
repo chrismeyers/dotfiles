@@ -8,7 +8,7 @@
       * Applications: Adwaita-dark
       * Cursor: DMZ-White
       * Icons: LoginIcons
-  + Notifications are handled in i3 using `notify-osd`
+  + Notifications are handled in i3 using [`dunst`](https://dunst-project.org/)
   + Programs built from source:
     + i3-gaps
       * [Repository](https://github.com/Airblader/i3)

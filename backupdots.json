@@ -44,6 +44,7 @@
         "compton": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
         "polybar": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
         "nvim": ["/home/chris/.config", "/home/chris/dotfiles/Common/neovim"],
+        "dunst": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
 
         "i3lock.service": ["/etc/systemd/system", "/home/chris/dotfiles/Linux/systemd"],
 
