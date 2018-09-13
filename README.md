@@ -26,6 +26,8 @@ with backupdots.json.
 │   │   └── .bashrc
 │   ├── compton
 │   │   └── compton.conf
+│   ├── dunst
+│   │   └── dunstrc
 │   ├── fontconfig
 │   │   └── conf.d
 │   │       └── 10-symbols.conf
@@ -107,6 +109,6 @@ with backupdots.json.
         └── UserSettings
             └── Preferences.sublime-settings
 
-46 directories, 53 files
+47 directories, 54 files
 ```
 <!-- END TREE -->
