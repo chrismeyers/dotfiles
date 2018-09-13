@@ -36,10 +36,11 @@ alias filetypes='find . -type f | perl -ne '"'"'print $1 if m/\.([^.\/]+)$/'"'"'
 alias root='sudo -i'
 alias sshconfig='subl $HOME/.ssh/config'
 alias power='xfce4-power-manager -c'
-alias svc="systemctl list-unit-files"
-alias svcrun="systemctl | grep running"
-alias sound="alsamixer"
-alias nmgui="$HOME/Documents/Development/shell_scripts/nmgui.sh"
+alias svc='systemctl list-unit-files'
+alias svcrun='systemctl | grep running'
+alias sound='alsamixer'
+alias nmgui='$HOME/Documents/Development/shell_scripts/nmgui.sh'
+alias notif='dbus-monitor "interface=org.freedesktop.Notifications" | grep --line-buffered "member=Notify\|string"'
 
 
 #============ Navigation ============
