@@ -9,6 +9,7 @@
       * Cursor: DMZ-White
       * Icons: LoginIcons
   + Notifications are handled in i3 using [`dunst`](https://dunst-project.org/)
+  + Power management is handled in i3 using `xfce4-power-manager`
   + Programs built from source:
     + i3-gaps
       * [Repository](https://github.com/Airblader/i3)
