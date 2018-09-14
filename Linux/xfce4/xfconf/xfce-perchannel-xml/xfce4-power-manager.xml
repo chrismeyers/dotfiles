@@ -19,7 +19,7 @@
     <property name="blank-on-ac" type="int" value="10"/>
     <property name="dpms-on-ac-sleep" type="uint" value="15"/>
     <property name="dpms-on-ac-off" type="uint" value="20"/>
-    <property name="change-brightness-on-key-events" type="bool" value="false"/>
+    <property name="change-brightness-on-key-events" type="bool" value="true"/>
     <property name="show-brightness-popup" type="bool" value="false"/>
   </property>
 </channel>
