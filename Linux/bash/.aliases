@@ -39,7 +39,7 @@ alias power='xfce4-power-manager -c'
 alias svc='systemctl list-unit-files'
 alias svcrun='systemctl | grep running'
 alias sound='alsamixer'
-alias nmgui='$HOME/Documents/Development/shell_scripts/nmgui.sh'
+alias nmgui='$HOME/Documents/Development/scripts/shell_scripts/nmgui.sh'
 alias notif='dbus-monitor "interface=org.freedesktop.Notifications" | grep --line-buffered "member=Notify\|string"'
 
 
