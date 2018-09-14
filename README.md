@@ -54,11 +54,15 @@ with backupdots.json.
 │   │       └── Preferences.sublime-settings
 │   ├── systemd
 │   │   └── i3lock.service
-│   └── Wallpapers
-│       ├── moon_mower.jpg
-│       ├── moon_mower.png
-│       ├── ruby_beach.jpg
-│       └── ruby_beach.png
+│   ├── Wallpapers
+│   │   ├── moon_mower.jpg
+│   │   ├── moon_mower.png
+│   │   ├── ruby_beach.jpg
+│   │   └── ruby_beach.png
+│   └── xfce4
+│       └── xfconf
+│           └── xfce-perchannel-xml
+│               └── xfce4-power-manager.xml
 ├── Mac
 │   ├── bash
 │   │   ├── .aliases
@@ -109,6 +113,6 @@ with backupdots.json.
         └── UserSettings
             └── Preferences.sublime-settings
 
-47 directories, 54 files
+50 directories, 55 files
 ```
 <!-- END TREE -->
