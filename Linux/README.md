@@ -9,7 +9,16 @@
       * Cursor: DMZ-White
       * Icons: LoginIcons
   + Notifications are handled in i3 using [`dunst`](https://dunst-project.org/)
-  + Power management is handled in i3 using `xfce4-power-manager`
+  + Power management is handled in i3 using `xfce4-power-manager` and `xbacklight`
+    * Polybar uses xbacklight to display screen brightness
+  + If xbacklight doesn't work after installing, modify `/usr/share/X11/xorg.conf.d/20-intel.conf` (create file if needed) to contain:
+    ```
+    Section "Device"
+    	Identifier "0x42"
+    	Driver "intel"
+    	Option "Backlight" "intel_backlight"
+    EndSection
+    ```
   + To enter deep sleep on suspend, modify `/etc/default/grub` to have:
     * `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash mem_sleep_default=deep"`
     * To apply changes, run: `sudo update-grub`

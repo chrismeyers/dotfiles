@@ -99,6 +99,15 @@ ws-icon-8 = 9;
 ws-icon-9 = 10: Music;
 ws-icon-default = 
 
+[module/backlight]
+type = internal/xbacklight
+output = eDP-1
+
+format = <label>
+format-underline = ${colors.primary}
+
+label = " %percentage%%"
+
 [module/volume]
 type = internal/alsa
 
