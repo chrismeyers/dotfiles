@@ -12,6 +12,7 @@
   + Power management is handled in i3 using `xfce4-power-manager`
   + To enter deep sleep on suspend, modify `/etc/default/grub` to have:
     * `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash mem_sleep_default=deep"`
+    * To apply changes, run: `sudo update-grub`
   + Programs built from source:
     + i3-gaps
       * [Repository](https://github.com/Airblader/i3)
