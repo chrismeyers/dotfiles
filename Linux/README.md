@@ -14,9 +14,9 @@
   + If xbacklight doesn't work after installing, modify `/usr/share/X11/xorg.conf.d/20-intel.conf` (create file if needed) to contain:
     ```
     Section "Device"
-    	Identifier "0x42"
+    	Identifier "0x42" # determined by running: xrandr --verbose
     	Driver "intel"
-    	Option "Backlight" "intel_backlight"
+    	Option "Backlight" "intel_backlight" # 2nd argument determined by running: ls -1 /sys/class/backlight
     EndSection
     ```
   + To enter deep sleep on suspend, modify `/etc/default/grub` to have:
