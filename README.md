@@ -42,6 +42,8 @@ with backupdots.json.
 │   │   └── config
 │   ├── i3status
 │   │   └── config
+│   ├── misc
+│   │   └── .stalonetrayrc
 │   ├── polybar
 │   │   ├── config
 │   │   └── launch.sh
@@ -113,6 +115,6 @@ with backupdots.json.
         └── UserSettings
             └── Preferences.sublime-settings
 
-50 directories, 55 files
+51 directories, 56 files
 ```
 <!-- END TREE -->
