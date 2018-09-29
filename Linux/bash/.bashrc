@@ -30,7 +30,7 @@ export HISTFILESIZE=500
 export HISTSIZE=500
 
 ### Set path variables
-#export PATH=":$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
 
 ## Set environment varibales
