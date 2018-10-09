@@ -33,8 +33,9 @@ export HISTSIZE=500
 export PATH="$HOME/.local/bin:$PATH"
 export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
 
-## Set environment varibales
-export EDITOR='vim'
+### Set environment varibales
+export PYTHONDONTWRITEBYTECODE=1
+export EDITOR='nvim'
 export GCC_COLORS "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 export XDG_CONFIG_HOME="$HOME/.config"
 

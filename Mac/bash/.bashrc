@@ -34,10 +34,14 @@ export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
 
-## Set environment varibales
+### Set environment varibales
+export PYTHONDONTWRITEBYTECODE=1
 export EDITOR='subl'
 export GCC_COLORS "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 export JAVA_HOME=`/usr/libexec/java_home -v '1.8*'`
+
+
 shopt -s checkwinsize
+
 source $HOME/.aliases
 source $HOME/.PHP_VERSION
