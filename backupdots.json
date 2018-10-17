@@ -7,6 +7,8 @@
         ".bash_profile": ["/Users/chris", "/Users/chris/dotfiles/Mac/bash"],
         ".astylerc": ["/Users/chris", "/Users/chris/dotfiles/Common/misc"],
 
+        "nvim": ["/Users/chris/.config", "/Users/chris/dotfiles/Common/neovim"],
+
         "Package Control.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Common/SublimeText/UserSettings"],
         "Preferences.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Mac/SublimeText/UserSettings"],
         "Python3.sublime-build": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Mac/SublimeText/UserSettings"],
