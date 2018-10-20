@@ -76,7 +76,7 @@ def perform_restore():
                 try:
                     os.symlink(backup_file, orig_file)
                 except PermissionError:
-                    if not sudo_command(f'sudo ln -s {backup_file} {orig_file}'):
+                    if not sudo_command(f'ln -s {backup_file} {orig_file}'):
                         continue
                 print(f'{str(file_num).rjust(3)} Linked {"directory" if os.path.isdir(backup_file) else "file"}: {file} to {_backup_data[file][0]}')
                 file_num += 1
@@ -99,14 +99,14 @@ def perform_cleanup():
                 try:
                     os.remove(current_file)
                 except PermissionError:
-                    if not sudo_command(f'sudo rm {current_file}'):
+                    if not sudo_command(f'rm {current_file}'):
                         continue
             else:
                 cleanup_type = 'directory'
                 try:
                     shutil.rmtree(current_file)
                 except PermissionError:
-                    if not sudo_command(f'sudo rm -rf {current_file}'):
+                    if not sudo_command(f'rm -rf {current_file}'):
                         continue
             print(f'{str(file_num).rjust(3)} Removed {cleanup_type}: {current_file}')
             file_num += 1
@@ -126,7 +126,7 @@ def perform_unlink():
             try:
                 os.unlink(current_file)
             except PermissionError:
-                if not sudo_command(f'sudo rm {current_file}'):
+                if not sudo_command(f'rm {current_file}'):
                     continue
             print(f'{str(file_num).rjust(3)} Unlinked {"directory" if is_dir else "file"}: {current_file}')
             file_num += 1
@@ -215,10 +215,10 @@ def sudo_command(cmd):
 
     # TODO: Handle permissions error on windows
     if (_args.platform).lower() == 'linux' or (_args.platform).lower() == 'mac': 
-        exit_code = os.system(cmd)
+        exit_code = os.system(f'sudo {cmd}')
         success = True if exit_code == 0 else False
     else:
-        print(f'    WARNING: Unable to symlink {backup_file} to {orig_file}, skipping...')
+        print(f'    WARNING: Unable to execute command `{cmd}` as a super user...')
 
     return success
 

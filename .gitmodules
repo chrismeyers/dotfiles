@@ -1,0 +1,3 @@
+[submodule "Common/vim/.vim/pack/plugins/start/gruvbox"]
+	path = Common/vim/.vim/pack/plugins/start/gruvbox
+	url = https://github.com/morhetz/gruvbox.git

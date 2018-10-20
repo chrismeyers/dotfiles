@@ -6,13 +6,14 @@
         ".gvimrc": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
         ".bash_profile": ["/Users/chris", "/Users/chris/dotfiles/Mac/bash"],
         ".astylerc": ["/Users/chris", "/Users/chris/dotfiles/Common/misc"],
-
-        "nvim": ["/Users/chris/.config", "/Users/chris/dotfiles/Common/neovim"],
+        ".vim": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
 
         "Package Control.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Common/SublimeText/UserSettings"],
         "Preferences.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Mac/SublimeText/UserSettings"],
         "Python3.sublime-build": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Mac/SublimeText/UserSettings"],
         "Python.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Common/SublimeText/UserSettings"],
+
+        "nvim": ["/Users/chris/.config", "/Users/chris/dotfiles/Common/neovim"],
 
         "httpd_MAMP_PRO_TEMPLATE.conf": ["/Users/chris/Documents/Development/config/MAMP/templates", "/Users/chris/dotfiles/Mac/HostFiles/MAMP/templates"],
         "nginx_MAMP_PRO_TEMPLATE.conf": ["/Users/chris/Documents/Development/config/MAMP/templates", "/Users/chris/dotfiles/Mac/HostFiles/MAMP/templates"],
@@ -35,6 +36,7 @@
         ".gvimrc": ["/home/chris", "/home/chris/dotfiles/Common/vim"],
         ".astylerc": ["/home/chris", "/home/chris/dotfiles/Common/misc"],
         ".stalonetrayrc": ["/home/chris", "/home/chris/dotfiles/Linux/misc"],
+        ".vim": ["/home/chris", "/home/chris/dotfiles/Common/vim"],
 
         "Package Control.sublime-settings": ["/home/chris/.config/sublime-text-3/Packages/User", "/home/chris/dotfiles/Common/SublimeText/UserSettings"],
         "Preferences.sublime-settings": ["/home/chris/.config/sublime-text-3/Packages/User", "/home/chris/dotfiles/Linux/SublimeText/UserSettings"],
@@ -60,8 +62,13 @@
     "Windows": {
         ".vimrc": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\vim"],
         ".gvimrc": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\vim"],
+        ".vim": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\vim"],
 
+        "Package Control.sublime-settings": ["C:\\Users\\Chris\\AppData\\Roaming\\Sublime Text 3\\Packages\\User", "C:\\Users\\Chris\\dotfiles\\Common\\SublimeText\\UserSettings"],
         "Preferences.sublime-settings": ["C:\\Users\\Chris\\AppData\\Roaming\\Sublime Text 3\\Packages\\User", "C:\\Users\\Chris\\dotfiles\\Windows\\SublimeText\\UserSettings"],
+        "Python.sublime-settings": ["C:\\Users\\Chris\\AppData\\Roaming\\Sublime Text 3\\Packages\\User", "C:\\Users\\Chris\\dotfiles\\Common\\SublimeText\\UserSettings"],
+
+        "nvim": ["C:\\Users\\Chris\\AppData\\Local", "C:\\Users\\Chris\\dotfiles\\Common\\neovim"],
 
         ".gitconfig": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Windows\\Git"]
     }
