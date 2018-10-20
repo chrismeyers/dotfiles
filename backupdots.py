@@ -150,7 +150,21 @@ def perform_tree():
 
 
 def generate_tree():
-    p = subprocess.Popen("tree -a -I '.git|.gitignore|backupdots.*|README.md'", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    # NOTE: I only want the names of Vim plugins to appear in the tree. In
+    # order to skip all the files in each Vim plugin dir, a maximum tree
+    # depth has been set. That being said, config files shouldn't be nested
+    # greater than this depth!
+    # TODO: There may be a better way to do this, but I can't figure out a
+    # way to ignore files/dirs under certain directories through the tree
+    # command. If the max depth ever becomes an issue, parsing the output
+    # from the tree command (use JSON output flag?) or drawing a custom tree
+    # may be needed.
+
+    max_tree_depth = 7
+    ignored = '|'.join(['.git', '.gitignore', 'backupdots.*', 'README.md'])
+
+    p = subprocess.Popen(f"tree -a -I '{ignored}' -L {max_tree_depth}",
+            shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out, err = p.communicate()
 
     out = out.decode('utf-8')
