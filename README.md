@@ -19,6 +19,11 @@ with backupdots.json.
 │   │       └── Python.sublime-settings
 │   └── vim
 │       ├── .gvimrc
+│       ├── .vim
+│       │   └── pack
+│       │       └── plugins
+│       │           └── start
+│       │               └── gruvbox
 │       └── .vimrc
 ├── Linux
 │   ├── bash
@@ -84,14 +89,10 @@ with backupdots.json.
 │   │   └── restore.sh
 │   ├── HostFiles
 │   │   ├── Homebrew
-│   │   │   └── usr
-│   │   │       └── local
-│   │   │           └── etc
-│   │   │               └── apache2
-│   │   │                   └── 2.4
-│   │   │                       ├── extra
-│   │   │                       │   └── httpd-vhosts-homebrew.conf
-│   │   │                       └── httpd.conf
+│   │   │   └── usr_local_etc_apache2_2.4
+│   │   │       ├── extra
+│   │   │       │   └── httpd-vhosts-homebrew.conf
+│   │   │       └── httpd.conf
 │   │   └── MAMP
 │   │       ├── httpd-vhosts.conf
 │   │       └── templates
@@ -115,6 +116,6 @@ with backupdots.json.
         └── UserSettings
             └── Preferences.sublime-settings
 
-51 directories, 56 files
+52 directories, 56 files
 ```
 <!-- END TREE -->

@@ -161,7 +161,7 @@ def generate_tree():
     # may be needed.
 
     max_tree_depth = 7
-    ignored = '|'.join(['.git', '.gitignore', 'backupdots.*', 'README.md'])
+    ignored = '|'.join(['.git', '.gitignore', '.gitmodules', 'backupdots.*', 'README.md'])
 
     p = subprocess.Popen(f"tree -a -I '{ignored}' -L {max_tree_depth}",
             shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
