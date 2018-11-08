@@ -65,7 +65,6 @@ brew "openssh"
 brew "perl@5.18"
 brew "phpmyadmin"
 brew "rsync"
-brew "ruby", link: true
 brew "screen"
 brew "sdl2"
 brew "subversion"
