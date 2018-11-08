@@ -13,6 +13,8 @@
         "Python3.sublime-build": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Mac/SublimeText/UserSettings"],
         "Python.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Common/SublimeText/UserSettings"],
 
+        "settings.json" : ["/Users/chris/Library/Application Support/Code/User", "/Users/chris/dotfiles/Common/vscode"],
+
         "nvim": ["/Users/chris/.config", "/Users/chris/dotfiles/Common/neovim"],
 
         "httpd_MAMP_PRO_TEMPLATE.conf": ["/Users/chris/Documents/Development/config/MAMP/templates", "/Users/chris/dotfiles/Mac/HostFiles/MAMP/templates"],
