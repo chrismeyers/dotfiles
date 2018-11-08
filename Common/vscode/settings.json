@@ -1,0 +1,25 @@
+{
+  // Get off my lawn, Microsoft (Telemetry)
+  "telemetry.enableTelemetry": false,
+
+  // General editor settings (Editor)
+  "editor.tabSize": 2,
+  "editor.lineNumbers": "relative",
+
+  // Language overrides (Default Configuration Overrides)
+  "[c]":  {
+    "editor.autoIndent": true
+  },
+
+  "[cpp]":  {
+    "editor.autoIndent": true
+  },
+
+  "[go]": {
+    "editor.insertSpaces": true
+  },
+
+  "[python]": {
+    "editor.tabSize": 4
+  }
+}

@@ -68,6 +68,8 @@
         "Preferences.sublime-settings": ["C:\\Users\\Chris\\AppData\\Roaming\\Sublime Text 3\\Packages\\User", "C:\\Users\\Chris\\dotfiles\\Windows\\SublimeText\\UserSettings"],
         "Python.sublime-settings": ["C:\\Users\\Chris\\AppData\\Roaming\\Sublime Text 3\\Packages\\User", "C:\\Users\\Chris\\dotfiles\\Common\\SublimeText\\UserSettings"],
 
+        "settings.json" : ["C:\\Users\\Chris\\AppData\\Roaming\\Code\\User", "C:\\Users\\Chris\\dotfiles\\Common\\vscode"],
+
         "nvim": ["C:\\Users\\Chris\\AppData\\Local", "C:\\Users\\Chris\\dotfiles\\Common\\neovim"],
 
         ".gitconfig": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Windows\\Git"]
