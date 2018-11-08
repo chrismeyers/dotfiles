@@ -17,14 +17,16 @@ with backupdots.json.
 │   │   └── UserSettings
 │   │       ├── Package Control.sublime-settings
 │   │       └── Python.sublime-settings
-│   └── vim
-│       ├── .gvimrc
-│       ├── .vim
-│       │   └── pack
-│       │       └── plugins
-│       │           └── start
-│       │               └── gruvbox
-│       └── .vimrc
+│   ├── vim
+│   │   ├── .gvimrc
+│   │   ├── .vim
+│   │   │   └── pack
+│   │   │       └── plugins
+│   │   │           └── start
+│   │   │               └── gruvbox
+│   │   └── .vimrc
+│   └── vscode
+│       └── settings.json
 ├── Linux
 │   ├── bash
 │   │   ├── .aliases
@@ -116,6 +118,6 @@ with backupdots.json.
         └── UserSettings
             └── Preferences.sublime-settings
 
-52 directories, 56 files
+53 directories, 57 files
 ```
 <!-- END TREE -->
