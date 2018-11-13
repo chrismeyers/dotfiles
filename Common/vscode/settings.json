@@ -6,6 +6,11 @@
   "editor.tabSize": 2,
   "editor.lineNumbers": "relative",
 
+  // File settings (Files)
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+
   // Language overrides (Default Configuration Overrides)
   "[c]":  {
     "editor.autoIndent": true
@@ -21,5 +26,8 @@
 
   "[python]": {
     "editor.tabSize": 4
-  }
+  },
+
+  // OS File system interaction (File Explorer)
+  "explorer.confirmDelete": false
 }
