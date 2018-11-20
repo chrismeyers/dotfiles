@@ -29,5 +29,8 @@
   },
 
   // OS File system interaction (File Explorer)
-  "explorer.confirmDelete": false
+  "explorer.confirmDelete": false,
+
+  // Extensions
+  "workbench.iconTheme": "vscode-icons"
 }
