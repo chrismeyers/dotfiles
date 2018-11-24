@@ -25,9 +25,6 @@
         "httpd-vhosts-homebrew.conf": ["/usr/local/etc/apache2/2.4/extra", "/Users/chris/dotfiles/Mac/HostFiles/Homebrew/usr_local_etc_apache2_2.4/extra"],
         "httpd.conf": ["/usr/local/etc/apache2/2.4", "/Users/chris/dotfiles/Mac/HostFiles/Homebrew/usr_local_etc_apache2_2.4"],
 
-        "com.googlecode.iterm2.plist": ["/Users/chris/Documents/TerminalProfiles/iTerm2/Default", "/Users/chris/dotfiles/Mac/iTermProfiles/Default"],
-        "iterm2_default.itermcolors": ["/Users/chris/Documents/TerminalProfiles/iTerm2/Default", "/Users/chris/dotfiles/Mac/iTermProfiles/Default"],
-
         ".gitconfig": ["/Users/chris", "/Users/chris/dotfiles/Mac/Git"],
         ".gitignore_global": ["/Users/chris", "/Users/chris/dotfiles/Mac/Git"]
     },
