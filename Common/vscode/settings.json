@@ -32,5 +32,6 @@
   "explorer.confirmDelete": false,
 
   // Extensions
-  "workbench.iconTheme": "vscode-icons"
+  "workbench.iconTheme": "vscode-icons",
+  "latex-workshop.view.pdf.viewer": "tab"
 }
