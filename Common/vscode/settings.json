@@ -30,6 +30,7 @@
 
   // OS File system interaction (File Explorer)
   "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
 
   // Extensions
   "workbench.iconTheme": "vscode-icons",
