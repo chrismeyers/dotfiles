@@ -2,7 +2,7 @@
 
 <channel name="xfce4-power-manager" version="1.0">
   <property name="xfce4-power-manager" type="empty">
-    <property name="power-button-action" type="empty"/>
+    <property name="power-button-action" type="uint" value="3"/>
     <property name="brightness-switch-restore-on-exit" type="int" value="1"/>
     <property name="brightness-switch" type="int" value="0"/>
     <property name="handle-brightness-keys" type="bool" value="true"/>
@@ -21,5 +21,8 @@
     <property name="dpms-on-ac-off" type="uint" value="20"/>
     <property name="change-brightness-on-key-events" type="bool" value="true"/>
     <property name="show-brightness-popup" type="bool" value="false"/>
+    <property name="inactivity-sleep-mode-on-battery" type="int" value="1"/>
+    <property name="sleep-button-action" type="uint" value="1"/>
+    <property name="hibernate-button-action" type="uint" value="3"/>
   </property>
 </channel>
