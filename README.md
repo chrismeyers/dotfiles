@@ -66,8 +66,7 @@ with backupdots.json.
 │   ├── Wallpapers
 │   │   ├── moon_mower.jpg
 │   │   ├── moon_mower.png
-│   │   ├── ruby_beach.jpg
-│   │   └── ruby_beach.png
+│   │   └── ruby_beach.jpg
 │   └── xfce4
 │       └── xfconf
 │           └── xfce-perchannel-xml
@@ -118,6 +117,6 @@ with backupdots.json.
         └── UserSettings
             └── Preferences.sublime-settings
 
-53 directories, 57 files
+53 directories, 56 files
 ```
 <!-- END TREE -->
