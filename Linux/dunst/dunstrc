@@ -70,7 +70,7 @@ hide_duplicates_count = yes
 # The width can be negative.  In this case the actual width is the
 # screen width minus the width defined in within the geometry option.
 #geometry = "250x50-40+40"
-geometry = "350x50-5+32"
+geometry = "350x50-0+28"
 
 # Shrink window if it's smaller than the width.  Will be ignored if
 # width is 0.
@@ -79,7 +79,7 @@ shrink = no
 # The transparency of the window.  Range: [0; 100].
 # This option will only work if a compositing windowmanager is
 # present (e.g. xcompmgr, compiz, etc.).
-transparency = 5
+transparency = 25
 
 # Don't remove messages, if the user is idle (no mouse or keyboard input)
 # for longer than idle_threshold seconds.
@@ -120,7 +120,7 @@ line_height = 3
 # Draw a line of "separatpr_height" pixel height between two
 # notifications.
 # Set to 0 to disable.
-separator_height = 2
+separator_height = 1
 
 # Padding between text and separator.
 padding = 6
@@ -148,11 +148,11 @@ dmenu = /usr/bin/rofi -dmenu -p dunst:
 browser = /usr/bin/google-chrome
 
 # Align icons left/right/off
-icon_position = left
-max_icon_size = 80
+#icon_position = left
+#max_icon_size = 80
 
 # Paths to default icons.
-icon_folders = /usr/share/icons/Moka/48x48/actions:/usr/share/icons/Moka/48x48/apps:/usr/share/icons/Moka/48x48/categories:/usr/share/icons/Moka/48x48/devices:/usr/share/icons/Moka/48x48/emblems:/usr/share/icons/Moka/48x48/emotes:/usr/share/icons/Moka/48x48/mimetypes:/usr/share/icons/Moka/48x48/places:/usr/share/icons/Moka/48x48/status:/usr/share/icons/Moka/48x48/unity:/usr/share/icons/Moka/48x48/web
+#icon_folders = /usr/share/icons/Moka/48x48/actions:/usr/share/icons/Moka/48x48/apps:/usr/share/icons/Moka/48x48/categories:/usr/share/icons/Moka/48x48/devices:/usr/share/icons/Moka/48x48/emblems:/usr/share/icons/Moka/48x48/emotes:/usr/share/icons/Moka/48x48/mimetypes:/usr/share/icons/Moka/48x48/places:/usr/share/icons/Moka/48x48/status:/usr/share/icons/Moka/48x48/unity:/usr/share/icons/Moka/48x48/web
 
 frame_width = 1
 frame_color = "#8EC07C"
