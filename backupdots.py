@@ -1,30 +1,35 @@
 #!/usr/bin/env python3
 
 '''
-usage: backupdots.py [-h] -p PLATFORM [-b] [-r] [-c] [-u] [-t MODE]
+usage: backupdots.py [-h] [-p {Mac,Linux,Windows}] [-b] [-r] [-c] [-u]
+                     [-t {print,inject}] [--check-platform]
 
 Backup or restore configuration files.
 
 optional arguments:
   -h, --help            show this help message and exit
-  -p PLATFORM, --platform PLATFORM
-                        specifies which set of files to use (Mac, Linux,
-                        Windows)
+  -p {Mac,Linux,Windows}, --platform {Mac,Linux,Windows}
+                        overrides the current platform to determine which set
+                        of files to use. WARNING: This should only be used if
+                        the determined platform is wrong!
   -b, --backup          perform a backup based on files in backupdots.json
   -r, --restore         perform a restore based on files in backupdots.json
   -c, --cleanup         removes *.orig files
   -u, --unlink          removes all symlinks for the given platform
-  -t MODE, --tree MODE  generates a directory tree and prints the output to
-                        stdout or injects the output into README.md (print,
-                        inject)
+  -t {print,inject}, --tree {print,inject}
+                        generates a directory tree and prints the output to
+                        stdout or injects the output into README.md
+  --check-platform      checks which platform would be run
 '''
 
 import os
 import sys
+import platform
 import json
 import argparse
 import shutil
 import subprocess
+from enum import Enum
 
 def perform_backup():
     # Copies files from original location to dotfiles/...
@@ -48,12 +53,11 @@ def perform_backup():
     if file_num == 1:
         print('Nothing to backup...')
 
-    if (_args.platform).lower() == 'mac':
+    if _platform == PlatformType.MAC:
         print('Dumping installed homebrew packages...')
         os.system(os.path.join(_backup_dir_root, 'Mac/Homebrew/dump.sh'))
         print('...brew bundle dump complete!')
-
-    if (_args.platform).lower() == 'linux':
+    elif _platform == PlatformType.LINUX:
         print('Dumping GNOME Terminal default profile...')
         os.system(os.path.join(_backup_dir_root, 'Linux/GNOMETerminal/dump.sh'))
         print('...profile dump complete!')
@@ -142,10 +146,6 @@ def perform_unlink():
 def perform_tree():
     tree_mode = (_args.tree).lower()
 
-    if tree_mode not in _tree_modes:
-        print(f'ERROR: Invalid --tree mode. Supported modes: {", ".join(_tree_modes)}.')
-        sys.exit(1)
-
     tree = generate_tree()
     if tree_mode == 'print':
         print(tree)
@@ -215,6 +215,13 @@ def inject_tree(tree):
         print('Updated directory tree in README.md...')
 
 
+def perform_check_platform():
+    print(f'The current platform is set to {platform_enum_to_string(_platform)}.')
+    if _args.platform is not None:
+        actual = platform_enum_to_string(determine_platform(True))
+        print(f'NOTE: The -p/--platform flag is overriding the actual platform of {actual}.')
+
+
 def sanitized_full_path(dir_location, file_name):
     sanitized_dir_location = dir_location
     sanitized_file_name = file_name
@@ -232,7 +239,7 @@ def sudo_command(cmd):
     success = False
 
     # TODO: Handle permissions error on windows
-    if (_args.platform).lower() == 'linux' or (_args.platform).lower() == 'mac': 
+    if _platform == PlatformType.LINUX or _platform == PlatformType.MAC: 
         exit_code = os.system(f'sudo {cmd}')
         success = True if exit_code == 0 else False
     else:
@@ -241,11 +248,54 @@ def sudo_command(cmd):
     return success
 
 
+def determine_platform(force_actual = False):
+    platform_enum = PlatformType.UNKNOWN
+
+    if not force_actual:
+        platform_str = _args.platform if _args.platform is not None else platform.system()
+    else:
+        platform_str = platform.system()
+    platform_str = platform_str.lower().strip()
+
+    if platform_str == 'linux':
+        platform_enum = PlatformType.LINUX
+    elif platform_str == 'mac' or platform_str == 'darwin':
+        platform_enum = PlatformType.MAC
+    elif platform_str == "windows":
+        platform_enum = PlatformType.WINDOWS
+
+    if platform_enum == PlatformType.UNKNOWN:
+        print(f'ERROR: Unsupported platform "{platform_str}"')
+        sys.exit(1)
+
+    return platform_enum
+
+
+def platform_enum_to_string(platform_enum):
+    if platform_enum == PlatformType.LINUX:
+        return 'Linux'
+    elif platform_enum == PlatformType.MAC:
+        return 'Mac'
+    elif platform_enum == PlatformType.WINDOWS:
+        return 'Windows'
+    else:
+        print(f'Unsupported platform enum {repr(platform_enum)}')
+        sys.exit(1)
+
+
+class PlatformType(Enum):
+    UNKNOWN = 0
+    LINUX = 1
+    MAC = 2
+    WINDOWS = 3
+
+
 if __name__ == '__main__':
     _backup_dir_root = os.path.dirname(os.path.abspath(__file__))
     _backup_config_file = sanitized_full_path(_backup_dir_root, 'backupdots.json')
     _backup_file_ext = 'orig'
     _tree_modes = ['print', 'inject']
+    _platform = PlatformType.UNKNOWN
 
     with open(_backup_config_file) as f:
         _all_backup_data = json.load(f)
@@ -253,19 +303,37 @@ if __name__ == '__main__':
     _platforms = list(_all_backup_data.keys())
 
     arg_parser = argparse.ArgumentParser(description='Backup or restore configuration files.')
-    arg_parser.add_argument('-p', '--platform', help=f'specifies which set of files to use ({", ".join(_platforms)})', required=True)
-    arg_parser.add_argument('-b', '--backup', help='perform a backup based on files in backupdots.json', action='store_true')
-    arg_parser.add_argument('-r', '--restore', help='perform a restore based on files in backupdots.json', action='store_true')
-    arg_parser.add_argument('-c', '--cleanup', help=f'removes *.{_backup_file_ext} files', action='store_true')
-    arg_parser.add_argument('-u', '--unlink', help=f'removes all symlinks for the given platform', action='store_true')
-    arg_parser.add_argument('-t', '--tree', help=f'generates a directory tree and prints the output to stdout or injects the output into README.md ({", ".join(_tree_modes)})', metavar='MODE')
+    arg_parser.add_argument('-p', '--platform',
+        help='overrides the current platform to determine which set of files to use. '
+             'WARNING: This should only be used if the determined platform is wrong!',
+        choices=_platforms)
+    arg_parser.add_argument('-b', '--backup',
+        help='perform a backup based on files in backupdots.json',
+        action='store_true')
+    arg_parser.add_argument('-r', '--restore',
+        help='perform a restore based on files in backupdots.json',
+        action='store_true')
+    arg_parser.add_argument('-c', '--cleanup',
+        help=f'removes *.{_backup_file_ext} files',
+        action='store_true')
+    arg_parser.add_argument('-u', '--unlink',
+        help='removes all symlinks for the given platform',
+        action='store_true')
+    arg_parser.add_argument('-t', '--tree',
+        help=f'generates a directory tree and prints the output to stdout or injects the '
+              'output into README.md',
+        choices=_tree_modes)
+    arg_parser.add_argument('--check-platform',
+        help='checks which platform would be run',
+        action='store_true')
     _args = arg_parser.parse_args()
 
     if not os.path.exists(_backup_config_file):
         print(f'ERROR: Configuration file "{_backup_config_file}" does not exist.')
         sys.exit(1)
 
-    _backup_data = _all_backup_data[(_args.platform).capitalize()]
+    _platform = determine_platform()
+    _backup_data = _all_backup_data[platform_enum_to_string(_platform)]
 
     if _args.backup:
         perform_backup()
@@ -277,5 +345,7 @@ if __name__ == '__main__':
         perform_unlink()
     elif _args.tree:
         perform_tree()
+    elif _args.check_platform:
+        perform_check_platform()
     else:
         perform_backup()

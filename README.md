@@ -4,6 +4,28 @@ My personal configuration files.
 These files are backed up and can be restored using backupdots.py in conjunction
 with backupdots.json.
 
+```
+usage: backupdots.py [-h] [-p {Mac,Linux,Windows}] [-b] [-r] [-c] [-u]
+                     [-t {print,inject}] [--check-platform]
+
+Backup or restore configuration files.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p {Mac,Linux,Windows}, --platform {Mac,Linux,Windows}
+                        overrides the current platform to determine which set
+                        of files to use. WARNING: This should only be used if
+                        the determined platform is wrong!
+  -b, --backup          perform a backup based on files in backupdots.json
+  -r, --restore         perform a restore based on files in backupdots.json
+  -c, --cleanup         removes *.orig files
+  -u, --unlink          removes all symlinks for the given platform
+  -t {print,inject}, --tree {print,inject}
+                        generates a directory tree and prints the output to
+                        stdout or injects the output into README.md
+  --check-platform      checks which platform would be run
+```
+
 <!-- BEGIN TREE -->
 ```
 .
