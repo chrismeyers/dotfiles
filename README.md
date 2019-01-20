@@ -47,6 +47,8 @@ with backupdots.json.
 │   │   └── load.sh
 │   ├── i3
 │   │   └── config
+│   ├── i3lock
+│   │   └── lock.sh
 │   ├── i3status
 │   │   └── config
 │   ├── misc
@@ -117,6 +119,6 @@ with backupdots.json.
         └── UserSettings
             └── Preferences.sublime-settings
 
-53 directories, 56 files
+54 directories, 57 files
 ```
 <!-- END TREE -->
