@@ -58,6 +58,10 @@ def perform_backup():
         os.system(os.path.join(_backup_dir_root, 'Linux/GNOMETerminal/dump.sh'))
         print('...profile dump complete!')
 
+        print('Dumping installed apt packages...')
+        os.system(os.path.join(_backup_dir_root, 'Linux/apt/dump.sh'))
+        print('...apt dump complete!')
+
 
 def perform_restore():
     # Symlinks files from dotfiles/... to original location.

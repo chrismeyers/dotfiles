@@ -1,4 +1,7 @@
 ## Linux configuration files
+These configuration files are specifically for Ubuntu. I am currently running
+Ubuntu 18.04.1. Many of these configuration files should work on other Linux
+distributions, but some may have to be tweaked.
   + GTK appearance:
     + i3 configured with LXAppearance:
       * Widget: [Arc-Dark](https://github.com/horst3180/arc-theme)

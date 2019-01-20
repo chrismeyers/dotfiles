@@ -28,6 +28,23 @@ with backupdots.json.
 │   └── vscode
 │       └── settings.json
 ├── Linux
+│   ├── apt
+│   │   ├── dump.sh
+│   │   ├── installed
+│   │   │   ├── packages.list
+│   │   │   ├── repo.keys
+│   │   │   ├── sources.list
+│   │   │   └── sources.list.d
+│   │   │       ├── google-chrome.list
+│   │   │       ├── google-chrome.list.save
+│   │   │       ├── jonathonf-ubuntu-gcc-8_1-bionic.list
+│   │   │       ├── jonathonf-ubuntu-gcc-8_1-bionic.list.save
+│   │   │       ├── papirus-ubuntu-papirus-bionic.list
+│   │   │       ├── spotify.list
+│   │   │       ├── spotify.list.save
+│   │   │       ├── sublime-text.list
+│   │   │       └── sublime-text.list.save
+│   │   └── restore.sh
 │   ├── bash
 │   │   ├── .aliases
 │   │   └── .bashrc
@@ -119,6 +136,6 @@ with backupdots.json.
         └── UserSettings
             └── Preferences.sublime-settings
 
-54 directories, 57 files
+57 directories, 71 files
 ```
 <!-- END TREE -->
