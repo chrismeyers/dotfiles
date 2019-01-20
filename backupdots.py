@@ -306,7 +306,8 @@ if __name__ == '__main__':
     arg_parser.add_argument('-p', '--platform',
         help='overrides the current platform to determine which set of files to use. '
              'WARNING: This should only be used if the determined platform is wrong!',
-        choices=_platforms)
+        choices=_platforms,
+        type=str.capitalize)
     arg_parser.add_argument('-b', '--backup',
         help='perform a backup based on files in backupdots.json',
         action='store_true')
@@ -322,7 +323,8 @@ if __name__ == '__main__':
     arg_parser.add_argument('-t', '--tree',
         help=f'generates a directory tree and prints the output to stdout or injects the '
               'output into README.md',
-        choices=_tree_modes)
+        choices=_tree_modes,
+        type=str.lower)
     arg_parser.add_argument('--check-platform',
         help='checks which platform would be run',
         action='store_true')
