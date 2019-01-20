@@ -1,13 +1,13 @@
 ## Linux configuration files
   + GTK appearance:
     + i3 configured with LXAppearance:
-      * Applications: Adwaita-dark
+      * Widget: [Arc-Dark](https://github.com/horst3180/arc-theme)
       * Cursor: DMZ-White
-      * Icons: [Moka](https://snwh.org/moka)
+      * Icon: [Papirus-Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
     + GNOME configured with gnome-tweak-tool (`gnome-tweaks`):
-      * Applications: Adwaita-dark
+      * Widget: Adwaita-dark
       * Cursor: DMZ-White
-      * Icons: LoginIcons
+      * Icon: LoginIcons
   + Notifications are handled in i3 using [`dunst`](https://dunst-project.org/)
   + Power management is handled in i3 using `xfce4-power-manager` and `xbacklight`
     * Polybar uses xbacklight to display screen brightness
