@@ -9,6 +9,6 @@ fi
 
 dpkg --get-selections > installed/packages.list
 cp /etc/apt/sources.list installed/
-cp -r /etc/apt/sources.list.d installed/
+rsync -avq --exclude=*.save /etc/apt/sources.list.d installed/
 sudo apt-key exportall > installed/repo.keys
 
