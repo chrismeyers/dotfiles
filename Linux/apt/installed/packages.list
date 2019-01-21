@@ -153,6 +153,9 @@ feh						install
 ffmpeg						install
 file						install
 file-roller					install
+filezilla					install
+filezilla-common				install
+filezilla-theme-papirus				install
 findutils					install
 firefox						install
 firefox-locale-en				install
@@ -783,6 +786,7 @@ libfile-fcntllock-perl				install
 libfile-listing-perl				install
 libfile-mimeinfo-perl				install
 libfile-stripnondeterminism-perl		install
+libfilezilla0					install
 libfl-dev:amd64					install
 libfl2:amd64					install
 libflac8:amd64					install
@@ -1220,6 +1224,7 @@ libproxy1-plugin-networkmanager:amd64		install
 libproxy1v5:amd64				install
 libpsl5:amd64					install
 libpthread-stubs0-dev:amd64			install
+libpugixml1v5:amd64				install
 libpulse-dev:amd64				install
 libpulse-mainloop-glib0:amd64			install
 libpulse0:amd64					install
@@ -1278,6 +1283,7 @@ libreoffice-ogltrans				install
 libreoffice-pdfimport				install
 libreoffice-style-breeze			install
 libreoffice-style-galaxy			install
+libreoffice-style-papirus			install
 libreoffice-style-tango				install
 libreoffice-writer				install
 librest-0.7-0:amd64				install
@@ -1457,6 +1463,8 @@ libwps-0.4-4:amd64				install
 libwrap0:amd64					install
 libwww-perl					install
 libwww-robotrules-perl				install
+libwxbase3.0-0v5:amd64				install
+libwxgtk3.0-0v5:amd64				install
 libx11-6:amd64					install
 libx11-data					install
 libx11-dev:amd64				install
@@ -1694,6 +1702,7 @@ p11-kit						install
 p11-kit-modules:amd64				install
 packagekit					install
 packagekit-tools				install
+papirus-folders					install
 papirus-icon-theme				install
 parted						install
 passwd						install

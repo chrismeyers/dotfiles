@@ -4,13 +4,14 @@ Ubuntu 18.04.1. Many of these configuration files should work on other Linux
 distributions, but some may have to be tweaked.
   + GTK appearance:
     + i3 configured with LXAppearance:
-      * Widget: [Arc-Dark](https://github.com/horst3180/arc-theme)
+      * Widgets: [Arc-Dark](https://github.com/horst3180/arc-theme)
       * Cursor: DMZ-White
-      * Icon: [Papirus-Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+      + Icons: [Papirus-Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+        * Folders: [Papirus Folders](https://github.com/PapirusDevelopmentTeam/papirus-folders) - bluegrey
     + GNOME configured with gnome-tweak-tool (`gnome-tweaks`):
-      * Widget: Adwaita-dark
+      * Widgets: Adwaita-dark
       * Cursor: DMZ-White
-      * Icon: LoginIcons
+      * Icons: LoginIcons
   + Notifications are handled in i3 using [`dunst`](https://dunst-project.org/)
   + Power management is handled in i3 using `xfce4-power-manager` and `xbacklight`
     * Polybar uses xbacklight to display screen brightness
