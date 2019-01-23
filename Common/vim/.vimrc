@@ -34,7 +34,7 @@ set pastetoggle=<F11>
 set number relativenumber
 
 "" Theming
-colorscheme gruvbox
+colorscheme iceberg
 set background=dark
 
 "" Allow backspacing over autoindent, line breaks and start of insert action
