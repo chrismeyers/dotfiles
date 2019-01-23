@@ -1479,6 +1479,8 @@ libxatracker2:amd64				install
 libxau-dev:amd64				install
 libxau6:amd64					install
 libxaw7:amd64					install
+libxcb-composite0:amd64				install
+libxcb-composite0-dev:amd64			install
 libxcb-cursor-dev:amd64				install
 libxcb-cursor0:amd64				install
 libxcb-dri2-0:amd64				install
@@ -1509,6 +1511,7 @@ libxcb-util-dev:amd64				install
 libxcb-util0-dev:amd64				install
 libxcb-util1:amd64				install
 libxcb-xfixes0:amd64				install
+libxcb-xfixes0-dev:amd64			install
 libxcb-xinerama0:amd64				install
 libxcb-xinerama0-dev:amd64			install
 libxcb-xkb-dev:amd64				install
