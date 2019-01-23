@@ -40,6 +40,9 @@ font-3 = FontAwesome5FreeSolid:size=11;0
 modules-left = i3
 modules-right = backlight volume wlan battery date menu0
 
+tray-position = right
+tray-padding = 5
+
 ;=====================================================
 ;   Creating Modules
 ;=====================================================
