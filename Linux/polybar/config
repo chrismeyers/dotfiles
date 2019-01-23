@@ -186,7 +186,7 @@ menu-0-1 = " shutdown  "
 menu-0-1-exec = shutdown now
 menu-0-2 = " restart  "
 menu-0-2-exec = shutdown -r now
-menu-0-3 = " cancel"
+menu-0-3 = " cancel  "
 
 label-open = 
 label-close =
