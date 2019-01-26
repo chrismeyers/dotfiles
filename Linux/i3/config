@@ -121,8 +121,8 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: Terminal"
 set $ws2 "2: Editor"
-set $ws3 "3: Browser"
-set $ws4 "4"
+set $ws3 "3: Chrome"
+set $ws4 "4: Firefox"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -164,7 +164,7 @@ assign [class="Gvim"] $ws2
 assign [class="Sublime_text"] $ws2
 
 assign [class="Google-chrome"] $ws3
-assign [class="Firefox"] $ws3
+assign [class="Firefox"] $ws4
 
 for_window [class="Spotify"] move to workspace $ws10
 
