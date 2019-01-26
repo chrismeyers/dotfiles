@@ -45,7 +45,8 @@ optional arguments:
 │   │   │   └── pack
 │   │   │       └── plugins
 │   │   │           └── start
-│   │   │               └── gruvbox
+│   │   │               ├── gruvbox
+│   │   │               └── iceberg
 │   │   └── .vimrc
 │   └── vscode
 │       └── settings.json
@@ -86,8 +87,6 @@ optional arguments:
 │   │   └── lock.sh
 │   ├── i3status
 │   │   └── config
-│   ├── misc
-│   │   └── .stalonetrayrc
 │   ├── polybar
 │   │   ├── config
 │   │   └── launch.sh
@@ -95,6 +94,8 @@ optional arguments:
 │   │   ├── config
 │   │   ├── material.rasi
 │   │   └── sidetab.rasi
+│   ├── stalonetray
+│   │   └── .stalonetrayrc
 │   ├── SublimeText
 │   │   └── UserSettings
 │   │       └── Preferences.sublime-settings
@@ -154,6 +155,6 @@ optional arguments:
         └── UserSettings
             └── Preferences.sublime-settings
 
-57 directories, 67 files
+58 directories, 67 files
 ```
 <!-- END TREE -->

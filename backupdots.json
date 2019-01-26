@@ -34,7 +34,7 @@
         ".vimrc": ["/home/chris", "/home/chris/dotfiles/Common/vim"],
         ".gvimrc": ["/home/chris", "/home/chris/dotfiles/Common/vim"],
         ".astylerc": ["/home/chris", "/home/chris/dotfiles/Common/misc"],
-        ".stalonetrayrc": ["/home/chris", "/home/chris/dotfiles/Linux/misc"],
+        ".stalonetrayrc": ["/home/chris", "/home/chris/dotfiles/Linux/stalonetray"],
         ".vim": ["/home/chris", "/home/chris/dotfiles/Common/vim"],
 
         "Package Control.sublime-settings": ["/home/chris/.config/sublime-text-3/Packages/User", "/home/chris/dotfiles/Common/SublimeText/UserSettings"],
