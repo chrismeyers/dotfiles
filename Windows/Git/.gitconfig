@@ -9,7 +9,7 @@
 [core]
 	autocrlf = true
 [credential]
-	helper = wincred
+	helper = manager
 [user]
 	name = Chris Meyers
 	email = cm.02.93@gmail.com
