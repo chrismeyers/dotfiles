@@ -93,9 +93,10 @@ label = %date%
 type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
+strip-wsnumbers = true
 
 ; focused = Active workspace on focused monitor
-label-focused = %icon%
+label-focused = %icon%  %name%
 label-focused-background = ${colors.background}
 label-focused-foreground = ${colors.primary}
 label-focused-underline = ${colors.primary}
@@ -120,7 +121,7 @@ label-urgent-foreground = ${colors.alert}
 label-urget-background = ${colors.background}
 label-urgent-padding = 2
 
-ws-icon-0 = 1: Terminal; 
+ws-icon-0 = 1: Terminal;
 ws-icon-1 = 2: Editor;
 ws-icon-2 = 3: Chrome;
 ws-icon-3 = 4: Firefox;
@@ -129,7 +130,7 @@ ws-icon-5 = 6;
 ws-icon-6 = 7;
 ws-icon-7 = 8;
 ws-icon-8 = 9;
-ws-icon-9 = 10: Music;
+ws-icon-9 = 10: Spotify;
 ws-icon-default = 
 
 [module/backlight]
