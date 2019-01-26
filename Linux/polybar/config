@@ -33,9 +33,9 @@ module-margin-left = 2
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=11.5;1
-font-1 = FontAwesome:size=11;0
-font-2 = FontAwesome5Brands:size=11;0
-font-3 = FontAwesome5FreeSolid:size=11;0
+font-1 = FontAwesome:size=11;1
+font-2 = FontAwesome5Brands:size=11;1
+font-3 = FontAwesome5FreeSolid:size=11;1
 
 modules-right = backlight volume wlan battery date menu0
 
@@ -67,9 +67,9 @@ module-margin-left = 2
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=11.5;1
-font-1 = FontAwesome:size=11;0
-font-2 = FontAwesome5Brands:size=11;0
-font-3 = FontAwesome5FreeSolid:size=11;0
+font-1 = FontAwesome:size=11;1
+font-2 = FontAwesome5Brands:size=11;1
+font-3 = FontAwesome5FreeSolid:size=11;1
 
 modules-left = i3
 
