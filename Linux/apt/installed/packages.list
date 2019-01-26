@@ -1308,6 +1308,7 @@ libsdl1.2debian:amd64				install
 libsdl2-2.0-0:amd64				install
 libseccomp2:amd64				install
 libsecret-1-0:amd64				install
+libsecret-1-dev:amd64				install
 libsecret-common				install
 libselinux1:amd64				install
 libselinux1-dev:amd64				install
