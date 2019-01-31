@@ -29,15 +29,16 @@ export HISTTIMEFORMAT='%Y-%m-%dT%H:%M:%S  '
 export HISTFILESIZE=500
 export HISTSIZE=500
 
-### Set path variables
-export PATH="$HOME/.local/bin:$PATH"
-export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
-
 ### Set environment varibales
+export PYENV_ROOT="$HOME/.pyenv"
 export PYTHONDONTWRITEBYTECODE=1
 export EDITOR='nvim'
 export GCC_COLORS "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 export XDG_CONFIG_HOME="$HOME/.config"
+
+### Set path variables
+export PATH="$PYENV_ROOT/bin:$HOME/.local/bin:$PATH"
+export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
 
 shopt -s checkwinsize
 
@@ -46,3 +47,12 @@ source $HOME/.aliases
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+# Specify shell-specific Python versions. The order of the list will determine
+# the priority of the version. Running `python` will invoke the first version
+# given to the command. Running `python2` will run the first version of 2.X.X.
+pyenv shell 3.7.2 2.7.15
