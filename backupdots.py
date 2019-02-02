@@ -51,7 +51,7 @@ def perform_backup():
             file_num += 1
 
     if file_num == 1:
-        print('Nothing to backup...')
+        print('Nothing to backup.')
 
     if _platform == PlatformType.MAC:
         print('Dumping installed homebrew packages...')
@@ -89,10 +89,10 @@ def perform_restore():
                 print(f'{str(file_num).rjust(3)} Linked {"directory" if os.path.isdir(backup_file) else "file"}: {file} to {_backup_data[file][0]}')
                 file_num += 1
         else:
-            print(f'    WARNING: {_backup_data[file][0]} does not exist, skipping...')
+            print(f'    WARNING: {_backup_data[file][0]} does not exist, skipping.')
 
     if file_num == 1:
-        print('Nothing to restore...')
+        print('Nothing to restore.')
 
 
 def perform_cleanup():
@@ -120,7 +120,7 @@ def perform_cleanup():
             file_num += 1
 
     if file_num == 1:
-        print('Nothing to cleanup...')
+        print('Nothing to cleanup.')
 
 
 def perform_unlink():
@@ -140,7 +140,7 @@ def perform_unlink():
             file_num += 1
 
     if file_num == 1:
-        print('Nothing to unlink...')
+        print('Nothing to unlink.')
 
 
 def perform_tree():
@@ -212,7 +212,7 @@ def inject_tree(tree):
         for line in readme_lines:
             f_out.write(line)
 
-        print('Updated directory tree in README.md...')
+        print('Updated directory tree in README.md.')
 
 
 def perform_check_platform():
@@ -243,7 +243,7 @@ def sudo_command(cmd):
         exit_code = os.system(f'sudo {cmd}')
         success = True if exit_code == 0 else False
     else:
-        print(f'    WARNING: Unable to execute command `{cmd}` as a super user...')
+        print(f'    WARNING: Unable to execute command `{cmd}` as a super user.')
 
     return success
 
