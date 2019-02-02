@@ -18,7 +18,7 @@ brew "awscli"
 brew "bash"
 brew "bash-completion"
 brew "bfg"
-brew "binutils", link: true
+brew "binutils"
 brew "bitchx"
 brew "cmake"
 brew "composer"
