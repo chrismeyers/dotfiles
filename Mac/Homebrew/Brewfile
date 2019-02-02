@@ -26,11 +26,11 @@ brew "coreutils"
 brew "cscope"
 brew "diffutils"
 brew "dos2unix"
-brew "ed", args: ["with-default-names"]
+brew "ed"
 brew "nettle"
 brew "emacs"
 brew "file-formula"
-brew "findutils", args: ["with-default-names"]
+brew "findutils"
 brew "fish"
 brew "mpfr"
 brew "gawk"
@@ -40,19 +40,19 @@ brew "git"
 brew "python@2"
 brew "pygtk"
 brew "glade"
-brew "gnu-indent", args: ["with-default-names"]
-brew "gnu-sed", args: ["with-default-names"]
-brew "gnu-tar", args: ["with-default-names"]
-brew "gnu-which", args: ["with-default-names"]
+brew "gnu-indent"
+brew "gnu-sed"
+brew "gnu-tar"
+brew "gnu-which"
 brew "gpatch"
-brew "grep", args: ["with-default-names"]
+brew "grep"
 brew "gzip"
 brew "imagemagick"
 brew "less"
 brew "libyaml"
 brew "m4"
 brew "make"
-brew "mongodb", restart_service: true
+brew "mongodb"
 brew "mosh"
 brew "mtr"
 brew "mysql"
