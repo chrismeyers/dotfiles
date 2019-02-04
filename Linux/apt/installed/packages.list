@@ -1047,6 +1047,7 @@ libldb1:amd64					install
 liblirc-client0:amd64				install
 liblist-moreutils-perl				install
 libllvm6.0:amd64				install
+libllvm7:amd64					install
 liblocale-gettext-perl				install
 liblouis-data					install
 liblouis14:amd64				install
@@ -1441,6 +1442,7 @@ libwacom2:amd64					install
 libwavpack1:amd64				install
 libwayland-client0:amd64			install
 libwayland-cursor0:amd64			install
+libwayland-egl1:amd64				install
 libwayland-egl1-mesa:amd64			install
 libwayland-server0:amd64			install
 libwbclient0:amd64				install
