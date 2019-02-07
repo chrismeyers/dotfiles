@@ -29,11 +29,11 @@ export HISTTIMEFORMAT='%Y-%m-%dT%H:%M:%S  '
 export HISTFILESIZE=500
 export HISTSIZE=500
 
-### Set environment varibales
+### Set environment variables
 export PYENV_ROOT="$HOME/.pyenv"
 export PYTHONDONTWRITEBYTECODE=1
 export EDITOR='subl'
-export GCC_COLORS "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
+export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 export JAVA_HOME=`/usr/libexec/java_home -v '1.8*'`
 
 ### Set path variables
@@ -46,10 +46,7 @@ shopt -s checkwinsize
 source $HOME/.aliases
 source $HOME/.PHP_VERSION
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+### Pyenv setup
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
@@ -58,3 +55,8 @@ fi
 # the priority of the version. Running `python` will invoke the first version
 # given to the command. Running `python2` will run the first version of 2.X.X.
 pyenv shell 3.7.2 2.7.15
+
+### Node Version Manager setup
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
