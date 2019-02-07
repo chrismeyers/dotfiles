@@ -10,17 +10,12 @@ BLUE_BOLD="\[\033[1;34m\]"
 BLUE="\[\033[0;34m\]"
 
 ### Prompt format:
-###   user on hostname in [pwd]
+###   user on hostname in [pwd] (git_branch)
 ###    >
-if [[ $EUID -ne 0 ]]; then
-  # Normal user prompt
-  export PS1="\u on ${RED}\h${NORMAL} in [\w] ${NORMAL} \n > "
-else
-  # Root user prompt
-  export PS1="${GREEN}\u${NORMAL} on ${RED}\h${NORMAL} in [\w] ${NORMAL} \n # " 
-fi
-export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
+git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+export PS1="\u on ${RED}\h${NORMAL} in [\w] ${GREEN}\$(git_branch)${NORMAL} \n > "
 
 ### History Settings
 shopt -s histappend
@@ -30,9 +25,11 @@ export HISTFILESIZE=500
 export HISTSIZE=500
 
 ### Set environment variables
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
 export PYENV_ROOT="$HOME/.pyenv"
 export PYTHONDONTWRITEBYTECODE=1
-export EDITOR='subl'
+export EDITOR="subl"
 export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 export JAVA_HOME=`/usr/libexec/java_home -v '1.8*'`
 
@@ -41,8 +38,10 @@ export PATH="$PYENV_ROOT/bin:$(brew --prefix coreutils)/libexec/gnubin:/usr/loca
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
 
+### Shell optional behavior
 shopt -s checkwinsize
 
+### Additional aliases
 source $HOME/.aliases
 source $HOME/.PHP_VERSION
 
