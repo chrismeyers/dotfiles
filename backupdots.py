@@ -164,8 +164,15 @@ def generate_tree():
     # from the tree command (use JSON output flag?) or drawing a custom tree
     # may be needed.
 
+    gitignored = []
+    gitignore_path = f'{_backup_dir_root}/.gitignore'
+    if os.path.exists(gitignore_path):
+        with open(gitignore_path, 'r') as f:
+            gitignored = [x.strip() for x in f.readlines()]
+
     max_tree_depth = 7
-    ignored = '|'.join(['.git', '.gitignore', '.gitmodules', 'backupdots.*', 'README.md'])
+    ignored = '|'.join(['.git', '.gitignore', '.gitmodules', 'backupdots.*',
+                        'README.md', *gitignored])
 
     p = subprocess.Popen(f"tree -a -I '{ignored}' -L {max_tree_depth}",
             shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
