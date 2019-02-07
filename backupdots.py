@@ -297,6 +297,10 @@ if __name__ == '__main__':
     _tree_modes = ['print', 'inject']
     _platform = PlatformType.UNKNOWN
 
+    if not os.path.exists(_backup_config_file):
+        print(f'ERROR: Configuration file "{_backup_config_file}" does not exist.')
+        sys.exit(1)
+
     with open(_backup_config_file) as f:
         _all_backup_data = json.load(f)
 
@@ -329,10 +333,6 @@ if __name__ == '__main__':
         help='checks which platform would be run',
         action='store_true')
     _args = arg_parser.parse_args()
-
-    if not os.path.exists(_backup_config_file):
-        print(f'ERROR: Configuration file "{_backup_config_file}" does not exist.')
-        sys.exit(1)
 
     _platform = determine_platform()
     _backup_data = _all_backup_data[platform_enum_to_string(_platform)]
