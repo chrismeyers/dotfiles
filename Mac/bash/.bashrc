@@ -20,7 +20,7 @@ export PS1="\u on ${RED}\h${NORMAL} in [\w] ${GREEN}\$(git_branch)${NORMAL} \n >
 ### History Settings
 shopt -s histappend
 export HISTCONTROL=ignoredups:ignorespace
-export HISTTIMEFORMAT='%Y-%m-%dT%H:%M:%S  '
+export HISTTIMEFORMAT="%Y-%m-%dT%H:%M:%S  "
 export HISTFILESIZE=500
 export HISTSIZE=500
 
