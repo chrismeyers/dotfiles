@@ -54,17 +54,17 @@ def perform_backup():
         print('Nothing to backup.')
 
     if _platform == PlatformType.MAC:
-        print('Dumping installed homebrew packages...')
+        print('Dumping installed homebrew packages...', end='')
         os.system(os.path.join(_backup_dir_root, 'Mac/Homebrew/dump.sh'))
-        print('...brew bundle dump complete!')
+        print('brew bundle dump complete!')
     elif _platform == PlatformType.LINUX:
-        print('Dumping GNOME Terminal default profile...')
+        print('Dumping GNOME Terminal default profile...', end='')
         os.system(os.path.join(_backup_dir_root, 'Linux/GNOMETerminal/dump.sh'))
-        print('...profile dump complete!')
+        print('profile dump complete!')
 
-        print('Dumping installed apt packages...')
+        print('Dumping installed apt packages...', end='')
         os.system(os.path.join(_backup_dir_root, 'Linux/apt/dump.sh'))
-        print('...apt dump complete!')
+        print('apt dump complete!')
 
 
 def perform_restore():
