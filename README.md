@@ -47,6 +47,7 @@ optional arguments:
 │   │   │           └── start
 │   │   │               ├── gruvbox
 │   │   │               └── iceberg
+│   │   ├── vimfiles -> .vim
 │   │   └── .vimrc
 │   └── vscode
 │       └── settings.json
@@ -155,6 +156,6 @@ optional arguments:
         └── UserSettings
             └── Preferences.sublime-settings
 
-58 directories, 67 files
+59 directories, 67 files
 ```
 <!-- END TREE -->
