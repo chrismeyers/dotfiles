@@ -102,20 +102,24 @@ def perform_cleanup():
         current_file = os.path.join(_backup_data[file][0], f'{file}.{_backup_file_ext}')
 
         if os.path.exists(current_file):
-            if not os.path.isdir(current_file):
-                cleanup_type = 'file'
+            if os.path.isfile(current_file) or os.path.islink(current_file):
+                cleanup_type = 'file' if os.path.isfile(current_file) else 'symlink'
                 try:
                     os.remove(current_file)
                 except PermissionError:
                     if not sudo_command(f'rm {current_file}'):
                         continue
-            else:
+            elif os.path.isdir(current_file):
                 cleanup_type = 'directory'
                 try:
                     shutil.rmtree(current_file)
                 except PermissionError:
                     if not sudo_command(f'rm -rf {current_file}'):
                         continue
+            else:
+                print(f'    WARNING: {current_file} is not a file, symlink, or directory. Skipping.')
+                continue
+
             print(f'{str(file_num).rjust(3)} Removed {cleanup_type}: {current_file}')
             file_num += 1
 
