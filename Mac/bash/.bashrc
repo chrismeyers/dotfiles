@@ -27,14 +27,13 @@ export HISTSIZE=500
 ### Set environment variables
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
-export PYENV_ROOT="$HOME/.pyenv"
 export PYTHONDONTWRITEBYTECODE=1
 export EDITOR="subl"
 export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 export JAVA_HOME=`/usr/libexec/java_home -v '1.8*'`
 
 ### Set path variables
-export PATH="$PYENV_ROOT/bin:$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/tools:/opt/apache-maven-3.3.9/bin:$HOME/.composer/vendor/bin:$HOME/.pub-cache/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/tools:/opt/apache-maven-3.3.9/bin:$HOME/.composer/vendor/bin:$HOME/.pub-cache/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
 
