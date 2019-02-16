@@ -31,6 +31,7 @@ import shutil
 import subprocess
 from enum import Enum
 
+
 def perform_backup():
     # Copies files from original location to dotfiles/...
     file_num = 1
@@ -43,10 +44,12 @@ def perform_backup():
                 os.makedirs(_backup_data[file][1], mode=0o755)
             if not os.path.isdir(orig_file):
                 backup_type = 'file'
-                shutil.copy(os.path.join(_backup_data[file][0], file), _backup_data[file][1])
+                shutil.copy(os.path.join(
+                    _backup_data[file][0], file), _backup_data[file][1])
             else:
                 backup_type = 'directory'
-                shutil.copytree(os.path.join(_backup_data[file][0], file), os.path.join(_backup_data[file][1], file))
+                shutil.copytree(os.path.join(_backup_data[file][0], file), os.path.join(
+                    _backup_data[file][1], file))
             print(f'{str(file_num).rjust(3)} Copied {backup_type}: {file} to {_backup_data[file][1]}')
             file_num += 1
 
@@ -59,7 +62,8 @@ def perform_backup():
         print('brew bundle dump complete!')
     elif _platform == PlatformType.LINUX:
         print('Dumping GNOME Terminal default profile...', end='', flush=True)
-        os.system(os.path.join(_backup_dir_root, 'Linux/GNOMETerminal/dump.sh'))
+        os.system(os.path.join(_backup_dir_root,
+                               'Linux/GNOMETerminal/dump.sh'))
         print('profile dump complete!')
 
         print('Dumping installed apt packages...', end='', flush=True)
@@ -103,7 +107,8 @@ def perform_cleanup():
     # Removes all *.{_backup_file_ext} files generated from perform_restore().
     file_num = 1
     for file in _backup_data:
-        current_file = os.path.join(_backup_data[file][0], f'{file}.{_backup_file_ext}')
+        current_file = os.path.join(
+            _backup_data[file][0], f'{file}.{_backup_file_ext}')
 
         if os.path.exists(current_file):
             if os.path.isfile(current_file) or os.path.islink(current_file):
@@ -183,7 +188,7 @@ def generate_tree():
                         'README.md', *gitignored])
 
     p = subprocess.Popen(f"tree -a -I '{ignored}' -L {max_tree_depth}",
-            shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                         shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out, err = p.communicate()
 
     out = out.decode('utf-8')
@@ -254,7 +259,7 @@ def sudo_command(cmd):
     success = False
 
     # TODO: Handle permissions error on windows
-    if _platform == PlatformType.LINUX or _platform == PlatformType.MAC: 
+    if _platform == PlatformType.LINUX or _platform == PlatformType.MAC:
         exit_code = os.system(f'sudo {cmd}')
         success = True if exit_code == 0 else False
     else:
@@ -263,7 +268,7 @@ def sudo_command(cmd):
     return success
 
 
-def determine_platform(force_actual = False):
+def determine_platform(force_actual=False):
     platform_enum = PlatformType.UNKNOWN
 
     if not force_actual:
@@ -307,7 +312,8 @@ class PlatformType(Enum):
 
 if __name__ == '__main__':
     _backup_dir_root = os.path.dirname(os.path.abspath(__file__))
-    _backup_config_file = sanitized_full_path(_backup_dir_root, 'backupdots.json')
+    _backup_config_file = sanitized_full_path(
+        _backup_dir_root, 'backupdots.json')
     _backup_file_ext = 'orig'
     _tree_modes = ['print', 'inject']
     _platform = PlatformType.UNKNOWN
@@ -321,32 +327,33 @@ if __name__ == '__main__':
 
     _platforms = list(_all_backup_data.keys())
 
-    arg_parser = argparse.ArgumentParser(description='Backup or restore configuration files.')
+    arg_parser = argparse.ArgumentParser(
+        description='Backup or restore configuration files.')
     arg_parser.add_argument('-p', '--platform',
-        help='overrides the current platform to determine which set of files to use. '
-             'WARNING: This should only be used if the determined platform is wrong!',
-        choices=_platforms,
-        type=str.capitalize)
+                            help='overrides the current platform to determine which set of files to use. '
+                            'WARNING: This should only be used if the determined platform is wrong!',
+                            choices=_platforms,
+                            type=str.capitalize)
     arg_parser.add_argument('-b', '--backup',
-        help='perform a backup based on files in backupdots.json',
-        action='store_true')
+                            help='perform a backup based on files in backupdots.json',
+                            action='store_true')
     arg_parser.add_argument('-r', '--restore',
-        help='perform a restore based on files in backupdots.json',
-        action='store_true')
+                            help='perform a restore based on files in backupdots.json',
+                            action='store_true')
     arg_parser.add_argument('-c', '--cleanup',
-        help=f'removes *.{_backup_file_ext} files',
-        action='store_true')
+                            help=f'removes *.{_backup_file_ext} files',
+                            action='store_true')
     arg_parser.add_argument('-u', '--unlink',
-        help='removes all symlinks for the given platform',
-        action='store_true')
+                            help='removes all symlinks for the given platform',
+                            action='store_true')
     arg_parser.add_argument('-t', '--tree',
-        help=f'generates a directory tree and prints the output to stdout or injects the '
-              'output into README.md',
-        choices=_tree_modes,
-        type=str.lower)
+                            help=f'generates a directory tree and prints the output to stdout or injects the '
+                            'output into README.md',
+                            choices=_tree_modes,
+                            type=str.lower)
     arg_parser.add_argument('--check-platform',
-        help='checks which platform would be run',
-        action='store_true')
+                            help='checks which platform would be run',
+                            action='store_true')
     _args = arg_parser.parse_args()
 
     _platform = determine_platform()
