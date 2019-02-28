@@ -2,10 +2,10 @@
 # Some aliases taken from: https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
 
 # Detect which `ls` is being used
-if ls --color > /dev/null 2>&1; then 
+if ls --color > /dev/null 2>&1; then
 	# GNU 'ls'
 	colorflag='--color'
-else 
+else
 	# OS X (BSD) 'ls'
 	colorflag='-G'
 fi
@@ -120,7 +120,7 @@ alias nodeserver='http-server'
 alias vhosts='subl /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf'
 #alias vhosts='subl /usr/local/etc/apache2/2.4/extra/httpd-vhosts-homebrew.conf'
 alias hosts='sudo subl /etc/hosts'
-alias httpd='subl /Applications/MAMP/conf/apache/httpd.conf'
+alias mampconf='subl /Applications/MAMP/conf/apache/httpd.conf'
 
 # Print IP addresses
 alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
