@@ -56,7 +56,7 @@ brew "make"
 brew "mongodb"
 brew "mosh"
 brew "mtr"
-brew "mysql"
+brew "mysql", restart_service: true
 brew "ncurses"
 brew "nano"
 brew "neovim"
