@@ -43,7 +43,6 @@ shopt -s checkwinsize
 
 ### Additional aliases
 source $HOME/.aliases
-source $HOME/.PHP_VERSION
 
 ### Pyenv setup
 if command -v pyenv 1>/dev/null 2>&1; then
