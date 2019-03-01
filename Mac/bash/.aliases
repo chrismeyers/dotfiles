@@ -105,8 +105,11 @@ alias pypiupload='twine upload dist/*'
 
 #============= Web stuff ============
 # MAMP
-alias mysql='/Applications/MAMP/Library/bin/mysql'
-alias mysqldump='/Applications/MAMP/Library/bin/mysqldump'
+alias mampmysql='/Applications/MAMP/Library/bin/mysql'
+alias mampmysqldump='/Applications/MAMP/Library/bin/mysqldump'
+alias mampconf='subl /Applications/MAMP/conf/apache/httpd.conf'
+alias mampvhosts='subl /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf'
+alias mampphpbroke='open /Applications/MAMP/logs/php_error.log'
 
 # Controls for built in Mac apache server
 alias localon='sudo apachectl start'
@@ -117,10 +120,7 @@ alias localre='sudo apachectl restart'
 alias nodeserver='http-server'
 
 # Config files
-alias vhosts='subl /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf'
-#alias vhosts='subl /usr/local/etc/apache2/2.4/extra/httpd-vhosts-homebrew.conf'
 alias hosts='sudo subl /etc/hosts'
-alias mampconf='subl /Applications/MAMP/conf/apache/httpd.conf'
 
 # Print IP addresses
 alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
@@ -131,8 +131,6 @@ alias urlencode='python -c "import urllib, sys; print urllib.quote(sys.argv[1])"
 alias urldecode='python -c "import urllib, sys; print urllib.unquote(sys.argv[1])"'
 
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
-
-alias phpbroke='open /Applications/MAMP/logs/php_error.log'
 
 
 #============= Editors ==============
