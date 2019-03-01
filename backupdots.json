@@ -22,8 +22,7 @@
         "php7.1.8_MAMP_PRO_TEMPLATE.ini": ["/Users/chris/Documents/Development/config/MAMP/templates", "/Users/chris/dotfiles/Mac/HostFiles/MAMP/templates"],
         "my56_MAMP_PRO_TEMPLATE.cnf": ["/Users/chris/Documents/Development/config/MAMP/templates", "/Users/chris/dotfiles/Mac/HostFiles/MAMP/templates"],
         "main_MAMP_PRO_TEMPLATE.cf": ["/Users/chris/Documents/Development/config/MAMP/templates", "/Users/chris/dotfiles/Mac/HostFiles/MAMP/templates"],
-        "httpd-vhosts-homebrew.conf": ["/usr/local/etc/apache2/2.4/extra", "/Users/chris/dotfiles/Mac/HostFiles/Homebrew/usr_local_etc_apache2_2.4/extra"],
-        "httpd.conf": ["/usr/local/etc/apache2/2.4", "/Users/chris/dotfiles/Mac/HostFiles/Homebrew/usr_local_etc_apache2_2.4"],
+        "httpd.conf": ["/usr/local/etc/httpd", "/Users/chris/dotfiles/Mac/HostFiles/Homebrew"],
 
         ".gitconfig": ["/Users/chris", "/Users/chris/dotfiles/Mac/Git"],
         ".gitignore_global": ["/Users/chris", "/Users/chris/dotfiles/Mac/Git"]
