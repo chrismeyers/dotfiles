@@ -127,12 +127,13 @@ optional arguments:
 │   │   ├── Brewfile
 │   │   ├── dump.sh
 │   │   └── restore.sh
-│   ├── HostFiles
+│   ├── iTermProfiles
+│   │   └── Default
+│   │       ├── com.googlecode.iterm2.plist
+│   │       └── iterm2_default.itermcolors
+│   ├── LAMP
 │   │   ├── Homebrew
-│   │   │   └── usr_local_etc_apache2_2.4
-│   │   │       ├── extra
-│   │   │       │   └── httpd-vhosts-homebrew.conf
-│   │   │       └── httpd.conf
+│   │   │   └── httpd.conf
 │   │   └── MAMP
 │   │       ├── httpd-vhosts.conf
 │   │       └── templates
@@ -141,10 +142,6 @@ optional arguments:
 │   │           ├── my56_MAMP_PRO_TEMPLATE.cnf
 │   │           ├── nginx_MAMP_PRO_TEMPLATE.conf
 │   │           └── php7.1.8_MAMP_PRO_TEMPLATE.ini
-│   ├── iTermProfiles
-│   │   └── Default
-│   │       ├── com.googlecode.iterm2.plist
-│   │       └── iterm2_default.itermcolors
 │   └── SublimeText
 │       └── UserSettings
 │           ├── Preferences.sublime-settings
@@ -156,6 +153,6 @@ optional arguments:
         └── UserSettings
             └── Preferences.sublime-settings
 
-59 directories, 67 files
+57 directories, 66 files
 ```
 <!-- END TREE -->
