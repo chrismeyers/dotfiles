@@ -33,7 +33,7 @@ export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 export JAVA_HOME=`/usr/libexec/java_home -v '1.8*'`
 
 ### Set path variables
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/tools:/opt/apache-maven-3.3.9/bin:$HOME/.composer/vendor/bin:$HOME/.pub-cache/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/texinfo/bin:/usr/local/opt/gettext/bin:$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/tools:/opt/apache-maven-3.3.9/bin:$HOME/.composer/vendor/bin:$HOME/.pub-cache/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
 
