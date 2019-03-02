@@ -70,6 +70,12 @@ def perform_backup():
         os.system(os.path.join(_backup_dir_root, 'Linux/apt/dump.sh'))
         print('apt dump complete!')
 
+    # Platform agnostic backup scripts
+    print('Dumping VSCode extensions...', end='', flush=True)
+    os.system(os.path.join(_backup_dir_root,
+                           'Common/vscode/dump.sh'))
+    print('extension dump complete!')
+
 
 def perform_restore():
     # Symlinks files from dotfiles/... to original location.
