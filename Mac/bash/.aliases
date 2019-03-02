@@ -107,9 +107,9 @@ alias mampvhosts='subl /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf'
 alias mampphpbroke='open /Applications/MAMP/logs/php_error.log'
 
 # Controls for Homebrew installed apache server and mysql
-alias lampon='brew services start httpd && brew services start mysql'
-alias lampoff='brew services stop httpd && brew services stop mysql'
-alias lampres='brew services restart httpd && brew services restart mysql'
+alias lampon='brew services run httpd && sleep 1 && brew services run mysql'
+alias lampoff='brew services stop httpd && sleep 1 && brew services stop mysql'
+alias lampres='lampoff && sleep 1 && lampon'
 
 # Node.js
 alias nodeserver='http-server'
