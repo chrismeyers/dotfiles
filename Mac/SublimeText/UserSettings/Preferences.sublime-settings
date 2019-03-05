@@ -8,6 +8,7 @@
 	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
 	"ensure_newline_at_eof_on_save": true,
 	"fade_fold_buttons": false,
+	"font_face": "Hack",
 	"font_size": 12,
 	"hot_exit": false,
 	"ignored_packages":
