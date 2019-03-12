@@ -3,6 +3,7 @@
 '''
 usage: backupdots.py [-h] [-p {Mac,Linux,Windows}] [-b] [-r] [-c] [-u]
                      [-t {print,inject}] [--check-platform]
+                     [--config-file CONFIG_FILE]
 
 Backup or restore configuration files.
 
@@ -12,14 +13,18 @@ optional arguments:
                         overrides the current platform to determine which set
                         of files to use. WARNING: This should only be used if
                         the determined platform is wrong!
-  -b, --backup          perform a backup based on files in backupdots.json
-  -r, --restore         perform a restore based on files in backupdots.json
+  -b, --backup          perform a backup based on files in the config file
+                        (default: backupdots.json)
+  -r, --restore         perform a restore based on files in the config file
+                        (default: backupdots.json)
   -c, --cleanup         removes *.orig files
   -u, --unlink          removes all symlinks for the given platform
   -t {print,inject}, --tree {print,inject}
                         generates a directory tree and prints the output to
                         stdout or injects the output into README.md
   --check-platform      checks which platform would be run
+  --config-file CONFIG_FILE
+                        name of a config file to override backupdots.json
 '''
 
 import os
@@ -318,20 +323,11 @@ class PlatformType(Enum):
 
 if __name__ == '__main__':
     _backup_dir_root = os.path.dirname(os.path.abspath(__file__))
-    _backup_config_file = sanitized_full_path(
-        _backup_dir_root, 'backupdots.json')
+    _backup_config_file = sanitized_full_path(_backup_dir_root, 'backupdots.json')
     _backup_file_ext = 'orig'
     _tree_modes = ['print', 'inject']
+    _platforms = ['Mac', 'Linux', 'Windows']
     _platform = PlatformType.UNKNOWN
-
-    if not os.path.exists(_backup_config_file):
-        print(f'ERROR: Configuration file "{_backup_config_file}" does not exist.')
-        sys.exit(1)
-
-    with open(_backup_config_file) as f:
-        _all_backup_data = json.load(f)
-
-    _platforms = list(_all_backup_data.keys())
 
     arg_parser = argparse.ArgumentParser(
         description='Backup or restore configuration files.')
@@ -341,10 +337,10 @@ if __name__ == '__main__':
                             choices=_platforms,
                             type=str.capitalize)
     arg_parser.add_argument('-b', '--backup',
-                            help='perform a backup based on files in backupdots.json',
+                            help='perform a backup based on files in the config file (default: backupdots.json)',
                             action='store_true')
     arg_parser.add_argument('-r', '--restore',
-                            help='perform a restore based on files in backupdots.json',
+                            help='perform a restore based on files in the config file (default: backupdots.json)',
                             action='store_true')
     arg_parser.add_argument('-c', '--cleanup',
                             help=f'removes *.{_backup_file_ext} files',
@@ -360,10 +356,26 @@ if __name__ == '__main__':
     arg_parser.add_argument('--check-platform',
                             help='checks which platform would be run',
                             action='store_true')
+    arg_parser.add_argument('--config-file',
+                            help='name of a config file to override backupdots.json')
     _args = arg_parser.parse_args()
 
+    if _args.config_file:
+        _backup_config_file = sanitized_full_path(_backup_dir_root, _args.config_file)
+
+    if not os.path.exists(_backup_config_file):
+        print(f'ERROR: Configuration file "{_backup_config_file}" does not exist.')
+        sys.exit(1)
+
+    with open(_backup_config_file) as f:
+        _all_backup_data = json.load(f)
+
     _platform = determine_platform()
-    _backup_data = _all_backup_data[platform_enum_to_string(_platform)]
+    try:
+        _backup_data = _all_backup_data[platform_enum_to_string(_platform)]
+    except KeyError:
+        print(f'ERROR: Configuration file "{_backup_config_file}" does not contain platform {platform_enum_to_string(_platform)}.')
+        sys.exit(1)
 
     if _args.backup:
         perform_backup()
