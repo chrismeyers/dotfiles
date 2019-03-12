@@ -55,6 +55,9 @@ optional arguments:
 │   │   ├── vimfiles -> .vim
 │   │   └── .vimrc
 │   └── vscode
+│       ├── dump.sh
+│       ├── extensions.txt
+│       ├── restore.sh
 │       └── settings.json
 ├── Linux
 │   ├── apt
@@ -120,13 +123,13 @@ optional arguments:
 │   │   ├── .aliases
 │   │   ├── .bash_profile
 │   │   ├── .bashrc
-│   │   └── MCG
+│   │   └── MCGStrategic
 │   │       ├── .aliases
 │   │       └── .bashrc
 │   ├── Git
 │   │   ├── .gitconfig
 │   │   ├── .gitignore_global
-│   │   └── MCG
+│   │   └── MCGStrategic
 │   │       └── .gitconfig
 │   ├── Homebrew
 │   │   ├── Brewfile
@@ -158,6 +161,6 @@ optional arguments:
         └── UserSettings
             └── Preferences.sublime-settings
 
-57 directories, 66 files
+57 directories, 69 files
 ```
 <!-- END TREE -->
