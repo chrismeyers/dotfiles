@@ -101,13 +101,13 @@ def perform_restore():
             if not os.path.exists(orig_file):
                 try:
                     os.symlink(backup_file, orig_file)
+                except PermissionError:
+                    if not sudo_command(f'ln -s {backup_file} {orig_file}'):
+                        continue
                 except OSError as e:
                     more_info = ' Try running this command as an administrator.' if _platform == PlatformType.WINDOWS else ''
                     print(f'    WARNING: {str(e).capitalize()}.{more_info}')
                     continue
-                except PermissionError:
-                    if not sudo_command(f'ln -s {backup_file} {orig_file}'):
-                        continue
                 print(f'{str(file_num).rjust(3)} Linked {"directory" if os.path.isdir(backup_file) else "file"}: {file} to {_backup_data[file][0]}')
                 file_num += 1
         else:
