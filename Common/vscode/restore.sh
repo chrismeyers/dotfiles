@@ -4,6 +4,6 @@
 cd "$(dirname "$0")"
 
 # Install each extension
-while read p; do
-  code --install-extension $p
+while read l; do
+  code --install-extension $l
 done <extensions.txt

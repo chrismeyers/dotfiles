@@ -75,10 +75,13 @@ def perform_backup():
         os.system(os.path.join(_backup_dir_root, 'Linux/apt/dump.sh'))
         print('apt dump complete!')
 
-    # Platform agnostic backup scripts
     print('Dumping VSCode extensions...', end='', flush=True)
-    os.system(os.path.join(_backup_dir_root,
-                           'Common/vscode/dump.sh'))
+    if _platform == PlatformType.MAC or _platform == PlatformType.LINUX:
+        os.system(os.path.join(_backup_dir_root,
+                               'Common/vscode/dump.sh'))
+    elif _platform == PlatformType.WINDOWS:
+        os.system(os.path.join(_backup_dir_root,
+                               'Common/vscode/dump.bat'))
     print('extension dump complete!')
 
 
