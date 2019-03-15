@@ -5,6 +5,8 @@
   // General editor settings (Editor)
   "editor.tabSize": 2,
   "editor.lineNumbers": "relative",
+  "editor.fontFamily": "Hack",
+  "editor.fontSize": 12,
 
   // File settings (Files)
   "files.trimTrailingWhitespace": true,
