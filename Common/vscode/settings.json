@@ -7,6 +7,7 @@
   "editor.lineNumbers": "relative",
   "editor.fontFamily": "Hack",
   "editor.fontSize": 12,
+  "editor.minimap.showSlider": "always",
 
   // File settings (Files)
   "files.trimTrailingWhitespace": true,
@@ -39,5 +40,5 @@
 
   // Extensions
   "workbench.iconTheme": "vscode-icons",
-  "latex-workshop.view.pdf.viewer": "tab"
+  "latex-workshop.view.pdf.viewer": "tab",
 }
