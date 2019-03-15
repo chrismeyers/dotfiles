@@ -43,6 +43,7 @@ optional arguments:
 │   ├── SublimeText
 │   │   └── UserSettings
 │   │       ├── Package Control.sublime-settings
+│   │       ├── Preferences.sublime-settings
 │   │       └── Python.sublime-settings
 │   ├── vim
 │   │   ├── .gvimrc
@@ -55,8 +56,10 @@ optional arguments:
 │   │   ├── vimfiles -> .vim
 │   │   └── .vimrc
 │   └── vscode
+│       ├── dump.bat
 │       ├── dump.sh
 │       ├── extensions.txt
+│       ├── restore.bat
 │       ├── restore.sh
 │       └── settings.json
 ├── Linux
@@ -106,8 +109,8 @@ optional arguments:
 │   ├── stalonetray
 │   │   └── .stalonetrayrc
 │   ├── SublimeText
-│   │   └── UserSettings
-│   │       └── Preferences.sublime-settings
+│   │   └── Overrides
+│   │       └── Preferences (Linux).sublime-settings
 │   ├── systemd
 │   │   └── i3lock.service
 │   ├── Wallpapers
@@ -151,16 +154,15 @@ optional arguments:
 │   │           ├── nginx_MAMP_PRO_TEMPLATE.conf
 │   │           └── php7.1.8_MAMP_PRO_TEMPLATE.ini
 │   └── SublimeText
-│       └── UserSettings
-│           ├── Preferences.sublime-settings
-│           └── Python3.sublime-build
+│       └── Overrides
+│           └── Preferences (OSX).sublime-settings
 └── Windows
     ├── Git
     │   └── .gitconfig
     └── SublimeText
-        └── UserSettings
-            └── Preferences.sublime-settings
+        └── Overrides
+            └── Preferences (Windows).sublime-settings
 
-57 directories, 69 files
+57 directories, 71 files
 ```
 <!-- END TREE -->
