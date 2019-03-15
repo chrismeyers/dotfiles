@@ -21,6 +21,10 @@ Clone `dotfiles` repo with plugins:
   * `cd ~`
   * `git clone --recursive https://github.com/chrismeyers/dotfiles.git`
 
+Clone submodules after `dotfiles` repo has been cloned:
+  * `cd ~/dotfiles`
+  * `git submodule update --init --recursive`
+
 Remove a plugin:
   * `cd ~/dotfiles`
   * `git submodule deinit Common/vim/.vim/pack/plugins/[start|opt]/plugin`
