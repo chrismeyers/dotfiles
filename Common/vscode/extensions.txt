@@ -11,7 +11,8 @@ James-Yu.latex-workshop
 ms-python.python
 mubaidr.vuejs-extension-pack
 octref.vetur
-robertohuertasm.vscode-icons
+teabyii.ayu
 tombonnike.vscode-status-bar-format-toggle
+vscode-icons-team.vscode-icons
 vscodevim.vim
 xabikos.JavaScriptSnippets

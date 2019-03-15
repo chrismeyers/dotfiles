@@ -32,6 +32,9 @@
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
 
+  // UI settings (Workbench)
+  "workbench.colorTheme": "Ayu Mirage Bordered",
+
   // Extensions
   "workbench.iconTheme": "vscode-icons",
   "latex-workshop.view.pdf.viewer": "tab"
