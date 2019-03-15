@@ -9,9 +9,9 @@
         ".vim": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
 
         "Package Control.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Common/SublimeText/UserSettings"],
-        "Preferences.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Mac/SublimeText/UserSettings"],
-        "Python3.sublime-build": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Mac/SublimeText/UserSettings"],
+        "Preferences.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Common/SublimeText/UserSettings"],
         "Python.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Common/SublimeText/UserSettings"],
+        "Preferences (OSX).sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/Default", "/Users/chris/dotfiles/Mac/SublimeText/Overrides"],
 
         "settings.json" : ["/Users/chris/Library/Application Support/Code/User", "/Users/chris/dotfiles/Common/vscode"],
 
@@ -37,8 +37,9 @@
         ".vim": ["/home/chris", "/home/chris/dotfiles/Common/vim"],
 
         "Package Control.sublime-settings": ["/home/chris/.config/sublime-text-3/Packages/User", "/home/chris/dotfiles/Common/SublimeText/UserSettings"],
-        "Preferences.sublime-settings": ["/home/chris/.config/sublime-text-3/Packages/User", "/home/chris/dotfiles/Linux/SublimeText/UserSettings"],
+        "Preferences.sublime-settings": ["/home/chris/.config/sublime-text-3/Packages/User", "/home/chris/dotfiles/Common/SublimeText/UserSettings"],
         "Python.sublime-settings": ["/home/chris/.config/sublime-text-3/Packages/User", "/home/chris/dotfiles/Common/SublimeText/UserSettings"],
+        "Preferences (Linux).sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/Default", "/Users/chris/dotfiles/Linux/SublimeText/Overrides"],
 
         "i3": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
         "i3status": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
@@ -63,8 +64,9 @@
         "vimfiles": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\vim"],
 
         "Package Control.sublime-settings": ["C:\\Users\\Chris\\AppData\\Roaming\\Sublime Text 3\\Packages\\User", "C:\\Users\\Chris\\dotfiles\\Common\\SublimeText\\UserSettings"],
-        "Preferences.sublime-settings": ["C:\\Users\\Chris\\AppData\\Roaming\\Sublime Text 3\\Packages\\User", "C:\\Users\\Chris\\dotfiles\\Windows\\SublimeText\\UserSettings"],
+        "Preferences.sublime-settings": ["C:\\Users\\Chris\\AppData\\Roaming\\Sublime Text 3\\Packages\\User", "C:\\Users\\Chris\\dotfiles\\Common\\SublimeText\\UserSettings"],
         "Python.sublime-settings": ["C:\\Users\\Chris\\AppData\\Roaming\\Sublime Text 3\\Packages\\User", "C:\\Users\\Chris\\dotfiles\\Common\\SublimeText\\UserSettings"],
+        "Preferences (Windows).sublime-settings": ["C:\\Users\\Chris\\AppData\\Roaming\\Sublime Text 3\\Packages\\Default", "C:\\Users\\Chris\\dotfiles\\Windows\\SublimeText\\Overrides"],
 
         "settings.json" : ["C:\\Users\\Chris\\AppData\\Roaming\\Code\\User", "C:\\Users\\Chris\\dotfiles\\Common\\vscode"],
 
