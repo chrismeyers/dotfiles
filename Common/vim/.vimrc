@@ -34,7 +34,9 @@ set pastetoggle=<F11>
 set number relativenumber
 
 "" Theming
-colorscheme iceberg
+set termguicolors
+let ayucolor="mirage"
+colorscheme ayu
 set background=dark
 
 "" Allow backspacing over autoindent, line breaks and start of insert action
@@ -68,7 +70,7 @@ set smartcase
 
 
 " Splits/Tabs ================================================================
-"" Open new vertical splits to the right of the current split and new 
+"" Open new vertical splits to the right of the current split and new
 "" horizontal splits below the current split
 set splitright
 set splitbelow
@@ -132,7 +134,7 @@ set smarttab
 set shiftwidth=2
 set softtabstop=2
 set expandtab
- 
+
 "" Indentation settings for using hard tabs for indent. Display tabs as
 "" 2 characters wide.
 "set shiftwidth=2
