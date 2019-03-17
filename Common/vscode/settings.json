@@ -4,7 +4,7 @@
 
   // General editor settings (Editor)
   "editor.tabSize": 2,
-  "editor.lineNumbers": "relative",
+  "editor.lineNumbers": "on",
   "editor.fontFamily": "Hack",
   "editor.fontSize": 12,
   "editor.minimap.showSlider": "always",
