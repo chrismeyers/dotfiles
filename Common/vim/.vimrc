@@ -30,8 +30,8 @@ set noeb vb t_vb=
 "" Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
 
-"" Enable hybrid line numbers
-set number relativenumber
+"" Enable line numbers
+set number
 
 "" Theming
 set termguicolors
