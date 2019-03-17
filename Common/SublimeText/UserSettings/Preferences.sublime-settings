@@ -11,7 +11,9 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Vintage"
+		"Six",
+		"Vintage",
+		"Vintageous"
 	],
 	"indent_guide_options":
 	[
@@ -20,6 +22,7 @@
 	],
 	"line_padding_bottom": 2,
 	"line_padding_top": 2,
+	"neovintageous_build_version": 11000,
 	"overlay_scroll_bars": "disabled",
 	"remember_open_files": false,
 	"rulers":
@@ -33,5 +36,8 @@
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"ui_separator": true,
+	"vintageous_use_ctrl_keys": false,
+	"vintageous_use_super_keys": false,
+	"vintageous_use_sys_clipboard": true,
 	"word_wrap": false
 }
