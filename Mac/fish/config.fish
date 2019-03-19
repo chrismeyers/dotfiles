@@ -13,6 +13,7 @@ set -gx PATH \
   /usr/local/opt/gettext/bin \
   $HOME/Library/Android/sdk/platform-tools \
   $HOME/Library/Android/sdk/tools \
+  $HOME/Library/Python/3.7/bin \
   /opt/apache-maven-3.3.9/bin \
   $HOME/.composer/vendor/bin \
   $HOME/.pub-cache/bin \
