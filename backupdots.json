@@ -2,11 +2,17 @@
     "Mac": {
         ".aliases": ["/Users/chris", "/Users/chris/dotfiles/Mac/bash"],
         ".bashrc": ["/Users/chris", "/Users/chris/dotfiles/Mac/bash"],
+        ".bash_profile": ["/Users/chris", "/Users/chris/dotfiles/Mac/bash"],
+
+        "config.fish": ["/Users/chris/.config/fish", "/Users/chris/dotfiles/Mac/fish"],
+        "aliases.fish": ["/Users/chris/.config/fish", "/Users/chris/dotfiles/Mac/fish"],
+        "functions": ["/Users/chris/.config/fish", "/Users/chris/dotfiles/Mac/fish"],
+
         ".vimrc": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
         ".gvimrc": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
-        ".bash_profile": ["/Users/chris", "/Users/chris/dotfiles/Mac/bash"],
-        ".astylerc": ["/Users/chris", "/Users/chris/dotfiles/Common/misc"],
         ".vim": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
+
+        ".astylerc": ["/Users/chris", "/Users/chris/dotfiles/Common/misc"],
 
         "Package Control.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Common/SublimeText/UserSettings"],
         "Preferences.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Common/SublimeText/UserSettings"],
@@ -30,11 +36,14 @@
     "Linux": {
         ".aliases": ["/home/chris", "/home/chris/dotfiles/Linux/bash"],
         ".bashrc": ["/home/chris", "/home/chris/dotfiles/Linux/bash"],
+
         ".vimrc": ["/home/chris", "/home/chris/dotfiles/Common/vim"],
         ".gvimrc": ["/home/chris", "/home/chris/dotfiles/Common/vim"],
-        ".astylerc": ["/home/chris", "/home/chris/dotfiles/Common/misc"],
-        ".stalonetrayrc": ["/home/chris", "/home/chris/dotfiles/Linux/stalonetray"],
         ".vim": ["/home/chris", "/home/chris/dotfiles/Common/vim"],
+
+        ".astylerc": ["/home/chris", "/home/chris/dotfiles/Common/misc"],
+
+        ".stalonetrayrc": ["/home/chris", "/home/chris/dotfiles/Linux/stalonetray"],
 
         "Package Control.sublime-settings": ["/home/chris/.config/sublime-text-3/Packages/User", "/home/chris/dotfiles/Common/SublimeText/UserSettings"],
         "Preferences.sublime-settings": ["/home/chris/.config/sublime-text-3/Packages/User", "/home/chris/dotfiles/Common/SublimeText/UserSettings"],
