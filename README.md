@@ -51,8 +51,7 @@ optional arguments:
 │   │   │   └── pack
 │   │   │       └── plugins
 │   │   │           └── start
-│   │   │               ├── gruvbox
-│   │   │               └── iceberg
+│   │   │               └── ayu-vim
 │   │   ├── vimfiles -> .vim
 │   │   └── .vimrc
 │   └── vscode
@@ -129,6 +128,11 @@ optional arguments:
 │   │   └── MCGStrategic
 │   │       ├── .aliases
 │   │       └── .bashrc
+│   ├── fish
+│   │   ├── aliases.fish
+│   │   ├── config.fish
+│   │   └── functions
+│   │       └── fish_prompt.fish
 │   ├── Git
 │   │   ├── .gitconfig
 │   │   ├── .gitignore_global
@@ -163,6 +167,6 @@ optional arguments:
         └── Overrides
             └── Preferences (Windows).sublime-settings
 
-57 directories, 71 files
+58 directories, 74 files
 ```
 <!-- END TREE -->
