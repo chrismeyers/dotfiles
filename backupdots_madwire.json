@@ -1,0 +1,29 @@
+{
+    "Mac": {
+        ".aliases": ["/Users/chris", "/Users/chris/dotfiles/Mac/bash/Madwire"],
+        ".bashrc": ["/Users/chris", "/Users/chris/dotfiles/Mac/bash/Madwire"],
+        ".bash_profile": ["/Users/chris", "/Users/chris/dotfiles/Mac/bash"],
+
+        "config.fish": ["/Users/chris/.config/fish", "/Users/chris/dotfiles/Mac/fish/Madwire"],
+        "aliases.fish": ["/Users/chris/.config/fish", "/Users/chris/dotfiles/Mac/fish/Madwire"],
+        "functions": ["/Users/chris/.config/fish", "/Users/chris/dotfiles/Mac/fish/Madwire"],
+
+        ".vimrc": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
+        ".gvimrc": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
+        ".vim": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
+
+        ".astylerc": ["/Users/chris", "/Users/chris/dotfiles/Common/misc"],
+
+        "Package Control.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Common/SublimeText/UserSettings"],
+        "Preferences.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Common/SublimeText/UserSettings"],
+        "Python.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Common/SublimeText/UserSettings"],
+        "Preferences (OSX).sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/Default", "/Users/chris/dotfiles/Mac/SublimeText/Overrides"],
+
+        "settings.json" : ["/Users/chris/Library/Application Support/Code/User", "/Users/chris/dotfiles/Common/vscode"],
+
+        "nvim": ["/Users/chris/.config", "/Users/chris/dotfiles/Common/neovim"],
+
+        ".gitconfig": ["/Users/chris", "/Users/chris/dotfiles/Mac/Git"],
+        ".gitignore_global": ["/Users/chris", "/Users/chris/dotfiles/Mac/Git"]
+    }
+}
