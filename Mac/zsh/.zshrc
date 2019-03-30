@@ -76,7 +76,7 @@ git_branch() {
   fi
 
   if [ -z "$(git status --short)" ]; then
-    git_status="%{$fg[green]%}✓%{$fg[green]%}"
+    git_status="✓"
   else
     git_status="%{$fg[red]%}✗%{$fg[green]%}"
   fi
