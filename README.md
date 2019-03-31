@@ -157,9 +157,11 @@ optional arguments:
 │   │           ├── my56_MAMP_PRO_TEMPLATE.cnf
 │   │           ├── nginx_MAMP_PRO_TEMPLATE.conf
 │   │           └── php7.1.8_MAMP_PRO_TEMPLATE.ini
-│   └── SublimeText
-│       └── Overrides
-│           └── Preferences (OSX).sublime-settings
+│   ├── SublimeText
+│   │   └── Overrides
+│   │       └── Preferences (OSX).sublime-settings
+│   └── zsh
+│       └── .zshrc
 └── Windows
     ├── Git
     │   └── .gitconfig
@@ -167,6 +169,6 @@ optional arguments:
         └── Overrides
             └── Preferences (Windows).sublime-settings
 
-58 directories, 74 files
+59 directories, 75 files
 ```
 <!-- END TREE -->
