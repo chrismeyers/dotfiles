@@ -8,6 +8,8 @@
         "aliases.fish": ["/Users/chris/.config/fish", "/Users/chris/dotfiles/Mac/fish/Madwire"],
         "functions": ["/Users/chris/.config/fish", "/Users/chris/dotfiles/Mac/fish/Madwire"],
 
+        ".zshrc": ["/Users/chris", "/Users/chris/dotfiles/Mac/zsh/Madwire"],
+
         ".vimrc": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
         ".gvimrc": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
         ".vim": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
