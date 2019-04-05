@@ -25,7 +25,7 @@
 
         "nvim": ["/Users/chris/.config", "/Users/chris/dotfiles/Common/neovim"],
 
-        ".gitconfig": ["/Users/chris", "/Users/chris/dotfiles/Mac/Git"],
+        ".gitconfig": ["/Users/chris", "/Users/chris/dotfiles/Mac/Git/Madwire"],
         ".gitignore_global": ["/Users/chris", "/Users/chris/dotfiles/Mac/Git"]
     }
 }
