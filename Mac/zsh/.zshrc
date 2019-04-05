@@ -98,8 +98,6 @@ export GOPATH="$HOME/Documents/Development/go"
 
 ### Set path variables
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/texinfo/bin:/usr/local/opt/gettext/bin:$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/tools:/opt/apache-maven-3.3.9/bin:$HOME/.composer/vendor/bin:$HOME/.pub-cache/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:$GOPATH/bin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -129,18 +127,3 @@ alias sz="source $HOME/.zshrc"
 
 ### Additional aliases
 source $HOME/.aliases
-
-### Pyenv setup
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
-# Specify shell-specific Python versions. The order of the list will determine
-# the priority of the version. Running `python` will invoke the first version
-# given to the command. Running `python2` will run the first version of 2.X.X.
-pyenv shell 3.7.2 2.7.15
-
-### Node Version Manager setup
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

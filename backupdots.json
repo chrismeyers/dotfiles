@@ -25,64 +25,7 @@
 
         "nvim": ["/Users/chris/.config", "/Users/chris/dotfiles/Common/neovim"],
 
-        "httpd_MAMP_PRO_TEMPLATE.conf": ["/Users/chris/Documents/Development/config/MAMP/templates", "/Users/chris/dotfiles/Mac/LAMP/MAMP/templates"],
-        "nginx_MAMP_PRO_TEMPLATE.conf": ["/Users/chris/Documents/Development/config/MAMP/templates", "/Users/chris/dotfiles/Mac/LAMP/MAMP/templates"],
-        "php7.1.8_MAMP_PRO_TEMPLATE.ini": ["/Users/chris/Documents/Development/config/MAMP/templates", "/Users/chris/dotfiles/Mac/LAMP/MAMP/templates"],
-        "my56_MAMP_PRO_TEMPLATE.cnf": ["/Users/chris/Documents/Development/config/MAMP/templates", "/Users/chris/dotfiles/Mac/LAMP/MAMP/templates"],
-        "main_MAMP_PRO_TEMPLATE.cf": ["/Users/chris/Documents/Development/config/MAMP/templates", "/Users/chris/dotfiles/Mac/LAMP/MAMP/templates"],
-        "httpd.conf": ["/usr/local/etc/httpd", "/Users/chris/dotfiles/Mac/LAMP/Homebrew"],
-
         ".gitconfig": ["/Users/chris", "/Users/chris/dotfiles/Mac/Git"],
         ".gitignore_global": ["/Users/chris", "/Users/chris/dotfiles/Mac/Git"]
-    },
-    "Linux": {
-        ".aliases": ["/home/chris", "/home/chris/dotfiles/Linux/bash"],
-        ".bashrc": ["/home/chris", "/home/chris/dotfiles/Linux/bash"],
-
-        ".vimrc": ["/home/chris", "/home/chris/dotfiles/Common/vim"],
-        ".gvimrc": ["/home/chris", "/home/chris/dotfiles/Common/vim"],
-        ".vim": ["/home/chris", "/home/chris/dotfiles/Common/vim"],
-
-        ".astylerc": ["/home/chris", "/home/chris/dotfiles/Common/misc"],
-
-        ".stalonetrayrc": ["/home/chris", "/home/chris/dotfiles/Linux/stalonetray"],
-
-        "Package Control.sublime-settings": ["/home/chris/.config/sublime-text-3/Packages/User", "/home/chris/dotfiles/Common/SublimeText/UserSettings"],
-        "Preferences.sublime-settings": ["/home/chris/.config/sublime-text-3/Packages/User", "/home/chris/dotfiles/Common/SublimeText/UserSettings"],
-        "Python.sublime-settings": ["/home/chris/.config/sublime-text-3/Packages/User", "/home/chris/dotfiles/Common/SublimeText/UserSettings"],
-        "Preferences (Linux).sublime-settings": ["/home/chris/.config/sublime-text-3/Packages/Default", "/Users/chris/dotfiles/Linux/SublimeText/Overrides"],
-
-        "i3": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
-        "i3status": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
-        "rofi": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
-        "fontconfig": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
-        "compton": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
-        "polybar": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
-        "nvim": ["/home/chris/.config", "/home/chris/dotfiles/Common/neovim"],
-        "dunst": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
-        "xfce4": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
-
-        "i3lock.service": ["/etc/systemd/system", "/home/chris/dotfiles/Linux/systemd"],
-
-        "Wallpapers": ["/home/chris/Pictures", "/home/chris/dotfiles/Linux"],
-
-        ".gitconfig": ["/home/chris", "/home/chris/dotfiles/Linux/Git"],
-        ".gitignore_global": ["/home/chris", "/home/chris/dotfiles/Linux/Git"]
-    },
-    "Windows": {
-        ".vimrc": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\vim"],
-        ".gvimrc": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\vim"],
-        "vimfiles": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\vim"],
-
-        "Package Control.sublime-settings": ["C:\\Users\\Chris\\AppData\\Roaming\\Sublime Text 3\\Packages\\User", "C:\\Users\\Chris\\dotfiles\\Common\\SublimeText\\UserSettings"],
-        "Preferences.sublime-settings": ["C:\\Users\\Chris\\AppData\\Roaming\\Sublime Text 3\\Packages\\User", "C:\\Users\\Chris\\dotfiles\\Common\\SublimeText\\UserSettings"],
-        "Python.sublime-settings": ["C:\\Users\\Chris\\AppData\\Roaming\\Sublime Text 3\\Packages\\User", "C:\\Users\\Chris\\dotfiles\\Common\\SublimeText\\UserSettings"],
-        "Preferences (Windows).sublime-settings": ["C:\\Users\\Chris\\AppData\\Roaming\\Sublime Text 3\\Packages\\Default", "C:\\Users\\Chris\\dotfiles\\Windows\\SublimeText\\Overrides"],
-
-        "settings.json" : ["C:\\Users\\Chris\\AppData\\Roaming\\Code\\User", "C:\\Users\\Chris\\dotfiles\\Common\\vscode"],
-
-        "nvim": ["C:\\Users\\Chris\\AppData\\Local", "C:\\Users\\Chris\\dotfiles\\Common\\neovim"],
-
-        ".gitconfig": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Windows\\Git"]
     }
 }
