@@ -2,10 +2,10 @@
 # Some aliases taken from: https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
 
 # Detect which `ls` is being used
-if ls --color > /dev/null 2>&1; then
+if ls --color > /dev/null 2>&1; then 
 	# GNU 'ls'
 	colorflag='--color'
-else
+else 
 	# OS X (BSD) 'ls'
 	colorflag='-G'
 fi
@@ -57,8 +57,10 @@ alias filetypes='find . -type f | perl -ne '"'"'print $1 if m/\.([^.\/]+)$/'"'"'
 
 
 #=============== Admin ==============
+alias root='su -'
+
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g'
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
 
 # Show/hide hidden files in Finder
 alias show='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
@@ -78,48 +80,49 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias docs='cd $HOME/Documents'
 alias dev='cd $HOME/Documents/Development'
-alias drop='cd $HOME/Dropbox'
-alias site='cd $HOME/Documents/Development/web-dev/chrismeyers.info'
 alias mov='cd $HOME/Movies'
 alias pics='cd $HOME/Pictures'
 alias dt='cd $HOME/Desktop'
-alias scripts='cd $HOME/scripts'
-alias dots='cd $HOME/dotfiles'
 alias dl='cd $HOME/Downloads'
-alias sublconfig='cd "$HOME/Library/Application Support/Sublime Text 3/Packages/User"'
+alias sublbuild='cd "$HOME/Library/Application Support/Sublime Text 3/Packages/User"'
 
 
 #============ Programming ===========
-alias pip3up='pip3 freeze > pip3_current.txt && pip3 install --upgrade -r pip3_current.txt && rm pip3_current.txt'
+alias bare='make clean'
+alias py2='/usr/local/bin/python'
+alias py3='/usr/local/bin/python3'
 alias glade='/usr/local/Cellar/glade/3.8.5_1/bin/glade-3'
 alias jre='/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java'
 alias pypaths='/usr/bin/env python3 -c "import sys; import os; print(os.linesep.join(sys.path))"'
 alias pypibuild='rm -rf dist/*; rm -rf build/*; /usr/bin/env python3 setup.py bdist_wheel sdist'
 alias pypiupload='twine upload dist/*'
+alias pyutilsdev='export PYTHONPATH="$HOME/Documents/Development/MCGStrategic/mcgpyutils:$PYTHONPATH"'
+alias pyutilsprod='export PYTHONPATH=""'
 
 
 #============= Web stuff ============
 # MAMP
-alias mampmysql='/Applications/MAMP/Library/bin/mysql'
-alias mampmysqldump='/Applications/MAMP/Library/bin/mysqldump'
-alias mampconf='subl /Applications/MAMP/conf/apache/httpd.conf'
-alias mampvhosts='subl /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf'
-alias mampphpbroke='open /Applications/MAMP/logs/php_error.log'
+alias mysql='/Applications/MAMP/Library/bin/mysql'
+alias mysqldump='/Applications/MAMP/Library/bin/mysqldump'
 
-# Controls for Homebrew installed apache server and mysql
-alias lampon='brew services run httpd && sleep 1 && brew services run mysql'
-alias lampoff='brew services stop httpd && sleep 1 && brew services stop mysql'
-alias lampres='lampoff && sleep 1 && lampon'
+# Controls for built in Mac apache server
+alias localon='sudo apachectl start'
+alias localoff='sudo apachectl stop'
+alias localre='sudo apachectl restart'
 
 # Node.js
 alias nodeserver='http-server'
 
 # Config files
+alias vhosts='subl /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf'
 alias hosts='sudo subl /etc/hosts'
+alias httpd='subl /Applications/MAMP/conf/apache/httpd.conf'
+alias php56ini='subl /Applications/MAMP/bin/php/php5.6.30/conf/php.ini'
+alias php71ini='subl /Applications/MAMP/bin/php/php7.1.6/conf/php.ini'
 
 # Print IP addresses
 alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
-alias localip='ipconfig getifaddr en0'
+alias localip='ipconfig getifaddr en1'
 
 # URL utils
 alias urlencode='python -c "import urllib, sys; print urllib.quote(sys.argv[1])"'
@@ -127,10 +130,8 @@ alias urldecode='python -c "import urllib, sys; print urllib.unquote(sys.argv[1]
 
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 
+alias phpbroke='open /Applications/MAMP/logs/php_error.log'
+
 
 #============= Editors ==============
 alias e='open -e'
-
-
-#============= Scripts ==============
-alias backupdots='python3 $HOME/dotfiles/backupdots.py'
