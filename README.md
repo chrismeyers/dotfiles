@@ -125,19 +125,17 @@ optional arguments:
 │   │   ├── .aliases
 │   │   ├── .bash_profile
 │   │   ├── .bashrc
-│   │   └── MCGStrategic
-│   │       ├── .aliases
-│   │       └── .bashrc
+│   │   └── scripts
+│   │       └── remote.sh
 │   ├── fish
 │   │   ├── aliases.fish
 │   │   ├── config.fish
 │   │   └── functions
-│   │       └── fish_prompt.fish
+│   │       ├── fish_prompt.fish
+│   │       └── remote.fish
 │   ├── Git
 │   │   ├── .gitconfig
-│   │   ├── .gitignore_global
-│   │   └── MCGStrategic
-│   │       └── .gitconfig
+│   │   └── .gitignore_global
 │   ├── Homebrew
 │   │   ├── Brewfile
 │   │   ├── dump.sh
@@ -169,6 +167,6 @@ optional arguments:
         └── Overrides
             └── Preferences (Windows).sublime-settings
 
-59 directories, 75 files
+58 directories, 74 files
 ```
 <!-- END TREE -->
