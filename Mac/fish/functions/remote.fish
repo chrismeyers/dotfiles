@@ -1,4 +1,4 @@
-function remote --description 'Mount remote folder using SSHFS and open in PHP Storm'
+function remote --description 'Mount remote folder using SSHFS and open in PhpStorm'
   switch (count $argv)
     case 0
       echo "Please include a host from your .ssh/config file."
