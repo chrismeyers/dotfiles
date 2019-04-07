@@ -20,8 +20,10 @@ alias la='ls -la'
 alias ltr='ls -ltr'
 alias lad='ls -lad */' # only list directories in current directory
 
-# Always show grep colors
-alias grep='grep --color=auto'
+# Always show grep colors. Oh-my-zsh handles setting grep options.
+if [[ -z "${ZSH}" ]]; then
+  alias grep='grep --color=auto'
+fi
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
