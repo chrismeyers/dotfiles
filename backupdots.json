@@ -12,6 +12,7 @@
 
         ".vimrc": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
         ".gvimrc": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
+        ".ideavimrc": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
         ".vim": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
 
         ".astylerc": ["/Users/chris", "/Users/chris/dotfiles/Common/misc"],

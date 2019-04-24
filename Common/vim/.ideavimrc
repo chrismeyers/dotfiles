@@ -1,0 +1,12 @@
+"" ===========================================================================
+"" .ideavimrc - Configuration file for the JetBrains IdeaVim plugin
+"" Author: Chris Meyers
+"" ===========================================================================
+
+" General ====================================================================
+"" Displays the Vim mode in the status bar
+set showmode
+
+" Key Mappings ===============================================================
+"" Backspace deletes the selected block of text in visual mode
+vnoremap <BS> d
