@@ -72,6 +72,7 @@
     "Windows": {
         ".vimrc": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\vim"],
         ".gvimrc": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\vim"],
+        ".ideavimrc": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\vim"],
         "vimfiles": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\vim"],
 
         "Package Control.sublime-settings": ["C:\\Users\\Chris\\AppData\\Roaming\\Sublime Text 3\\Packages\\User", "C:\\Users\\Chris\\dotfiles\\Common\\SublimeText\\UserSettings"],
