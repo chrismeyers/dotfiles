@@ -39,6 +39,8 @@
         ".aliases": ["/home/chris", "/home/chris/dotfiles/Linux/bash"],
         ".bashrc": ["/home/chris", "/home/chris/dotfiles/Linux/bash"],
 
+        ".zshrc": ["/home/chris", "/home/chris/dotfiles/Linux/zsh"],
+
         ".vimrc": ["/home/chris", "/home/chris/dotfiles/Common/vim"],
         ".gvimrc": ["/home/chris", "/home/chris/dotfiles/Common/vim"],
         ".vim": ["/home/chris", "/home/chris/dotfiles/Common/vim"],
