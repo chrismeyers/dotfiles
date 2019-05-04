@@ -47,6 +47,7 @@ optional arguments:
 │   │       └── Python.sublime-settings
 │   ├── vim
 │   │   ├── .gvimrc
+│   │   ├── .ideavimrc
 │   │   ├── .vim
 │   │   │   └── pack
 │   │   │       └── plugins
@@ -164,6 +165,6 @@ optional arguments:
         └── Overrides
             └── Preferences (Windows).sublime-settings
 
-57 directories, 72 files
+57 directories, 73 files
 ```
 <!-- END TREE -->
