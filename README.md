@@ -74,7 +74,8 @@ optional arguments:
 │   │   │       ├── jonathonf-ubuntu-gcc-8_1-bionic.list
 │   │   │       ├── papirus-ubuntu-papirus-bionic.list
 │   │   │       ├── spotify.list
-│   │   │       └── sublime-text.list
+│   │   │       ├── sublime-text.list
+│   │   │       └── vscode.list
 │   │   └── restore.sh
 │   ├── bash
 │   │   ├── .aliases
@@ -117,10 +118,12 @@ optional arguments:
 │   │   ├── moon_mower.jpg
 │   │   ├── moon_mower.png
 │   │   └── ruby_beach.jpg
-│   └── xfce4
-│       └── xfconf
-│           └── xfce-perchannel-xml
-│               └── xfce4-power-manager.xml
+│   ├── xfce4
+│   │   └── xfconf
+│   │       └── xfce-perchannel-xml
+│   │           └── xfce4-power-manager.xml
+│   └── zsh
+│       └── .zshrc
 ├── Mac
 │   ├── bash
 │   │   ├── .aliases
@@ -165,6 +168,6 @@ optional arguments:
         └── Overrides
             └── Preferences (Windows).sublime-settings
 
-57 directories, 73 files
+58 directories, 75 files
 ```
 <!-- END TREE -->
