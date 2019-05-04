@@ -7,7 +7,7 @@
 	untracked = ls-files --others --exclude-standard
 	updatesubs = submodule foreach git pull origin master
 [core]
-	editor = 'subl' --wait
+	editor = nvim
 	excludesfile = /Users/chris/.gitignore_global
 	autocrlf = input
 [credential]

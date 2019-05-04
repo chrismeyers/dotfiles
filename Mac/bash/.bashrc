@@ -41,7 +41,7 @@ export HISTSIZE=500
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 export PYTHONDONTWRITEBYTECODE=1
-export EDITOR="subl --wait"
+export EDITOR="nvim"
 export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 export JAVA_HOME=`/usr/libexec/java_home -v '1.8*'`
 export GOPATH="$HOME/Documents/Development/go"
