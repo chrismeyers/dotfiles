@@ -37,8 +37,8 @@
 
   // UI settings (Workbench)
   "workbench.colorTheme": "Ayu Mirage Bordered",
+  "workbench.iconTheme": "ayu",
 
   // Extensions
-  "workbench.iconTheme": "vscode-icons",
   "latex-workshop.view.pdf.viewer": "tab",
 }
