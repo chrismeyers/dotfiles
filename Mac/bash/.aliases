@@ -90,6 +90,7 @@ alias dots='cd $HOME/dotfiles'
 alias dl='cd $HOME/Downloads'
 alias sublconfig='cd "$HOME/Library/Application Support/Sublime Text 3/Packages/User"'
 alias capdev='cd $HOME/.captain/headproxy'
+alias cronlogs='ssh $STANDARD_CRON_SSH_ALIAS -t "cd $STANDARD_CRON_LOGS_PATH; bash"'
 
 
 #============ Programming ===========
@@ -99,7 +100,7 @@ alias jre='/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin
 alias pypaths='/usr/bin/env python3 -c "import sys; import os; print(os.linesep.join(sys.path))"'
 alias pypibuild='rm -rf dist/*; rm -rf build/*; /usr/bin/env python3 setup.py bdist_wheel sdist'
 alias pypiupload='twine upload dist/*'
-alias madofficedev='$HOME/dotfiles/Mac/bash/scripts/remote.sh dilla /home/dilla/headproxy/madoffice-development-chrism'
+alias madofficedev='$HOME/dotfiles/Mac/bash/scripts/remote.sh $MO_DEV_SSH_ALIAS $MO_DEV_CODE_PATH'
 
 
 #============= Web stuff ============
