@@ -160,6 +160,7 @@ optional arguments:
 │   │   └── Overrides
 │   │       └── Preferences (OSX).sublime-settings
 │   └── zsh
+│       ├── .env_vars.template
 │       └── .zshrc
 └── Windows
     ├── Git
@@ -168,6 +169,6 @@ optional arguments:
         └── Overrides
             └── Preferences (Windows).sublime-settings
 
-58 directories, 75 files
+58 directories, 76 files
 ```
 <!-- END TREE -->
