@@ -135,7 +135,7 @@ fi
 # Specify shell-specific Python versions. The order of the list will determine
 # the priority of the version. Running `python` will invoke the first version
 # given to the command. Running `python2` will run the first version of 2.X.X.
-pyenv shell 3.7.2 2.7.15
+pyenv shell 3.7.3 2.7.15
 
 ### Node Version Manager setup
 export NVM_DIR="$HOME/.nvm"
