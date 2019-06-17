@@ -33,6 +33,9 @@ set pastetoggle=<F11>
 "" Enable line numbers
 set number
 
+"" Enable spell check by default
+set spell
+
 "" Theming
 set termguicolors
 let ayucolor="mirage"
