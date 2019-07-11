@@ -24,7 +24,8 @@
   },
 
   "[go]": {
-    "editor.insertSpaces": true
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4
   },
 
   "[python]": {

@@ -9,8 +9,10 @@ formulahendry.auto-close-tag
 formulahendry.auto-rename-tag
 James-Yu.latex-workshop
 ms-python.python
+ms-vscode.Go
 mubaidr.vuejs-extension-pack
 octref.vetur
+robertoachar.vscode-essentials-snippets
 teabyii.ayu
 tombonnike.vscode-status-bar-format-toggle
 vscode-icons-team.vscode-icons
