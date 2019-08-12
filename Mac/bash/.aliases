@@ -103,6 +103,7 @@ alias pypiupload='twine upload dist/*'
 alias madofficedev='$HOME/dotfiles/Mac/bash/scripts/remote.sh $MO_DEV_SSH_ALIAS $MO_DEV_CODE_PATH'
 alias msaproddev='$HOME/dotfiles/Mac/bash/scripts/remote.sh $MSA_PROD_SSH_ALIAS $MSA_PROD_CODE_PATH'
 alias msastagedev='$HOME/dotfiles/Mac/bash/scripts/remote.sh $MSA_STAGE_SSH_ALIAS $MSA_STAGE_CODE_PATH'
+alias xdb='echo "?XDEBUG_SESSION_START=PHPSTORM"'
 
 
 #============= Web stuff ============
