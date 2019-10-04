@@ -91,7 +91,7 @@ alias dl='cd $HOME/Downloads'
 alias sublconfig='cd "$HOME/Library/Application Support/Sublime Text 3/Packages/User"'
 alias capdev='cd $HOME/.captain/headproxy'
 alias cronlogs='ssh $STANDARD_CRON_SSH_ALIAS -t "cd $STANDARD_CRON_LOGS_PATH; bash"'
-alias gbpurge='git branch --merged | grep -v "\*" | grep -v "master" | grep -v "stage" | xargs -n 1 git branch -d'
+alias gbpurge='git branch --merged | grep -v "\*" | grep -v "master" | grep -v "stage" | grep -v "testing" | xargs -n 1 git branch -d'
 
 #============ Programming ===========
 alias pip3up='pip3 freeze > pip3_current.txt && pip3 install --upgrade -r pip3_current.txt && rm pip3_current.txt'
