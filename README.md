@@ -34,138 +34,138 @@ optional arguments:
 <!-- BEGIN TREE -->
 ```
 .
-├── Common
-│   ├── misc
-│   │   └── .astylerc
-│   ├── neovim
-│   │   └── nvim
-│   │       └── init.vim
-│   ├── SublimeText
-│   │   └── UserSettings
+├── Common/
+│   ├── SublimeText/
+│   │   └── UserSettings/
 │   │       ├── Package Control.sublime-settings
 │   │       ├── Preferences.sublime-settings
 │   │       └── Python.sublime-settings
-│   ├── vim
+│   ├── misc/
+│   │   └── .astylerc
+│   ├── neovim/
+│   │   └── nvim/
+│   │       └── init.vim
+│   ├── vim/
 │   │   ├── .gvimrc
 │   │   ├── .ideavimrc
-│   │   ├── .vim
-│   │   │   └── pack
-│   │   │       └── plugins
-│   │   │           └── start
-│   │   │               └── ayu-vim
-│   │   ├── vimfiles -> .vim
-│   │   └── .vimrc
-│   └── vscode
+│   │   ├── .vim/
+│   │   │   └── pack/
+│   │   │       └── plugins/
+│   │   │           └── start/
+│   │   │               └── ayu-vim/
+│   │   ├── .vimrc
+│   │   └── vimfiles -> .vim/
+│   └── vscode/
 │       ├── dump.bat
-│       ├── dump.sh
+│       ├── dump.sh*
 │       ├── extensions.txt
 │       ├── restore.bat
-│       ├── restore.sh
+│       ├── restore.sh*
 │       └── settings.json
-├── Linux
-│   ├── apt
-│   │   ├── dump.sh
-│   │   ├── installed
+├── Linux/
+│   ├── GNOMETerminal/
+│   │   ├── Default.dconf
+│   │   ├── dump.sh*
+│   │   └── load.sh*
+│   ├── Git/
+│   │   ├── .gitconfig
+│   │   └── .gitignore_global
+│   ├── SublimeText/
+│   │   └── Overrides/
+│   │       └── Preferences (Linux).sublime-settings
+│   ├── Wallpapers/
+│   │   ├── moon_mower.jpg
+│   │   ├── moon_mower.png
+│   │   └── ruby_beach.jpg
+│   ├── apt/
+│   │   ├── dump.sh*
+│   │   ├── installed/
 │   │   │   ├── packages.list
 │   │   │   ├── repo.keys
 │   │   │   ├── sources.list
-│   │   │   └── sources.list.d
+│   │   │   └── sources.list.d/
 │   │   │       ├── google-chrome.list
 │   │   │       ├── jonathonf-ubuntu-gcc-8_1-bionic.list
 │   │   │       ├── papirus-ubuntu-papirus-bionic.list
 │   │   │       ├── spotify.list
 │   │   │       ├── sublime-text.list
 │   │   │       └── vscode.list
-│   │   └── restore.sh
-│   ├── bash
+│   │   └── restore.sh*
+│   ├── bash/
 │   │   ├── .aliases
 │   │   └── .bashrc
-│   ├── compton
+│   ├── compton/
 │   │   └── compton.conf
-│   ├── dunst
+│   ├── dunst/
 │   │   └── dunstrc
-│   ├── fontconfig
-│   │   └── conf.d
+│   ├── fontconfig/
+│   │   └── conf.d/
 │   │       └── 10-symbols.conf
-│   ├── Git
-│   │   ├── .gitconfig
-│   │   └── .gitignore_global
-│   ├── GNOMETerminal
-│   │   ├── Default.dconf
-│   │   ├── dump.sh
-│   │   └── load.sh
-│   ├── i3
+│   ├── i3/
 │   │   └── config
-│   ├── i3lock
-│   │   └── lock.sh
-│   ├── i3status
+│   ├── i3lock/
+│   │   └── lock.sh*
+│   ├── i3status/
 │   │   └── config
-│   ├── polybar
+│   ├── polybar/
 │   │   ├── config
-│   │   └── launch.sh
-│   ├── rofi
+│   │   └── launch.sh*
+│   ├── rofi/
 │   │   ├── config
 │   │   ├── material.rasi
 │   │   └── sidetab.rasi
-│   ├── stalonetray
+│   ├── stalonetray/
 │   │   └── .stalonetrayrc
-│   ├── SublimeText
-│   │   └── Overrides
-│   │       └── Preferences (Linux).sublime-settings
-│   ├── systemd
+│   ├── systemd/
 │   │   └── i3lock.service
-│   ├── Wallpapers
-│   │   ├── moon_mower.jpg
-│   │   ├── moon_mower.png
-│   │   └── ruby_beach.jpg
-│   ├── xfce4
-│   │   └── xfconf
-│   │       └── xfce-perchannel-xml
+│   ├── xfce4/
+│   │   └── xfconf/
+│   │       └── xfce-perchannel-xml/
 │   │           └── xfce4-power-manager.xml
-│   └── zsh
+│   └── zsh/
 │       └── .zshrc
-├── Mac
-│   ├── bash
-│   │   ├── .aliases
-│   │   ├── .bash_profile
-│   │   └── .bashrc
-│   ├── fish
-│   │   ├── aliases.fish
-│   │   ├── config.fish
-│   │   └── functions
-│   │       └── fish_prompt.fish
-│   ├── Git
+├── Mac/
+│   ├── Git/
 │   │   ├── .gitconfig
 │   │   └── .gitignore_global
-│   ├── Homebrew
+│   ├── Homebrew/
 │   │   ├── Brewfile
-│   │   ├── dump.sh
-│   │   └── restore.sh
-│   ├── iTermProfiles
-│   │   └── Default
-│   │       ├── com.googlecode.iterm2.plist
-│   │       └── iterm2_default.itermcolors
-│   ├── LAMP
-│   │   ├── Homebrew
+│   │   ├── dump.sh*
+│   │   └── restore.sh*
+│   ├── LAMP/
+│   │   ├── Homebrew/
 │   │   │   └── httpd.conf
-│   │   └── MAMP
+│   │   └── MAMP/
 │   │       ├── httpd-vhosts.conf
-│   │       └── templates
+│   │       └── templates/
 │   │           ├── httpd_MAMP_PRO_TEMPLATE.conf
 │   │           ├── main_MAMP_PRO_TEMPLATE.cf
 │   │           ├── my56_MAMP_PRO_TEMPLATE.cnf
 │   │           ├── nginx_MAMP_PRO_TEMPLATE.conf
 │   │           └── php7.1.8_MAMP_PRO_TEMPLATE.ini
-│   ├── SublimeText
-│   │   └── Overrides
+│   ├── SublimeText/
+│   │   └── Overrides/
 │   │       └── Preferences (OSX).sublime-settings
-│   └── zsh
+│   ├── bash/
+│   │   ├── .aliases
+│   │   ├── .bash_profile
+│   │   └── .bashrc
+│   ├── fish/
+│   │   ├── aliases.fish
+│   │   ├── config.fish
+│   │   └── functions/
+│   │       └── fish_prompt.fish
+│   ├── iTermProfiles/
+│   │   └── Default/
+│   │       ├── com.googlecode.iterm2.plist
+│   │       └── iterm2_default.itermcolors
+│   └── zsh/
 │       └── .zshrc
-└── Windows
-    ├── Git
+└── Windows/
+    ├── Git/
     │   └── .gitconfig
-    └── SublimeText
-        └── Overrides
+    └── SublimeText/
+        └── Overrides/
             └── Preferences (Windows).sublime-settings
 
 58 directories, 75 files

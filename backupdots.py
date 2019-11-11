@@ -201,7 +201,7 @@ def generate_tree():
     ignored = '|'.join(['.git', '.gitignore', '.gitmodules', 'backupdots.*',
                         'README.md', *gitignored])
 
-    p = subprocess.Popen(f"tree -a -I '{ignored}' -L {max_tree_depth}",
+    p = subprocess.Popen(f"tree -a -F -I '{ignored}' -L {max_tree_depth}",
                          shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out, err = p.communicate()
 
@@ -211,6 +211,8 @@ def generate_tree():
     if err != '':
         print(f'ERROR: {err}')
         sys.exit(1)
+
+    out = out.replace('\\', '')
 
     return out
 
