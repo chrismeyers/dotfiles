@@ -13,6 +13,8 @@ ms-vscode.Go
 mubaidr.vuejs-extension-pack
 octref.vetur
 robertoachar.vscode-essentials-snippets
+rust-lang.rust
+sdras.vue-vscode-snippets
 teabyii.ayu
 tombonnike.vscode-status-bar-format-toggle
 vscode-icons-team.vscode-icons

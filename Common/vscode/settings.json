@@ -4,6 +4,8 @@
 
   // General editor settings (Editor)
   "editor.tabSize": 2,
+  "editor.autoIndent": true,
+  "editor.insertSpaces": true,
   "editor.lineNumbers": "on",
   "editor.fontFamily": "Hack",
   "editor.fontSize": 12,
@@ -15,14 +17,6 @@
   "files.trimFinalNewlines": true,
 
   // Language overrides (Default Configuration Overrides)
-  "[c]":  {
-    "editor.autoIndent": true
-  },
-
-  "[cpp]":  {
-    "editor.autoIndent": true
-  },
-
   "[go]": {
     "editor.insertSpaces": false,
     "editor.tabSize": 4
@@ -38,8 +32,11 @@
 
   // UI settings (Workbench)
   "workbench.colorTheme": "Ayu Mirage Bordered",
+  "workbench.iconTheme": "ayu",
+
+  // Windows integrated terminal settings
+  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
 
   // Extensions
-  "workbench.iconTheme": "vscode-icons",
   "latex-workshop.view.pdf.viewer": "tab",
 }
