@@ -160,8 +160,6 @@ optional arguments:
 │   │       ├── com.googlecode.iterm2.plist
 │   │       └── iterm2_default.itermcolors
 │   └── zsh/
-│       ├── .env_vars
-│       ├── .env_vars.template
 │       └── .zshrc
 └── Windows/
     ├── Git/
@@ -170,6 +168,6 @@ optional arguments:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-58 directories, 77 files
+58 directories, 75 files
 ```
 <!-- END TREE -->
