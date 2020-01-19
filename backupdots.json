@@ -9,7 +9,6 @@
         "functions": ["/Users/chris/.config/fish", "/Users/chris/dotfiles/Mac/fish"],
 
         ".zshrc": ["/Users/chris", "/Users/chris/dotfiles/Mac/zsh"],
-        ".env_vars": ["/Users/chris", "/Users/chris/dotfiles/Mac/zsh"],
 
         ".vimrc": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
         ".gvimrc": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],

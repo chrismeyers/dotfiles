@@ -120,7 +120,6 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source $HOME/.env_vars
 alias sz="source $HOME/.zshrc"
 
 ### Additional aliases
