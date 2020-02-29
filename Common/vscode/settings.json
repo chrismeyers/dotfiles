@@ -39,5 +39,8 @@
 
   // Extensions
   "latex-workshop.view.pdf.viewer": "tab",
-  "go.formatTool": "goimports"
+  "go.formatTool": "goimports",
+  "go.toolsEnvVars": {
+    "GO111MODULE": "on"
+  }
 }
