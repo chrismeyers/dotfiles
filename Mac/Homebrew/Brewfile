@@ -59,7 +59,7 @@ brew "m4"
 brew "make"
 brew "mosh"
 brew "mtr"
-brew "mysql@5.7", link: true
+brew "mysql@5.7", restart_service: true, link: true
 brew "nano"
 brew "neovim"
 brew "nmap"
