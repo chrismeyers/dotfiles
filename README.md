@@ -148,6 +148,7 @@ optional arguments:
 │   │   ├── .bash_profile
 │   │   ├── .bashrc
 │   │   └── scripts/
+│   │       ├── madoffice.sh*
 │   │       └── remote.sh*
 │   ├── fish/
 │   │   ├── aliases.fish
@@ -168,6 +169,6 @@ optional arguments:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-58 directories, 75 files
+58 directories, 76 files
 ```
 <!-- END TREE -->
