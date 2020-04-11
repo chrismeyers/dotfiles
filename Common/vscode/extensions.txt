@@ -6,6 +6,7 @@ dbaeumer.vscode-eslint
 eg2.vscode-npm-script
 esbenp.prettier-vscode
 formulahendry.auto-close-tag
+formulahendry.auto-complete-tag
 formulahendry.auto-rename-tag
 James-Yu.latex-workshop
 ms-python.python
@@ -17,6 +18,7 @@ rust-lang.rust
 sdras.vue-vscode-snippets
 teabyii.ayu
 tombonnike.vscode-status-bar-format-toggle
+VisualStudioExptTeam.vscodeintellicode
 vscode-icons-team.vscode-icons
 vscodevim.vim
 xabikos.JavaScriptSnippets
