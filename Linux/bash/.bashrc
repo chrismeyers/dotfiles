@@ -65,9 +65,8 @@ fi
 # Specify shell-specific Python versions. The order of the list will determine
 # the priority of the version. Running `python` will invoke the first version
 # given to the command. Running `python2` will run the first version of 2.X.X.
-pyenv shell 3.7.2 2.7.15
+pyenv shell 3.8.2 2.7.16
 
 ### Node Version Manager setup
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
