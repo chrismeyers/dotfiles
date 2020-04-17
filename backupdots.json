@@ -66,8 +66,6 @@
         "dunst": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
         "xfce4": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
 
-        "i3lock.service": ["/etc/systemd/system", "/home/chris/dotfiles/Linux/systemd"],
-
         "Wallpapers": ["/home/chris/Pictures", "/home/chris/dotfiles/Linux"],
 
         ".gitconfig": ["/home/chris", "/home/chris/dotfiles/Linux/Git"],
