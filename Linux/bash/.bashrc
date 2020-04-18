@@ -34,8 +34,7 @@ export PS1="\u on ${RED}\h${NORMAL} in [\w] \$(git_branch) \n > "
 shopt -s histappend
 export HISTCONTROL=ignoredups:ignorespace
 export HISTTIMEFORMAT="%Y-%m-%dT%H:%M:%S  "
-export HISTFILESIZE=500
-export HISTSIZE=500
+export HISTSIZE=50000
 
 ### Set environment variables
 export CLICOLOR=1
