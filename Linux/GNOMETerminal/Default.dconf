@@ -2,7 +2,7 @@
 allow-bold=true
 audible-bell=false
 background-color='rgb(0,0,0)'
-background-transparency-percent=10
+background-transparency-percent=6
 default-size-columns=113
 default-size-rows=26
 font='Hack 10'
