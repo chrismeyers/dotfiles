@@ -38,16 +38,16 @@ optional arguments:
 ```
 .
 ├── Common/
-│   ├── SublimeText/
-│   │   └── UserSettings/
-│   │       ├── Package Control.sublime-settings
-│   │       ├── Preferences.sublime-settings
-│   │       └── Python.sublime-settings
 │   ├── misc/
 │   │   └── .astylerc
 │   ├── neovim/
 │   │   └── nvim/
 │   │       └── init.vim
+│   ├── SublimeText/
+│   │   └── UserSettings/
+│   │       ├── Package Control.sublime-settings
+│   │       ├── Preferences.sublime-settings
+│   │       └── Python.sublime-settings
 │   ├── vim/
 │   │   ├── .gvimrc
 │   │   ├── .ideavimrc
@@ -56,8 +56,8 @@ optional arguments:
 │   │   │       └── plugins/
 │   │   │           └── start/
 │   │   │               └── ayu-vim/
-│   │   ├── .vimrc
-│   │   └── vimfiles -> .vim/
+│   │   ├── vimfiles -> .vim/
+│   │   └── .vimrc
 │   └── vscode/
 │       ├── dump.bat
 │       ├── dump.sh*
@@ -66,34 +66,6 @@ optional arguments:
 │       ├── restore.sh*
 │       └── settings.json
 ├── Linux/
-│   ├── GNOMETerminal/
-│   │   ├── Default.dconf
-│   │   ├── dump.sh*
-│   │   └── load.sh*
-│   ├── Git/
-│   │   ├── .gitconfig
-│   │   └── .gitignore_global
-│   ├── SublimeText/
-│   │   └── Overrides/
-│   │       └── Preferences (Linux).sublime-settings
-│   ├── Wallpapers/
-│   │   ├── moon_mower.jpg
-│   │   ├── moon_mower.png
-│   │   └── ruby_beach.jpg
-│   ├── apt/
-│   │   ├── dump.sh*
-│   │   ├── installed/
-│   │   │   ├── packages.list
-│   │   │   ├── repo.keys
-│   │   │   ├── sources.list
-│   │   │   └── sources.list.d/
-│   │   │       ├── google-chrome.list
-│   │   │       ├── jonathonf-ubuntu-gcc-8_1-bionic.list
-│   │   │       ├── papirus-ubuntu-papirus-bionic.list
-│   │   │       ├── spotify.list
-│   │   │       ├── sublime-text.list
-│   │   │       └── vscode.list
-│   │   └── restore.sh*
 │   ├── bash/
 │   │   ├── .aliases
 │   │   └── .bashrc
@@ -104,6 +76,13 @@ optional arguments:
 │   ├── fontconfig/
 │   │   └── conf.d/
 │   │       └── 10-symbols.conf
+│   ├── Git/
+│   │   ├── .gitconfig
+│   │   └── .gitignore_global
+│   ├── GNOMETerminal/
+│   │   ├── Default.dconf
+│   │   ├── dump.sh*
+│   │   └── load.sh*
 │   ├── i3/
 │   │   └── config
 │   ├── i3lock/
@@ -119,8 +98,15 @@ optional arguments:
 │   │   └── sidetab.rasi
 │   ├── stalonetray/
 │   │   └── .stalonetrayrc
+│   ├── SublimeText/
+│   │   └── Overrides/
+│   │       └── Preferences (Linux).sublime-settings
 │   ├── systemd/
 │   │   └── i3lock.service
+│   ├── Wallpapers/
+│   │   ├── moon_mower.jpg
+│   │   ├── moon_mower.png
+│   │   └── ruby_beach.jpg
 │   ├── xfce4/
 │   │   └── xfconf/
 │   │       └── xfce-perchannel-xml/
@@ -128,6 +114,15 @@ optional arguments:
 │   └── zsh/
 │       └── .zshrc
 ├── Mac/
+│   ├── bash/
+│   │   ├── .aliases
+│   │   ├── .bash_profile
+│   │   └── .bashrc
+│   ├── fish/
+│   │   ├── aliases.fish
+│   │   ├── config.fish
+│   │   └── functions/
+│   │       └── fish_prompt.fish
 │   ├── Git/
 │   │   ├── .gitconfig
 │   │   └── .gitignore_global
@@ -135,6 +130,10 @@ optional arguments:
 │   │   ├── Brewfile
 │   │   ├── dump.sh*
 │   │   └── restore.sh*
+│   ├── iTermProfiles/
+│   │   └── Default/
+│   │       ├── com.googlecode.iterm2.plist
+│   │       └── iterm2_default.itermcolors
 │   ├── LAMP/
 │   │   ├── Homebrew/
 │   │   │   └── httpd.conf
@@ -149,19 +148,6 @@ optional arguments:
 │   ├── SublimeText/
 │   │   └── Overrides/
 │   │       └── Preferences (OSX).sublime-settings
-│   ├── bash/
-│   │   ├── .aliases
-│   │   ├── .bash_profile
-│   │   └── .bashrc
-│   ├── fish/
-│   │   ├── aliases.fish
-│   │   ├── config.fish
-│   │   └── functions/
-│   │       └── fish_prompt.fish
-│   ├── iTermProfiles/
-│   │   └── Default/
-│   │       ├── com.googlecode.iterm2.plist
-│   │       └── iterm2_default.itermcolors
 │   └── zsh/
 │       └── .zshrc
 └── Windows/
@@ -171,6 +157,6 @@ optional arguments:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-58 directories, 75 files
+55 directories, 64 files
 ```
 <!-- END TREE -->
