@@ -91,6 +91,7 @@ export PYTHONDONTWRITEBYTECODE=1
 export EDITOR="nvim"
 export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 export GOPATH="$HOME/Documents/Development/go"
+export GO111MODULE="on"
 
 ### Set path variables
 export PATH="$PYENV_ROOT/bin:$HOME/.local/bin:/usr/local/go/bin:$GOPATH/bin:$PATH"
