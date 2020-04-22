@@ -67,6 +67,7 @@ alias sublconfig='cd "$HOME/.config/sublime-text-3/Packages/User"'
 alias pypaths='python -c "import sys; import os; print(os.linesep.join(sys.path))"'
 alias pypibuild='rm -rf dist/*; rm -rf build/*; python setup.py bdist_wheel sdist'
 alias pypiupload='twine upload dist/*'
+alias gbpurge='git branch --merged | grep -v "\*" | grep -v "master" | xargs -n 1 git branch -d'
 
 
 #============= Web stuff ============
