@@ -71,10 +71,6 @@ def perform_backup():
                                'Linux/GNOMETerminal/dump.sh'))
         print('profile dump complete!')
 
-        print('Dumping installed apt packages...', end='', flush=True)
-        os.system(os.path.join(_backup_dir_root, 'Linux/apt/dump.sh'))
-        print('apt dump complete!')
-
     print('Dumping VSCode extensions...', end='', flush=True)
     if _platform == PlatformType.MAC or _platform == PlatformType.LINUX:
         os.system(os.path.join(_backup_dir_root,
