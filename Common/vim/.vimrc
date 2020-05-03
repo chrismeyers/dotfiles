@@ -138,6 +138,14 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
+"" Open file at last cursor position
+""   For nvim, see - :help last-position-jump
+""   For vim, see  - /etc/vim/vimrc
+autocmd BufReadPost *
+  \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+  \ |   exe "normal! g`\""
+  \ | endif
+
 "" Indentation settings for using hard tabs for indent. Display tabs as
 "" 2 characters wide.
 "set shiftwidth=2
