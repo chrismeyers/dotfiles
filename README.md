@@ -79,10 +79,6 @@ optional arguments:
 │   ├── Git/
 │   │   ├── .gitconfig
 │   │   └── .gitignore_global
-│   ├── GNOMETerminal/
-│   │   ├── Default.dconf
-│   │   ├── dump.sh*
-│   │   └── load.sh*
 │   ├── i3/
 │   │   └── config
 │   ├── i3lock/
@@ -103,6 +99,13 @@ optional arguments:
 │   │       └── Preferences (Linux).sublime-settings
 │   ├── systemd/
 │   │   └── i3lock.service
+│   ├── terminals/
+│   │   ├── alacritty/
+│   │   │   └── alacritty.yml
+│   │   └── gnome/
+│   │       ├── Default.dconf
+│   │       ├── dump.sh*
+│   │       └── load.sh*
 │   ├── Wallpapers/
 │   │   ├── moon_mower.jpg
 │   │   ├── moon_mower.png
@@ -157,6 +160,6 @@ optional arguments:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-55 directories, 64 files
+57 directories, 65 files
 ```
 <!-- END TREE -->
