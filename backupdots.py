@@ -66,10 +66,10 @@ def perform_backup():
         os.system(os.path.join(_backup_dir_root, 'Mac/Homebrew/dump.sh'))
         print('brew bundle dump complete!')
     elif _platform == PlatformType.LINUX:
-        print('Dumping GNOME Terminal default profile...', end='', flush=True)
-        os.system(os.path.join(_backup_dir_root,
-                               'Linux/GNOMETerminal/dump.sh'))
-        print('profile dump complete!')
+        print('Dumping terminal profiles...', end='', flush=True)
+        os.system(os.path.join(_backup_dir_root, 'Linux/terminals/gnome/dump.sh'))
+        os.system(os.path.join(_backup_dir_root, 'Linux/terminals/tilix/dump.sh'))
+        print('profile dumps complete!')
 
     print('Dumping VSCode extensions...', end='', flush=True)
     if _platform == PlatformType.MAC or _platform == PlatformType.LINUX:

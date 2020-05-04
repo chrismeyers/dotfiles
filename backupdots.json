@@ -66,6 +66,7 @@
         "dunst": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
         "xfce4": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
         "alacritty": ["/home/chris/.config", "/home/chris/dotfiles/Linux/terminals"],
+        "tilix": ["/home/chris/.config", "/home/chris/dotfiles/Linux/terminals/tilix"],
 
         "Wallpapers": ["/home/chris/Pictures", "/home/chris/dotfiles/Linux"],
 

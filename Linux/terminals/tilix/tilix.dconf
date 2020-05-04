@@ -1,0 +1,31 @@
+[/]
+app-title='${sessionName}'
+auto-hide-mouse=true
+focus-follow-mouse=true
+quake-specific-monitor=0
+sidebar-on-right=false
+terminal-title-show-when-single=true
+terminal-title-style='normal'
+theme-variant='system'
+use-tabs=false
+
+[profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
+background-color='#000000'
+background-transparency-percent=8
+badge-color='#AC7EA8'
+badge-color-set=false
+bold-color-set=false
+bold-is-bright=true
+cursor-colors-set=false
+dim-transparency-percent=43
+font='Hack 11'
+foreground-color='#A9A9A9'
+highlight-colors-set=false
+login-shell=false
+palette=['#252525', '#D54E53', '#4D9A06', '#FFC135', '#79A5DA', '#D81B60', '#00ACC1', '#F5F5F5', '#708284', '#D54E53', '#4D9A06', '#FFC135', '#79A5DA', '#D81B60', '#00ACC1', '#F5F5F5']
+scrollback-lines=10000
+terminal-bell='none'
+text-blink-mode='focused'
+use-system-font=false
+use-theme-colors=false
+visible-name='Default'

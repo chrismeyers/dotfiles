@@ -102,10 +102,17 @@ optional arguments:
 │   ├── terminals/
 │   │   ├── alacritty/
 │   │   │   └── alacritty.yml
-│   │   └── gnome/
-│   │       ├── Default.dconf
+│   │   ├── gnome/
+│   │   │   ├── Default.dconf
+│   │   │   ├── dump.sh*
+│   │   │   └── load.sh*
+│   │   └── tilix/
 │   │       ├── dump.sh*
-│   │       └── load.sh*
+│   │       ├── load.sh*
+│   │       ├── tilix/
+│   │       │   └── schemes/
+│   │       │       └── default_colors.json
+│   │       └── tilix.dconf
 │   ├── Wallpapers/
 │   │   ├── moon_mower.jpg
 │   │   ├── moon_mower.png
@@ -160,6 +167,6 @@ optional arguments:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-57 directories, 65 files
+60 directories, 69 files
 ```
 <!-- END TREE -->
