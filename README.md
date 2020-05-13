@@ -48,6 +48,8 @@ optional arguments:
 │   │       ├── Package Control.sublime-settings
 │   │       ├── Preferences.sublime-settings
 │   │       └── Python.sublime-settings
+│   ├── tmux/
+│   │   └── .tmux.conf
 │   ├── vim/
 │   │   ├── .gvimrc
 │   │   ├── .ideavimrc
@@ -167,6 +169,6 @@ optional arguments:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-60 directories, 69 files
+61 directories, 70 files
 ```
 <!-- END TREE -->

@@ -37,7 +37,11 @@ set number
 set spell
 
 "" Theming
-set termguicolors
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 let ayucolor="mirage"
 colorscheme ayu
 set background=dark
@@ -176,9 +180,6 @@ nnoremap <F6> :set spell!<CR><Bar>:echo "Spell Check: " . strpart("OffOn", 3 * &
 
 "" <C-L> (redraw) also turns off search highlighting until the next search
 nnoremap <C-L> :nohl<CR><C-L>
-
-"" <C-A> selects all
-nnoremap <C-A> ggVG<CR>
 
 "" <C-Up|Down|Left|Right> provide simplified split movement
 nnoremap <C-Up> <C-w><Up>

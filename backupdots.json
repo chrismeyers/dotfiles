@@ -45,6 +45,8 @@
         ".gvimrc": ["/home/chris", "/home/chris/dotfiles/Common/vim"],
         ".vim": ["/home/chris", "/home/chris/dotfiles/Common/vim"],
 
+        ".tmux.conf": ["/home/chris", "/home/chris/dotfiles/Common/tmux"],
+
         ".astylerc": ["/home/chris", "/home/chris/dotfiles/Common/misc"],
 
         ".stalonetrayrc": ["/home/chris", "/home/chris/dotfiles/Linux/stalonetray"],
