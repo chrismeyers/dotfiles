@@ -45,6 +45,8 @@ optional arguments:
 │   ├── neovim/
 │   │   └── nvim/
 │   │       └── init.vim
+│   ├── tmux/
+│   │   └── .tmux.conf
 │   ├── vim/
 │   │   ├── .gvimrc
 │   │   ├── .ideavimrc
@@ -169,6 +171,6 @@ optional arguments:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-58 directories, 76 files
+59 directories, 77 files
 ```
 <!-- END TREE -->
