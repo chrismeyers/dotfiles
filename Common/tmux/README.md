@@ -24,3 +24,6 @@
 | `<prefix> t`   | Show clock |
 | `<prefix> :`   | Launch tmux prompt |
 | `<prefix> ?`   | List all shortcuts |
+
+## Troubleshooting
+- Fix missing `tmux-256color` terminfo on macOS [[Link](https://gist.github.com/bbqtd/a4ac060d6f6b9ea6fe3aabe735aa9d95)]
