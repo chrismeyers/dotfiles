@@ -5,7 +5,7 @@
 	<key>AdjustWindowForFontSizeChange</key>
 	<true/>
 	<key>AllowClipboardAccess</key>
-	<false/>
+	<true/>
 	<key>AlternateMouseScroll</key>
 	<true/>
 	<key>AnimateDimming</key>
@@ -367,7 +367,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>501 474 918 512 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>56 33 1620 735 0 0 1680 1027 </string>
+	<string>56 34 1620 735 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>62 486 899 426 0 0 1680 1028 </string>
 	<key>NeverWarnAboutShortLivedSessions_3127A694-5EB3-4F20-A97F-A007AF3E7FCE</key>
@@ -570,7 +570,7 @@
 			<key>Columns</key>
 			<integer>230</integer>
 			<key>Command</key>
-			<string></string>
+			<string>/usr/local/bin/zsh -l -c "tmux attach || tmux"</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -592,7 +592,7 @@
 			<key>Cursor Type</key>
 			<integer>2</integer>
 			<key>Custom Command</key>
-			<string>No</string>
+			<string>Yes</string>
 			<key>Custom Directory</key>
 			<string>No</string>
 			<key>Default Bookmark</key>
@@ -1357,12 +1357,13 @@
 	<key>NoSyncAllAppVersions</key>
 	<array>
 		<string>3.3.6</string>
-		<string>3.3.2</string>
 		<string>3.3.8</string>
+		<string>3.3.2</string>
 		<string>3.3.3</string>
 		<string>3.3.7</string>
-		<string>3.3.0</string>
+		<string>3.3.9</string>
 		<string>3.2.9</string>
+		<string>3.3.0</string>
 		<string>3.3.4</string>
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
@@ -1389,7 +1390,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>487561697.68850601</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>87</integer>
+	<integer>115</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>586830661.96559894</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -1778,6 +1779,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>currentTab.window</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>id</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -1966,6 +1975,14 @@
 				<true/>
 				<key>name</key>
 				<string>currentSession.name</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>window</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -2172,7 +2189,9 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-02-07T00:54:06Z</date>
+	<date>2020-05-15T05:25:44Z</date>
+	<key>SUUpdateGroupIdentifier</key>
+	<integer>3753088012</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -2243,7 +2262,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.8</string>
+	<string>3.3.9</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
