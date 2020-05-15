@@ -5,7 +5,7 @@
 	<key>AdjustWindowForFontSizeChange</key>
 	<true/>
 	<key>AllowClipboardAccess</key>
-	<false/>
+	<true/>
 	<key>AlternateMouseScroll</key>
 	<true/>
 	<key>AnimateDimming</key>
@@ -363,7 +363,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>369 250 918 452 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1753 60 1620 749 1680 0 3440 1417 </string>
+	<string>1915 219 1620 749 1680 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>2609 1485 1620 749 2438 1440 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1377,15 +1377,15 @@
 	<array>
 		<string>3.3.6</string>
 		<string>3.3.8</string>
-		<string>3.3.0</string>
+		<string>3.3.4</string>
 		<string>3.3.1</string>
 		<string>3.3.3</string>
 		<string>3.3.5</string>
 		<string>3.3.7</string>
 		<string>3.3.9</string>
-		<string>3.2.9</string>
+		<string>3.3.0</string>
 		<string>3.3.2</string>
-		<string>3.3.4</string>
+		<string>3.2.9</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
@@ -1403,7 +1403,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>052894D1-7398-4072-8121-A8D725A1AB7B</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>356</integer>
+	<integer>359</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>586793036.89451003</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
