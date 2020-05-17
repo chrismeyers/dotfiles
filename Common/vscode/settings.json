@@ -10,6 +10,7 @@
   "editor.fontFamily": "Hack",
   "editor.fontSize": 12,
   "editor.minimap.showSlider": "always",
+  "editor.suggestSelection": "first",
 
   // File settings (Files)
   "files.trimTrailingWhitespace": true,
@@ -49,5 +50,7 @@
   "vim.handleKeys": {
     "<C-a>": false,
     "<C-f>": false
-  }
+  },
+
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }
