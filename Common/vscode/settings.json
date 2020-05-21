@@ -11,6 +11,7 @@
   "editor.fontSize": 12,
   "editor.minimap.showSlider": "always",
   "editor.suggestSelection": "first",
+  "editor.formatOnSave": true,
 
   // File settings (Files)
   "files.trimTrailingWhitespace": true,
@@ -43,6 +44,8 @@
 
   "go.formatTool": "goimports",
   "go.useLanguageServer": true,
+
+  "dart.lineLength": 120,
 
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
