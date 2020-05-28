@@ -57,7 +57,8 @@ optional arguments:
 │   │   │   └── pack/
 │   │   │       └── plugins/
 │   │   │           └── start/
-│   │   │               └── ayu-vim/
+│   │   │               ├── ayu-vim/
+│   │   │               └── vim-commentary/
 │   │   ├── vimfiles -> .vim/
 │   │   └── .vimrc
 │   └── vscode/
@@ -169,6 +170,6 @@ optional arguments:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-61 directories, 70 files
+62 directories, 70 files
 ```
 <!-- END TREE -->
