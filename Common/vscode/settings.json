@@ -59,8 +59,6 @@
   "go.formatTool": "goimports",
   "go.useLanguageServer": true,
 
-  "dart.lineLength": 120,
-
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
