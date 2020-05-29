@@ -1,3 +1,6 @@
 [submodule "Common/vim/.vim/pack/plugins/start/ayu-vim"]
 	path = Common/vim/.vim/pack/plugins/start/ayu-vim
 	url = https://github.com/ayu-theme/ayu-vim
+[submodule "Common/vim/.vim/pack/plugins/start/vim-commentary"]
+	path = Common/vim/.vim/pack/plugins/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
