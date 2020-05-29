@@ -4,12 +4,14 @@
 
   // General editor settings (Editor)
   "editor.tabSize": 2,
-  "editor.autoIndent": true,
+  "editor.autoIndent": "full",
   "editor.insertSpaces": true,
   "editor.lineNumbers": "on",
   "editor.fontFamily": "Hack",
   "editor.fontSize": 12,
   "editor.minimap.showSlider": "always",
+  "editor.suggestSelection": "first",
+  "editor.formatOnSave": false,
 
   // File settings (Files)
   "files.trimTrailingWhitespace": true,
@@ -26,6 +28,20 @@
     "editor.tabSize": 4
   },
 
+  "[dart]": {
+    "editor.formatOnSave": true
+  },
+
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[vue]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
   // OS File system interaction (File Explorer)
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
@@ -39,5 +55,17 @@
 
   // Extensions
   "latex-workshop.view.pdf.viewer": "tab",
+
   "go.formatTool": "goimports",
+  "go.useLanguageServer": true,
+
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }
