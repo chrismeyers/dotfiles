@@ -147,17 +147,6 @@ optional arguments:
 │   │   └── Default/
 │   │       ├── com.googlecode.iterm2.plist
 │   │       └── iterm2_default.itermcolors
-│   ├── LAMP/
-│   │   ├── Homebrew/
-│   │   │   └── httpd.conf
-│   │   └── MAMP/
-│   │       ├── httpd-vhosts.conf
-│   │       └── templates/
-│   │           ├── httpd_MAMP_PRO_TEMPLATE.conf
-│   │           ├── main_MAMP_PRO_TEMPLATE.cf
-│   │           ├── my56_MAMP_PRO_TEMPLATE.cnf
-│   │           ├── nginx_MAMP_PRO_TEMPLATE.conf
-│   │           └── php7.1.8_MAMP_PRO_TEMPLATE.ini
 │   ├── SublimeText/
 │   │   └── Overrides/
 │   │       └── Preferences (OSX).sublime-settings
@@ -170,6 +159,6 @@ optional arguments:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-62 directories, 70 files
+58 directories, 63 files
 ```
 <!-- END TREE -->
