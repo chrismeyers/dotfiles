@@ -17,3 +17,5 @@
 	email = chris.meyers@madwiremedia.com
 [push]
 	default = simple
+[pull]
+	rebase = false
