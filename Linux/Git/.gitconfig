@@ -15,5 +15,7 @@
 	email = cm.02.93@gmail.com
 [push]
 	default = simple
+[pull]
+	rebase = false
 [credential]
 	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
