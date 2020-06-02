@@ -54,7 +54,8 @@ optional arguments:
 │   │   │   └── pack/
 │   │   │       └── plugins/
 │   │   │           └── start/
-│   │   │               └── ayu-vim/
+│   │   │               ├── ayu-vim/
+│   │   │               └── vim-commentary/
 │   │   ├── .vimrc
 │   │   └── vimfiles -> .vim/
 │   └── vscode/
@@ -79,19 +80,6 @@ optional arguments:
 │   │   ├── moon_mower.jpg
 │   │   ├── moon_mower.png
 │   │   └── ruby_beach.jpg
-│   ├── apt/
-│   │   ├── dump.sh*
-│   │   ├── installed/
-│   │   │   ├── packages.list
-│   │   │   ├── repo.keys
-│   │   │   ├── sources.list
-│   │   │   └── sources.list.d/
-│   │   │       ├── google-chrome.list
-│   │   │       ├── jonathonf-ubuntu-gcc-8_1-bionic.list
-│   │   │       ├── papirus-ubuntu-papirus-bionic.list
-│   │   │       ├── spotify.list
-│   │   │       └── sublime-text.list
-│   │   └── restore.sh*
 │   ├── bash/
 │   │   ├── .aliases
 │   │   └── .bashrc
@@ -131,17 +119,6 @@ optional arguments:
 │   │   ├── Brewfile
 │   │   ├── dump.sh*
 │   │   └── restore.sh*
-│   ├── LAMP/
-│   │   ├── Homebrew/
-│   │   │   └── httpd.conf
-│   │   └── MAMP/
-│   │       ├── httpd-vhosts.conf
-│   │       └── templates/
-│   │           ├── httpd_MAMP_PRO_TEMPLATE.conf
-│   │           ├── main_MAMP_PRO_TEMPLATE.cf
-│   │           ├── my56_MAMP_PRO_TEMPLATE.cnf
-│   │           ├── nginx_MAMP_PRO_TEMPLATE.conf
-│   │           └── php7.1.8_MAMP_PRO_TEMPLATE.ini
 │   ├── SublimeText/
 │   │   └── Overrides/
 │   │       └── Preferences (OSX).sublime-settings
@@ -171,6 +148,6 @@ optional arguments:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-59 directories, 77 files
+53 directories, 60 files
 ```
 <!-- END TREE -->
