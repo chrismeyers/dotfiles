@@ -51,6 +51,7 @@ brew "ncurses"
 brew "htop"
 brew "httpd"
 brew "imagemagick"
+brew "kubernetes-cli", link: false
 brew "less"
 brew "libcroco"
 brew "libyaml"
