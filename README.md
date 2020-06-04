@@ -143,13 +143,16 @@ optional arguments:
 │   │   ├── Brewfile
 │   │   ├── dump.sh*
 │   │   └── restore.sh*
-│   ├── iTermProfiles/
-│   │   └── Default/
-│   │       ├── com.googlecode.iterm2.plist
-│   │       └── iterm2_default.itermcolors
 │   ├── SublimeText/
 │   │   └── Overrides/
 │   │       └── Preferences (OSX).sublime-settings
+│   ├── terminals/
+│   │   ├── alacritty/
+│   │   │   └── alacritty.yml
+│   │   └── iTermProfiles/
+│   │       └── Default/
+│   │           ├── com.googlecode.iterm2.plist
+│   │           └── iterm2_default.itermcolors
 │   └── zsh/
 │       └── .zshrc
 └── Windows/
@@ -159,6 +162,6 @@ optional arguments:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-58 directories, 63 files
+60 directories, 64 files
 ```
 <!-- END TREE -->
