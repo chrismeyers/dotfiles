@@ -310,9 +310,9 @@
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles/Mac/iTermProfiles/Default</string>
+	<string>~/dotfiles/Mac/terminals/iTermProfiles/Default</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
-	<string>{712, 459}</string>
+	<string>{799, 459}</string>
 	<key>NSNavPanelExpandedSizeForSaveMode</key>
 	<string>{712, 521}</string>
 	<key>NSNavPanelExpandedStateForSaveMode</key>
@@ -358,6 +358,8 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame NSNavPanelAutosaveName</key>
+	<string>490 335 799 459 0 0 1680 1027 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>688 554 606 456 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
@@ -1358,12 +1360,12 @@
 	<array>
 		<string>3.3.6</string>
 		<string>3.3.8</string>
-		<string>3.3.2</string>
+		<string>3.3.0</string>
 		<string>3.3.3</string>
 		<string>3.3.7</string>
 		<string>3.3.9</string>
 		<string>3.2.9</string>
-		<string>3.3.0</string>
+		<string>3.3.2</string>
 		<string>3.3.4</string>
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
@@ -1375,7 +1377,7 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{553, 768}</string>
+		<string>{562, 929}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -1390,7 +1392,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>487561697.68850601</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>115</integer>
+	<integer>141</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>586830661.96559894</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -2171,7 +2173,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/chris/dotfiles/Mac/iTermProfiles/Default</string>
+	<string>/Users/chris/dotfiles/Mac/terminals/iTermProfiles/Default</string>
 	<key>PromptOnQuit</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -2189,7 +2191,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-05-15T05:25:44Z</date>
+	<date>2020-06-04T01:19:46Z</date>
 	<key>SUUpdateGroupIdentifier</key>
 	<integer>3753088012</integer>
 	<key>SUUpdateRelaunchingMarker</key>
