@@ -8,9 +8,9 @@ esbenp.prettier-vscode
 formulahendry.auto-close-tag
 formulahendry.auto-complete-tag
 formulahendry.auto-rename-tag
+golang.Go
 James-Yu.latex-workshop
 ms-python.python
-ms-vscode.Go
 mubaidr.vuejs-extension-pack
 octref.vetur
 robertoachar.vscode-essentials-snippets
