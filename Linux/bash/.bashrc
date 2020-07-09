@@ -10,7 +10,7 @@ BLUE_BOLD="\033[1;34m"
 BLUE="\033[0;34m"
 
 ### Prompt format:
-###   user on hostname in [pwd] (git_branch git_status)
+###   user on hostname in [pwd] git_branch_and_status
 ###    >
 git_branch() {
   if ! git rev-parse --is-inside-work-tree &> /dev/null; then
