@@ -65,7 +65,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 ### Prompt format:
-###   user on hostname in [pwd] (git_branch git_status)
+###   user on hostname in [pwd] git_branch_and_status
 ###    >
 git_branch() {
   if ! git rev-parse --is-inside-work-tree &> /dev/null; then
@@ -73,12 +73,12 @@ git_branch() {
   fi
 
   if [ -z "$(git status --short)" ]; then
-    git_status="✓"
+    git_status_color="%{$fg[green]%}"
   else
-    git_status="%{$fg[red]%}✗%{$fg[green]%}"
+    git_status_color="%{$fg[yellow]%}"
   fi
 
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/%{$fg[green]%}(\1 $git_status)%{$reset_color%}/"
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/%{$git_status_color%}\1%{$reset_color%}/"
 }
 
 PROMPT='%n on %{$fg[red]%}%m%{$reset_color%} in [%~] $(git_branch)
