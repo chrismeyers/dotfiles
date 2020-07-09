@@ -3,7 +3,7 @@
 echo "Starting Madoffice Legacy..."
 (
   cd ~/.captain/headproxy/madoffice-legacy-development/docker/legacy/development \
-    && ./run.static.development.sh
+    && ./run.development.sh
 )
 
 echo "Starting Madoffice API..."

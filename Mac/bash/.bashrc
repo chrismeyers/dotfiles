@@ -8,6 +8,8 @@ GREEN_BOLD="\033[1;32m"
 GREEN="\033[0;32m"
 BLUE_BOLD="\033[1;34m"
 BLUE="\033[0;34m"
+YELLOW_BOLD="\033[1;33m"
+YELLOW="\033[0;33m"
 
 ### Prompt format:
 ###   user on hostname in [pwd] (git_branch git_status)
@@ -18,14 +20,14 @@ git_branch() {
   fi
 
   if [ -z "$(git status --short)" ]; then
-    git_status="✓"
+    git_status_color="${GREEN}"
   else
-    git_status="${RED}✗${GREEN}"
+    git_status_color="${YELLOW}"
   fi
 
   git_branch=`git --no-pager branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
 
-  printf "${GREEN}(${git_branch} ${git_status})${NORMAL}"
+  printf "${git_status_color}${git_branch}${git_status}${NORMAL}"
 }
 
 export PS1="\u on ${RED}\h${NORMAL} in [\w] \$(git_branch) \n > "
