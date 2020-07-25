@@ -143,6 +143,8 @@ optional arguments:
 │   │   ├── Brewfile
 │   │   ├── dump.sh*
 │   │   └── restore.sh*
+│   ├── Rectangle/
+│   │   └── com.knollsoft.Rectangle.plist
 │   ├── SublimeText/
 │   │   └── Overrides/
 │   │       └── Preferences (OSX).sublime-settings
@@ -162,6 +164,6 @@ optional arguments:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-60 directories, 64 files
+61 directories, 65 files
 ```
 <!-- END TREE -->
