@@ -8,7 +8,7 @@ esbenp.prettier-vscode
 formulahendry.auto-close-tag
 formulahendry.auto-complete-tag
 formulahendry.auto-rename-tag
-golang.Go
+golang.go
 James-Yu.latex-workshop
 ms-python.python
 mubaidr.vuejs-extension-pack
