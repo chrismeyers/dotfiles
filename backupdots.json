@@ -1,5 +1,10 @@
 {
     "Mac": {
+        "__backup__": [
+            {"name": "Homebrew packages", "script": "/Users/chris/dotfiles/Mac/Homebrew/dump.sh"},
+            {"name": "VS Code extensions", "script": "/Users/chris/dotfiles/Common/vscode/dump.sh"}
+        ],
+
         ".aliases": ["/Users/chris", "/Users/chris/dotfiles/Mac/bash"],
         ".bashrc": ["/Users/chris", "/Users/chris/dotfiles/Mac/bash"],
         ".bash_profile": ["/Users/chris", "/Users/chris/dotfiles/Mac/bash"],
@@ -34,6 +39,12 @@
         ".gitignore_global": ["/Users/chris", "/Users/chris/dotfiles/Mac/Git"]
     },
     "Linux": {
+        "__backup__": [
+            {"name": "GNOME terminal profiles", "script": "/home/chris/dotfiles/Linux/terminals/gnome/dump.sh"},
+            {"name": "Tilix terminal profiles", "script": "/home/chris/dotfiles/Linux/terminals/tilix/dump.sh"},
+            {"name": "VS Code extensions", "script": "/home/chris/dotfiles/Common/vscode/dump.sh"}
+        ],
+
         ".aliases": ["/home/chris", "/home/chris/dotfiles/Linux/bash"],
         ".bashrc": ["/home/chris", "/home/chris/dotfiles/Linux/bash"],
 
@@ -74,6 +85,10 @@
         ".gitignore_global": ["/home/chris", "/home/chris/dotfiles/Linux/Git"]
     },
     "Windows": {
+        "__backup__": [
+            {"name": "VS Code extensions", "script": "C:\\Users\\Chris\\dotfiles\\Common\\vscode\\dump.bat"}
+        ],
+
         ".vimrc": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\vim"],
         ".gvimrc": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\vim"],
         ".ideavimrc": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\vim"],

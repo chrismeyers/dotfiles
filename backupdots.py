@@ -61,24 +61,22 @@ def perform_backup():
     if file_num == 1:
         print('Nothing to backup.')
 
-    if _platform == PlatformType.MAC:
-        print('Dumping installed homebrew packages...', end='', flush=True)
-        os.system(os.path.join(_backup_dir_root, 'Mac/Homebrew/dump.sh'))
-        print('brew bundle dump complete!')
-    elif _platform == PlatformType.LINUX:
-        print('Dumping terminal profiles...', end='', flush=True)
-        os.system(os.path.join(_backup_dir_root, 'Linux/terminals/gnome/dump.sh'))
-        os.system(os.path.join(_backup_dir_root, 'Linux/terminals/tilix/dump.sh'))
-        print('profile dumps complete!')
 
-    print('Dumping VSCode extensions...', end='', flush=True)
-    if _platform == PlatformType.MAC or _platform == PlatformType.LINUX:
-        os.system(os.path.join(_backup_dir_root,
-                               'Common/vscode/dump.sh'))
-    elif _platform == PlatformType.WINDOWS:
-        os.system(os.path.join(_backup_dir_root,
-                               'Common/vscode/dump.bat'))
-    print('extension dump complete!')
+    if _backup_scripts is not None:
+        for item in _backup_scripts:
+            name = item.get('name', 'Unknown')
+            script = item.get("script", None)
+
+            if script is None:
+                print(f'WARNING: Missing script key for "{name}" {_backup_config_key} entry')
+                continue
+            elif not os.path.exists(script):
+                print(f'WARNING: {script} does not exist')
+                continue
+
+            print(f'Dumping {name}...', end='', flush=True)
+            os.system(script)
+            print(f'complete.')
 
 
 def perform_restore():
@@ -329,6 +327,8 @@ if __name__ == '__main__':
     _tree_modes = ['print', 'inject']
     _platforms = ['Mac', 'Linux', 'Windows']
     _platform = PlatformType.UNKNOWN
+    _backup_config_key = '__backup__'
+    _backup_scripts = None
 
     arg_parser = argparse.ArgumentParser(
         description='Backup or restore configuration files.')
@@ -374,6 +374,8 @@ if __name__ == '__main__':
     _platform = determine_platform()
     try:
         _backup_data = _all_backup_data[platform_enum_to_string(_platform)]
+        # Extract backup scripts so they don't interfere with normal processing
+        _backup_scripts = _backup_data.pop(_backup_config_key, None)
     except KeyError:
         print(f'ERROR: Configuration file "{_backup_config_file}" does not contain platform {platform_enum_to_string(_platform)}.')
         sys.exit(1)
