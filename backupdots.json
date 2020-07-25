@@ -25,6 +25,8 @@
 
         "settings.json" : ["/Users/chris/Library/Application Support/Code/User", "/Users/chris/dotfiles/Common/vscode"],
 
+        "com.knollsoft.Rectangle.plist": ["/Users/chris/Library/Preferences", "/Users/chris/dotfiles/Mac/Rectangle"],
+
         "nvim": ["/Users/chris/.config", "/Users/chris/dotfiles/Common/neovim"],
         "alacritty": ["/Users/chris/.config", "/Users/chris/dotfiles/Mac/terminals"],
 
