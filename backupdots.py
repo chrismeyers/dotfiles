@@ -73,8 +73,11 @@ def perform_backup():
                 continue
 
             print(f'Dumping {name}...', end='', flush=True)
-            os.system(script)
-            print(f'complete.')
+            exit_code = os.system(script)
+            if exit_code == 0:
+                print('complete.')
+            else:
+                print(f'script exited with code {exit_code}.')
 
 
 def perform_restore():
