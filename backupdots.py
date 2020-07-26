@@ -49,12 +49,10 @@ def perform_backup():
                 os.makedirs(_backup_data[file][1], mode=0o755)
             if not os.path.isdir(orig_file):
                 backup_type = 'file'
-                shutil.copy(os.path.join(
-                    _backup_data[file][0], file), _backup_data[file][1])
+                shutil.copy(os.path.join(_backup_data[file][0], file), _backup_data[file][1])
             else:
                 backup_type = 'directory'
-                shutil.copytree(os.path.join(_backup_data[file][0], file), os.path.join(
-                    _backup_data[file][1], file))
+                shutil.copytree(os.path.join(_backup_data[file][0], file), os.path.join(_backup_data[file][1], file))
             print(f'{str(file_num).rjust(3)} Copied {backup_type}: {file} to {_backup_data[file][1]}')
             file_num += 1
 
@@ -100,12 +98,14 @@ def perform_restore():
                         continue
                 except OSError as e:
                     more_info = ' Try running this command as an administrator.' if _platform == PlatformType.WINDOWS else ''
-                    print(f'    WARNING: {str(e).capitalize()}.{more_info}')
+                    print(f'{"".rjust(4)}WARNING: {str(e).capitalize()}.{more_info}')
                     continue
-                print(f'{str(file_num).rjust(3)} Linked {"directory" if os.path.isdir(backup_file) else "file"}: {file} to {_backup_data[file][0]}')
+
+                link_type = 'directory' if os.path.isdir(backup_file) else 'file'
+                print(f'{str(file_num).rjust(3)} Linked {link_type}: {file} to {_backup_data[file][0]}')
                 file_num += 1
         else:
-            print(f'    WARNING: {_backup_data[file][0]} does not exist, skipping.')
+            print(f'{"".rjust(4)}WARNING: {_backup_data[file][0]} does not exist, skipping.')
 
     if file_num == 1:
         print('Nothing to restore.')
@@ -115,8 +115,7 @@ def perform_cleanup():
     # Removes all *.{_backup_file_ext} files generated from perform_restore().
     file_num = 1
     for file in _backup_data:
-        current_file = os.path.join(
-            _backup_data[file][0], f'{file}.{_backup_file_ext}')
+        current_file = os.path.join(_backup_data[file][0], f'{file}.{_backup_file_ext}')
 
         if os.path.exists(current_file):
             if os.path.isfile(current_file) or os.path.islink(current_file):
@@ -134,7 +133,7 @@ def perform_cleanup():
                     if not sudo_command(f'rm -rf {current_file}'):
                         continue
             else:
-                print(f'    WARNING: {current_file} is not a file, symlink, or directory. Skipping.')
+                print(f'{"".rjust(4)}WARNING: {current_file} is not a file, symlink, or directory. Skipping.')
                 continue
 
             print(f'{str(file_num).rjust(3)} Removed {cleanup_type}: {current_file}')
@@ -184,7 +183,6 @@ def generate_tree():
     # command. If the max depth ever becomes an issue, parsing the output
     # from the tree command (use JSON output flag?) or drawing a custom tree
     # may be needed.
-
     gitignored = []
     gitignore_path = f'{_backup_dir_root}/.gitignore'
     if os.path.exists(gitignore_path):
@@ -273,7 +271,7 @@ def sudo_command(cmd):
         exit_code = os.system(f'sudo {cmd}')
         success = True if exit_code == 0 else False
     else:
-        print(f'    WARNING: Unable to execute command `{cmd}` as a super user.')
+        print(f'{"".rjust(4)}WARNING: Unable to execute command `{cmd}` as a super user.')
 
     return success
 
@@ -332,33 +330,50 @@ if __name__ == '__main__':
 
     arg_parser = argparse.ArgumentParser(
         description='Backup or restore configuration files.')
-    arg_parser.add_argument('-p', '--platform',
-                            help='overrides the current platform to determine which set of files to use. '
-                            'WARNING: This should only be used if the determined platform is wrong!',
-                            choices=_platforms,
-                            type=str.capitalize)
-    arg_parser.add_argument('-b', '--backup',
-                            help='perform a backup based on files in the config file (default: backupdots.json)',
-                            action='store_true')
-    arg_parser.add_argument('-r', '--restore',
-                            help='perform a restore based on files in the config file (default: backupdots.json)',
-                            action='store_true')
-    arg_parser.add_argument('-c', '--cleanup',
-                            help=f'removes *.{_backup_file_ext} files',
-                            action='store_true')
-    arg_parser.add_argument('-u', '--unlink',
-                            help='removes all symlinks for the given platform',
-                            action='store_true')
-    arg_parser.add_argument('-t', '--tree',
-                            help=f'generates a directory tree and prints the output to stdout or injects the '
-                            'output into README.md',
-                            choices=_tree_modes,
-                            type=str.lower)
-    arg_parser.add_argument('--check-platform',
-                            help='checks which platform would be run',
-                            action='store_true')
-    arg_parser.add_argument('--config-file',
-                            help='name of a config file to override backupdots.json')
+
+    arg_parser.add_argument(
+        '-p', '--platform',
+        help='overrides the current platform to determine which set of files to use. '
+        'WARNING: This should only be used if the determined platform is wrong!',
+        choices=_platforms,
+        type=str.capitalize)
+
+    arg_parser.add_argument(
+        '-b', '--backup',
+        help='perform a backup based on files in the config file (default: backupdots.json)',
+        action='store_true')
+
+    arg_parser.add_argument(
+        '-r', '--restore',
+        help='perform a restore based on files in the config file (default: backupdots.json)',
+        action='store_true')
+
+    arg_parser.add_argument(
+        '-c', '--cleanup',
+        help=f'removes *.{_backup_file_ext} files',
+        action='store_true')
+
+    arg_parser.add_argument(
+        '-u', '--unlink',
+        help='removes all symlinks for the given platform',
+        action='store_true')
+
+    arg_parser.add_argument(
+        '-t', '--tree',
+        help=f'generates a directory tree and prints the output to stdout or injects the '
+        'output into README.md',
+        choices=_tree_modes,
+        type=str.lower)
+
+    arg_parser.add_argument(
+        '--check-platform',
+        help='checks which platform would be run',
+        action='store_true')
+
+    arg_parser.add_argument(
+        '--config-file',
+        help='name of a config file to override backupdots.json')
+
     _args = arg_parser.parse_args()
 
     if _args.config_file:
