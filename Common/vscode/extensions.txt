@@ -9,6 +9,7 @@ formulahendry.auto-close-tag
 formulahendry.auto-rename-tag
 golang.go
 James-Yu.latex-workshop
+matt-meyers.vscode-dbml
 ms-python.python
 ms-vsliveshare.vsliveshare
 mubaidr.vuejs-extension-pack
