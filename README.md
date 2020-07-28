@@ -1,8 +1,8 @@
 # dotfiles
 My personal configuration files.
 
-These files are backed up and can be restored using backupdots.py in conjunction
-with backupdots.json.
+These files are backed up and can be restored using `backupdots.py` in conjunction
+with `backupdots.json`.
 
 ```
 usage: backupdots.py [-h] [-p {Mac,Linux,Windows}] [-b] [-r] [-c] [-u]
@@ -119,6 +119,8 @@ optional arguments:
 │   │   ├── Brewfile
 │   │   ├── dump.sh*
 │   │   └── restore.sh*
+│   ├── Rectangle/
+│   │   └── com.knollsoft.Rectangle.plist
 │   ├── SublimeText/
 │   │   └── Overrides/
 │   │       └── Preferences (OSX).sublime-settings
@@ -148,6 +150,6 @@ optional arguments:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-53 directories, 60 files
+54 directories, 61 files
 ```
 <!-- END TREE -->
