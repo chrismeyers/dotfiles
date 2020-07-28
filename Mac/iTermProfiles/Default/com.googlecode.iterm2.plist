@@ -257,6 +257,8 @@
 	<false/>
 	<key>DisableFullscreenTransparency</key>
 	<true/>
+	<key>DisableWindowSizeSnap</key>
+	<integer>1</integer>
 	<key>EnableRendezvous</key>
 	<false/>
 	<key>FocusFollowsMouse</key>
@@ -357,19 +359,19 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>52 83 224 275 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>5350 258 620 392 5120 -870 1080 1897 </string>
+	<string>3088 1938 620 392 2438 1440 1920 1057 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>369 250 918 452 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>3400 1440 955 1057 2438 1440 1920 1057 </string>
+	<string>3398 1440 960 1057 2438 1440 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>2635 1479 1620 749 2438 1440 1920 1057 </string>
+	<string>2723 419 1620 749 1680 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>2502 1603 1620 749 2438 1440 1920 1057 </string>
+	<string>2640 1550 1620 749 2438 1440 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>2619 429 1620 749 1680 0 3440 1417 </string>
+	<string>2519 1469 1620 749 2438 1440 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>2227 589 1620 749 1680 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
@@ -2373,17 +2375,19 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.6</string>
-		<string>3.3.8</string>
-		<string>3.3.2</string>
-		<string>3.3.1</string>
-		<string>3.3.3</string>
 		<string>3.3.5</string>
-		<string>3.3.7</string>
-		<string>3.3.9</string>
-		<string>3.3.0</string>
-		<string>3.2.9</string>
+		<string>3.3.3</string>
+		<string>3.3.1</string>
+		<string>3.3.8</string>
+		<string>3.3.12</string>
+		<string>3.3.6</string>
+		<string>3.3.11</string>
 		<string>3.3.4</string>
+		<string>3.3.2</string>
+		<string>3.3.9</string>
+		<string>3.2.9</string>
+		<string>3.3.0</string>
+		<string>3.3.7</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
@@ -2401,7 +2405,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>052894D1-7398-4072-8121-A8D725A1AB7B</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>382</integer>
+	<integer>474</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>586793036.89451003</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -3190,11 +3194,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-05-18T14:14:46Z</date>
+	<date>2020-07-28T15:00:50Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
-	<integer>2589020229</integer>
+	<integer>2696314122</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -3267,7 +3271,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.9</string>
+	<string>3.3.12</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
