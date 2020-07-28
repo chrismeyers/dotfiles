@@ -257,6 +257,8 @@
 	<false/>
 	<key>DisableFullscreenTransparency</key>
 	<true/>
+	<key>DisableWindowSizeSnap</key>
+	<integer>1</integer>
 	<key>EnableRendezvous</key>
 	<false/>
 	<key>FocusFollowsMouse</key>
@@ -363,13 +365,13 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>688 554 606 456 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>557 476 620 392 0 0 1680 1027 </string>
+	<string>556 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>276 77 618 521 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>501 474 918 512 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>56 34 1620 735 0 0 1680 1027 </string>
+	<string>52 2 1628 511 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>62 486 899 426 0 0 1680 1028 </string>
 	<key>NeverWarnAboutShortLivedSessions_3127A694-5EB3-4F20-A97F-A007AF3E7FCE</key>
@@ -1360,13 +1362,15 @@
 	<array>
 		<string>3.3.6</string>
 		<string>3.3.8</string>
-		<string>3.3.0</string>
+		<string>3.3.11</string>
+		<string>3.3.12</string>
+		<string>3.3.4</string>
 		<string>3.3.3</string>
 		<string>3.3.7</string>
 		<string>3.3.9</string>
 		<string>3.2.9</string>
+		<string>3.3.0</string>
 		<string>3.3.2</string>
-		<string>3.3.4</string>
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
@@ -1377,7 +1381,7 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{562, 929}</string>
+		<string>{720, 590}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -1392,7 +1396,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>487561697.68850601</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>141</integer>
+	<integer>162</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>586830661.96559894</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -2191,9 +2195,9 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-06-04T01:19:46Z</date>
+	<date>2020-07-28T03:36:24Z</date>
 	<key>SUUpdateGroupIdentifier</key>
-	<integer>3753088012</integer>
+	<integer>3683133333</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -2264,7 +2268,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.9</string>
+	<string>3.3.12</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
