@@ -59,7 +59,6 @@ def perform_backup():
     if file_num == 1:
         print('Nothing to backup.')
 
-
     if _backup_scripts is not None:
         for item in _backup_scripts:
             name = item.get('name', 'Unknown')
