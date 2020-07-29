@@ -32,6 +32,7 @@
 | `<prefix> <ctrl-o>`  | Move all panes clockwise |
 | `<prefix> M-<arrow>` | Resize current pane based on which `<arrow>` key was pressed |
 | `<prefix> t`         | Show clock |
+| `<prefix> q`         | Show pane numbers |
 | `<prefix> :`         | Launch tmux prompt |
 | `<prefix> ?`         | List all shortcuts |
 
