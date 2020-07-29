@@ -67,5 +67,8 @@
     "<C-f>": false
   },
 
+  "python.languageServer": "Microsoft",
+  "python.showStartPage": false,
+
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }
