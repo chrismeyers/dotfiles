@@ -40,3 +40,13 @@ These configuration files were originally created when using Ubuntu 18.04.1. Man
     + Python
       * [Repository](https://github.com/python/cpython)
       * [Installation Guide](https://github.com/chrismeyers/trumppet/blob/master/README.md#additional-information)
+
+  + Install [Oh My Zsh](https://ohmyz.sh/):
+    ```
+    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    ```
+
+  + Install [pyenv](https://github.com/pyenv/pyenv) with [pyenv installer](https://github.com/pyenv/pyenv-installer):
+    ```
+    curl https://pyenv.run | bash
+    ```
