@@ -56,7 +56,7 @@
 
         ".tmux.conf": ["/home/chris", "/home/chris/dotfiles/Common/tmux"],
 
-        ".pyenv_versions": ["/Users/chris", "/Users/chris/dotfiles/Common/misc"],
+        ".pyenv_versions": ["/home/chris", "/home/chris/dotfiles/Common/misc"],
 
         ".stalonetrayrc": ["/home/chris", "/home/chris/dotfiles/Linux/stalonetray"],
 
