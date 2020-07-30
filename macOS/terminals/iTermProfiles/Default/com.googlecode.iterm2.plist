@@ -361,7 +361,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
-	<string>490 335 799 459 0 0 1680 1027 </string>
+	<string>466 426 799 459 0 0 1680 1027 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>688 554 606 456 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
@@ -371,7 +371,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>501 474 918 512 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>52 2 1628 511 0 0 1680 1027 </string>
+	<string>52 0 1620 735 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>62 486 899 426 0 0 1680 1028 </string>
 	<key>NeverWarnAboutShortLivedSessions_3127A694-5EB3-4F20-A97F-A007AF3E7FCE</key>
@@ -1396,7 +1396,11 @@
 	<key>NoSyncLastTipTime</key>
 	<real>487561697.68850601</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>162</integer>
+	<integer>186</integer>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>1</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>586830661.96559894</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -2177,7 +2181,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/chris/dotfiles/Mac/terminals/iTermProfiles/Default</string>
+	<string>/Users/chris/dotfiles/macOS/terminals/iTermProfiles/Default</string>
 	<key>PromptOnQuit</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -2195,7 +2199,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-07-28T03:36:24Z</date>
+	<date>2020-07-29T22:03:24Z</date>
 	<key>SUUpdateGroupIdentifier</key>
 	<integer>3683133333</integer>
 	<key>SUUpdateRelaunchingMarker</key>
