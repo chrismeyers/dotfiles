@@ -367,7 +367,7 @@
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>3398 1440 960 1057 2438 1440 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>2723 419 1620 749 1680 0 3440 1417 </string>
+	<string>2615 1670 1620 749 2438 1440 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>2640 1550 1620 749 2438 1440 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -2405,7 +2405,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>052894D1-7398-4072-8121-A8D725A1AB7B</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>474</integer>
+	<integer>477</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>586793036.89451003</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -3176,7 +3176,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/chris/dotfiles/Mac/iTermProfiles/Default</string>
+	<string>/Users/chris/dotfiles/macOS/iTermProfiles/Default</string>
 	<key>PromptOnQuit</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -3194,7 +3194,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-07-28T15:00:50Z</date>
+	<date>2020-07-29T15:00:51Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>

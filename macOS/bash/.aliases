@@ -100,8 +100,8 @@ alias pypaths='/usr/bin/env python3 -c "import sys; import os; print(os.linesep.
 alias pypibuild='rm -rf dist/*; rm -rf build/*; /usr/bin/env python3 setup.py bdist_wheel sdist'
 alias pypiupload='twine upload dist/*'
 alias xdb='echo "?XDEBUG_SESSION_START=PHPSTORM"'
-alias msadev='$HOME/dotfiles/Mac/bash/scripts/remote.sh msa /var/www/msa/trunk'
-alias modev='$HOME/dotfiles/Mac/bash/scripts/madoffice.sh'
+alias msadev='$HOME/dotfiles/macOS/bash/scripts/remote.sh msa /var/www/msa/trunk'
+alias modev='$HOME/dotfiles/macOS/bash/scripts/madoffice.sh'
 
 #============= Web stuff ============
 # MAMP

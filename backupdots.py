@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 '''
-usage: backupdots.py [-h] [-p {Mac,Linux,Windows}] [-b] [-r] [-c] [-u]
+usage: backupdots.py [-h] [-p {macOS,Linux,Windows}] [-b] [-r] [-c] [-u]
                      [-t {print,inject}] [--check-platform]
                      [--config-file CONFIG_FILE]
 
@@ -9,7 +9,7 @@ Backup or restore configuration files.
 
 optional arguments:
   -h, --help            show this help message and exit
-  -p {Mac,Linux,Windows}, --platform {Mac,Linux,Windows}
+  -p {macOS,Linux,Windows}, --platform {macOS,Linux,Windows}
                         overrides the current platform to determine which set
                         of files to use. WARNING: This should only be used if
                         the determined platform is wrong!
@@ -269,7 +269,7 @@ def sudo_command(cmd):
     success = False
 
     # TODO: Handle permissions error on windows
-    if _platform == PlatformType.LINUX or _platform == PlatformType.MAC:
+    if _platform == PlatformType.LINUX or _platform == PlatformType.MACOS:
         exit_code = os.system(f'sudo {cmd}')
         success = True if exit_code == 0 else False
     else:
@@ -289,8 +289,8 @@ def determine_platform(force_actual=False):
 
     if platform_str == 'linux':
         platform_enum = PlatformType.LINUX
-    elif platform_str == 'mac' or platform_str == 'darwin':
-        platform_enum = PlatformType.MAC
+    elif platform_str == 'macos' or platform_str == 'darwin':
+        platform_enum = PlatformType.MACOS
     elif platform_str == "windows":
         platform_enum = PlatformType.WINDOWS
 
@@ -304,8 +304,8 @@ def determine_platform(force_actual=False):
 def platform_enum_to_string(platform_enum):
     if platform_enum == PlatformType.LINUX:
         return 'Linux'
-    elif platform_enum == PlatformType.MAC:
-        return 'Mac'
+    elif platform_enum == PlatformType.MACOS:
+        return 'macOS'
     elif platform_enum == PlatformType.WINDOWS:
         return 'Windows'
     else:
@@ -316,7 +316,7 @@ def platform_enum_to_string(platform_enum):
 class PlatformType(Enum):
     UNKNOWN = 0
     LINUX = 1
-    MAC = 2
+    MACOS = 2
     WINDOWS = 3
 
 
@@ -325,7 +325,7 @@ if __name__ == '__main__':
     _backup_config_file = sanitized_full_path(_backup_dir_root, 'backupdots.json')
     _backup_file_ext = 'orig'
     _tree_modes = ['print', 'inject']
-    _platforms = ['Mac', 'Linux', 'Windows']
+    _platforms = ['macOS', 'Linux', 'Windows']
     _platform = PlatformType.UNKNOWN
     _backup_config_key = '__backup__'
     _backup_scripts = None
@@ -337,8 +337,7 @@ if __name__ == '__main__':
         '-p', '--platform',
         help='overrides the current platform to determine which set of files to use. '
         'WARNING: This should only be used if the determined platform is wrong!',
-        choices=_platforms,
-        type=str.capitalize)
+        choices=_platforms)
 
     arg_parser.add_argument(
         '-b', '--backup',

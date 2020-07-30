@@ -5,7 +5,7 @@ These files are backed up and can be restored using `backupdots.py` in conjuncti
 with `backupdots.json`.
 
 ```
-usage: backupdots.py [-h] [-p {Mac,Linux,Windows}] [-b] [-r] [-c] [-u]
+usage: backupdots.py [-h] [-p {macOS,Linux,Windows}] [-b] [-r] [-c] [-u]
                      [-t {print,inject}] [--check-platform]
                      [--config-file CONFIG_FILE]
 
@@ -13,7 +13,7 @@ Backup or restore configuration files.
 
 optional arguments:
   -h, --help            show this help message and exit
-  -p {Mac,Linux,Windows}, --platform {Mac,Linux,Windows}
+  -p {macOS,Linux,Windows}, --platform {macOS,Linux,Windows}
                         overrides the current platform to determine which set
                         of files to use. WARNING: This should only be used if
                         the determined platform is wrong!
@@ -111,7 +111,7 @@ optional arguments:
 │       └── xfconf/
 │           └── xfce-perchannel-xml/
 │               └── xfce4-power-manager.xml
-├── Mac/
+├── macOS/
 │   ├── Git/
 │   │   ├── .gitconfig
 │   │   └── .gitignore_global
