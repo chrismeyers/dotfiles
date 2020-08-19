@@ -94,7 +94,7 @@ export JAVA_HOME=`/usr/libexec/java_home -v '1.8*'`
 export GOPATH="$HOME/Documents/Development/go"
 
 ### Set path variables
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/texinfo/bin:/usr/local/opt/gettext/bin:$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/tools:/opt/apache-maven-3.3.9/bin:$HOME/.composer/vendor/bin:$HOME/.pub-cache/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:$GOPATH/bin:$PATH"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/texinfo/bin:/usr/local/opt/gettext/bin:$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/tools:/opt/apache-maven-3.3.9/bin:$HOME/.composer/vendor/bin:$HOME/.pub-cache/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:$GOPATH/bin:$HOME/.cargo/bin:$PATH"
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
