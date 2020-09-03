@@ -93,7 +93,7 @@ export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 export GOPATH="$HOME/Documents/Development/go"
 
 ### Set path variables
-export PATH="$PYENV_ROOT/bin:$HOME/.local/bin:/usr/local/go/bin:$GOPATH/bin:/usr/lib/dart/bin:$HOME/.pub-cache/bin:$PATH"
+export PATH="$PYENV_ROOT/bin:$HOME/.local/bin:/usr/local/go/bin:$GOPATH/bin:/usr/lib/dart/bin:$HOME/.pub-cache/bin:$HOME/.poetry/bin:$PATH"
 export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
 
 # You may need to manually set your language environment
