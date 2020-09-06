@@ -49,7 +49,14 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export GOPATH="$HOME/Documents/Development/go"
 
 ### Set path variables
-export PATH="$PYENV_ROOT/bin:$HOME/.local/bin:/usr/local/go/bin:$GOPATH/bin:/usr/lib/dart/bin:$HOME/.pub-cache/bin:$HOME/.poetry/bin:$PATH"
+export PATH="$PYENV_ROOT/bin\
+:/usr/lib/dart/bin\
+:/usr/local/go/bin\
+:$GOPATH/bin\
+:$HOME/.local/bin\
+:$HOME/.pub-cache/bin\
+:$HOME/.poetry/bin\
+:$PATH"
 export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
 
 ### Shell optional behavior
