@@ -17,7 +17,6 @@ robertoachar.vscode-essentials-snippets
 rust-lang.rust
 sdras.vue-vscode-snippets
 teabyii.ayu
-tombonnike.vscode-status-bar-format-toggle
 VisualStudioExptTeam.vscodeintellicode
 vscode-icons-team.vscode-icons
 vscodevim.vim
