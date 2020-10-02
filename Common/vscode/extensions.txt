@@ -16,6 +16,7 @@ octref.vetur
 robertoachar.vscode-essentials-snippets
 rust-lang.rust
 sdras.vue-vscode-snippets
+streetsidesoftware.code-spell-checker
 teabyii.ayu
 VisualStudioExptTeam.vscodeintellicode
 vscode-icons-team.vscode-icons
