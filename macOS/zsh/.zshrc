@@ -90,10 +90,12 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 export PYTHONDONTWRITEBYTECODE=1
 export EDITOR="nvim"
 export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
-export JAVA_HOME=`/usr/libexec/java_home -v '1.8*'`
-export GOPATH="$HOME/Documents/Development/go"
 
 ### Set path variables
+export GOPATH="$HOME/Documents/Development/go"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
+export JAVA_HOME=`/usr/libexec/java_home -v '1.8*'`
 export PATH="$(brew --prefix coreutils)/libexec/gnubin\
 :/usr/local/bin\
 :/usr/local/sbin\
@@ -107,9 +109,8 @@ export PATH="$(brew --prefix coreutils)/libexec/gnubin\
 :$HOME/.pub-cache/bin\
 :$HOME/.local/bin\
 :$HOME/.poetry/bin\
+:$HOME/.cargo/bin\
 :$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
