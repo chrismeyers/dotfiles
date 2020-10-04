@@ -33,6 +33,9 @@ alias sa='source $HOME/.aliases'
 # Recursively get all the file extensions in the current directory.
 alias filetypes='find . -type f | perl -ne '"'"'print $1 if m/\.([^.\/]+)$/'"'"' | sort -u'
 
+# Easier PATH inspection
+alias prettypath='echo $PATH | tr ":" "\n" | nl'
+
 
 #=============== Admin ==============
 alias root='sudo -i'
