@@ -47,6 +47,7 @@ export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 ### Set path variables
 export GOPATH="$HOME/Documents/Development/go"
+export DENO_INSTALL="$HOME/.deno"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
 export JAVA_HOME=`/usr/libexec/java_home -v '1.8*'`
@@ -57,6 +58,7 @@ export PATH="$(brew --prefix coreutils)/libexec/gnubin\
 :/usr/local/opt/gettext/bin\
 :/Applications/Postgres.app/Contents/Versions/latest/bin\
 :$GOPATH/bin\
+:$DENO_INSTALL/bin\
 :$HOME/Library/Android/sdk/platform-tools\
 :$HOME/Library/Android/sdk/tools\
 :$HOME/.composer/vendor/bin\
