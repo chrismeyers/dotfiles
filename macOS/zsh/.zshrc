@@ -90,11 +90,16 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 export PYTHONDONTWRITEBYTECODE=1
 export EDITOR="nvim"
 export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
-export JAVA_HOME=`/usr/libexec/java_home -v '1.8*'`
-export GOPATH="$HOME/Documents/Development/go"
 
 ### Set path variables
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/texinfo/bin:/usr/local/opt/gettext/bin:$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/tools:/opt/apache-maven-3.3.9/bin:$HOME/.composer/vendor/bin:$HOME/.pub-cache/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:$GOPATH/bin:$HOME/.cargo/bin:$PATH"
+export GOPATH="$HOME/Documents/Development/go"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin\
+:/usr/local/bin\
+:/usr/local/sbin\
+:$GOPATH/bin\
+:$HOME/.composer/vendor/bin\
+:$HOME/.local/bin\
+:$PATH"
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -124,3 +129,9 @@ alias sz="source $HOME/.zshrc"
 
 ### Additional aliases
 source $HOME/.aliases
+
+### Pyenv setup
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+source $HOME/.pyenv_versions
