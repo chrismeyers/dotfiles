@@ -41,7 +41,8 @@ optional arguments:
 │   │       ├── Preferences.sublime-settings
 │   │       └── Python.sublime-settings
 │   ├── misc/
-│   │   └── .astylerc
+│   │   ├── .astylerc
+│   │   └── .pyenv_versions
 │   ├── neovim/
 │   │   └── nvim/
 │   │       └── init.vim
@@ -111,45 +112,45 @@ optional arguments:
 │       └── xfconf/
 │           └── xfce-perchannel-xml/
 │               └── xfce4-power-manager.xml
-├── macOS/
+├── Windows/
 │   ├── Git/
-│   │   ├── .gitconfig
-│   │   └── .gitignore_global
-│   ├── Homebrew/
-│   │   ├── Brewfile
-│   │   ├── dump.sh*
-│   │   └── restore.sh*
-│   ├── Rectangle/
-│   │   └── com.knollsoft.Rectangle.plist
-│   ├── SublimeText/
-│   │   └── Overrides/
-│   │       └── Preferences (OSX).sublime-settings
-│   ├── bash/
-│   │   ├── .aliases
-│   │   ├── .bash_profile
-│   │   ├── .bashrc
-│   │   └── scripts/
-│   │       ├── madoffice.sh*
-│   │       └── remote.sh*
-│   ├── fish/
-│   │   ├── aliases.fish
-│   │   ├── config.fish
-│   │   └── functions/
-│   │       ├── fish_prompt.fish
-│   │       └── remote.fish
-│   ├── iTermProfiles/
-│   │   └── Default/
-│   │       ├── com.googlecode.iterm2.plist
-│   │       └── iterm2_default.itermcolors
-│   └── zsh/
-│       └── .zshrc
-└── Windows/
+│   │   └── .gitconfig
+│   └── SublimeText/
+│       └── Overrides/
+│           └── Preferences (Windows).sublime-settings
+└── macOS/
     ├── Git/
-    │   └── .gitconfig
-    └── SublimeText/
-        └── Overrides/
-            └── Preferences (Windows).sublime-settings
+    │   ├── .gitconfig
+    │   └── .gitignore_global
+    ├── Homebrew/
+    │   ├── Brewfile
+    │   ├── dump.sh*
+    │   └── restore.sh*
+    ├── Rectangle/
+    │   └── com.knollsoft.Rectangle.plist
+    ├── SublimeText/
+    │   └── Overrides/
+    │       └── Preferences (OSX).sublime-settings
+    ├── bash/
+    │   ├── .aliases
+    │   ├── .bash_profile
+    │   ├── .bashrc
+    │   └── scripts/
+    │       ├── madoffice.sh*
+    │       └── remote.sh*
+    ├── fish/
+    │   ├── aliases.fish
+    │   ├── config.fish
+    │   └── functions/
+    │       ├── fish_prompt.fish
+    │       └── remote.fish
+    ├── iTermProfiles/
+    │   └── Default/
+    │       ├── com.googlecode.iterm2.plist
+    │       └── iterm2_default.itermcolors
+    └── zsh/
+        └── .zshrc
 
-54 directories, 61 files
+54 directories, 62 files
 ```
 <!-- END TREE -->
