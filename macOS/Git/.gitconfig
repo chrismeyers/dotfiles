@@ -14,7 +14,7 @@
 	helper = osxkeychain
 [user]
 	name = Chris Meyers
-	email = cm.02.93@gmail.com
+	email = chris@chrismeyers.info
 [push]
 	default = simple
 [pull]
