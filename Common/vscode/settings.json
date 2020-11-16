@@ -48,7 +48,7 @@
 
   // UI settings (Workbench)
   "workbench.colorTheme": "Ayu Mirage Bordered",
-  "workbench.iconTheme": "ayu",
+  "workbench.iconTheme": "vscode-icons",
 
   // Windows integrated terminal settings
   "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
@@ -70,5 +70,7 @@
   "python.languageServer": "Microsoft",
   "python.showStartPage": false,
 
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
+  "prettier.singleQuote": true
 }
