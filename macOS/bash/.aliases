@@ -101,7 +101,7 @@ alias jre='/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin
 alias pypaths='/usr/bin/env python3 -c "import sys; import os; print(os.linesep.join(sys.path))"'
 alias pypibuild='rm -rf dist/*; rm -rf build/*; /usr/bin/env python3 setup.py bdist_wheel sdist'
 alias pypiupload='twine upload dist/*'
-alias gbpurge='git branch --merged | grep -v "\*" | grep -v "master" | xargs -n 1 git branch -d'
+alias gbpurge='git branch --merged | grep -E -v "\*|master|main|stage|qa" | xargs -n 1 git branch -d'
 
 
 #============= Web stuff ============
