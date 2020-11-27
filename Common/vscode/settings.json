@@ -73,5 +73,7 @@
 
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 
-  "prettier.singleQuote": true
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all"
 }
