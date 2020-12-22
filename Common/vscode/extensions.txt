@@ -11,6 +11,7 @@ formulahendry.auto-rename-tag
 golang.go
 James-Yu.latex-workshop
 ms-python.python
+ms-toolsai.jupyter
 mubaidr.vuejs-extension-pack
 octref.vetur
 robertoachar.vscode-essentials-snippets
