@@ -1,11 +1,9 @@
 # dotfiles
 My personal configuration files.
 
-These files are backed up and can be restored using `backupdots.py` in conjunction
-with `backupdots.json`.
+These files are backed up and can be restored using `backupdots.py` in conjunction with `backupdots.json`.
 
-Make sure to clone this repository with the `--recursive` flag to include all
-submodules.
+Make sure to clone this repository with the `--recursive` flag to include all submodules.
 
 ```
 usage: backupdots.py [-h] [-p {macOS,Linux,Windows}] [-b] [-r] [-c] [-u]
