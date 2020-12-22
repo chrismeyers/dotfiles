@@ -48,7 +48,7 @@ export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 ### Set path variables
 export GOPATH="$HOME/Documents/Development/go"
 export DENO_INSTALL="$HOME/.deno"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
 export JAVA_HOME=`/usr/libexec/java_home -v '1.8*'`
 export PATH="$(brew --prefix coreutils)/libexec/gnubin\
