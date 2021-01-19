@@ -41,8 +41,7 @@ optional arguments:
 │   │       ├── Preferences.sublime-settings
 │   │       └── Python.sublime-settings
 │   ├── misc/
-│   │   ├── .astylerc
-│   │   └── .pyenv_versions
+│   │   └── .astylerc
 │   ├── neovim/
 │   │   └── nvim/
 │   │       └── init.vim
@@ -151,6 +150,6 @@ optional arguments:
     └── zsh/
         └── .zshrc
 
-54 directories, 62 files
+54 directories, 61 files
 ```
 <!-- END TREE -->

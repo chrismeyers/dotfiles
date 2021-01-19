@@ -22,8 +22,6 @@
 
         ".tmux.conf": ["/Users/chris", "/Users/chris/dotfiles/Common/tmux"],
 
-        ".pyenv_versions": ["/Users/chris", "/Users/chris/dotfiles/Common/misc"],
-
         "Package Control.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Common/SublimeText/UserSettings"],
         "Preferences.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Common/SublimeText/UserSettings"],
         "Python.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Common/SublimeText/UserSettings"],
