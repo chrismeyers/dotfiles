@@ -37,8 +37,7 @@ optional arguments:
 .
 ├── Common/
 │   ├── misc/
-│   │   ├── .astylerc
-│   │   └── .pyenv_versions
+│   │   └── .astylerc
 │   ├── neovim/
 │   │   └── nvim/
 │   │       └── init.vim
