@@ -69,7 +69,12 @@ source $HOME/.aliases
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
-source $HOME/.pyenv_versions
+
+# Specifies global Python versions. The order of the versions will determine the
+# priority of the version. Running `python` will invoke the first version given
+# to this command. Running `python2` or `python3` will run the first version of
+# 2.X.X or 3.X.X in the version list.
+pyenv global 3.9.0 2.7.18
 
 ### Node Version Manager setup
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
