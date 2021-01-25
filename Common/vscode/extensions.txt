@@ -19,6 +19,7 @@ rust-lang.rust
 sdras.vue-vscode-snippets
 streetsidesoftware.code-spell-checker
 teabyii.ayu
+tombonnike.vscode-status-bar-format-toggle
 VisualStudioExptTeam.vscodeintellicode
 vscode-icons-team.vscode-icons
 vscodevim.vim
