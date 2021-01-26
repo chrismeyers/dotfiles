@@ -48,10 +48,8 @@ export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 ### Set path variables
 export GOPATH="$HOME/Documents/Development/go"
 export DENO_INSTALL="$HOME/.deno"
-export MANPATH="/opt/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
-export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin\
-:/opt/homebrew/bin\
+export PATH="/opt/homebrew/bin\
 :/usr/local/bin\
 :/usr/local/sbin\
 :/usr/local/opt/texinfo/bin\
