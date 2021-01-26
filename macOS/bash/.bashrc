@@ -40,7 +40,7 @@ export HISTSIZE=50000
 
 ### Set environment variables
 export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
+export LSCOLORS=ExGxBxDxCxegedabagacad
 export PYTHONDONTWRITEBYTECODE=1
 export EDITOR="nvim"
 export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
