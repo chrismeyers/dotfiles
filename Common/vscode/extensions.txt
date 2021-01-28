@@ -2,6 +2,7 @@ christian-kohler.npm-intellisense
 christian-kohler.path-intellisense
 dariofuzinato.vue-peek
 dbaeumer.vscode-eslint
+dnicolson.binary-plist
 eg2.vscode-npm-script
 esbenp.prettier-vscode
 formulahendry.auto-close-tag
@@ -10,6 +11,7 @@ golang.go
 James-Yu.latex-workshop
 matt-meyers.vscode-dbml
 ms-python.python
+ms-toolsai.jupyter
 ms-vsliveshare.vsliveshare
 mubaidr.vuejs-extension-pack
 octref.vetur
