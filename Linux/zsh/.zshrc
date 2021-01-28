@@ -128,7 +128,7 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias sz="source $HOME/.zshrc"
+alias sz="exec zsh"
 
 ### Additional aliases
 source $HOME/.aliases
