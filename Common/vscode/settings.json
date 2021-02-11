@@ -42,6 +42,11 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
+  "[html]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
   // OS File system interaction (File Explorer)
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
