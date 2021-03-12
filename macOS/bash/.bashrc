@@ -48,8 +48,7 @@ export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 ### Set path variables
 export GOPATH="$HOME/Documents/Development/go"
-export PATH="$(brew --prefix coreutils)/libexec/gnubin\
-:/usr/local/bin\
+export PATH="/usr/local/bin\
 :/usr/local/sbin\
 :$GOPATH/bin\
 :$HOME/.composer/vendor/bin\

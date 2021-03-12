@@ -81,6 +81,11 @@ git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/%{$git_status_color%}\1%{$reset_color%}/"
 }
 
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}
+
 PROMPT='%n on %{$fg[red]%}%m%{$reset_color%} in [%~] $(git_branch)
  > '
 
@@ -93,8 +98,7 @@ export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 ### Set path variables
 export GOPATH="$HOME/Documents/Development/go"
-export PATH="$(brew --prefix coreutils)/libexec/gnubin\
-:/usr/local/bin\
+export PATH="/usr/local/bin\
 :/usr/local/sbin\
 :$GOPATH/bin\
 :$HOME/.composer/vendor/bin\
