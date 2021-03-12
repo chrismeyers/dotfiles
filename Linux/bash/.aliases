@@ -60,7 +60,7 @@ alias dots='cd $HOME/dotfiles'
 alias dl='cd $HOME/Downloads'
 alias sublconfig='cd "$HOME/.config/sublime-text-3/Packages/User"'
 alias capdev='cd $HOME/.captain/headproxy'
-alias gbpurge='git branch --merged | grep -E -v "\*|master|main|stage|qa" | xargs -n 1 git branch -d'
+alias gbpurge='git branch --merged | grep -E -v "\*|master|main|develop|stage|qa" | xargs -n 1 git branch -d'
 
 
 #============ Programming ===========
