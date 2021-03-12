@@ -65,58 +65,6 @@ optional arguments:
 │       ├── restore.bat
 │       ├── restore.sh*
 │       └── settings.json
-├── Linux/
-│   ├── GNOMETerminal/
-│   │   ├── Default.dconf
-│   │   ├── dump.sh*
-│   │   └── load.sh*
-│   ├── Git/
-│   │   ├── .gitconfig
-│   │   └── .gitignore_global
-│   ├── SublimeText/
-│   │   └── Overrides/
-│   │       └── Preferences (Linux).sublime-settings
-│   ├── Wallpapers/
-│   │   ├── moon_mower.jpg
-│   │   ├── moon_mower.png
-│   │   └── ruby_beach.jpg
-│   ├── bash/
-│   │   ├── .aliases
-│   │   └── .bashrc
-│   ├── compton/
-│   │   └── compton.conf
-│   ├── dunst/
-│   │   └── dunstrc
-│   ├── fontconfig/
-│   │   └── conf.d/
-│   │       └── 10-symbols.conf
-│   ├── i3/
-│   │   └── config
-│   ├── i3lock/
-│   │   └── lock.sh*
-│   ├── i3status/
-│   │   └── config
-│   ├── polybar/
-│   │   ├── config
-│   │   └── launch.sh*
-│   ├── rofi/
-│   │   ├── config
-│   │   ├── material.rasi
-│   │   └── sidetab.rasi
-│   ├── stalonetray/
-│   │   └── .stalonetrayrc
-│   ├── systemd/
-│   │   └── i3lock.service
-│   └── xfce4/
-│       └── xfconf/
-│           └── xfce-perchannel-xml/
-│               └── xfce4-power-manager.xml
-├── Windows/
-│   ├── Git/
-│   │   └── .gitconfig
-│   └── SublimeText/
-│       └── Overrides/
-│           └── Preferences (Windows).sublime-settings
 └── macOS/
     ├── Git/
     │   ├── .gitconfig
@@ -150,6 +98,6 @@ optional arguments:
     └── zsh/
         └── .zshrc
 
-54 directories, 61 files
+29 directories, 34 files
 ```
 <!-- END TREE -->
