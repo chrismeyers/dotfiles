@@ -50,6 +50,7 @@ export GOPATH="$HOME/Documents/Development/go"
 export DENO_INSTALL="$HOME/.deno"
 export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
 export PATH="/opt/homebrew/bin\
+:/opt/homebrew/sbin\
 :/usr/local/bin\
 :/usr/local/sbin\
 :/usr/local/opt/texinfo/bin\
