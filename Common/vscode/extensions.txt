@@ -1,7 +1,6 @@
 christian-kohler.npm-intellisense
 christian-kohler.path-intellisense
 dariofuzinato.vue-peek
-Dart-Code.dart-code
 dbaeumer.vscode-eslint
 dnicolson.binary-plist
 eg2.vscode-npm-script
