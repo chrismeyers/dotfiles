@@ -52,6 +52,11 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
+  "[yaml]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+
   // OS File system interaction (File Explorer)
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
@@ -83,10 +88,6 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 
   "prettier.singleQuote": true,
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
-  ]
+
+  "yaml.format.singleQuote": true
 }

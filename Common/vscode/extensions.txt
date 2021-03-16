@@ -1,3 +1,4 @@
+42Crunch.vscode-openapi
 christian-kohler.npm-intellisense
 christian-kohler.path-intellisense
 dariofuzinato.vue-peek
@@ -15,6 +16,7 @@ ms-toolsai.jupyter
 ms-vsliveshare.vsliveshare
 mubaidr.vuejs-extension-pack
 octref.vetur
+redhat.vscode-yaml
 robertoachar.vscode-essentials-snippets
 sdras.vue-vscode-snippets
 streetsidesoftware.code-spell-checker
