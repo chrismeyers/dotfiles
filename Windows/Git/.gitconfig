@@ -9,7 +9,7 @@
 [core]
 	autocrlf = true
 [credential]
-	helper = manager
+	helper = manager-core
 [user]
 	name = Chris Meyers
 	email = chris@chrismeyers.info
