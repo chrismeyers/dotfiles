@@ -8,10 +8,11 @@
 | `tmux kill-server`         | Resets all current sessions |
 
 ## Copy/Paste
-| OS    | Instructions |
-| ----- | ------------ |
-| Linux | Hold `<shift>` and select text with cursor, `<ctrl-shift-c>`, `<ctrl-shift-v>` |
-| macOS | Hold `<option>` and select text with cursor, `<cmd-c>`, `<cmd-v>` |
+| Interface | OS    | Instructions |
+| --------- | ----- | ------------ |
+| Mouse     | Linux | Hold `<shift>` and select text with cursor, `<ctrl-shift-c>` to copy, `<ctrl-shift-v>` to paste |
+|           | macOS | Hold `<option>` and select text with cursor, `<cmd-c>` to copy, `<cmd-v>` to paste |
+| Keyboard  | N/A   | Press `<prefix> C-[` to enter copy mode, `hjkl` or `<arrow>` to navigate, `v` for free-form selection, `V` to select the entire line, `r` to toggle rectangle selection, `y` to copy selected text, `q` to exit copy mode, `<prefix> C-]` to paste |
 
 ## Common shortcuts
 | Hotkey               | Description |
