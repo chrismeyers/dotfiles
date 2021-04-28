@@ -2,7 +2,8 @@
     "macOS": {
         "__backup__": [
             {"name": "Homebrew packages", "script": "/Users/chris/dotfiles/macOS/Homebrew/dump.sh"},
-            {"name": "VS Code extensions", "script": "/Users/chris/dotfiles/Common/vscode/dump.sh"}
+            {"name": "VS Code extensions", "script": "/Users/chris/dotfiles/Common/vscode/dump.sh"},
+            {"name": "Rectangle config", "script": "/Users/chris/dotfiles/macOs/Rectangle/backup.sh"}
         ],
 
         ".aliases": ["/Users/chris", "/Users/chris/dotfiles/macOS/bash"],

@@ -36,16 +36,16 @@ optional arguments:
 ```
 .
 ├── Common/
-│   ├── misc/
-│   │   └── .astylerc
-│   ├── neovim/
-│   │   └── nvim/
-│   │       └── init.vim
 │   ├── SublimeText/
 │   │   └── UserSettings/
 │   │       ├── Package Control.sublime-settings
 │   │       ├── Preferences.sublime-settings
 │   │       └── Python.sublime-settings
+│   ├── misc/
+│   │   └── .astylerc
+│   ├── neovim/
+│   │   └── nvim/
+│   │       └── init.vim
 │   ├── tmux/
 │   │   └── .tmux.conf
 │   ├── vim/
@@ -57,8 +57,8 @@ optional arguments:
 │   │   │           └── start/
 │   │   │               ├── ayu-vim/
 │   │   │               └── vim-commentary/
-│   │   ├── vimfiles -> .vim/
-│   │   └── .vimrc
+│   │   ├── .vimrc
+│   │   └── vimfiles -> .vim/
 │   └── vscode/
 │       ├── dump.bat
 │       ├── dump.sh*
@@ -67,6 +67,16 @@ optional arguments:
 │       ├── restore.sh*
 │       └── settings.json
 ├── Linux/
+│   ├── Git/
+│   │   ├── .gitconfig
+│   │   └── .gitignore_global
+│   ├── SublimeText/
+│   │   └── Overrides/
+│   │       └── Preferences (Linux).sublime-settings
+│   ├── Wallpapers/
+│   │   ├── moon_mower.jpg
+│   │   ├── moon_mower.png
+│   │   └── ruby_beach.jpg
 │   ├── bash/
 │   │   ├── .aliases
 │   │   └── .bashrc
@@ -77,9 +87,6 @@ optional arguments:
 │   ├── fontconfig/
 │   │   └── conf.d/
 │   │       └── 10-symbols.conf
-│   ├── Git/
-│   │   ├── .gitconfig
-│   │   └── .gitignore_global
 │   ├── i3/
 │   │   └── config
 │   ├── i3lock/
@@ -95,9 +102,6 @@ optional arguments:
 │   │   └── sidetab.rasi
 │   ├── stalonetray/
 │   │   └── .stalonetrayrc
-│   ├── SublimeText/
-│   │   └── Overrides/
-│   │       └── Preferences (Linux).sublime-settings
 │   ├── systemd/
 │   │   └── i3lock.service
 │   ├── terminals/
@@ -114,54 +118,51 @@ optional arguments:
 │   │       │   └── schemes/
 │   │       │       └── default_colors.json
 │   │       └── tilix.dconf
-│   ├── Wallpapers/
-│   │   ├── moon_mower.jpg
-│   │   ├── moon_mower.png
-│   │   └── ruby_beach.jpg
 │   ├── xfce4/
 │   │   └── xfconf/
 │   │       └── xfce-perchannel-xml/
 │   │           └── xfce4-power-manager.xml
 │   └── zsh/
 │       └── .zshrc
-├── macOS/
-│   ├── bash/
-│   │   ├── .aliases
-│   │   ├── .bash_profile
-│   │   └── .bashrc
-│   ├── fish/
-│   │   ├── aliases.fish
-│   │   ├── config.fish
-│   │   └── functions/
-│   │       └── fish_prompt.fish
+├── Windows/
 │   ├── Git/
-│   │   ├── .gitconfig
-│   │   └── .gitignore_global
-│   ├── Homebrew/
-│   │   ├── Brewfile
-│   │   ├── dump.sh*
-│   │   └── restore.sh*
-│   ├── Rectangle/
-│   │   └── com.knollsoft.Rectangle.plist
-│   ├── SublimeText/
-│   │   └── Overrides/
-│   │       └── Preferences (OSX).sublime-settings
-│   ├── terminals/
-│   │   ├── alacritty/
-│   │   │   └── alacritty.yml
-│   │   └── iTermProfiles/
-│   │       └── Default/
-│   │           ├── com.googlecode.iterm2.plist
-│   │           └── iterm2_default.itermcolors
-│   └── zsh/
-│       └── .zshrc
-└── Windows/
+│   │   └── .gitconfig
+│   └── SublimeText/
+│       └── Overrides/
+│           └── Preferences (Windows).sublime-settings
+└── macOS/
     ├── Git/
-    │   └── .gitconfig
-    └── SublimeText/
-        └── Overrides/
-            └── Preferences (Windows).sublime-settings
+    │   ├── .gitconfig
+    │   └── .gitignore_global
+    ├── Homebrew/
+    │   ├── Brewfile
+    │   ├── dump.sh*
+    │   └── restore.sh*
+    ├── Rectangle/
+    │   ├── backup.sh*
+    │   └── com.knollsoft.Rectangle.plist
+    ├── SublimeText/
+    │   └── Overrides/
+    │       └── Preferences (OSX).sublime-settings
+    ├── bash/
+    │   ├── .aliases
+    │   ├── .bash_profile
+    │   └── .bashrc
+    ├── fish/
+    │   ├── aliases.fish
+    │   ├── config.fish
+    │   └── functions/
+    │       └── fish_prompt.fish
+    ├── terminals/
+    │   ├── alacritty/
+    │   │   └── alacritty.yml
+    │   └── iTermProfiles/
+    │       └── Default/
+    │           ├── com.googlecode.iterm2.plist
+    │           └── iterm2_default.itermcolors
+    └── zsh/
+        └── .zshrc
 
-61 directories, 65 files
+61 directories, 66 files
 ```
 <!-- END TREE -->
