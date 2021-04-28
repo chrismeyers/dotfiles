@@ -74,6 +74,7 @@ optional arguments:
     │   ├── dump.sh*
     │   └── restore.sh*
     ├── Rectangle/
+    │   ├── backup.sh*
     │   └── com.knollsoft.Rectangle.plist
     ├── SublimeText/
     │   └── Overrides/
@@ -98,6 +99,6 @@ optional arguments:
     └── zsh/
         └── .zshrc
 
-29 directories, 34 files
+29 directories, 35 files
 ```
 <!-- END TREE -->
