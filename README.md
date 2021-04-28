@@ -10,7 +10,7 @@ usage: backupdots.py [-h] [-p {macOS,Linux,Windows}] [-b] [-r] [-c] [-u]
                      [-t {print,inject}] [--check-platform]
                      [--config-file CONFIG_FILE]
 
-Backup or restore configuration files.
+Backup or restore configuration files
 
 optional arguments:
   -h, --help            show this help message and exit
