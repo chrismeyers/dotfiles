@@ -5,7 +5,7 @@ usage: backupdots.py [-h] [-p {macOS,Linux,Windows}] [-b] [-r] [-c] [-u]
                      [-t {print,inject}] [--check-platform]
                      [--config-file CONFIG_FILE]
 
-Backup or restore configuration files.
+Backup or restore configuration files
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -56,9 +56,6 @@ def perform_backup():
             print(f'{str(file_num).rjust(3)} Copied {backup_type}: {file} to {_backup_data[file][1]}')
             file_num += 1
 
-    if file_num == 1:
-        print('Nothing to backup.')
-
     if _backup_scripts is not None:
         for item in _backup_scripts:
             name = item.get('name', 'Unknown')
@@ -71,12 +68,16 @@ def perform_backup():
                 print(f'WARNING: {script} does not exist')
                 continue
 
-            print(f'Dumping {name}...', end='', flush=True)
+            print(f'Backing up {name}...', end='', flush=True)
             exit_code = os.system(script)
             if exit_code == 0:
-                print('complete.')
+                print('complete')
+                file_num += 1
             else:
-                print(f'script exited with code {exit_code}.')
+                print(f'script exited with code {exit_code}')
+
+    if file_num == 1:
+        print('Nothing to backup')
 
 
 def perform_restore():
@@ -99,7 +100,7 @@ def perform_restore():
                     if not sudo_command(f'ln -s {backup_file} {orig_file}'):
                         continue
                 except OSError as e:
-                    more_info = ' Try running this command as an administrator.' if _platform == PlatformType.WINDOWS else ''
+                    more_info = ' Try running this command as an administrator' if _platform == PlatformType.WINDOWS else ''
                     print(f'{"".rjust(4)}WARNING: {str(e).capitalize()}.{more_info}')
                     continue
 
@@ -107,10 +108,10 @@ def perform_restore():
                 print(f'{str(file_num).rjust(3)} Linked {link_type}: {file} to {_backup_data[file][0]}')
                 file_num += 1
         else:
-            print(f'{"".rjust(4)}WARNING: {_backup_data[file][0]} does not exist, skipping.')
+            print(f'{"".rjust(4)}WARNING: {_backup_data[file][0]} does not exist, skipping')
 
     if file_num == 1:
-        print('Nothing to restore.')
+        print('Nothing to restore')
 
 
 def perform_cleanup():
@@ -135,14 +136,14 @@ def perform_cleanup():
                     if not sudo_command(f'rm -rf {current_file}'):
                         continue
             else:
-                print(f'{"".rjust(4)}WARNING: {current_file} is not a file, symlink, or directory. Skipping.')
+                print(f'{"".rjust(4)}WARNING: {current_file} is not a file, symlink, or directory...skipping')
                 continue
 
             print(f'{str(file_num).rjust(3)} Removed {cleanup_type}: {current_file}')
             file_num += 1
 
     if file_num == 1:
-        print('Nothing to cleanup.')
+        print('Nothing to cleanup')
 
 
 def perform_unlink():
@@ -162,7 +163,7 @@ def perform_unlink():
             file_num += 1
 
     if file_num == 1:
-        print('Nothing to unlink.')
+        print('Nothing to unlink')
 
 
 def perform_tree():
@@ -242,14 +243,14 @@ def inject_tree(tree):
         for line in readme_lines:
             f_out.write(line)
 
-        print('Updated directory tree in README.md.')
+        print('Updated directory tree in README.md')
 
 
 def perform_check_platform():
-    print(f'The current platform is set to {platform_enum_to_string(_platform)}.')
+    print(f'The current platform is set to {platform_enum_to_string(_platform)}')
     if _args.platform is not None:
         actual = platform_enum_to_string(determine_platform(True))
-        print(f'NOTE: The -p/--platform flag is overriding the actual platform of {actual}.')
+        print(f'NOTE: The -p/--platform flag is overriding the actual platform of {actual}')
 
 
 def sanitized_full_path(dir_location, file_name):
@@ -273,7 +274,7 @@ def sudo_command(cmd):
         exit_code = os.system(f'sudo {cmd}')
         success = True if exit_code == 0 else False
     else:
-        print(f'{"".rjust(4)}WARNING: Unable to execute command `{cmd}` as a super user.')
+        print(f'{"".rjust(4)}WARNING: Unable to execute command `{cmd}` as a super user')
 
     return success
 
@@ -331,7 +332,7 @@ if __name__ == '__main__':
     _backup_scripts = None
 
     arg_parser = argparse.ArgumentParser(
-        description='Backup or restore configuration files.')
+        description='Backup or restore configuration files')
 
     arg_parser.add_argument(
         '-p', '--platform',
@@ -381,7 +382,7 @@ if __name__ == '__main__':
         _backup_config_file = sanitized_full_path(_backup_dir_root, _args.config_file)
 
     if not os.path.exists(_backup_config_file):
-        print(f'ERROR: Configuration file "{_backup_config_file}" does not exist.')
+        print(f'ERROR: Configuration file "{_backup_config_file}" does not exist')
         sys.exit(1)
 
     with open(_backup_config_file) as f:
@@ -393,7 +394,7 @@ if __name__ == '__main__':
         # Extract backup scripts so they don't interfere with normal processing
         _backup_scripts = _backup_data.pop(_backup_config_key, None)
     except KeyError:
-        print(f'ERROR: Configuration file "{_backup_config_file}" does not contain platform {platform_enum_to_string(_platform)}.')
+        print(f'ERROR: Configuration file "{_backup_config_file}" does not contain platform {platform_enum_to_string(_platform)}')
         sys.exit(1)
 
     if _args.backup:
