@@ -50,6 +50,12 @@
   // UI settings (Workbench)
   "workbench.colorTheme": "Ayu Mirage Bordered",
   "workbench.iconTheme": "vscode-icons",
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
 
   // Windows integrated terminal settings
   "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
