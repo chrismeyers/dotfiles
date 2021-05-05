@@ -38,6 +38,11 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
+  "[javascriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
   "[vue]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -48,6 +53,7 @@
   "explorer.confirmDragAndDrop": false,
 
   // UI settings (Workbench)
+  "workbench.editor.untitled.hint": "hidden",
   "workbench.colorTheme": "Ayu Mirage Bordered",
   "workbench.iconTheme": "vscode-icons",
   "workbench.editorAssociations": [
