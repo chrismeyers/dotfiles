@@ -85,7 +85,13 @@
 
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 
-  "prettier.semi": true,
   "prettier.singleQuote": true,
-  "prettier.trailingComma": "all"
+
+  "gitlens.defaultTimeFormat": "HH:mm",
+  "gitlens.defaultDateFormat": "MMMM Do, YYYY HH:mm",
+  "gitlens.statusBar.enabled": false,
+  "gitlens.codeLens.scopes": [
+    "document"
+  ],
+  "gitlens.codeLens.recentChange.command": "gitlens.diffWithPrevious"
 }
