@@ -62,6 +62,7 @@
   "explorer.confirmDragAndDrop": false,
 
   // UI settings (Workbench)
+  "workbench.editor.untitled.hint": "hidden",
   "workbench.colorTheme": "Ayu Mirage Bordered",
   "workbench.iconTheme": "vscode-icons",
 
