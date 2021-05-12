@@ -15,6 +15,7 @@ James-Yu.latex-workshop
 matt-meyers.vscode-dbml
 ms-azuretools.vscode-docker
 ms-python.python
+ms-python.vscode-pylance
 ms-toolsai.jupyter
 ms-vsliveshare.vsliveshare
 mubaidr.vuejs-extension-pack
