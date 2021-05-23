@@ -13,6 +13,7 @@ golang.go
 James-Yu.latex-workshop
 ms-azuretools.vscode-docker
 ms-python.python
+ms-python.vscode-pylance
 ms-toolsai.jupyter
 mubaidr.vuejs-extension-pack
 octref.vetur
