@@ -98,11 +98,13 @@ export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 ### Set path variables
 export GOPATH="$HOME/Documents/Development/go"
+export PYENV_ROOT="$HOME/.pyenv"
 export PATH="/usr/local/bin\
 :/usr/local/sbin\
 :$GOPATH/bin\
 :$HOME/.composer/vendor/bin\
 :$HOME/.local/bin\
+:$PYENV_ROOT/bin\
 :$PATH"
 
 # You may need to manually set your language environment
@@ -139,7 +141,7 @@ source $HOME/.env_vars
 
 ### Pyenv setup
 if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
+  eval "$(pyenv init --path)"
 fi
 
 # Specifies global Python versions. The order of the versions will determine the
