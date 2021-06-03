@@ -20,6 +20,7 @@ ms-toolsai.jupyter
 ms-vsliveshare.vsliveshare
 mubaidr.vuejs-extension-pack
 octref.vetur
+redhat.vscode-commons
 redhat.vscode-yaml
 robertoachar.vscode-essentials-snippets
 sdras.vue-vscode-snippets
