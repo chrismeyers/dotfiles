@@ -18,6 +18,9 @@
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
 
+  // Git settings
+  "git.autoRepositoryDetection": "openEditors",
+
   // Language overrides (Default Configuration Overrides)
   "[go]": {
     "editor.insertSpaces": false,
