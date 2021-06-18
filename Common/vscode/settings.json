@@ -1,6 +1,7 @@
 {
-  // Get off my lawn, Microsoft (Telemetry)
+  // Get off my lawn (Telemetry)
   "telemetry.enableTelemetry": false,
+  "redhat.telemetry.enabled": false,
 
   // General editor settings (Editor)
   "editor.tabSize": 2,
