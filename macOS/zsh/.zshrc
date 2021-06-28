@@ -100,6 +100,7 @@ export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 ### Set path variables
 export GOPATH="$HOME/Documents/Development/go"
 export DENO_INSTALL="$HOME/.deno"
+export PYENV_ROOT="$HOME/.pyenv"
 export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
 export PATH="/opt/homebrew/bin\
 :/opt/homebrew/sbin\
@@ -110,6 +111,7 @@ export PATH="/opt/homebrew/bin\
 :/Applications/Postgres.app/Contents/Versions/latest/bin\
 :$GOPATH/bin\
 :$DENO_INSTALL/bin\
+:$PYENV_ROOT/bin\
 :$HOME/Library/Android/sdk/platform-tools\
 :$HOME/Library/Android/sdk/tools\
 :$HOME/.composer/vendor/bin\
@@ -150,7 +152,7 @@ source $HOME/.aliases
 
 ### Pyenv setup
 if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
+  eval "$(pyenv init --path)"
 fi
 
 # Specifies global Python versions. The order of the versions will determine the

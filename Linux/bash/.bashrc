@@ -48,12 +48,14 @@ export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 ### Set path variables
 export GOPATH="$HOME/Documents/Development/go"
+export PYENV_ROOT="$HOME/.pyenv"
 export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="$PYENV_ROOT/bin\
 :/usr/lib/dart/bin\
 :/usr/local/go/bin\
 :$GOPATH/bin\
+:$PYENV_ROOT/bin\
 :$HOME/.local/bin\
 :$HOME/.pub-cache/bin\
 :$HOME/.poetry/bin\
@@ -67,7 +69,7 @@ source $HOME/.aliases
 
 ### Pyenv setup
 if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
+  eval "$(pyenv init --path)"
 fi
 
 # Specifies global Python versions. The order of the versions will determine the
