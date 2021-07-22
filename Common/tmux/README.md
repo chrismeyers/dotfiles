@@ -12,7 +12,7 @@
 | --------- | ----- | ------------ |
 | Mouse     | Linux | Hold `<shift>` and select text with cursor, `<ctrl-shift-c>` to copy, `<ctrl-shift-v>` to paste |
 |           | macOS | Hold `<option>` and select text with cursor, `<cmd-c>` to copy, `<cmd-v>` to paste |
-| Keyboard  | N/A   | Press `<prefix> C-[` to enter copy mode, `hjkl` or `<arrow>` to navigate, `v` for free-form selection, `V` to select the entire line, `r` to toggle rectangle selection, `y` to copy selected text, `q` to exit copy mode, `<prefix> C-]` to paste |
+| Keyboard  | N/A   | Press `<prefix> [` to enter copy mode, `hjkl` or `<arrow>` to navigate, `v` for free-form selection, `V` to select the entire line, `r` to toggle rectangle selection, `y` to copy selected text, `q` to exit copy mode, `<prefix> ]` to paste |
 
 ## Common shortcuts
 | Hotkey               | Description |
@@ -24,8 +24,8 @@
 | `<prefix> x`         | Kill current window |
 | `<prefix> s`         | Open window and session selection screen (`<right-arrow>` expands the selected session) |
 | `<prefix> d`         | Detach tmux (exit back to normal terminal) |
-| `<prefix> %`         | Create horizontal pane |
-| `<prefix> "`         | Create vertical pane |
+| `<prefix> -`         | Create horizontal pane |
+| `<prefix> \`         | Create vertical pane |
 | `<prefix> !`         | Move pane to a new window |
 | `<prefix> <space>`   | Cycle through `:next-layout` in current window |
 | `<prefix> o`         | Cycle focus through all panes in current window |
