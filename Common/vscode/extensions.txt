@@ -1,3 +1,4 @@
+chrismeyers.vscode-pretty-json
 christian-kohler.npm-intellisense
 christian-kohler.path-intellisense
 dariofuzinato.vue-peek
