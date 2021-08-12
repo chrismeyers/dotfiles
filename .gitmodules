@@ -4,3 +4,6 @@
 [submodule "Common/vim/.vim/pack/plugins/start/vim-commentary"]
 	path = Common/vim/.vim/pack/plugins/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule "Common/vim/.vim/pack/plugins/start/nord-vim"]
+	path = Common/vim/.vim/pack/plugins/start/nord-vim
+	url = https://github.com/arcticicestudio/nord-vim.git

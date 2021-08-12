@@ -71,7 +71,7 @@
 
   // UI settings (Workbench)
   "workbench.editor.untitled.hint": "hidden",
-  "workbench.colorTheme": "Ayu Mirage Bordered",
+  "workbench.colorTheme": "Nord",
   "workbench.iconTheme": "vscode-icons",
 
   // Windows integrated terminal settings
