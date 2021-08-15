@@ -56,6 +56,7 @@ optional arguments:
 │   │   │       └── plugins/
 │   │   │           └── start/
 │   │   │               ├── ayu-vim/
+│   │   │               ├── nord-vim/
 │   │   │               └── vim-commentary/
 │   │   ├── .vimrc
 │   │   └── vimfiles -> .vim/
@@ -163,6 +164,6 @@ optional arguments:
     └── zsh/
         └── .zshrc
 
-61 directories, 66 files
+62 directories, 66 files
 ```
 <!-- END TREE -->

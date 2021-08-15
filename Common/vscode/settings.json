@@ -54,7 +54,7 @@
 
   // UI settings (Workbench)
   "workbench.editor.untitled.hint": "hidden",
-  "workbench.colorTheme": "Ayu Mirage Bordered",
+  "workbench.colorTheme": "Nord",
   "workbench.iconTheme": "vscode-icons",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"

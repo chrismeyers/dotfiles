@@ -43,8 +43,7 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-let ayucolor="mirage"
-colorscheme ayu
+colorscheme nord
 set background=dark
 
 "" Allow backspacing over autoindent, line breaks and start of insert action
