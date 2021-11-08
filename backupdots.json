@@ -23,11 +23,6 @@
 
         ".tmux.conf": ["/Users/chris", "/Users/chris/dotfiles/Common/tmux"],
 
-        "Package Control.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Common/SublimeText/UserSettings"],
-        "Preferences.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Common/SublimeText/UserSettings"],
-        "Python.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Common/SublimeText/UserSettings"],
-        "Preferences (OSX).sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/Default", "/Users/chris/dotfiles/macOS/SublimeText/Overrides"],
-
         "settings.json" : ["/Users/chris/Library/Application Support/Code/User", "/Users/chris/dotfiles/Common/vscode"],
 
         "com.knollsoft.Rectangle.plist": ["/Users/chris/Library/Preferences", "/Users/chris/dotfiles/macOS/Rectangle"],
