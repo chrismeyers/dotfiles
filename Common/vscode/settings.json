@@ -43,6 +43,11 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
   "[vue]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -90,5 +95,7 @@
   "gitlens.codeLens.scopes": [
     "document"
   ],
-  "gitlens.codeLens.recentChange.command": "gitlens.diffWithPrevious"
+  "gitlens.codeLens.recentChange.command": "gitlens.diffWithPrevious",
+
+  "docker.showStartPage": false
 }

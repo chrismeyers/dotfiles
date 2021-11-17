@@ -2,7 +2,6 @@ arcticicestudio.nord-visual-studio-code
 chrismeyers.vscode-pretty-json
 christian-kohler.npm-intellisense
 christian-kohler.path-intellisense
-dariofuzinato.vue-peek
 dbaeumer.vscode-eslint
 dnicolson.binary-plist
 eamodio.gitlens
@@ -17,14 +16,11 @@ ms-azuretools.vscode-docker
 ms-python.python
 ms-python.vscode-pylance
 ms-toolsai.jupyter
-mubaidr.vuejs-extension-pack
-octref.vetur
+ms-toolsai.jupyter-keymap
+ms-toolsai.jupyter-renderers
 robertoachar.vscode-essentials-snippets
-rust-lang.rust
-sdras.vue-vscode-snippets
 streetsidesoftware.code-spell-checker
 teabyii.ayu
-tombonnike.vscode-status-bar-format-toggle
 VisualStudioExptTeam.vscodeintellicode
 vscode-icons-team.vscode-icons
 vscodevim.vim
