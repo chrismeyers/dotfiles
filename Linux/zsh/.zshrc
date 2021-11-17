@@ -81,13 +81,14 @@ git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/%{$git_status_color%}\1%{$reset_color%}/"
 }
 
+PROMPT='%n on %{$fg[red]%}%m%{$reset_color%} in [%~] $(git_branch)
+ > '
+
+### Additional functions
 timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
-
-PROMPT='%n on %{$fg[red]%}%m%{$reset_color%} in [%~] $(git_branch)
- > '
 
 ### Set environment variables
 export CLICOLOR=1
