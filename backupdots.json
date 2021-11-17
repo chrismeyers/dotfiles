@@ -22,17 +22,11 @@
 
         ".tmux.conf": ["/Users/chris", "/Users/chris/dotfiles/Common/tmux"],
 
-        "Package Control.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Common/SublimeText/UserSettings"],
-        "Preferences.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Common/SublimeText/UserSettings"],
-        "Python.sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/User", "/Users/chris/dotfiles/Common/SublimeText/UserSettings"],
-        "Preferences (OSX).sublime-settings": ["/Users/chris/Library/Application Support/Sublime Text 3/Packages/Default", "/Users/chris/dotfiles/macOS/SublimeText/Overrides"],
-
         "settings.json" : ["/Users/chris/Library/Application Support/Code/User", "/Users/chris/dotfiles/Common/vscode"],
 
         "com.knollsoft.Rectangle.plist": ["/Users/chris/Library/Preferences", "/Users/chris/dotfiles/macOS/Rectangle"],
 
         "nvim": ["/Users/chris/.config", "/Users/chris/dotfiles/Common/neovim"],
-        "alacritty": ["/Users/chris/.config", "/Users/chris/dotfiles/macOS/terminals"],
 
         ".gitconfig": ["/Users/chris", "/Users/chris/dotfiles/macOS/Git"],
         ".gitignore_global": ["/Users/chris", "/Users/chris/dotfiles/macOS/Git"]
@@ -57,11 +51,6 @@
 
         ".stalonetrayrc": ["/home/chris", "/home/chris/dotfiles/Linux/stalonetray"],
 
-        "Package Control.sublime-settings": ["/home/chris/.config/sublime-text-3/Packages/User", "/home/chris/dotfiles/Common/SublimeText/UserSettings"],
-        "Preferences.sublime-settings": ["/home/chris/.config/sublime-text-3/Packages/User", "/home/chris/dotfiles/Common/SublimeText/UserSettings"],
-        "Python.sublime-settings": ["/home/chris/.config/sublime-text-3/Packages/User", "/home/chris/dotfiles/Common/SublimeText/UserSettings"],
-        "Preferences (Linux).sublime-settings": ["/home/chris/.config/sublime-text-3/Packages/Default", "/home/chris/dotfiles/Linux/SublimeText/Overrides"],
-
         "settings.json" : ["/home/chris/.config/Code/User", "/home/chris/dotfiles/Common/vscode"],
 
         "i3": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
@@ -73,7 +62,6 @@
         "nvim": ["/home/chris/.config", "/home/chris/dotfiles/Common/neovim"],
         "dunst": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
         "xfce4": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
-        "alacritty": ["/home/chris/.config", "/home/chris/dotfiles/Linux/terminals"],
         "tilix": ["/home/chris/.config", "/home/chris/dotfiles/Linux/terminals/tilix"],
 
         "Wallpapers": ["/home/chris/Pictures", "/home/chris/dotfiles/Linux"],
@@ -90,11 +78,6 @@
         ".gvimrc": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\vim"],
         ".ideavimrc": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\vim"],
         "vimfiles": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\vim"],
-
-        "Package Control.sublime-settings": ["C:\\Users\\Chris\\AppData\\Roaming\\Sublime Text 3\\Packages\\User", "C:\\Users\\Chris\\dotfiles\\Common\\SublimeText\\UserSettings"],
-        "Preferences.sublime-settings": ["C:\\Users\\Chris\\AppData\\Roaming\\Sublime Text 3\\Packages\\User", "C:\\Users\\Chris\\dotfiles\\Common\\SublimeText\\UserSettings"],
-        "Python.sublime-settings": ["C:\\Users\\Chris\\AppData\\Roaming\\Sublime Text 3\\Packages\\User", "C:\\Users\\Chris\\dotfiles\\Common\\SublimeText\\UserSettings"],
-        "Preferences (Windows).sublime-settings": ["C:\\Users\\Chris\\AppData\\Roaming\\Sublime Text 3\\Packages\\Default", "C:\\Users\\Chris\\dotfiles\\Windows\\SublimeText\\Overrides"],
 
         "settings.json" : ["C:\\Users\\Chris\\AppData\\Roaming\\Code\\User", "C:\\Users\\Chris\\dotfiles\\Common\\vscode"],
 
