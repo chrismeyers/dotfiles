@@ -78,7 +78,7 @@ alias hosts='sudo nvim /etc/hosts'
 
 # Print IP addresses
 alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
-alias localip="ifconfig | grep 'inet ' | grep -Fv 127.0.0.1 | awk '{print $2}'"
+alias localip="ifconfig | grep 'inet ' | grep -Fv 127.0.0.1 | awk '{print \$2}'"
 
 # URL utils
 alias urlencode='python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1]))"'
