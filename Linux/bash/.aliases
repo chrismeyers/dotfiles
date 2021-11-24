@@ -30,16 +30,13 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 alias sb='source $HOME/.bashrc'
 alias sa='source $HOME/.aliases'
 
-# Recursively get all the file extensions in the current directory.
-alias filetypes='find . -type f | perl -ne '"'"'print $1 if m/\.([^.\/]+)$/'"'"' | sort -u'
-
 # Easier PATH inspection
 alias prettypath='echo $PATH | tr ":" "\n" | nl'
 
 
 #=============== Admin ==============
 alias root='sudo -i'
-alias sshconfig='subl $HOME/.ssh/config'
+alias sshconfig='nvim $HOME/.ssh/config'
 alias power='xfce4-power-manager -c'
 alias svc='systemctl list-unit-files'
 alias svcrun='systemctl | grep running'
@@ -55,39 +52,33 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias docs='cd $HOME/Documents'
 alias dev='cd $HOME/Documents/Development'
+alias scrp='cd $HOME/Documents/Development/scripts'
 alias drop='cd $HOME/Dropbox'
 alias site='cd $HOME/Documents/Development/web-dev/chrismeyers-website'
 alias vid='cd $HOME/Videos'
 alias pics='cd $HOME/Pictures'
 alias dt='cd $HOME/Desktop'
-alias scripts='cd $HOME/scripts'
 alias dots='cd $HOME/dotfiles'
 alias dl='cd $HOME/Downloads'
-alias sublconfig='cd "$HOME/.config/sublime-text-3/Packages/User"'
 
 
 #============ Programming ===========
-alias pypaths='python -c "import sys; import os; print(os.linesep.join(sys.path))"'
-alias pypibuild='rm -rf dist/*; rm -rf build/*; python setup.py bdist_wheel sdist'
-alias pypiupload='twine upload dist/*'
 alias gbpurge='git fetch --prune && git branch --merged | grep -E -v "\*|master|main|develop|stage|qa" | xargs -n 1 git branch -d'
 
 
 #============= Web stuff ============
-# Node.js
-alias nodeserver='http-server'
-
 # Config files
-alias hosts='sudo subl /etc/hosts'
+alias hosts='sudo nvim /etc/hosts'
 
 # Print IP addresses
 alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias localip='hostname -I'
 
 # URL utils
-alias urlencode='python -c "import urllib, sys; print urllib.quote(sys.argv[1])"'
-alias urldecode='python -c "import urllib, sys; print urllib.unquote(sys.argv[1])"'
+alias urlencode='python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1]))"'
+alias urldecode='python3 -c "import urllib.parse, sys; print(urllib.parse.unquote(sys.argv[1]))"'
 
+# Browsers
 alias chrome='/usr/bin/google-chrome-stable'
 
 

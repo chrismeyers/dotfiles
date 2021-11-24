@@ -22,13 +22,9 @@ alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # Simulate signing out of shell session
 alias reload='exec $SHELL -l'
 
-# Merge PDF files
-# Usage: `mergepdf -o output.pdf input1.pdf ... inputN.pdf`
-alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
-
 # Command line volume control
-alias stfu='osascript -e "set volume output muted true"'
-alias speak='osascript -e "set volume output muted false"'
+alias quiet='osascript -e "set volume output muted true"'
+alias noise='osascript -e "set volume output muted false"'
 alias turndownforwhat='osascript -e "set volume 7"'
 
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
@@ -37,12 +33,9 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 alias sc='source $HOME/.config/fish/config.fish'
 alias sa='source $HOME/.config/fish/aliases.fish'
 
-# Recursively get all the file extensions in the current directory.
-alias filetypes='find . -type f | perl -ne '"'"'print $1 if m/\.([^.\/]+)$/'"'"' | sort -u'
-
 
 #=============== Admin ==============
-# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
+# Get macOS Software Updates, and update Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g'
 
 # Show/hide hidden files in Finder
@@ -53,7 +46,7 @@ alias hide='defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 # Use if icons in Finder are incorrect or there are duplicates in "Open With"
 alias lsdb="/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain system -domain user"
 
-alias sshconfig='subl $HOME/.ssh/config'
+alias sshconfig='nvim $HOME/.ssh/config'
 
 
 #============ Navigation ============
@@ -63,53 +56,33 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias docs='cd $HOME/Documents'
 alias dev='cd $HOME/Documents/Development'
+alias scrp='cd $HOME/Documents/Development/scripts'
 alias drop='cd $HOME/Dropbox'
 alias site='cd $HOME/Documents/Development/web-dev/chrismeyers-website'
 alias mov='cd $HOME/Movies'
 alias pics='cd $HOME/Pictures'
 alias dt='cd $HOME/Desktop'
-alias scripts='cd $HOME/scripts'
 alias dots='cd $HOME/dotfiles'
 alias dl='cd $HOME/Downloads'
-alias sublconfig='cd "$HOME/Library/Application Support/Sublime Text 3/Packages/User"'
 
 
 #============ Programming ===========
-alias pip3up='pip3 freeze > pip3_current.txt && pip3 install --upgrade -r pip3_current.txt && rm pip3_current.txt'
-alias glade='/usr/local/Cellar/glade/3.8.5_1/bin/glade-3'
-alias jre='/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java'
-alias pypaths='/usr/bin/env python3 -c "import sys; import os; print(os.linesep.join(sys.path))"'
-alias pypibuild='rm -rf dist/*; rm -rf build/*; /usr/bin/env python3 setup.py bdist_wheel sdist'
-alias pypiupload='twine upload dist/*'
+alias gbpurge='git fetch --prune && git branch --merged | grep -E -v "\*|master|main|develop|stage|qa" | xargs -n 1 git branch -d'
 
 
 #============= Web stuff ============
-# MAMP
-alias mampmysql='/Applications/MAMP/Library/bin/mysql'
-alias mampmysqldump='/Applications/MAMP/Library/bin/mysqldump'
-alias mampconf='subl /Applications/MAMP/conf/apache/httpd.conf'
-alias mampvhosts='subl /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf'
-alias mampphpbroke='open /Applications/MAMP/logs/php_error.log'
-
-# Controls for Homebrew installed apache server and mysql
-alias lampon='brew services run httpd && sleep 1 && brew services run mysql'
-alias lampoff='brew services stop httpd && sleep 1 && brew services stop mysql'
-alias lampres='lampoff && sleep 1 && lampon'
-
-# Node.js
-alias nodeserver='http-server'
-
 # Config files
-alias hosts='sudo subl /etc/hosts'
+alias hosts='sudo nvim /etc/hosts'
 
 # Print IP addresses
 alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
-alias localip='ipconfig getifaddr en0'
+alias localip="ifconfig | grep 'inet ' | grep -Fv 127.0.0.1 | awk '{print \$2}'"
 
 # URL utils
-alias urlencode='python -c "import urllib, sys; print urllib.quote(sys.argv[1])"'
-alias urldecode='python -c "import urllib, sys; print urllib.unquote(sys.argv[1])"'
+alias urlencode='python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1]))"'
+alias urldecode='python3 -c "import urllib.parse, sys; print(urllib.parse.unquote(sys.argv[1]))"'
 
+# Browsers
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 
 
