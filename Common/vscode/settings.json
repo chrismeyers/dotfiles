@@ -1,6 +1,6 @@
 {
   // Get off my lawn, Microsoft (Telemetry)
-  "telemetry.enableTelemetry": false,
+  "telemetry.telemetryLevel": "off",
 
   // General editor settings (Editor)
   "editor.tabSize": 2,
@@ -33,22 +33,7 @@
     "editor.formatOnSave": true
   },
 
-  "[javascript]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  "[javascriptreact]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  "[typescript]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  "[vue]": {
+  "[javascript][typescript][javascriptreact][vue]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -83,7 +68,6 @@
   },
 
   "python.languageServer": "Default",
-  "python.showStartPage": false,
 
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 
@@ -95,7 +79,5 @@
   "gitlens.codeLens.scopes": [
     "document"
   ],
-  "gitlens.codeLens.recentChange.command": "gitlens.diffWithPrevious",
-
-  "docker.showStartPage": false
+  "gitlens.codeLens.recentChange.command": "gitlens.diffWithPrevious"
 }
