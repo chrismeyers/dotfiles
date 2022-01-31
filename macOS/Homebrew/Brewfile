@@ -14,7 +14,7 @@ brew "bash-completion"
 brew "bfg"
 brew "gettext"
 brew "libpq"
-brew "php", restart_service: true, link: false
+brew "php", link: false
 brew "composer"
 brew "dos2unix"
 brew "flyway"
@@ -38,9 +38,9 @@ brew "node"
 brew "perl@5.18"
 brew "php-code-sniffer"
 brew "php-cs-fixer"
-brew "php@7.4", restart_service: true, link: true
+brew "php@7.4", link: true
 brew "pyenv"
-brew "redis", restart_service: true
+brew "redis"
 brew "ripgrep"
 brew "rsync"
 brew "ruby"
