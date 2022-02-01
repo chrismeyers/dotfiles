@@ -38,6 +38,11 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
+  "[makefile]": {
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4
+  },
+
   // OS File system interaction (File Explorer)
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
