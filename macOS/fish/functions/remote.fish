@@ -6,7 +6,7 @@ function remote --description 'Mount remote folder using SSHFS and open in PhpSt
       set_color 00BCD4
       echo "Mounting $argv[1]..."
       set_color normal
-      cd ~/Documents/Development/remote
+      cd ~/dev/remote
       if not test -d $argv[1]
         mkdir $argv[1]
       end
@@ -19,7 +19,7 @@ function remote --description 'Mount remote folder using SSHFS and open in PhpSt
       set_color 00BCD4
       echo "Mounting $argv[1]:$argv[2]..."
       set_color normal
-      cd ~/Documents/Development/remote
+      cd ~/dev/remote
       if not test -d $argv[1]
         mkdir $argv[1]
       end

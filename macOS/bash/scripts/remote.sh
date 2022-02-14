@@ -7,7 +7,7 @@ then
   echo "  path: path to the code on remote server"
 else
   echo "Mounting $1..."
-  cd ~/Documents/Development/remote
+  cd ~/dev/remote
 
   if [ ! -d $1 ]
   then
