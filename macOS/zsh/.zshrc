@@ -99,10 +99,10 @@ export EDITOR="nvim"
 export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 
 ### Set path variables
-export GOPATH="$HOME/Documents/Development/go"
+export GOPATH="$HOME/dev/go"
 export DENO_INSTALL="$HOME/.deno"
 export PYENV_ROOT="$HOME/.pyenv"
-export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
+export PYTHONPATH="$HOME/dev/python:$PYTHONPATH"
 export PATH="/opt/homebrew/bin\
 :/opt/homebrew/sbin\
 :/usr/local/bin\

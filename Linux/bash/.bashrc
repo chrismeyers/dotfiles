@@ -47,9 +47,9 @@ export EDITOR="nvim"
 export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 
 ### Set path variables
-export GOPATH="$HOME/Documents/Development/go"
+export GOPATH="$HOME/dev/go"
 export PYENV_ROOT="$HOME/.pyenv"
-export PYTHONPATH="$HOME/Documents/Development/python-dev:$PYTHONPATH"
+export PYTHONPATH="$HOME/dev/python:$PYTHONPATH"
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="$PYENV_ROOT/bin\
 :/usr/lib/dart/bin\
