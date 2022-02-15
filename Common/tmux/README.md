@@ -26,6 +26,7 @@
 | `<prefix> d`         | Detach tmux (exit back to normal terminal) |
 | `<prefix> -`         | Create horizontal pane |
 | `<prefix> \`         | Create vertical pane |
+| `<prefix> z`         | Maximize current pane |
 | `<prefix> !`         | Move pane to a new window |
 | `<prefix> <space>`   | Cycle through `:next-layout` in current window |
 | `<prefix> o`         | Cycle focus through all panes in current window |
