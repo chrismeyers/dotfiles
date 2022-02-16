@@ -34,11 +34,12 @@ import json
 import argparse
 import shutil
 import subprocess
+from collections import namedtuple
 from enum import Enum
 
 
 def perform_backup():
-    # Copies files from original location to dotfiles/...
+    '''Copies files to dotfiles repo and runs backup scripts'''
     file_num = 1
     for file in _backup_data:
         orig_file = os.path.join(_backup_data[file][0], file)
@@ -53,7 +54,7 @@ def perform_backup():
             else:
                 backup_type = 'directory'
                 shutil.copytree(os.path.join(_backup_data[file][0], file), os.path.join(_backup_data[file][1], file))
-            print(f'{str(file_num).rjust(3)} Copied {backup_type}: {file} to {_backup_data[file][1]}')
+            log(f'Copied {backup_type}: {orig_file} to {_backup_data[file][1]}', gutter=LogGutter(file_num, 3, True))
             file_num += 1
 
     if _backup_scripts is not None:
@@ -62,35 +63,35 @@ def perform_backup():
             script = item.get("script", None)
 
             if script is None:
-                print(f'WARNING: Missing script key for "{name}" {_backup_config_key} entry')
+                log(f'Missing script key for "{name}" {_backup_config_key} entry', level=LogLevel.WARN)
                 continue
             elif not os.path.exists(script):
-                print(f'WARNING: {script} does not exist')
+                log(f'{script} does not exist', level=LogLevel.WARN)
                 continue
 
-            print(f'Backing up {name}...', end='', flush=True)
+            log(f'Backing up {name}...', end='', flush=True)
             exit_code = os.system(script)
             if exit_code == 0:
-                print('complete')
+                log('complete')
                 file_num += 1
             else:
-                print(f'script exited with code {exit_code}')
+                log(f'script exited with code {exit_code}')
 
     if file_num == 1:
-        print('Nothing to backup')
+        log('Nothing to backup')
 
 
 def perform_restore():
-    # Symlinks files from dotfiles/... to original location.
+    '''Symlinks files from dotfiles repo to original location'''
     file_num = 1
     for file in _backup_data:
         orig_file = os.path.join(_backup_data[file][0], file)
         backup_file = os.path.join(_backup_data[file][1], file)
 
         # Assume that the program isn't installed or the configuration file is
-        # not needed if the original path doesn't exist.
+        # not needed if the original path doesn't exist
         if os.path.exists(_backup_data[file][0]):
-            # Make a backup of the file before creating a symlink.
+            # Make a backup of the file before creating a symlink
             if os.path.exists(orig_file) and not os.path.islink(orig_file):
                 shutil.move(orig_file, f'{orig_file}.{_backup_file_ext}')
             if not os.path.exists(orig_file):
@@ -101,21 +102,21 @@ def perform_restore():
                         continue
                 except OSError as e:
                     more_info = ' Try running this command as an administrator' if _platform == PlatformType.WINDOWS else ''
-                    print(f'{"".rjust(4)}WARNING: {str(e).capitalize()}.{more_info}')
+                    log(f'{str(e).capitalize()}.{more_info}', level=LogLevel.WARN, gutter=LogGutter('', 4, False))
                     continue
 
                 link_type = 'directory' if os.path.isdir(backup_file) else 'file'
-                print(f'{str(file_num).rjust(3)} Linked {link_type}: {file} to {_backup_data[file][0]}')
+                log(f'Linked {link_type}: {orig_file}', gutter=LogGutter(file_num, 3, True))
                 file_num += 1
         else:
-            print(f'{"".rjust(4)}WARNING: {_backup_data[file][0]} does not exist, skipping')
+            log(f'{_backup_data[file][0]} does not exist, skipping', level=LogLevel.WARN, gutter=LogGutter('', 4, False))
 
     if file_num == 1:
-        print('Nothing to restore')
+        log('Nothing to restore')
 
 
 def perform_cleanup():
-    # Removes all *.{_backup_file_ext} files generated from perform_restore().
+    '''Removes all *.{_backup_file_ext} files generated from restore'''
     file_num = 1
     for file in _backup_data:
         current_file = os.path.join(_backup_data[file][0], f'{file}.{_backup_file_ext}')
@@ -136,18 +137,18 @@ def perform_cleanup():
                     if not sudo_command(f'rm -rf {current_file}'):
                         continue
             else:
-                print(f'{"".rjust(4)}WARNING: {current_file} is not a file, symlink, or directory...skipping')
+                log(f'{current_file} is not a file, symlink, or directory...skipping', level=LogLevel.WARN, gutter=('', 4, False))
                 continue
 
-            print(f'{str(file_num).rjust(3)} Removed {cleanup_type}: {current_file}')
+            log(f'Removed {cleanup_type}: {current_file}', gutter=LogGutter(file_num, 3, True))
             file_num += 1
 
     if file_num == 1:
-        print('Nothing to cleanup')
+        log('Nothing to cleanup')
 
 
 def perform_unlink():
-    # Removes all symlinks for the given platform.
+    '''Removes all symlinks for the given platform'''
     file_num = 1
     for file in _backup_data:
         is_dir = os.path.isdir(os.path.join(_backup_data[file][1], file))
@@ -159,11 +160,11 @@ def perform_unlink():
             except PermissionError:
                 if not sudo_command(f'rm {current_file}'):
                     continue
-            print(f'{str(file_num).rjust(3)} Unlinked {"directory" if is_dir else "file"}: {current_file}')
+            log(f'Unlinked {"directory" if is_dir else "file"}: {current_file}', gutter=LogGutter(file_num, 3, True))
             file_num += 1
 
     if file_num == 1:
-        print('Nothing to unlink')
+        log('Nothing to unlink')
 
 
 def perform_tree():
@@ -171,7 +172,7 @@ def perform_tree():
 
     tree = generate_tree()
     if tree_mode == 'print':
-        print(tree)
+        log(tree)
     elif tree_mode == 'inject':
         inject_tree(tree)
 
@@ -204,7 +205,7 @@ def generate_tree():
     err = err.decode('utf-8')
 
     if err != '':
-        print(f'ERROR: {err}')
+        log(err, level=LogLevel.ERROR)
         sys.exit(1)
 
     out = out.replace('\\', '')
@@ -216,7 +217,7 @@ def inject_tree(tree):
     readme_path = os.path.join(_backup_dir_root, 'README.md')
 
     if not os.path.exists(readme_path):
-        print(f'ERROR: {readme_path} does not exist!')
+        log(f'{readme_path} does not exist!', level=LogLevel.ERROR)
         sys.exit(1)
 
     with open(readme_path, 'r') as f_in:
@@ -232,25 +233,25 @@ def inject_tree(tree):
 
         if begin_index > 0 and end_index > 0:
             # Remove all the lines between BEGIN and END tags, then replace
-            # with the new tree.
+            # with the new tree
             del readme_lines[begin_index + 1:end_index]
             readme_lines.insert(begin_index + 1, f'```\n{tree}```\n')
         else:
-            print('ERROR: BEGIN and END tags are likely missing from README.md')
+            log('BEGIN and END tags are likely missing from README.md', level=LogLevel.ERROR)
             sys.exit(1)
 
     with open(readme_path, 'w') as f_out:
         for line in readme_lines:
             f_out.write(line)
 
-        print('Updated directory tree in README.md')
+        log('Updated directory tree in README.md')
 
 
 def perform_check_platform():
-    print(f'The current platform is set to {platform_enum_to_string(_platform)}')
+    log(f'The current platform is set to {platform_enum_to_string(_platform)}')
     if _args.platform is not None:
         actual = platform_enum_to_string(determine_platform(True))
-        print(f'NOTE: The -p/--platform flag is overriding the actual platform of {actual}')
+        log(f'NOTE: The -p/--platform flag is overriding the actual platform of {actual}')
 
 
 def sanitized_full_path(dir_location, file_name):
@@ -274,7 +275,7 @@ def sudo_command(cmd):
         exit_code = os.system(f'sudo {cmd}')
         success = True if exit_code == 0 else False
     else:
-        print(f'{"".rjust(4)}WARNING: Unable to execute command `{cmd}` as a super user')
+        log(f'Unable to execute command `{cmd}` as a super user', level=LogLevel.WARN, gutter=LogGutter('', 4, False))
 
     return success
 
@@ -296,7 +297,7 @@ def determine_platform(force_actual=False):
         platform_enum = PlatformType.WINDOWS
 
     if platform_enum == PlatformType.UNKNOWN:
-        print(f'ERROR: Unsupported platform "{platform_str}"')
+        log(f'Unsupported platform "{platform_str}"', level=LogLevel.ERROR)
         sys.exit(1)
 
     return platform_enum
@@ -310,7 +311,7 @@ def platform_enum_to_string(platform_enum):
     elif platform_enum == PlatformType.WINDOWS:
         return 'Windows'
     else:
-        print(f'Unsupported platform enum {repr(platform_enum)}')
+        log(f'Unsupported platform enum {repr(platform_enum)}')
         sys.exit(1)
 
 
@@ -319,6 +320,21 @@ class PlatformType(Enum):
     LINUX = 1
     MACOS = 2
     WINDOWS = 3
+
+
+class LogLevel(Enum):
+    INFO = 1
+    WARN = 2
+    ERROR = 3
+
+
+LogGutter = namedtuple("LogGutter", "content length space")
+
+
+def log(message, level=LogLevel.INFO, gutter=LogGutter('', 0, False), end='\n', flush=False):
+    level_prefix = 'ERROR: ' if level == LogLevel.ERROR else 'WARNING: ' if level == LogLevel.WARN else ''
+
+    print(f'{str(gutter.content).rjust(gutter.length)}{" " if gutter.space else ""}{level_prefix}{message}', end=end, flush=flush)
 
 
 if __name__ == '__main__':
@@ -382,7 +398,7 @@ if __name__ == '__main__':
         _backup_config_file = sanitized_full_path(_backup_dir_root, _args.config_file)
 
     if not os.path.exists(_backup_config_file):
-        print(f'ERROR: Configuration file "{_backup_config_file}" does not exist')
+        log(f'Configuration file "{_backup_config_file}" does not exist', level=LogLevel.ERROR)
         sys.exit(1)
 
     with open(_backup_config_file) as f:
@@ -394,7 +410,7 @@ if __name__ == '__main__':
         # Extract backup scripts so they don't interfere with normal processing
         _backup_scripts = _backup_data.pop(_backup_config_key, None)
     except KeyError:
-        print(f'ERROR: Configuration file "{_backup_config_file}" does not contain platform {platform_enum_to_string(_platform)}')
+        log(f'Configuration file "{_backup_config_file}" does not contain platform {platform_enum_to_string(_platform)}', level=LogLevel.ERROR)
         sys.exit(1)
 
     if _args.backup:
