@@ -26,6 +26,7 @@
   },
 
   "[python]": {
+    "editor.formatOnSave": true,
     "editor.tabSize": 4
   },
 
@@ -73,6 +74,7 @@
   },
 
   "python.languageServer": "Default",
+  "python.formatting.provider": "black",
 
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 
