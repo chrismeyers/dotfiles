@@ -6,27 +6,20 @@ These files are backed up and can be restored using `backupdots.py` in conjuncti
 Make sure to clone this repository with the `--recursive` flag to include all submodules.
 
 ```
-usage: backupdots.py [-h] [-p {macOS,Linux,Windows}] [-b] [-r] [-c] [-u]
-                     [-t {print,inject}] [--check-platform]
-                     [--config-file CONFIG_FILE]
+usage: backupdots.py [-h] [-p {macOS,Linux,Windows}] [-b] [-r] [-c] [-u] [-t {print,inject}] [--check-platform] [--config-file CONFIG_FILE]
 
 Backup or restore configuration files
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -p {macOS,Linux,Windows}, --platform {macOS,Linux,Windows}
-                        overrides the current platform to determine which set
-                        of files to use. WARNING: This should only be used if
-                        the determined platform is wrong!
-  -b, --backup          perform a backup based on files in the config file
-                        (default: backupdots.json)
-  -r, --restore         perform a restore based on files in the config file
-                        (default: backupdots.json)
+                        overrides the current platform to determine which set of files to use. WARNING: This should only be used if the determined platform is wrong!
+  -b, --backup          perform a backup based on files in the config file (default: backupdots.json)
+  -r, --restore         perform a restore based on files in the config file (default: backupdots.json)
   -c, --cleanup         removes *.orig files
   -u, --unlink          removes all symlinks for the given platform
   -t {print,inject}, --tree {print,inject}
-                        generates a directory tree and prints the output to
-                        stdout or injects the output into README.md
+                        generates a directory tree and prints the output to stdout or injects the output into README.md
   --check-platform      checks which platform would be run
   --config-file CONFIG_FILE
                         name of a config file to override backupdots.json
