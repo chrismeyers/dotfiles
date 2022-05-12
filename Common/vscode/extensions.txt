@@ -11,7 +11,6 @@ eg2.vscode-npm-script
 esbenp.prettier-vscode
 formulahendry.auto-close-tag
 formulahendry.auto-rename-tag
-gitkraken.gitkraken-authentication
 golang.go
 matt-meyers.vscode-dbml
 ms-azuretools.vscode-docker
