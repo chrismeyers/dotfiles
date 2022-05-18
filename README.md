@@ -27,7 +27,7 @@ options:
 
 <!-- BEGIN TREE -->
 ```
-.
+./
 ├── Common/
 │   ├── SublimeText/
 │   │   └── UserSettings/
@@ -133,8 +133,7 @@ options:
     │   ├── dump.sh*
     │   └── restore.sh*
     ├── Rectangle/
-    │   ├── backup.sh*
-    │   └── com.knollsoft.Rectangle.plist
+    │   └── RectangleConfig.json
     ├── SublimeText/
     │   └── Overrides/
     │       └── Preferences (OSX).sublime-settings
@@ -157,6 +156,6 @@ options:
     └── zsh/
         └── .zshrc
 
-62 directories, 66 files
+62 directories, 65 files
 ```
 <!-- END TREE -->

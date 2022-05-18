@@ -2,8 +2,7 @@
     "macOS": {
         "__backup__": [
             {"name": "Homebrew packages", "script": "/Users/chris/dotfiles/macOS/Homebrew/dump.sh"},
-            {"name": "VS Code extensions", "script": "/Users/chris/dotfiles/Common/vscode/dump.sh"},
-            {"name": "Rectangle config", "script": "/Users/chris/dotfiles/macOS/Rectangle/backup.sh"}
+            {"name": "VS Code extensions", "script": "/Users/chris/dotfiles/Common/vscode/dump.sh"}
         ],
 
         ".aliases": ["/Users/chris", "/Users/chris/dotfiles/macOS/bash"],
@@ -23,8 +22,6 @@
         ".tmux.conf": ["/Users/chris", "/Users/chris/dotfiles/Common/tmux"],
 
         "settings.json" : ["/Users/chris/Library/Application Support/Code/User", "/Users/chris/dotfiles/Common/vscode"],
-
-        "com.knollsoft.Rectangle.plist": ["/Users/chris/Library/Preferences", "/Users/chris/dotfiles/macOS/Rectangle"],
 
         "nvim": ["/Users/chris/.config", "/Users/chris/dotfiles/Common/neovim"],
 
