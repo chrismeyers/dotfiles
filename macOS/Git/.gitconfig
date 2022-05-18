@@ -5,7 +5,7 @@
 	st = status
 	details = log -n1 -p --format=fuller
 	untracked = ls-files --others --exclude-standard
-	updatesubs = submodule foreach git pull origin master
+	updatesubs = submodule update --recursive --remote
 [core]
 	editor = nvim
 	excludesfile = /Users/chris/.gitignore_global

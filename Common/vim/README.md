@@ -30,6 +30,7 @@ Remove a plugin:
   * `git submodule deinit Common/vim/.vim/pack/plugins/[start|opt]/plugin`
   * `git rm -r Common/vim/.vim/pack/plugins/[start|opt]/plugin`
   * `rm -r .git/modules/Common/vim/.vim/pack/plugins/[start|opt]/plugin`
+  * Manually remove any additional references in `.git/modules/...` and `.git/config` if needed
 
 Update a plugin:
   * `cd ~/dotfiles/Common/vim/.vim/pack/plugins/[start|opt]/plugin`
@@ -37,6 +38,6 @@ Update a plugin:
 
 Update all plugins:
   * `cd ~/dotfiles`
-  * `git submodule foreach git pull origin master`
+  * `git submodule update --recursive --remote`
 
 See [this gist](https://gist.github.com/manasthakur/d4dc9a610884c60d944a4dd97f0b3560) for more information.
