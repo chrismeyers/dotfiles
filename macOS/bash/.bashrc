@@ -63,9 +63,6 @@ shopt -s checkwinsize
 ### Additional aliases
 source $HOME/.aliases
 
-### Source sensitive environment variables (keys, tokens, etc)
-source $HOME/.env_vars
-
 ### Pyenv setup
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init --path)"
