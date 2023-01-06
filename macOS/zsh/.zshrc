@@ -95,6 +95,20 @@ timezsh() {
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
+kctx() {
+  case $1 in
+  'stage')
+    kubectl config use-context m360-stage
+    ;;
+  'prod')
+    kubectl config use-context m360-prod
+    ;;
+  *)
+    echo 'unknown context'
+    ;;
+  esac
+}
+
 ### Set environment variables
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxegedabagacad
