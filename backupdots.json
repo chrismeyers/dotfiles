@@ -1,17 +1,13 @@
 {
     "macOS": {
         "__backup__": [
-            {"name": "Homebrew packages", "script": "/Users/chris/dotfiles/macOS/Homebrew/dump.sh"},
-            {"name": "VS Code extensions", "script": "/Users/chris/dotfiles/Common/vscode/dump.sh"}
+            { "name": "Homebrew packages", "script": "/Users/chris/dotfiles/macOS/Homebrew/dump.sh" },
+            { "name": "VS Code extensions", "script": "/Users/chris/dotfiles/Common/vscode/dump.sh" }
         ],
 
         ".aliases": ["/Users/chris", "/Users/chris/dotfiles/macOS/bash"],
         ".bashrc": ["/Users/chris", "/Users/chris/dotfiles/macOS/bash"],
         ".bash_profile": ["/Users/chris", "/Users/chris/dotfiles/macOS/bash"],
-
-        "config.fish": ["/Users/chris/.config/fish", "/Users/chris/dotfiles/macOS/fish"],
-        "aliases.fish": ["/Users/chris/.config/fish", "/Users/chris/dotfiles/macOS/fish"],
-        "functions": ["/Users/chris/.config/fish", "/Users/chris/dotfiles/macOS/fish"],
 
         ".zshrc": ["/Users/chris", "/Users/chris/dotfiles/macOS/zsh"],
 
@@ -30,9 +26,9 @@
     },
     "Linux": {
         "__backup__": [
-            {"name": "GNOME terminal profiles", "script": "/home/chris/dotfiles/Linux/terminals/gnome/dump.sh"},
-            {"name": "Tilix terminal profiles", "script": "/home/chris/dotfiles/Linux/terminals/tilix/dump.sh"},
-            {"name": "VS Code extensions", "script": "/home/chris/dotfiles/Common/vscode/dump.sh"}
+            { "name": "GNOME terminal profiles", "script": "/home/chris/dotfiles/Linux/terminals/gnome/dump.sh" },
+            { "name": "Tilix terminal profiles", "script": "/home/chris/dotfiles/Linux/terminals/tilix/dump.sh" },
+            { "name": "VS Code extensions", "script": "/home/chris/dotfiles/Common/vscode/dump.sh" }
         ],
 
         ".aliases": ["/home/chris", "/home/chris/dotfiles/Linux/bash"],
@@ -68,7 +64,7 @@
     },
     "Windows": {
         "__backup__": [
-            {"name": "VS Code extensions", "script": "C:\\Users\\Chris\\dotfiles\\Common\\vscode\\dump.bat"}
+            { "name": "VS Code extensions", "script": "C:\\Users\\Chris\\dotfiles\\Common\\vscode\\dump.bat" }
         ],
 
         ".vimrc": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\vim"],

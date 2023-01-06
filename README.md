@@ -141,11 +141,6 @@ options:
     │   ├── .aliases
     │   ├── .bash_profile
     │   └── .bashrc
-    ├── fish/
-    │   ├── aliases.fish
-    │   ├── config.fish
-    │   └── functions/
-    │       └── fish_prompt.fish
     ├── terminals/
     │   ├── alacritty/
     │   │   └── alacritty.yml
@@ -156,6 +151,6 @@ options:
     └── zsh/
         └── .zshrc
 
-62 directories, 65 files
+60 directories, 62 files
 ```
 <!-- END TREE -->
