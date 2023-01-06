@@ -64,15 +64,8 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-### Prompt format:
-###   user on hostname in [pwd] current_k8s_context git_branch_and_status
-###    >
-k8s_context() {
-  ctx=$(kubectl config current-context)
-  echo "%{$fg[cyan]%}k8s:$ctx%{$reset_color%}"
-}
-
-git_branch() {
+### Functions
+git_branch () {
   if ! git rev-parse --is-inside-work-tree &> /dev/null; then
     return
   fi
@@ -86,16 +79,17 @@ git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ %{$git_status_color%}git:\1%{$reset_color%}/"
 }
 
-PROMPT='%n on %{$fg[red]%}%m%{$reset_color%} in [%~] $(k8s_context)$(git_branch)
- > '
-
-### Additional functions
-timezsh() {
+timezsh () {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
-kctx() {
+k8s_context () {
+  ctx=$(kubectl config current-context)
+  echo "%{$fg[cyan]%}k8s:$ctx%{$reset_color%}"
+}
+
+kctx () {
   case $1 in
   'stage')
     kubectl config use-context m360-stage
@@ -108,6 +102,12 @@ kctx() {
     ;;
   esac
 }
+
+### Prompt format:
+###   user on hostname in [pwd] current_k8s_context git_branch_and_status
+###    >
+PROMPT='%n on %{$fg[red]%}%m%{$reset_color%} in [%~] $(k8s_context)$(git_branch)
+ > '
 
 ### Set environment variables
 export CLICOLOR=1
