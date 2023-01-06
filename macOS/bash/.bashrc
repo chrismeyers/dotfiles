@@ -54,19 +54,10 @@ export PATH="/opt/homebrew/bin\
 :/opt/homebrew/sbin\
 :/usr/local/bin\
 :/usr/local/sbin\
-:/usr/local/opt/texinfo/bin\
-:/usr/local/opt/gettext/bin\
-:/Applications/Postgres.app/Contents/Versions/latest/bin\
 :$GOPATH/bin\
 :$DENO_INSTALL/bin\
 :$PYENV_ROOT/bin\
-:$HOME/Library/Android/sdk/platform-tools\
-:$HOME/Library/Android/sdk/tools\
-:$HOME/.composer/vendor/bin\
-:$HOME/.pub-cache/bin\
 :$HOME/.local/bin\
-:$HOME/.poetry/bin\
-:$HOME/.cargo/bin\
 :$PATH"
 
 ### Shell optional behavior
