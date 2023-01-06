@@ -65,9 +65,7 @@ ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-### Prompt format:
-###   user on hostname in [pwd] git_branch_and_status
-###    >
+### Functions
 git_branch() {
   if ! git rev-parse --is-inside-work-tree &> /dev/null; then
     return
@@ -82,14 +80,16 @@ git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/%{$git_status_color%}\1%{$reset_color%}/"
 }
 
-PROMPT='%n on %{$fg[red]%}%m%{$reset_color%} in [%~] $(git_branch)
- > '
-
-### Additional functions
 timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
+
+### Prompt format:
+###   user on hostname in [pwd] git_branch_and_status
+###    >
+PROMPT='%n on %{$fg[red]%}%m%{$reset_color%} in [%~] $(git_branch)
+ > '
 
 ### Set environment variables
 export CLICOLOR=1
