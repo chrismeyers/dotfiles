@@ -433,6 +433,10 @@ def log(message, level=LogLevel.INFO, gutter=LogGutter, end="\n", flush=False):
 
 
 if __name__ == "__main__":
+    if sys.version_info < (3, 7):
+        log("This script requires Python 3.7+", level=LogLevel.ERROR)
+        sys.exit(1)
+
     _backup_dir_root = os.path.dirname(os.path.abspath(__file__))
     _backup_config_file = sanitized_full_path(_backup_dir_root, "backupdots.json")
     _backup_file_ext = "orig"
