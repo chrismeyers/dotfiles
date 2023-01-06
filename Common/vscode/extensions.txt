@@ -6,7 +6,6 @@ christian-kohler.path-intellisense
 dbaeumer.vscode-eslint
 dnicolson.binary-plist
 eamodio.gitlens
-eg2.vscode-npm-script
 esbenp.prettier-vscode
 formulahendry.auto-close-tag
 formulahendry.auto-rename-tag
@@ -18,7 +17,6 @@ ms-python.vscode-pylance
 ms-vsliveshare.vsliveshare
 redhat.vscode-commons
 redhat.vscode-yaml
-robertoachar.vscode-essentials-snippets
 streetsidesoftware.code-spell-checker
 teabyii.ayu
 VisualStudioExptTeam.vscodeintellicode
