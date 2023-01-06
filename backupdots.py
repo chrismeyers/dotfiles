@@ -27,7 +27,7 @@ import json
 import argparse
 import shutil
 import subprocess
-from collections import namedtuple
+from dataclasses import dataclass
 from enum import Enum
 
 
@@ -56,7 +56,7 @@ def perform_backup():
                 )
             log(
                 f"Copied {backup_type}: {orig_file} to {_backup_data[file][1]}",
-                gutter=LogGutter(file_num, 3, True),
+                gutter=LogGutter(str(file_num), 3, True),
             )
             file_num += 1
 
@@ -115,21 +115,21 @@ def perform_restore():
                     log(
                         f"{str(e).capitalize()}.{more_info}",
                         level=LogLevel.WARN,
-                        gutter=LogGutter("", 4, False),
+                        gutter=LogGutter(length=4),
                     )
                     continue
 
                 link_type = "directory" if os.path.isdir(backup_file) else "file"
                 log(
                     f"Linked {link_type}: {orig_file}",
-                    gutter=LogGutter(file_num, 3, True),
+                    gutter=LogGutter(str(file_num), 3, True),
                 )
                 file_num += 1
         else:
             log(
                 f"{_backup_data[file][0]} does not exist, skipping",
                 level=LogLevel.WARN,
-                gutter=LogGutter("", 4, False),
+                gutter=LogGutter(length=4),
             )
 
     if file_num == 1:
@@ -161,13 +161,13 @@ def perform_cleanup():
                 log(
                     f"{current_file} is not a file, symlink, or directory...skipping",
                     level=LogLevel.WARN,
-                    gutter=("", 4, False),
+                    gutter=LogGutter(length=4),
                 )
                 continue
 
             log(
                 f"Removed {cleanup_type}: {current_file}",
-                gutter=LogGutter(file_num, 3, True),
+                gutter=LogGutter(str(file_num), 3, True),
             )
             file_num += 1
 
@@ -190,7 +190,7 @@ def perform_unlink():
                     continue
             log(
                 f'Unlinked {"directory" if is_dir else "file"}: {current_file}',
-                gutter=LogGutter(file_num, 3, True),
+                gutter=LogGutter(str(file_num), 3, True),
             )
             file_num += 1
 
@@ -319,7 +319,7 @@ def sudo_command(cmd):
         log(
             f"Unable to execute command `{cmd}` as a super user",
             level=LogLevel.WARN,
-            gutter=LogGutter("", 4, False),
+            gutter=LogGutter(length=4),
         )
 
     return success
@@ -375,12 +375,48 @@ class LogLevel(Enum):
     ERROR = 3
 
 
-LogGutter = namedtuple("LogGutter", "content length space")
+@dataclass
+class LogGutter:
+    content: str = ""
+    """The content of the gutter"""
+
+    length: int = 0
+    """
+    The length of the gutter. If the length of content is less than this value,
+    the gutter is aligned to this value using spaces. Otherwise, this value is
+    ignored.
+    """
+
+    space: bool = False
+    """Whether or not to include a space between the gutter and message"""
 
 
-def log(
-    message, level=LogLevel.INFO, gutter=LogGutter("", 0, False), end="\n", flush=False
-):
+def log(message, level=LogLevel.INFO, gutter=LogGutter, end="\n", flush=False):
+    """
+    Usage examples:
+
+    ### Simple one line message
+    >>> log("test")
+    test
+
+    ### Multi-part message on same line
+    >>> log("start...", end="", flush=True)
+    >>> log("end")
+    start...end
+
+    ### Default level message with a gutter using positional args
+    >>> log("test", gutter=LogGutter("1", 3, True))
+      1 test
+
+    ### Elevated level message with a gutter using kwargs
+    >>> log("test", level=LogLevel.WARN, gutter=LogGutter(content="1", length=3, space=True))
+      1 WARNING: test
+
+    ### Gutter with one argument using kwargs
+    >>> log("test", gutter=LogGutter(length=4))
+        test
+    """
+
     level_prefix = (
         "ERROR: "
         if level == LogLevel.ERROR
