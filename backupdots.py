@@ -433,8 +433,8 @@ def log(message, level=LogLevel.INFO, gutter=LogGutter, end="\n", flush=False):
 
 
 if __name__ == "__main__":
-    if sys.version_info < (3, 7):
-        log("This script requires Python 3.7+", level=LogLevel.ERROR)
+    if sys.version_info < (3, 7, 0):
+        log("This script requires Python >= 3.7.0", level=LogLevel.ERROR)
         sys.exit(1)
 
     _backup_dir_root = os.path.dirname(os.path.abspath(__file__))
