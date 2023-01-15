@@ -358,7 +358,7 @@ def platform_enum_to_string(platform_enum):
     elif platform_enum == PlatformType.WINDOWS:
         return "Windows"
     else:
-        log(f"Unsupported platform enum {repr(platform_enum)}")
+        log(f"Unsupported platform enum {repr(platform_enum)}", level=LogLevel.ERROR)
         sys.exit(1)
 
 
