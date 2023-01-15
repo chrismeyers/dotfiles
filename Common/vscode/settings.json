@@ -34,7 +34,7 @@
     "editor.formatOnSave": true
   },
 
-  "[javascript][typescript][javascriptreact][vue]": {
+  "[javascript][typescript][javascriptreact][vue][astro]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
