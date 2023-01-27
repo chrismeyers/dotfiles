@@ -48,7 +48,6 @@ options:
 │   │   │   └── pack/
 │   │   │       └── plugins/
 │   │   │           └── start/
-│   │   │               ├── ayu-vim/
 │   │   │               ├── nord-vim/
 │   │   │               └── vim-commentary/
 │   │   ├── .vimrc
@@ -151,6 +150,6 @@ options:
     └── zsh/
         └── .zshrc
 
-60 directories, 62 files
+59 directories, 62 files
 ```
 <!-- END TREE -->
