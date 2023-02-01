@@ -29,40 +29,26 @@
   },
 
   "[python]": {
+    "editor.formatOnSave": true,
     "editor.tabSize": 4
   },
 
-  "[dart]": {
-    "editor.formatOnSave": true
+  "[javascript][typescript][javascriptreact][typescriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
   "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-
-  "[javascript]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  "[typescript]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  "[vue]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  "[html]": {
-    "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
   "[yaml]": {
-    "editor.formatOnSave": true,
     "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+
+  "[makefile]": {
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4
   },
 
   // OS File system interaction (File Explorer)
@@ -92,7 +78,7 @@
   },
 
   "python.languageServer": "Default",
-  "python.showStartPage": false,
+  "python.formatting.provider": "black",
 
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 
