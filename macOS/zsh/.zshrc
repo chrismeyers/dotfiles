@@ -120,7 +120,8 @@ export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 export GOPATH="$HOME/dev/go"
 export DENO_INSTALL="$HOME/.deno"
 export PYENV_ROOT="$HOME/.pyenv"
-export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+export FOUNDATION_INFRA_PATH="$HOME/dev/foundation-infra"
 export PATH="/usr/local/bin\
 :/usr/local/sbin\
 :$GOPATH/bin\
