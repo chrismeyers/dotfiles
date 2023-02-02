@@ -30,12 +30,12 @@
     "editor.tabSize": 4
   },
 
-  "[dart]": {
-    "editor.formatOnSave": true
+  "[javascript][typescript][javascriptreact][typescriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
-  "[javascript][typescript][javascriptreact][vue][astro]": {
-    "editor.formatOnSave": true,
+  "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
