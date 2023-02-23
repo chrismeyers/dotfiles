@@ -1,7 +1,9 @@
 {
   // Get off my lawn (Telemetry)
-  "telemetry.enableTelemetry": false,
+  "telemetry.telemetryLevel": "off",
   "redhat.telemetry.enabled": false,
+  "intelephense.telemetry.enabled": false,
+  "gitlens.telemetry.enabled": false,
 
   // General editor settings (Editor)
   "editor.tabSize": 2,
