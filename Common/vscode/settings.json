@@ -1,6 +1,7 @@
 {
-  // Get off my lawn, Microsoft (Telemetry)
+  // Get off my lawn (Telemetry)
   "telemetry.telemetryLevel": "off",
+  "gitlens.telemetry.enabled": false,
 
   // General editor settings (Editor)
   "editor.tabSize": 2,
