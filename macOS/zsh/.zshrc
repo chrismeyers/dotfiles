@@ -103,6 +103,11 @@ kctx () {
   esac
 }
 
+nvmu () {
+  nvm install $1 --reinstall-packages-from=current
+  nvm alias default $1
+}
+
 ### Prompt format:
 ###   user on hostname in [pwd] current_k8s_context git_branch_and_status
 ###    >
