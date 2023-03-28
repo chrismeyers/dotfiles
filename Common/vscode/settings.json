@@ -62,7 +62,7 @@
 
   // Extensions
   "latex-workshop.view.pdf.viewer": "tab",
-  "latex-workshop.latex.recipe.default": "lastUsed", // "Recipe: latexmk (xelatex)" is used for smaller PDF file sizes
+  "latex-workshop.latex.recipe.default": "latexmk (xelatex)", // XeLaTeX is used for smaller PDF file sizes
 
   "go.formatTool": "goimports",
   "go.useLanguageServer": true,
