@@ -85,6 +85,11 @@ timezsh() {
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
+nvmu () {
+  nvm install $1 --reinstall-packages-from=current
+  nvm alias default $1
+}
+
 ### Prompt format:
 ###   user on hostname in [pwd] git_branch_and_status
 ###    >
