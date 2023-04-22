@@ -66,7 +66,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 ### Functions
-git_branch() {
+git_branch () {
   if ! git rev-parse --is-inside-work-tree &> /dev/null; then
     return
   fi
@@ -88,7 +88,7 @@ git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/%{$git_status_color%}git:\1%{$reset_color%}/"
 }
 
-timezsh() {
+timezsh () {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
