@@ -71,8 +71,16 @@ git_branch() {
     return
   fi
 
-  if [ -z "$(git status --short)" ]; then
-    git_status_color="%{$fg[green]%}"
+  changes="$(git status --short 2> /dev/null)"
+  result=$?
+
+  if [ -z $changes ]; then
+    if [ $result -eq 0 ]; then
+      git_status_color="%{$fg[green]%}"
+    else
+      # An error has occurred when checking the git status, probably in .git
+      git_status_color="%{$fg[red]%}"
+    fi
   else
     git_status_color="%{$fg[yellow]%}"
   fi
