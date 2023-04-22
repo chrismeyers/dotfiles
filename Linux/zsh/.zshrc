@@ -61,34 +61,48 @@ HIST_STAMPS="%Y-%m-%d %H:%M:%S"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-### Prompt format:
-###   user on hostname in [pwd] git_branch_and_status
-###    >
-git_branch() {
+### Functions
+git_branch () {
   if ! git rev-parse --is-inside-work-tree &> /dev/null; then
     return
   fi
 
-  if [ -z "$(git status --short)" ]; then
-    git_status_color="%{$fg[green]%}"
+  changes="$(git status --porcelain 2> /dev/null)"
+  result=$?
+
+  if [ -z $changes ]; then
+    if [ $result -eq 0 ]; then
+      git_status_color="%{$fg[green]%}"
+    else
+      # An error has occurred when checking the git status, probably in .git
+      git_status_color="%{$fg[red]%}"
+    fi
   else
     git_status_color="%{$fg[yellow]%}"
   fi
 
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/%{$git_status_color%}\1%{$reset_color%}/"
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/%{$git_status_color%}git:\1%{$reset_color%}/"
 }
 
-PROMPT='%n on %{$fg[red]%}%m%{$reset_color%} in [%~] $(git_branch)
- > '
-
-### Additional functions
-timezsh() {
+timezsh () {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
+
+nvmu () {
+  nvm install $1 --reinstall-packages-from=current
+  nvm alias default $1
+}
+
+### Prompt format:
+###   user on hostname in [pwd] git_branch_and_status
+###    >
+PROMPT='%n on %{$fg[red]%}%m%{$reset_color%} in [%~] $(git_branch)
+ > '
 
 ### Set environment variables
 export CLICOLOR=1
