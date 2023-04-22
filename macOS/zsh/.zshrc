@@ -71,7 +71,7 @@ git_branch() {
     return
   fi
 
-  changes="$(git status --short 2> /dev/null)"
+  changes="$(git status --porcelain 2> /dev/null)"
   result=$?
 
   if [ -z $changes ]; then
@@ -85,7 +85,7 @@ git_branch() {
     git_status_color="%{$fg[yellow]%}"
   fi
 
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/%{$git_status_color%}\1%{$reset_color%}/"
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/%{$git_status_color%}git:\1%{$reset_color%}/"
 }
 
 timezsh() {
