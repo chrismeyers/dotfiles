@@ -34,7 +34,7 @@ Remove a plugin:
 
 Update a plugin:
   * `cd ~/dotfiles/Common/vim/.vim/pack/plugins/[start|opt]/plugin`
-  * `git pull origin master`
+  * `git pull origin [master|main]`
 
 Update all plugins:
   * `cd ~/dotfiles`
