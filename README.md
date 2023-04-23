@@ -47,7 +47,6 @@ options:
 │   │   │   └── pack/
 │   │   │       └── plugins/
 │   │   │           └── start/
-│   │   │               ├── ayu-vim/
 │   │   │               ├── nord-vim/
 │   │   │               └── vim-commentary/
 │   │   ├── .vimrc
