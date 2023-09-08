@@ -20,6 +20,10 @@
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
+  "files.eol": "\n",
+
+  // Window settings (Window)
+  "window.commandCenter": false,
 
   // Git settings
   "git.autoRepositoryDetection": "openEditors",
@@ -32,6 +36,7 @@
 
   "[python]": {
     "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.tabSize": 4
   },
 
@@ -62,12 +67,7 @@
   "workbench.colorTheme": "Nord",
   "workbench.iconTheme": "vscode-icons",
 
-  // Windows integrated terminal settings
-  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
-
   // Extensions
-  "latex-workshop.view.pdf.viewer": "tab",
-
   "go.formatTool": "goimports",
   "go.useLanguageServer": true,
 
@@ -80,7 +80,6 @@
   },
 
   "python.languageServer": "Default",
-  "python.formatting.provider": "black",
 
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 

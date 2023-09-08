@@ -13,13 +13,13 @@ formulahendry.auto-rename-tag
 golang.go
 matt-meyers.vscode-dbml
 ms-azuretools.vscode-docker
+ms-python.black-formatter
 ms-python.python
 ms-python.vscode-pylance
 ms-vsliveshare.vsliveshare
 redhat.vscode-commons
 redhat.vscode-yaml
 streetsidesoftware.code-spell-checker
-teabyii.ayu
 VisualStudioExptTeam.vscodeintellicode
 vscode-icons-team.vscode-icons
 vscodevim.vim
