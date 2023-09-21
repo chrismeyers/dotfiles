@@ -186,3 +186,7 @@ nnoremap <C-Up> <C-w><Up>
 nnoremap <C-Down> <C-w><Down>
 nnoremap <C-Left> <C-w><Left>
 nnoremap <C-Right> <C-w><Right>
+
+" Language specific settings ==================================================
+"" Python
+let g:python3_host_prog=expand('~/.pyenv/shims/python3')
