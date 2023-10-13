@@ -150,6 +150,6 @@ options:
     └── zsh/
         └── .zshrc
 
-59 directories, 62 files
+60 directories, 62 files
 ```
 <!-- END TREE -->
