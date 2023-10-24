@@ -112,7 +112,11 @@ kctx () {
 }
 
 nvmu () {
-  nvm install $1 --reinstall-packages-from=current
+  if [ $# -lt 1 ]; then
+    echo "Usage: $(basename "$0") version"
+    return 1
+  fi
+  nvm install --reinstall-packages-from=current $1
   nvm alias default $1
 }
 
