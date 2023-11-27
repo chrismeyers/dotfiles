@@ -20,3 +20,4 @@ VisualStudioExptTeam.vscodeintellicode
 vscode-icons-team.vscode-icons
 vscodevim.vim
 xabikos.JavaScriptSnippets
+ziglang.vscode-zig
