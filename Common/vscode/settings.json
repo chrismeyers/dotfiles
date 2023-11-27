@@ -54,7 +54,7 @@
   "explorer.confirmDragAndDrop": false,
 
   // UI settings (Workbench)
-  "workbench.editor.untitled.hint": "hidden",
+  "workbench.editor.empty.hint": "hidden",
   "workbench.colorTheme": "Nord",
   "workbench.iconTheme": "vscode-icons",
 
