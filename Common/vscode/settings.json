@@ -40,6 +40,11 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
+  "[ruby]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "Shopify.ruby-lsp"
+  },
+
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
