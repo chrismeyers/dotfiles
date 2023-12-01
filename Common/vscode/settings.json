@@ -25,6 +25,8 @@
 
   // Language overrides (Default Configuration Overrides)
   "[go]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "golang.go",
     "editor.insertSpaces": false,
     "editor.tabSize": 4
   },
