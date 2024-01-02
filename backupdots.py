@@ -78,7 +78,7 @@ def perform_backup():
             log(f"Backing up {name}...", end="", flush=True)
             exit_code = os.system(script)
             if exit_code == 0:
-                log("complete")
+                log("done")
                 file_num += 1
             else:
                 log(f"script exited with code {exit_code}")
