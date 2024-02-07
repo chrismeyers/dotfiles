@@ -14,14 +14,15 @@ golang.go
 matt-meyers.vscode-dbml
 ms-azuretools.vscode-docker
 ms-python.black-formatter
+ms-python.debugpy
 ms-python.python
 ms-python.vscode-pylance
 ms-vsliveshare.vsliveshare
 redhat.vscode-commons
 redhat.vscode-yaml
 streetsidesoftware.code-spell-checker
-VisualStudioExptTeam.vscodeintellicode
+visualstudioexptteam.vscodeintellicode
 vscode-icons-team.vscode-icons
 vscodevim.vim
-xabikos.JavaScriptSnippets
+xabikos.javascriptsnippets
 yoavbls.pretty-ts-errors
