@@ -105,6 +105,9 @@ kctx () {
   'prod')
     kubectl config use-context m360-prod
     ;;
+  'sandbox')
+    kubectl config use-context sandbox
+    ;;
   *)
     echo 'unknown context'
     ;;
