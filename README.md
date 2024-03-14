@@ -50,8 +50,7 @@ options:
 │   │   │           └── start/
 │   │   │               ├── nord-vim/
 │   │   │               └── vim-commentary/
-│   │   ├── .vimrc
-│   │   └── vimfiles -> .vim/
+│   │   └── .vimrc
 │   └── vscode/
 │       ├── dump.bat
 │       ├── dump.sh*
@@ -150,6 +149,6 @@ options:
     └── zsh/
         └── .zshrc
 
-60 directories, 62 files
+59 directories, 62 files
 ```
 <!-- END TREE -->
