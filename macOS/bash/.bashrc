@@ -67,9 +67,7 @@ shopt -s checkwinsize
 source $HOME/.aliases
 
 ### Pyenv setup
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init --path)"
-fi
+eval "$(pyenv init -)"
 
 # Specifies global Python versions. The order of the versions will determine the
 # priority of the version. Running `python` will invoke the first version given
