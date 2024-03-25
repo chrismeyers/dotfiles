@@ -420,9 +420,7 @@ def log(message, level=LogLevel.INFO, gutter=LogGutter, end="\n", flush=False):
     level_prefix = (
         "ERROR: "
         if level == LogLevel.ERROR
-        else "WARNING: "
-        if level == LogLevel.WARN
-        else ""
+        else "WARNING: " if level == LogLevel.WARN else ""
     )
 
     print(
