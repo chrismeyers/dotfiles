@@ -80,6 +80,7 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 
   "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
 
   "gitlens.defaultTimeFormat": "HH:mm",
   "gitlens.defaultDateFormat": "MMMM Do, YYYY HH:mm",
