@@ -99,17 +99,11 @@ k8s_context () {
 
 kctx () {
   case $1 in
-  'stage')
-    kubectl config use-context m360-stage
-    ;;
-  'prod')
-    kubectl config use-context m360-prod
-    ;;
-  'sandbox')
-    kubectl config use-context sandbox
+  'prod' | 'stage')
+    kubectl config use-context m360-$1
     ;;
   *)
-    echo 'unknown context'
+    kubectl config use-context $1
     ;;
   esac
 }
