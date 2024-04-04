@@ -86,6 +86,7 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 
   "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
 
   "yaml.format.singleQuote": true,
 
