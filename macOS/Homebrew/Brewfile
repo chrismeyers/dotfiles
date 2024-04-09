@@ -15,6 +15,7 @@ brew "bfg"
 brew "openldap"
 brew "php", link: false
 brew "composer"
+brew "direnv"
 brew "dos2unix"
 brew "git"
 brew "go"
@@ -27,7 +28,7 @@ brew "kubernetes-cli"
 brew "less"
 brew "libyaml"
 brew "make"
-brew "mysql@5.7", restart_service: true, link: true
+brew "mysql@5.7", link: true
 brew "neovim"
 brew "nmap"
 brew "node"
