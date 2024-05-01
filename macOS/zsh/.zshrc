@@ -133,6 +133,7 @@ export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 ### Set path variables
 export GOPATH="$HOME/dev/go"
 export DENO_INSTALL="$HOME/.deno"
+export BUN_INSTALL="$HOME/.bun"
 export PYENV_ROOT="$HOME/.pyenv"
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export FOUNDATION_INFRA_PATH="$HOME/dev/foundation-infra"
@@ -140,6 +141,7 @@ export PATH="/usr/local/bin\
 :/usr/local/sbin\
 :$GOPATH/bin\
 :$DENO_INSTALL/bin\
+:$BUN_INSTALL/bin\
 :$HOME/.composer/vendor/bin\
 :$HOME/.local/bin\
 :$PYENV_ROOT/bin\
@@ -190,8 +192,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+### gcloud
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/chris/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/chris/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/chris/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/chris/google-cloud-sdk/completion.zsh.inc'; fi
+
+### Bun
+# bun completions
+[ -s "/Users/chris/.bun/_bun" ] && source "/Users/chris/.bun/_bun"
