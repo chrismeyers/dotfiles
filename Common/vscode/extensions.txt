@@ -8,8 +8,6 @@ dbaeumer.vscode-eslint
 dnicolson.binary-plist
 eamodio.gitlens
 esbenp.prettier-vscode
-formulahendry.auto-close-tag
-formulahendry.auto-rename-tag
 golang.go
 matt-meyers.vscode-dbml
 ms-azuretools.vscode-docker
