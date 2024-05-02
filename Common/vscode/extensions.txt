@@ -6,9 +6,6 @@ dbaeumer.vscode-eslint
 dnicolson.binary-plist
 eamodio.gitlens
 esbenp.prettier-vscode
-formulahendry.auto-close-tag
-formulahendry.auto-complete-tag
-formulahendry.auto-rename-tag
 golang.go
 james-yu.latex-workshop
 ms-azuretools.vscode-docker
