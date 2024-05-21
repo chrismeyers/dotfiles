@@ -613,7 +613,7 @@
 			<key>Columns</key>
 			<integer>230</integer>
 			<key>Command</key>
-			<string>/opt/homebrew/bin/zsh -l -c "/opt/homebrew/bin/tmux attach || /opt/homebrew/bin/tmux"</string>
+			<string>/opt/homebrew/bin/zsh -c "/opt/homebrew/bin/tmux attach || /opt/homebrew/bin/tmux"</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
