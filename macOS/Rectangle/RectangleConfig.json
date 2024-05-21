@@ -52,6 +52,9 @@
     "doubleClickTitleBar" : {
       "int" : 0
     },
+    "doubleClickTitleBarIgnoredApps" : {
+
+    },
     "doubleClickTitleBarRestore" : {
       "int" : 0
     },
@@ -81,6 +84,9 @@
     },
     "gapSize" : {
       "float" : 0
+    },
+    "hapticFeedbackOnSnap" : {
+      "int" : 0
     },
     "hideMenubarIcon" : {
       "bool" : false
@@ -192,6 +198,9 @@
     },
     "systemWideMouseDown" : {
       "int" : 0
+    },
+    "systemWideMouseDownApps" : {
+
     },
     "todo" : {
       "int" : 0
@@ -316,5 +325,5 @@
       "modifierFlags" : 786432
     }
   },
-  "version" : "79"
+  "version" : "85"
 }
