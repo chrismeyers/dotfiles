@@ -37,25 +37,22 @@ def perform_backup():
     for file in _backup_data:
         orig_file = os.path.join(_backup_data[file][0], file)
         backup_file = os.path.join(_backup_data[file][1], file)
+        backup_dir = os.path.dirname(backup_file)
 
         if not os.path.exists(backup_file.replace("'", "")) and not os.path.islink(
             orig_file
         ):
-            if not os.path.exists(_backup_data[file][1]):
-                os.makedirs(_backup_data[file][1], mode=0o755)
+            if not os.path.exists(backup_dir):
+                os.makedirs(backup_dir, mode=0o755)
             if not os.path.isdir(orig_file):
                 backup_type = "file"
-                shutil.copy(
-                    os.path.join(_backup_data[file][0], file), _backup_data[file][1]
-                )
+                shutil.copy(orig_file, backup_dir)
             else:
                 backup_type = "directory"
-                shutil.copytree(
-                    os.path.join(_backup_data[file][0], file),
-                    os.path.join(_backup_data[file][1], file),
-                )
+                shutil.copytree(orig_file, backup_file)
+
             log(
-                f"Copied {backup_type}: {orig_file} to {_backup_data[file][1]}",
+                f"Copied {backup_type}: {orig_file} to {backup_dir}",
                 gutter=LogGutter(str(file_num), 3, True),
             )
             file_num += 1
@@ -92,11 +89,12 @@ def perform_restore():
     file_num = 1
     for file in _backup_data:
         orig_file = os.path.join(_backup_data[file][0], file)
+        orig_dir = os.path.dirname(orig_file)
         backup_file = os.path.join(_backup_data[file][1], file)
 
         # Assume that the program isn't installed or the configuration file is
         # not needed if the original path doesn't exist
-        if os.path.exists(_backup_data[file][0]):
+        if os.path.exists(orig_dir):
             # Make a backup of the file before creating a symlink
             if os.path.exists(orig_file) and not os.path.islink(orig_file):
                 shutil.move(orig_file, f"{orig_file}.{_backup_file_ext}")
@@ -127,7 +125,7 @@ def perform_restore():
                 file_num += 1
         else:
             log(
-                f"{_backup_data[file][0]} does not exist, skipping",
+                f"{orig_dir} does not exist, skipping",
                 level=LogLevel.WARN,
                 gutter=LogGutter(length=4),
             )
