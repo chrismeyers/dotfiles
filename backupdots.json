@@ -9,10 +9,6 @@
         ".bashrc": ["/Users/chris", "/Users/chris/dotfiles/macOS/bash"],
         ".bash_profile": ["/Users/chris", "/Users/chris/dotfiles/macOS/bash"],
 
-        "config.fish": ["/Users/chris/.config/fish", "/Users/chris/dotfiles/macOS/fish"],
-        "aliases.fish": ["/Users/chris/.config/fish", "/Users/chris/dotfiles/macOS/fish"],
-        "functions": ["/Users/chris/.config/fish", "/Users/chris/dotfiles/macOS/fish"],
-
         ".zshrc": ["/Users/chris", "/Users/chris/dotfiles/macOS/zsh"],
 
         ".vimrc": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],

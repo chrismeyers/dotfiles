@@ -137,7 +137,9 @@ export BUN_INSTALL="$HOME/.bun"
 export PYENV_ROOT="$HOME/.pyenv"
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export FOUNDATION_INFRA_PATH="$HOME/dev/foundation-infra"
-export PATH="/usr/local/bin\
+export PATH="/opt/homebrew/bin\
+:/opt/homebrew/sbin\
+:/usr/local/bin\
 :/usr/local/sbin\
 :$GOPATH/bin\
 :$DENO_INSTALL/bin\
@@ -185,7 +187,7 @@ eval "$(pyenv init -)"
 # priority of the version. Running `python` will invoke the first version given
 # to this command. Running `python2` or `python3` will run the first version of
 # 2.X.X or 3.X.X in the version list.
-pyenv global 3.12.2 2.7.18
+pyenv global 3.12.4 2.7.18
 
 ### Node Version Manager setup
 export NVM_DIR="$HOME/.nvm"
