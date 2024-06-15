@@ -135,6 +135,7 @@ export GOPATH="$HOME/dev/go"
 export DENO_INSTALL="$HOME/.deno"
 export BUN_INSTALL="$HOME/.bun"
 export PYENV_ROOT="$HOME/.pyenv"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export FOUNDATION_INFRA_PATH="$HOME/dev/foundation-infra"
 export PATH="/opt/homebrew/bin\
