@@ -166,7 +166,7 @@ eval "$(pyenv init -)"
 # priority of the version. Running `python` will invoke the first version given
 # to this command. Running `python2` or `python3` will run the first version of
 # 2.X.X or 3.X.X in the version list.
-pyenv global 3.12.2 2.7.18
+pyenv global 3.13.0 2.7.18
 
 ### Node Version Manager setup
 export NVM_DIR="$HOME/.nvm"
