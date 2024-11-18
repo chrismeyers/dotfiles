@@ -96,5 +96,7 @@
   "gitlens.codeLens.scopes": [
     "document"
   ],
-  "gitlens.codeLens.recentChange.command": "gitlens.diffWithPrevious"
+  "gitlens.codeLens.recentChange.command": "gitlens.diffWithPrevious",
+
+  "cSpell.useCustomDecorations": false
 }
