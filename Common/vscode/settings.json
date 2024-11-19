@@ -93,5 +93,6 @@
   "zig.initialSetupDone": true,
   "zig.path": "",
   "zig.zls.path": "",
-  "zig.zls.enableInlayHints": false
+
+  "cSpell.useCustomDecorations": false
 }
