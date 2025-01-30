@@ -1,6 +1,21 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/chris/.oh-my-zsh"
 
+# Set path variables
+export GOPATH="$HOME/dev/go"
+export DENO_INSTALL="$HOME/.deno"
+export PYENV_ROOT="$HOME/.pyenv"
+export PYTHONPATH="$HOME/dev/python:$PYTHONPATH"
+export PATH="/opt/homebrew/bin\
+:/opt/homebrew/sbin\
+:/usr/local/bin\
+:/usr/local/sbin\
+:$GOPATH/bin\
+:$DENO_INSTALL/bin\
+:$PYENV_ROOT/bin\
+:$HOME/.local/bin\
+:$PATH"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -114,21 +129,6 @@ export LSCOLORS=ExGxBxDxCxegedabagacad
 export PYTHONDONTWRITEBYTECODE=1
 export EDITOR="nvim"
 export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
-
-### Set path variables
-export GOPATH="$HOME/dev/go"
-export DENO_INSTALL="$HOME/.deno"
-export PYENV_ROOT="$HOME/.pyenv"
-export PYTHONPATH="$HOME/dev/python:$PYTHONPATH"
-export PATH="/opt/homebrew/bin\
-:/opt/homebrew/sbin\
-:/usr/local/bin\
-:/usr/local/sbin\
-:$GOPATH/bin\
-:$DENO_INSTALL/bin\
-:$PYENV_ROOT/bin\
-:$HOME/.local/bin\
-:$PATH"
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
