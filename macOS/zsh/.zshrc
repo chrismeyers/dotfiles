@@ -1,6 +1,28 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/chris/.oh-my-zsh"
 
+# Set path variables
+export GOPATH="$HOME/dev/go"
+export DENO_INSTALL="$HOME/.deno"
+export BUN_INSTALL="$HOME/.bun"
+export PYENV_ROOT="$HOME/.pyenv"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
+export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+export FOUNDATION_INFRA_PATH="$HOME/dev/foundation-infra"
+export PATH="/opt/homebrew/bin\
+:/opt/homebrew/sbin\
+:/usr/local/bin\
+:/usr/local/sbin\
+:$GOPATH/bin\
+:$DENO_INSTALL/bin\
+:$BUN_INSTALL/bin\
+:$HOME/.composer/vendor/bin\
+:$HOME/.local/bin\
+:$PYENV_ROOT/bin\
+:$ANDROID_SDK_ROOT/emulator\
+:$ANDROID_SDK_ROOT/platform-tools\
+:$PATH"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -131,28 +153,6 @@ export LSCOLORS=ExGxBxDxCxegedabagacad
 export PYTHONDONTWRITEBYTECODE=1
 export EDITOR="nvim"
 export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
-
-### Set path variables
-export GOPATH="$HOME/dev/go"
-export DENO_INSTALL="$HOME/.deno"
-export BUN_INSTALL="$HOME/.bun"
-export PYENV_ROOT="$HOME/.pyenv"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
-export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
-export FOUNDATION_INFRA_PATH="$HOME/dev/foundation-infra"
-export PATH="/opt/homebrew/bin\
-:/opt/homebrew/sbin\
-:/usr/local/bin\
-:/usr/local/sbin\
-:$GOPATH/bin\
-:$DENO_INSTALL/bin\
-:$BUN_INSTALL/bin\
-:$HOME/.composer/vendor/bin\
-:$HOME/.local/bin\
-:$PYENV_ROOT/bin\
-:$ANDROID_SDK_ROOT/emulator\
-:$ANDROID_SDK_ROOT/platform-tools\
-:$PATH"
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
