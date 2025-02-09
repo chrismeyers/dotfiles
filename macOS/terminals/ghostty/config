@@ -42,10 +42,18 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-command = /opt/homebrew/bin/zsh -c "/opt/homebrew/bin/tmux attach || /opt/homebrew/bin/tmux"
+initial-command = /opt/homebrew/bin/zsh -c "/opt/homebrew/bin/tmux attach || /opt/homebrew/bin/tmux"
 
 window-save-state = always
 quit-after-last-window-closed = true
 
 cursor-style = block
 cursor-style-blink = false
+
+font-feature = -calt, -liga, -dlig
+
+# TODO: Try to figure out why the title is set to the default ghost emoji
+# instead of the current directory with clickable finder icon when tmux is
+# launched via `command` / `initial-command`. That is the behavior when not
+# using tmux at all or when launching tmux manually.
+title = Ghostty
