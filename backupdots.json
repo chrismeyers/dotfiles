@@ -22,7 +22,9 @@
         "nvim": ["/Users/chris/.config", "/Users/chris/dotfiles/Common/neovim"],
 
         ".gitconfig": ["/Users/chris", "/Users/chris/dotfiles/macOS/Git"],
-        ".gitignore_global": ["/Users/chris", "/Users/chris/dotfiles/macOS/Git"]
+        ".gitignore_global": ["/Users/chris", "/Users/chris/dotfiles/macOS/Git"],
+
+        "config": ["/Users/chris/Library/Application Support/com.mitchellh.ghostty", "/Users/chris/dotfiles/macOS/terminals/ghostty"]
     },
     "Linux": {
         "__backup__": [

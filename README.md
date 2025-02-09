@@ -149,6 +149,8 @@ options:
     ├── terminals/
     │   ├── alacritty/
     │   │   └── alacritty.yml
+    │   ├── ghostty/
+    │   │   └── config
     │   └── iTermProfiles/
     │       └── Default/
     │           ├── com.googlecode.iterm2.plist
@@ -156,6 +158,6 @@ options:
     └── zsh/
         └── .zshrc
 
-59 directories, 62 files
+60 directories, 63 files
 ```
 <!-- END TREE -->
