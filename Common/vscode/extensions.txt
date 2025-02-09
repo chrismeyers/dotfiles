@@ -7,7 +7,6 @@ dnicolson.binary-plist
 eamodio.gitlens
 esbenp.prettier-vscode
 golang.go
-jakebecker.elixir-ls
 james-yu.latex-workshop
 ms-azuretools.vscode-docker
 ms-python.black-formatter
