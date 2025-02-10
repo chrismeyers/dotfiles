@@ -57,3 +57,5 @@ font-feature = -calt, -liga, -dlig
 # launched via `command` / `initial-command`. That is the behavior when not
 # using tmux at all or when launching tmux manually.
 title = Ghostty
+
+theme = nord
