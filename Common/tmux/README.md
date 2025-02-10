@@ -11,7 +11,7 @@
 | Interface | OS    | Instructions |
 | --------- | ----- | ------------ |
 | Mouse     | Linux | Hold `<shift>` and select text with cursor, `<ctrl-shift-c>` to copy, `<ctrl-shift-v>` to paste |
-|           | macOS | Hold `<option>` and select text with cursor, `<cmd-c>` to copy, `<cmd-v>` to paste |
+|           | macOS | Hold `<option>` (iTerm2) or `<shift>` (Ghostty) and select text with cursor, `<cmd-c>` to copy, `<cmd-v>` to paste |
 | Keyboard  | N/A   | Press `<prefix> [` to enter copy mode, `hjkl` or `<arrow>` to navigate, `v` for free-form selection, `V` to select the entire line, `r` to toggle rectangle selection, `y` to copy selected text, `q` to exit copy mode, `<prefix> ]` to paste |
 
 ## Common shortcuts

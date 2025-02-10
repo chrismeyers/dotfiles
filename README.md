@@ -91,13 +91,16 @@ options:
     │   └── functions/
     │       ├── fish_prompt.fish
     │       └── remote.fish
-    ├── iTermProfiles/
-    │   └── Default/
-    │       ├── com.googlecode.iterm2.plist
-    │       └── iterm2_default.itermcolors
+    ├── terminals/
+    │   ├── ghostty/
+    │   │   └── config
+    │   └── iTermProfiles/
+    │       └── Default/
+    │           ├── com.googlecode.iterm2.plist
+    │           └── iterm2_default.itermcolors
     └── zsh/
         └── .zshrc
 
-29 directories, 34 files
+31 directories, 35 files
 ```
 <!-- END TREE -->
