@@ -50,6 +50,7 @@ quit-after-last-window-closed = true
 cursor-style = block
 cursor-style-blink = false
 
+font-size = 12
 font-feature = -calt, -liga, -dlig
 
 # TODO: Try to figure out why the title is set to the default ghost emoji
