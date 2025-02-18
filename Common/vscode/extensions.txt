@@ -1,4 +1,3 @@
-arcticicestudio.nord-visual-studio-code
 bmewburn.vscode-intelephense-client
 casualjim.gotemplate
 chrismeyers.vscode-pretty-json
@@ -7,6 +6,7 @@ christian-kohler.path-intellisense
 dbaeumer.vscode-eslint
 dnicolson.binary-plist
 eamodio.gitlens
+enkia.tokyo-night
 esbenp.prettier-vscode
 golang.go
 matt-meyers.vscode-dbml

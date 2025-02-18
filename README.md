@@ -55,7 +55,7 @@ options:
 │   │   │   └── pack/
 │   │   │       └── plugins/
 │   │   │           └── start/
-│   │   │               ├── nord-vim/
+│   │   │               ├── tokyonight.nvim/
 │   │   │               └── vim-commentary/
 │   │   └── .vimrc
 │   └── vscode/
