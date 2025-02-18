@@ -58,4 +58,7 @@ font-feature = -calt, -liga, -dlig
 # using tmux at all or when launching tmux manually.
 title = Ghostty
 
-theme = nord
+theme = tokyonight-storm
+
+background-opacity = 0.85
+background-blur = true

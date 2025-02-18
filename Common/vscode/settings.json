@@ -57,7 +57,7 @@
 
   // UI settings (Workbench)
   "workbench.editor.empty.hint": "hidden",
-  "workbench.colorTheme": "Nord",
+  "workbench.colorTheme": "Tokyo Night Storm",
   "workbench.iconTheme": "vscode-icons",
 
   // Extensions
@@ -90,7 +90,6 @@
   ],
   "gitlens.codeLens.recentChange.command": "gitlens.diffWithPrevious",
 
-  "zig.initialSetupDone": true,
   "zig.path": "",
   "zig.zls.path": "",
 
