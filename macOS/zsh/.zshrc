@@ -115,6 +115,8 @@ nvmu () {
   fi
   nvm install --reinstall-packages-from=current $1
   nvm alias default $1
+  corepack disable
+  npm install --global yarn
 }
 
 ### Prompt format:
