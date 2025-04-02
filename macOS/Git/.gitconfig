@@ -15,9 +15,18 @@
 [user]
 	name = Chris Meyers
 	email = chris@chrismeyers.net
+	signingkey = /Users/chris/.ssh/id_ed25519_git.pub
 [push]
 	default = simple
 [pull]
 	rebase = false
 [init]
 	defaultBranch = main
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[gpg "ssh"]
+	allowedSignersFile = /Users/chris/.config/git/allowed-signers
