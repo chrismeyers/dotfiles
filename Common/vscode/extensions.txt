@@ -18,4 +18,3 @@ visualstudioexptteam.vscodeintellicode
 vscode-icons-team.vscode-icons
 vscodevim.vim
 xabikos.javascriptsnippets
-ziglang.vscode-zig

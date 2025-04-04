@@ -90,8 +90,5 @@
   ],
   "gitlens.codeLens.recentChange.command": "gitlens.diffWithPrevious",
 
-  "zig.path": "",
-  "zig.zls.path": "",
-
   "cSpell.useCustomDecorations": false
 }

@@ -36,16 +36,16 @@ options:
 ```
 ./
 ├── Common/
-│   ├── SublimeText/
-│   │   └── UserSettings/
-│   │       ├── Package Control.sublime-settings
-│   │       ├── Preferences.sublime-settings
-│   │       └── Python.sublime-settings
 │   ├── misc/
 │   │   └── .astylerc
 │   ├── neovim/
 │   │   └── nvim/
 │   │       └── init.vim
+│   ├── SublimeText/
+│   │   └── UserSettings/
+│   │       ├── Package Control.sublime-settings
+│   │       ├── Preferences.sublime-settings
+│   │       └── Python.sublime-settings
 │   ├── tmux/
 │   │   └── .tmux.conf
 │   ├── vim/
@@ -66,16 +66,6 @@ options:
 │       ├── restore.sh*
 │       └── settings.json
 ├── Linux/
-│   ├── Git/
-│   │   ├── .gitconfig
-│   │   └── .gitignore_global
-│   ├── SublimeText/
-│   │   └── Overrides/
-│   │       └── Preferences (Linux).sublime-settings
-│   ├── Wallpapers/
-│   │   ├── moon_mower.jpg
-│   │   ├── moon_mower.png
-│   │   └── ruby_beach.jpg
 │   ├── bash/
 │   │   ├── .aliases
 │   │   └── .bashrc
@@ -86,6 +76,9 @@ options:
 │   ├── fontconfig/
 │   │   └── conf.d/
 │   │       └── 10-symbols.conf
+│   ├── Git/
+│   │   ├── .gitconfig
+│   │   └── .gitignore_global
 │   ├── i3/
 │   │   └── config
 │   ├── i3lock/
@@ -101,6 +94,9 @@ options:
 │   │   └── sidetab.rasi
 │   ├── stalonetray/
 │   │   └── .stalonetrayrc
+│   ├── SublimeText/
+│   │   └── Overrides/
+│   │       └── Preferences (Linux).sublime-settings
 │   ├── systemd/
 │   │   └── i3lock.service
 │   ├── terminals/
@@ -117,46 +113,50 @@ options:
 │   │       │   └── schemes/
 │   │       │       └── default_colors.json
 │   │       └── tilix.dconf
+│   ├── Wallpapers/
+│   │   ├── moon_mower.jpg
+│   │   ├── moon_mower.png
+│   │   └── ruby_beach.jpg
 │   ├── xfce4/
 │   │   └── xfconf/
 │   │       └── xfce-perchannel-xml/
 │   │           └── xfce4-power-manager.xml
 │   └── zsh/
 │       └── .zshrc
-├── Windows/
+├── macOS/
+│   ├── bash/
+│   │   ├── .aliases
+│   │   ├── .bash_profile
+│   │   └── .bashrc
 │   ├── Git/
-│   │   └── .gitconfig
-│   └── SublimeText/
-│       └── Overrides/
-│           └── Preferences (Windows).sublime-settings
-└── macOS/
+│   │   ├── .gitconfig
+│   │   └── .gitignore_global
+│   ├── Homebrew/
+│   │   ├── Brewfile
+│   │   ├── dump.sh*
+│   │   └── restore.sh*
+│   ├── Rectangle/
+│   │   └── RectangleConfig.json
+│   ├── SublimeText/
+│   │   └── Overrides/
+│   │       └── Preferences (OSX).sublime-settings
+│   ├── terminals/
+│   │   ├── alacritty/
+│   │   │   └── alacritty.yml
+│   │   ├── ghostty/
+│   │   │   └── config
+│   │   └── iTermProfiles/
+│   │       └── Default/
+│   │           ├── com.googlecode.iterm2.plist
+│   │           └── iterm2_default.itermcolors
+│   └── zsh/
+│       └── .zshrc
+└── Windows/
     ├── Git/
-    │   ├── .gitconfig
-    │   └── .gitignore_global
-    ├── Homebrew/
-    │   ├── Brewfile
-    │   ├── dump.sh*
-    │   └── restore.sh*
-    ├── Rectangle/
-    │   └── RectangleConfig.json
-    ├── SublimeText/
-    │   └── Overrides/
-    │       └── Preferences (OSX).sublime-settings
-    ├── bash/
-    │   ├── .aliases
-    │   ├── .bash_profile
-    │   └── .bashrc
-    ├── terminals/
-    │   ├── alacritty/
-    │   │   └── alacritty.yml
-    │   ├── ghostty/
-    │   │   └── config
-    │   └── iTermProfiles/
-    │       └── Default/
-    │           ├── com.googlecode.iterm2.plist
-    │           └── iterm2_default.itermcolors
-    └── zsh/
-        └── .zshrc
+    │   └── .gitconfig
+    └── SublimeText/
+        └── Overrides/
+            └── Preferences (Windows).sublime-settings
 
 60 directories, 63 files
 ```
