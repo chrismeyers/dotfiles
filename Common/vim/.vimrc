@@ -28,7 +28,9 @@ set confirm
 set noeb vb t_vb=
 
 "" Use <F11> to toggle between 'paste' and 'nopaste'
-set pastetoggle=<F11>
+if !has('nvim')
+  set pastetoggle=<F11>
+endif
 
 "" Enable line numbers
 set number
