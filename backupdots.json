@@ -1,83 +1,86 @@
 {
     "macOS": {
-        "__backup__": [
+        "backup": [
             { "name": "Homebrew packages", "script": "/Users/chris/dotfiles/macOS/Homebrew/dump.sh" },
             { "name": "VS Code extensions", "script": "/Users/chris/dotfiles/Common/vscode/dump.sh" }
         ],
+        "files": [
+            ["/Users/chris/dotfiles/macOS/bash/.aliases", "/Users/chris/.aliases"],
+            ["/Users/chris/dotfiles/macOS/bash/.bashrc", "/Users/chris/.bashrc"],
+            ["/Users/chris/dotfiles/macOS/bash/.bash_profile", "/Users/chris/.bash_profile"],
 
-        ".aliases": ["/Users/chris", "/Users/chris/dotfiles/macOS/bash"],
-        ".bashrc": ["/Users/chris", "/Users/chris/dotfiles/macOS/bash"],
-        ".bash_profile": ["/Users/chris", "/Users/chris/dotfiles/macOS/bash"],
+            ["/Users/chris/dotfiles/macOS/zsh/.zshrc", "/Users/chris/.zshrc"],
 
-        ".zshrc": ["/Users/chris", "/Users/chris/dotfiles/macOS/zsh"],
+            ["/Users/chris/dotfiles/Common/vim/.vimrc", "/Users/chris/.vimrc"],
+            ["/Users/chris/dotfiles/Common/vim/.gvimrc", "/Users/chris/.gvimrc"],
+            ["/Users/chris/dotfiles/Common/vim/.vim", "/Users/chris/.vim"],
 
-        ".vimrc": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
-        ".gvimrc": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
-        ".vim": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
+            ["/Users/chris/dotfiles/Common/tmux/.tmux.conf", "/Users/chris/.tmux.conf"],
 
-        ".tmux.conf": ["/Users/chris", "/Users/chris/dotfiles/Common/tmux"],
+            ["/Users/chris/dotfiles/Common/vscode/settings.json", "/Users/chris/Library/Application Support/Code/User/settings.json"],
 
-        "settings.json" : ["/Users/chris/Library/Application Support/Code/User", "/Users/chris/dotfiles/Common/vscode"],
+            ["/Users/chris/dotfiles/Common/neovim/nvim", "/Users/chris/.config/nvim"],
 
-        "nvim": ["/Users/chris/.config", "/Users/chris/dotfiles/Common/neovim"],
+            ["/Users/chris/dotfiles/macOS/Git/.gitconfig", "/Users/chris/.gitconfig"],
+            ["/Users/chris/dotfiles/macOS/Git/.gitignore_global", "/Users/chris/.gitignore_global"],
 
-        ".gitconfig": ["/Users/chris", "/Users/chris/dotfiles/macOS/Git"],
-        ".gitignore_global": ["/Users/chris", "/Users/chris/dotfiles/macOS/Git"],
-
-        "config": ["/Users/chris/Library/Application Support/com.mitchellh.ghostty", "/Users/chris/dotfiles/macOS/terminals/ghostty"]
+            ["/Users/chris/dotfiles/macOS/terminals/ghostty/config", "/Users/chris/Library/Application Support/com.mitchellh.ghostty/config"]
+        ]
     },
     "Linux": {
-        "__backup__": [
+        "backup": [
             { "name": "GNOME terminal profiles", "script": "/home/chris/dotfiles/Linux/terminals/gnome/dump.sh" },
             { "name": "Tilix terminal profiles", "script": "/home/chris/dotfiles/Linux/terminals/tilix/dump.sh" },
             { "name": "VS Code extensions", "script": "/home/chris/dotfiles/Common/vscode/dump.sh" }
         ],
+        "files": [
+            ["/home/chris/dotfiles/Linux/bash/.aliases", "/home/chris/.aliases"],
+            ["/home/chris/dotfiles/Linux/bash/.bashrc", "/home/chris/.bashrc"],
 
-        ".aliases": ["/home/chris", "/home/chris/dotfiles/Linux/bash"],
-        ".bashrc": ["/home/chris", "/home/chris/dotfiles/Linux/bash"],
+            ["/home/chris/dotfiles/Linux/zsh/.zshrc", "/home/chris/.zshrc"],
 
-        ".zshrc": ["/home/chris", "/home/chris/dotfiles/Linux/zsh"],
+            ["/home/chris/dotfiles/Common/vim/.vimrc", "/home/chris/.vimrc"],
+            ["/home/chris/dotfiles/Common/vim/.gvimrc", "/home/chris/.gvimrc"],
+            ["/home/chris/dotfiles/Common/vim/.vim", "/home/chris/.vim"],
 
-        ".vimrc": ["/home/chris", "/home/chris/dotfiles/Common/vim"],
-        ".gvimrc": ["/home/chris", "/home/chris/dotfiles/Common/vim"],
-        ".vim": ["/home/chris", "/home/chris/dotfiles/Common/vim"],
+            ["/home/chris/dotfiles/Common/tmux/.tmux.conf", "/home/chris/.tmux.conf"],
 
-        ".tmux.conf": ["/home/chris", "/home/chris/dotfiles/Common/tmux"],
+            ["/home/chris/dotfiles/Linux/stalonetray/.stalonetrayrc", "/home/chris/.stalonetrayrc"],
 
-        ".stalonetrayrc": ["/home/chris", "/home/chris/dotfiles/Linux/stalonetray"],
+            ["/home/chris/dotfiles/Common/vscode/settings.json", "/home/chris/.config/Code/User/settings.json"],
 
-        "settings.json" : ["/home/chris/.config/Code/User", "/home/chris/dotfiles/Common/vscode"],
+            ["/home/chris/dotfiles/Linux/i3", "/home/chris/.config/i3"],
+            ["/home/chris/dotfiles/Linux/i3status", "/home/chris/.config/i3status"],
+            ["/home/chris/dotfiles/Linux/rofi", "/home/chris/.config/rofi"],
+            ["/home/chris/dotfiles/Linux/fontconfig", "/home/chris/.config/fontconfig"],
+            ["/home/chris/dotfiles/Linux/compton", "/home/chris/.config/compton"],
+            ["/home/chris/dotfiles/Linux/polybar", "/home/chris/.config/polybar"],
+            ["/home/chris/dotfiles/Common/neovim/nvim", "/home/chris/.config/nvim"],
+            ["/home/chris/dotfiles/Linux/dunst", "/home/chris/.config/dunst"],
+            ["/home/chris/dotfiles/Linux/xfce4", "/home/chris/.config/xfce4"],
+            ["/home/chris/dotfiles/Linux/terminals/tilix/tilix", "/home/chris/.config/tilix"],
 
-        "i3": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
-        "i3status": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
-        "rofi": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
-        "fontconfig": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
-        "compton": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
-        "polybar": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
-        "nvim": ["/home/chris/.config", "/home/chris/dotfiles/Common/neovim"],
-        "dunst": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
-        "xfce4": ["/home/chris/.config", "/home/chris/dotfiles/Linux"],
-        "tilix": ["/home/chris/.config", "/home/chris/dotfiles/Linux/terminals/tilix"],
+            ["/home/chris/dotfiles/Linux/Wallpapers", "/home/chris/Pictures/Wallpapers"],
 
-        "Wallpapers": ["/home/chris/Pictures", "/home/chris/dotfiles/Linux"],
-
-        ".gitconfig": ["/home/chris", "/home/chris/dotfiles/Linux/Git"],
-        ".gitignore_global": ["/home/chris", "/home/chris/dotfiles/Linux/Git"]
+            ["/home/chris/dotfiles/Linux/Git/.gitconfig", "/home/chris/.gitconfig"],
+            ["/home/chris/dotfiles/Linux/Git/.gitignore_global", "/home/chris/.gitignore_global"]
+        ]
     },
     "Windows": {
-        "__backup__": [
+        "backup": [
             { "name": "VS Code extensions", "script": "C:\\Users\\Chris\\dotfiles\\Common\\vscode\\dump.bat" }
         ],
+        "files": [
+            ["C:\\Users\\Chris\\dotfiles\\Common\\vim\\.vimrc", "C:\\Users\\Chris\\.vimrc"],
+            ["C:\\Users\\Chris\\dotfiles\\Common\\vim\\.gvimrc", "C:\\Users\\Chris\\.gvimrc"],
+            ["C:\\Users\\Chris\\dotfiles\\Common\\vim\\.ideavimrc", "C:\\Users\\Chris\\.ideavimrc"],
+            ["C:\\Users\\Chris\\dotfiles\\Common\\vim\\.vim", "C:\\Users\\Chris\\.vim"],
 
-        ".vimrc": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\vim"],
-        ".gvimrc": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\vim"],
-        ".ideavimrc": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\vim"],
-        ".vim": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Common\\vim"],
+            ["C:\\Users\\Chris\\dotfiles\\Common\\vscode\\settings.json", "C:\\Users\\Chris\\AppData\\Roaming\\Code\\User\\settings.json"],
 
-        "settings.json" : ["C:\\Users\\Chris\\AppData\\Roaming\\Code\\User", "C:\\Users\\Chris\\dotfiles\\Common\\vscode"],
+            ["C:\\Users\\Chris\\dotfiles\\Common\\neovim\\nvim", "C:\\Users\\Chris\\AppData\\Local\\nvim"],
 
-        "nvim": ["C:\\Users\\Chris\\AppData\\Local", "C:\\Users\\Chris\\dotfiles\\Common\\neovim"],
-
-        ".gitconfig": ["C:\\Users\\Chris", "C:\\Users\\Chris\\dotfiles\\Windows\\Git"]
+            ["C:\\Users\\Chris\\dotfiles\\Windows\\Git\\.gitconfig", "C:\\Users\\Chris\\.gitconfig"]
+        ]
     }
 }
