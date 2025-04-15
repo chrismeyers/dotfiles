@@ -59,7 +59,7 @@ def perform_backup():
                 shutil.copytree(target, source)
             else:
                 backup_type = "file"
-                shutil.copy(target, source_dir)
+                shutil.copy(target, source)
 
             log(
                 f"Copied {backup_type}: {target} to {source_dir}",
