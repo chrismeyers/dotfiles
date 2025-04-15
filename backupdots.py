@@ -41,49 +41,53 @@ from enum import Enum
 def perform_backup():
     """Copies files to dotfiles repo and runs backup scripts"""
     file_num = 1
-    for backup_file, orig_file in _files:
-        backup_dir = os.path.dirname(backup_file)
+    for source, target in _backup_data.get("files", []):
+        source_dir = os.path.dirname(source)
 
-        if not os.path.exists(backup_file.replace("'", "")) and not os.path.islink(
-            orig_file
-        ):
-            if not os.path.exists(backup_dir):
-                os.makedirs(backup_dir, mode=0o755)
-            if not os.path.isdir(orig_file):
-                backup_type = "file"
-                shutil.copy(orig_file, backup_dir)
-            else:
+        if not os.path.exists(target):
+            log(
+                f"{target} does not exist, skipping",
+                level=LogLevel.WARN,
+                gutter=LogGutter(length=4),
+            )
+        elif not os.path.exists(source.replace("'", "")) and not os.path.islink(target):
+            if not os.path.exists(source_dir):
+                os.makedirs(source_dir, mode=0o755)
+
+            if os.path.isdir(target):
                 backup_type = "directory"
-                shutil.copytree(orig_file, backup_file)
+                shutil.copytree(target, source)
+            else:
+                backup_type = "file"
+                shutil.copy(target, source_dir)
 
             log(
-                f"Copied {backup_type}: {orig_file} to {backup_dir}",
+                f"Copied {backup_type}: {target} to {source_dir}",
                 gutter=LogGutter(str(file_num), 3, True),
             )
             file_num += 1
 
-    if _scripts is not None:
-        for item in _scripts:
-            name = item.get("name", "Unknown")
-            script = item.get("script", None)
+    for item in _backup_data.get("backup", []):
+        name = item.get("name", "Unknown")
+        script = item.get("script", None)
 
-            if script is None:
-                log(
-                    f'Missing script key for "{name}" {_scripts_config_key} entry',
-                    level=LogLevel.WARN,
-                )
-                continue
-            elif not os.path.exists(script):
-                log(f"{script} does not exist", level=LogLevel.WARN)
-                continue
+        if script is None:
+            log(
+                f'Missing script key for "{name}" backup entry',
+                level=LogLevel.WARN,
+            )
+            continue
+        elif not os.path.exists(script):
+            log(f"{script} does not exist", level=LogLevel.WARN)
+            continue
 
-            log(f"Backing up {name}...", end="", flush=True)
-            exit_code = os.system(script)
-            if exit_code == 0:
-                log("done")
-                file_num += 1
-            else:
-                log(f"script exited with code {exit_code}")
+        log(f"Backing up {name}...", end="", flush=True)
+        exit_code = os.system(script)
+        if exit_code == 0:
+            log("done")
+            file_num += 1
+        else:
+            log(f"script exited with code {exit_code}")
 
     if file_num == 1:
         log("Nothing to backup")
@@ -92,26 +96,27 @@ def perform_backup():
 def perform_restore():
     """Symlinks files from dotfiles repo to original location"""
     file_num = 1
-    for backup_file, orig_file in _files:
-        orig_dir = os.path.dirname(orig_file)
+    for source, target in _backup_data.get("files", []):
+        target_dir = os.path.dirname(target)
 
-        if not os.path.exists(backup_file):
+        if not os.path.exists(source):
             log(
-                f"{backup_file} does not exist, skipping",
+                f"{source} does not exist, skipping",
                 level=LogLevel.WARN,
                 gutter=LogGutter(length=4),
             )
         # Assume that the program isn't installed or the configuration file is
         # not needed if the original path doesn't exist
-        elif os.path.exists(orig_dir):
+        elif os.path.exists(target_dir):
             # Make a backup of the file before creating a symlink
-            if os.path.exists(orig_file) and not os.path.islink(orig_file):
-                shutil.move(orig_file, f"{orig_file}.{_backup_file_ext}")
-            if not os.path.exists(orig_file):
+            if os.path.exists(target) and not os.path.islink(target):
+                shutil.move(target, f"{target}.{_backup_file_ext}")
+
+            if not os.path.exists(target):
                 try:
-                    os.symlink(backup_file, orig_file)
+                    os.symlink(source, target)
                 except PermissionError:
-                    if not sudo_command(f"ln -s {backup_file} {orig_file}"):
+                    if not sudo_command(f"ln -s {source} {target}"):
                         continue
                 except OSError as e:
                     more_info = (
@@ -126,15 +131,15 @@ def perform_restore():
                     )
                     continue
 
-                link_type = "directory" if os.path.isdir(backup_file) else "file"
+                link_type = "directory" if os.path.isdir(source) else "file"
                 log(
-                    f"Linked {link_type}: {orig_file}",
+                    f"Linked {link_type}: {target}",
                     gutter=LogGutter(str(file_num), 3, True),
                 )
                 file_num += 1
         else:
             log(
-                f"{orig_dir} does not exist, skipping",
+                f"{target_dir} does not exist, skipping",
                 level=LogLevel.WARN,
                 gutter=LogGutter(length=4),
             )
@@ -146,34 +151,34 @@ def perform_restore():
 def perform_cleanup():
     """Removes all *.{_backup_file_ext} files generated from restore"""
     file_num = 1
-    for _, orig_file in _files:
-        current_file = f"{orig_file}.{_backup_file_ext}"
+    for _, target in _backup_data.get("files", []):
+        current = f"{target}.{_backup_file_ext}"
 
-        if os.path.exists(current_file):
-            if os.path.isfile(current_file) or os.path.islink(current_file):
-                cleanup_type = "file" if os.path.isfile(current_file) else "symlink"
+        if os.path.exists(current):
+            if os.path.isfile(current) or os.path.islink(current):
+                cleanup_type = "symlink" if os.path.islink(current) else "file"
                 try:
-                    os.remove(current_file)
+                    os.remove(current)
                 except PermissionError:
-                    if not sudo_command(f"rm {current_file}"):
+                    if not sudo_command(f"rm {current}"):
                         continue
-            elif os.path.isdir(current_file):
+            elif os.path.isdir(current):
                 cleanup_type = "directory"
                 try:
-                    shutil.rmtree(current_file)
+                    shutil.rmtree(current)
                 except PermissionError:
-                    if not sudo_command(f"rm -rf {current_file}"):
+                    if not sudo_command(f"rm -rf {current}"):
                         continue
             else:
                 log(
-                    f"{current_file} is not a file, symlink, or directory...skipping",
+                    f"{current} is not a file, symlink, or directory...skipping",
                     level=LogLevel.WARN,
                     gutter=LogGutter(length=4),
                 )
                 continue
 
             log(
-                f"Removed {cleanup_type}: {current_file}",
+                f"Removed {cleanup_type}: {current}",
                 gutter=LogGutter(str(file_num), 3, True),
             )
             file_num += 1
@@ -185,17 +190,16 @@ def perform_cleanup():
 def perform_unlink():
     """Removes all symlinks for the given platform"""
     file_num = 1
-    for backup_file, orig_file in _files:
-        is_dir = os.path.isdir(backup_file)
-
-        if os.path.exists(orig_file):
+    for source, target in _backup_data.get("files", []):
+        if os.path.exists(target):
             try:
-                os.unlink(orig_file)
+                os.unlink(target)
             except PermissionError:
-                if not sudo_command(f"rm {orig_file}"):
+                if not sudo_command(f"rm {target}"):
                     continue
+
             log(
-                f'Unlinked {"directory" if is_dir else "file"}: {orig_file}',
+                f'Unlinked {"directory" if os.path.isdir(source) else "file"}: {target}',
                 gutter=LogGutter(str(file_num), 3, True),
             )
             file_num += 1
@@ -447,10 +451,6 @@ if __name__ == "__main__":
     _tree_modes = ["print", "inject"]
     _platforms = ["macOS", "Linux", "Windows"]
     _platform = PlatformType.UNKNOWN
-    _scripts_config_key = "backup"
-    _scripts = None
-    _files_config_key = "files"
-    _files = None
 
     arg_parser = argparse.ArgumentParser(
         description="Backup or restore configuration files"
@@ -529,8 +529,6 @@ if __name__ == "__main__":
     _platform = determine_platform()
     try:
         _backup_data = _all_backup_data[platform_enum_to_string(_platform)]
-        _scripts = _backup_data.pop(_scripts_config_key, None)
-        _files = _backup_data.pop(_files_config_key, None)
     except KeyError:
         log(
             f'Configuration file "{_backup_config_file}" does not contain platform {platform_enum_to_string(_platform)}',
