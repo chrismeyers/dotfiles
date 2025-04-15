@@ -36,16 +36,16 @@ options:
 ```
 ./
 ├── Common/
-│   ├── SublimeText/
-│   │   └── UserSettings/
-│   │       ├── Package Control.sublime-settings
-│   │       ├── Preferences.sublime-settings
-│   │       └── Python.sublime-settings
 │   ├── misc/
 │   │   └── .astylerc
 │   ├── neovim/
 │   │   └── nvim/
 │   │       └── init.vim
+│   ├── SublimeText/
+│   │   └── UserSettings/
+│   │       ├── Package Control.sublime-settings
+│   │       ├── Preferences.sublime-settings
+│   │       └── Python.sublime-settings
 │   ├── tmux/
 │   │   └── .tmux.conf
 │   ├── vim/
@@ -66,18 +66,6 @@ options:
 │       ├── restore.sh*
 │       └── settings.json
 └── macOS/
-    ├── Git/
-    │   ├── .gitconfig
-    │   └── .gitignore_global
-    ├── Homebrew/
-    │   ├── Brewfile
-    │   ├── dump.sh*
-    │   └── restore.sh*
-    ├── Rectangle/
-    │   └── RectangleConfig.json
-    ├── SublimeText/
-    │   └── Overrides/
-    │       └── Preferences (OSX).sublime-settings
     ├── bash/
     │   ├── .aliases
     │   ├── .bash_profile
@@ -91,6 +79,18 @@ options:
     │   └── functions/
     │       ├── fish_prompt.fish
     │       └── remote.fish
+    ├── Git/
+    │   ├── .gitconfig
+    │   └── .gitignore_global
+    ├── Homebrew/
+    │   ├── Brewfile
+    │   ├── dump.sh*
+    │   └── restore.sh*
+    ├── Rectangle/
+    │   └── RectangleConfig.json
+    ├── SublimeText/
+    │   └── Overrides/
+    │       └── Preferences (OSX).sublime-settings
     ├── terminals/
     │   ├── ghostty/
     │   │   └── config

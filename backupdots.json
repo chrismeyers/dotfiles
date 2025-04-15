@@ -1,30 +1,31 @@
 {
     "macOS": {
-        "__backup__": [
-            {"name": "Homebrew packages", "script": "/Users/chris/dotfiles/macOS/Homebrew/dump.sh"},
-            {"name": "VS Code extensions", "script": "/Users/chris/dotfiles/Common/vscode/dump.sh"}
+        "backup": [
+            { "name": "Homebrew packages", "script": "/Users/chris/dotfiles/macOS/Homebrew/dump.sh" },
+            { "name": "VS Code extensions", "script": "/Users/chris/dotfiles/Common/vscode/dump.sh" }
         ],
+        "files": [
+            ["/Users/chris/dotfiles/macOS/bash/.aliases", "/Users/chris/.aliases"],
+            ["/Users/chris/dotfiles/macOS/bash/.bashrc", "/Users/chris/.bashrc"],
+            ["/Users/chris/dotfiles/macOS/bash/.bash_profile", "/Users/chris/.bash_profile"],
 
-        ".aliases": ["/Users/chris", "/Users/chris/dotfiles/macOS/bash"],
-        ".bashrc": ["/Users/chris", "/Users/chris/dotfiles/macOS/bash"],
-        ".bash_profile": ["/Users/chris", "/Users/chris/dotfiles/macOS/bash"],
+            ["/Users/chris/dotfiles/macOS/zsh/.zshrc", "/Users/chris/.zshrc"],
 
-        ".zshrc": ["/Users/chris", "/Users/chris/dotfiles/macOS/zsh"],
+            ["/Users/chris/dotfiles/Common/vim/.vimrc", "/Users/chris/.vimrc"],
+            ["/Users/chris/dotfiles/Common/vim/.gvimrc", "/Users/chris/.gvimrc"],
+            ["/Users/chris/dotfiles/Common/vim/.ideavimrc", "/Users/chris/.ideavimrc"],
+            ["/Users/chris/dotfiles/Common/vim/.vim", "/Users/chris/.vim"],
 
-        ".vimrc": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
-        ".gvimrc": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
-        ".ideavimrc": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
-        ".vim": ["/Users/chris", "/Users/chris/dotfiles/Common/vim"],
+            ["/Users/chris/dotfiles/Common/tmux/.tmux.conf", "/Users/chris/.tmux.conf"],
 
-        ".tmux.conf": ["/Users/chris", "/Users/chris/dotfiles/Common/tmux"],
+            ["/Users/chris/dotfiles/Common/vscode/settings.json", "/Users/chris/Library/Application Support/Code/User/settings.json"],
 
-        "settings.json" : ["/Users/chris/Library/Application Support/Code/User", "/Users/chris/dotfiles/Common/vscode"],
+            ["/Users/chris/dotfiles/Common/neovim/nvim", "/Users/chris/.config/nvim"],
 
-        "nvim": ["/Users/chris/.config", "/Users/chris/dotfiles/Common/neovim"],
+            ["/Users/chris/dotfiles/macOS/Git/.gitconfig", "/Users/chris/.gitconfig"],
+            ["/Users/chris/dotfiles/macOS/Git/.gitignore_global", "/Users/chris/.gitignore_global"],
 
-        ".gitconfig": ["/Users/chris", "/Users/chris/dotfiles/macOS/Git"],
-        ".gitignore_global": ["/Users/chris", "/Users/chris/dotfiles/macOS/Git"],
-
-        "config": ["/Users/chris/Library/Application Support/com.mitchellh.ghostty", "/Users/chris/dotfiles/macOS/terminals/ghostty"]
+            ["/Users/chris/dotfiles/macOS/terminals/ghostty/config", "/Users/chris/Library/Application Support/com.mitchellh.ghostty/config"]
+        ]
     }
 }

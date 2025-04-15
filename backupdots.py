@@ -41,9 +41,7 @@ from enum import Enum
 def perform_backup():
     """Copies files to dotfiles repo and runs backup scripts"""
     file_num = 1
-    for file in _backup_data:
-        orig_file = os.path.join(_backup_data[file][0], file)
-        backup_file = os.path.join(_backup_data[file][1], file)
+    for backup_file, orig_file in _files:
         backup_dir = os.path.dirname(backup_file)
 
         if not os.path.exists(backup_file.replace("'", "")) and not os.path.islink(
@@ -64,14 +62,14 @@ def perform_backup():
             )
             file_num += 1
 
-    if _backup_scripts is not None:
-        for item in _backup_scripts:
+    if _scripts is not None:
+        for item in _scripts:
             name = item.get("name", "Unknown")
             script = item.get("script", None)
 
             if script is None:
                 log(
-                    f'Missing script key for "{name}" {_backup_config_key} entry',
+                    f'Missing script key for "{name}" {_scripts_config_key} entry',
                     level=LogLevel.WARN,
                 )
                 continue
@@ -94,14 +92,18 @@ def perform_backup():
 def perform_restore():
     """Symlinks files from dotfiles repo to original location"""
     file_num = 1
-    for file in _backup_data:
-        orig_file = os.path.join(_backup_data[file][0], file)
+    for backup_file, orig_file in _files:
         orig_dir = os.path.dirname(orig_file)
-        backup_file = os.path.join(_backup_data[file][1], file)
 
+        if not os.path.exists(backup_file):
+            log(
+                f"{backup_file} does not exist, skipping",
+                level=LogLevel.WARN,
+                gutter=LogGutter(length=4),
+            )
         # Assume that the program isn't installed or the configuration file is
         # not needed if the original path doesn't exist
-        if os.path.exists(orig_dir):
+        elif os.path.exists(orig_dir):
             # Make a backup of the file before creating a symlink
             if os.path.exists(orig_file) and not os.path.islink(orig_file):
                 shutil.move(orig_file, f"{orig_file}.{_backup_file_ext}")
@@ -144,8 +146,8 @@ def perform_restore():
 def perform_cleanup():
     """Removes all *.{_backup_file_ext} files generated from restore"""
     file_num = 1
-    for file in _backup_data:
-        current_file = os.path.join(_backup_data[file][0], f"{file}.{_backup_file_ext}")
+    for _, orig_file in _files:
+        current_file = f"{orig_file}.{_backup_file_ext}"
 
         if os.path.exists(current_file):
             if os.path.isfile(current_file) or os.path.islink(current_file):
@@ -183,18 +185,17 @@ def perform_cleanup():
 def perform_unlink():
     """Removes all symlinks for the given platform"""
     file_num = 1
-    for file in _backup_data:
-        is_dir = os.path.isdir(os.path.join(_backup_data[file][1], file))
-        current_file = os.path.join(_backup_data[file][0], file)
+    for backup_file, orig_file in _files:
+        is_dir = os.path.isdir(backup_file)
 
-        if os.path.exists(current_file):
+        if os.path.exists(orig_file):
             try:
-                os.unlink(current_file)
+                os.unlink(orig_file)
             except PermissionError:
-                if not sudo_command(f"rm {current_file}"):
+                if not sudo_command(f"rm {orig_file}"):
                     continue
             log(
-                f'Unlinked {"directory" if is_dir else "file"}: {current_file}',
+                f'Unlinked {"directory" if is_dir else "file"}: {orig_file}',
                 gutter=LogGutter(str(file_num), 3, True),
             )
             file_num += 1
@@ -446,8 +447,10 @@ if __name__ == "__main__":
     _tree_modes = ["print", "inject"]
     _platforms = ["macOS", "Linux", "Windows"]
     _platform = PlatformType.UNKNOWN
-    _backup_config_key = "__backup__"
-    _backup_scripts = None
+    _scripts_config_key = "backup"
+    _scripts = None
+    _files_config_key = "files"
+    _files = None
 
     arg_parser = argparse.ArgumentParser(
         description="Backup or restore configuration files"
@@ -526,8 +529,8 @@ if __name__ == "__main__":
     _platform = determine_platform()
     try:
         _backup_data = _all_backup_data[platform_enum_to_string(_platform)]
-        # Extract backup scripts so they don't interfere with normal processing
-        _backup_scripts = _backup_data.pop(_backup_config_key, None)
+        _scripts = _backup_data.pop(_scripts_config_key, None)
+        _files = _backup_data.pop(_files_config_key, None)
     except KeyError:
         log(
             f'Configuration file "{_backup_config_file}" does not contain platform {platform_enum_to_string(_platform)}',
