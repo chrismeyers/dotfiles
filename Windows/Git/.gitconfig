@@ -13,9 +13,19 @@
 [user]
 	name = Chris Meyers
 	email = chris@chrismeyers.net
+	signingkey = C:\\Users\\Chris\\.ssh\\id_ed25519_git.pub
 [push]
 	default = simple
 [pull]
 	rebase = false
 [init]
 	defaultBranch = main
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[gpg "ssh"]
+	allowedSignersFile = C:\\Users\\Chris\\.config\\git\\allowed-signers.txt
+	program = C:\\Windows\\System32\\OpenSSH\\ssh-keygen.exe
