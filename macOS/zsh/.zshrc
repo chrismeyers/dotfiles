@@ -204,6 +204,5 @@ if [ -f '/Users/chris/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/chris/goo
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/chris/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/chris/google-cloud-sdk/completion.zsh.inc'; fi
 
-### Bun
-# bun completions
-[ -s "/Users/chris/.bun/_bun" ] && source "/Users/chris/.bun/_bun"
+### Ensure ssh-agent is running
+ssh-add --apple-load-keychain 2> /dev/null
