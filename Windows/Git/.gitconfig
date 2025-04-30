@@ -8,6 +8,7 @@
 	updatesubs = submodule update --recursive --remote
 [core]
 	autocrlf = true
+	sshCommand = 'C:\\Windows\\System32\\OpenSSH\\ssh.exe'
 [credential]
 	helper = manager
 [user]
