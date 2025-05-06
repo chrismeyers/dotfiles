@@ -1,9 +1,8 @@
 # dotfiles
+
 My personal configuration files.
 
 These files are backed up and can be restored using `backupdots.py` in conjunction with `backupdots.json`.
-
-Make sure to clone this repository with the `--recursive` flag to include all submodules.
 
 ```
 usage: backupdots.py [-h] [-p {macOS,Linux,Windows}] [-b] [-r] [-c] [-u]
@@ -40,7 +39,8 @@ options:
 │   │   └── .astylerc
 │   ├── neovim/
 │   │   └── nvim/
-│   │       └── init.vim
+│   │       ├── init.lua
+│   │       └── lazy-lock.json
 │   ├── SublimeText/
 │   │   └── UserSettings/
 │   │       ├── Package Control.sublime-settings
@@ -51,12 +51,6 @@ options:
 │   ├── vim/
 │   │   ├── .gvimrc
 │   │   ├── .ideavimrc
-│   │   ├── .vim/
-│   │   │   └── pack/
-│   │   │       └── plugins/
-│   │   │           └── start/
-│   │   │               ├── tokyonight.nvim/
-│   │   │               └── vim-commentary/
 │   │   └── .vimrc
 │   └── vscode/
 │       ├── dump.bat
@@ -101,6 +95,6 @@ options:
     └── zsh/
         └── .zshrc
 
-31 directories, 35 files
+25 directories, 36 files
 ```
 <!-- END TREE -->

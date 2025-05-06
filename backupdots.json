@@ -14,7 +14,6 @@
             ["/Users/chris/dotfiles/Common/vim/.vimrc", "/Users/chris/.vimrc"],
             ["/Users/chris/dotfiles/Common/vim/.gvimrc", "/Users/chris/.gvimrc"],
             ["/Users/chris/dotfiles/Common/vim/.ideavimrc", "/Users/chris/.ideavimrc"],
-            ["/Users/chris/dotfiles/Common/vim/.vim", "/Users/chris/.vim"],
 
             ["/Users/chris/dotfiles/Common/tmux/.tmux.conf", "/Users/chris/.tmux.conf"],
 

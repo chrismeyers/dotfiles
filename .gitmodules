@@ -1,6 +1,0 @@
-[submodule "Common/vim/.vim/pack/plugins/start/vim-commentary"]
-	path = Common/vim/.vim/pack/plugins/start/vim-commentary
-	url = ../../tpope/vim-commentary.git
-[submodule "Common/vim/.vim/pack/plugins/start/tokyonight.nvim"]
-	path = Common/vim/.vim/pack/plugins/start/tokyonight.nvim
-	url = ../../folke/tokyonight.nvim.git
