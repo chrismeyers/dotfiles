@@ -28,9 +28,7 @@ set confirm
 set noeb vb t_vb=
 
 "" Use <F11> to toggle between 'paste' and 'nopaste'
-if !has('nvim')
-  set pastetoggle=<F11>
-endif
+set pastetoggle=<F11>
 
 "" Enable line numbers
 set number
@@ -39,16 +37,14 @@ set number
 set spell
 
 "" Theming
-if has('nvim')
-  if exists('+termguicolors')
-    "" t_8f and t_8b allow color schemes to work properly in tmux
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-    set termguicolors
-  endif
-  colorscheme tokyonight-storm
-  set background=dark
+if exists('+termguicolors')
+  "" t_8f and t_8b allow color schemes to work properly in tmux
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
 endif
+colorscheme elflord
+set background=dark
 
 "" Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start

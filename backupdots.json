@@ -13,7 +13,6 @@
 
             ["/Users/chris/dotfiles/Common/vim/.vimrc", "/Users/chris/.vimrc"],
             ["/Users/chris/dotfiles/Common/vim/.gvimrc", "/Users/chris/.gvimrc"],
-            ["/Users/chris/dotfiles/Common/vim/.vim", "/Users/chris/.vim"],
 
             ["/Users/chris/dotfiles/Common/tmux/.tmux.conf", "/Users/chris/.tmux.conf"],
 
@@ -41,7 +40,6 @@
 
             ["/home/chris/dotfiles/Common/vim/.vimrc", "/home/chris/.vimrc"],
             ["/home/chris/dotfiles/Common/vim/.gvimrc", "/home/chris/.gvimrc"],
-            ["/home/chris/dotfiles/Common/vim/.vim", "/home/chris/.vim"],
 
             ["/home/chris/dotfiles/Common/tmux/.tmux.conf", "/home/chris/.tmux.conf"],
 
@@ -74,7 +72,6 @@
             ["C:\\Users\\Chris\\dotfiles\\Common\\vim\\.vimrc", "C:\\Users\\Chris\\.vimrc"],
             ["C:\\Users\\Chris\\dotfiles\\Common\\vim\\.gvimrc", "C:\\Users\\Chris\\.gvimrc"],
             ["C:\\Users\\Chris\\dotfiles\\Common\\vim\\.ideavimrc", "C:\\Users\\Chris\\.ideavimrc"],
-            ["C:\\Users\\Chris\\dotfiles\\Common\\vim\\.vim", "C:\\Users\\Chris\\.vim"],
 
             ["C:\\Users\\Chris\\dotfiles\\Common\\vscode\\settings.json", "C:\\Users\\Chris\\AppData\\Roaming\\Code\\User\\settings.json"],
 
