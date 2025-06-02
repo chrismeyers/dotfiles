@@ -10,7 +10,6 @@ enkia.tokyo-night
 esbenp.prettier-vscode
 golang.go
 matt-meyers.vscode-dbml
-ms-azuretools.vscode-docker
 ms-python.black-formatter
 ms-python.debugpy
 ms-python.python
