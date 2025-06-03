@@ -106,7 +106,14 @@ git_branch () {
     git_status_color="%{$fg[yellow]%}"
   fi
 
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ %{$git_status_color%}git:\1%{$reset_color%}/"
+  branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/")
+  max_length=25
+
+  if [[ ${#branch} -gt $max_length ]]; then
+    branch="${branch:0:$max_length}\u2026"
+  fi
+
+  echo "[%{$git_status_color%}git:$branch%{$reset_color%}]"
 }
 
 timezsh () {
@@ -115,8 +122,14 @@ timezsh () {
 }
 
 k8s_context () {
-  ctx=$(kubectl config current-context)
-  echo "%{$fg[cyan]%}k8s:$ctx%{$reset_color%}"
+  ctx=$(kubectl config current-context 2> /dev/null)
+  result=$?
+
+  if [ $result -ne 0 ]; then
+    return
+  fi
+
+  echo "[%{$fg[cyan]%}k8s:$ctx%{$reset_color%}]"
 }
 
 kctx () {
@@ -142,9 +155,9 @@ nvmu () {
 }
 
 ### Prompt format:
-###   user on hostname in [pwd] current_k8s_context git_branch_and_status
+###   user@hostname[pwd][current_k8s_context][git_branch_and_status]
 ###    >
-PROMPT='%n on %{$fg[red]%}%m%{$reset_color%} in [%~] $(k8s_context)$(git_branch)
+PROMPT='%n@%{$fg[red]%}%m%{$reset_color%}[%~]$(k8s_context)$(git_branch)
  > '
 
 ### Set environment variables
