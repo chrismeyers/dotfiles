@@ -115,15 +115,14 @@ timezsh () {
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
-nvmu () {
+fnmu () {
   if [ $# -lt 1 ]; then
     echo "Usage: $(basename "$0") version"
     return 1
   fi
-  nvm install --reinstall-packages-from=current $1
-  nvm alias default $1
-  corepack disable
-  npm install --global yarn
+  fnm install $1
+  fnm default $1
+  npm install --global yarn npm-check-updates neovim @vscode/vsce vercel
 }
 
 ### Prompt format:
@@ -169,7 +168,7 @@ alias sz="exec zsh"
 source $HOME/.aliases
 
 ### Pyenv setup
-eval "$(pyenv init -)"
+eval "$(pyenv init - --no-rehash zsh)"
 
 # Specifies global Python versions. The order of the versions will determine the
 # priority of the version. Running `python` will invoke the first version given
@@ -177,10 +176,10 @@ eval "$(pyenv init -)"
 # 2.X.X or 3.X.X in the version list.
 pyenv global 3.13.0 2.7.18
 
-### Node Version Manager setup
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+### Fast Node Manager setup
+eval "$(fnm env --shell zsh)"
 
 ### Ensure ssh-agent is running
-ssh-add --apple-load-keychain 2> /dev/null
+if [ -z $(pgrep ssh-agent) ]; then
+  ssh-add --apple-load-keychain 2> /dev/null
+fi
