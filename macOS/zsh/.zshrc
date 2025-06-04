@@ -134,6 +134,12 @@ k8s_context () {
 
 kctx () {
   case $1 in
+  'p')
+    kubectl config use-context m360-prod
+    ;;
+  's')
+    kubectl config use-context m360-stage
+    ;;
   'prod' | 'stage')
     kubectl config use-context m360-$1
     ;;
