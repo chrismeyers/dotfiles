@@ -8,5 +8,3 @@
     - Run `chsh -s /path/to/shell`
 1. Install [Oh My Zsh](https://ohmyz.sh/)
 1. Install `pyenv` versions defined [here](./zsh/.zshrc)
-1. Install [Node Version Manager](https://github.com/nvm-sh/nvm#install--update-script)
-    - Remove any redundant source lines added to rc files by the install script
