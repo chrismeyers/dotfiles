@@ -125,6 +125,10 @@ require('lazy').setup({
     'folke/tokyonight.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
+      require('tokyonight').setup {
+        transparent = true,
+      }
+
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
@@ -193,23 +197,23 @@ require('lazy').setup({
         pickers = {
           find_files = {
             find_command = {
-              "rg",
-              "--files",
-              "--color=never",
-              "--hidden",
-              "--glob=!**/.git/*",
+              'rg',
+              '--files',
+              '--color=never',
+              '--hidden',
+              '--glob=!**/.git/*',
             },
           },
           live_grep = {
             additional_args = {
-              "--hidden",
-              "--glob=!**/.git/*",
+              '--hidden',
+              '--glob=!**/.git/*',
             },
           },
           grep_string = {
             additional_args = {
-              "--hidden",
-              "--glob=!**/.git/*",
+              '--hidden',
+              '--glob=!**/.git/*',
             },
           },
         },
