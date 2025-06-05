@@ -52,13 +52,9 @@ cursor-style-blink = false
 
 font-feature = -calt, -liga, -dlig
 
-# TODO: Try to figure out why the title is set to the default ghost emoji
-# instead of the current directory with clickable finder icon when tmux is
-# launched via `command` / `initial-command`. That is the behavior when not
-# using tmux at all or when launching tmux manually.
 title = Ghostty
 
 theme = tokyonight-storm
 
-background-opacity = 0.85
+background-opacity = 0.95
 background-blur = true
