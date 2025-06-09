@@ -213,6 +213,28 @@ pyenv global 3.12.4 2.7.18
 ### Fast Node Manager setup
 eval "$(fnm env --shell zsh)"
 
+__fnm_cleanup () {
+  # Disable exit on error for cleanup
+  set +e
+
+  if [ -n "${FNM_MULTISHELL_PATH}" ]; then
+    rm -f "${FNM_MULTISHELL_PATH}"
+    # Remove fnm symlinks older than 7 days
+    find "$(dirname ${FNM_MULTISHELL_PATH})/" -type l -name '*_*' -mtime +7 -delete &>/dev/null
+  fi
+}
+
+trap __fnm_cleanup EXIT
+
+__fnm_notify_missing () {
+  # Notify if __fnm_cleanup deleted a symlink for a shell that's still active
+  if [[ -n "${FNM_MULTISHELL_PATH}" && ! -L "${FNM_MULTISHELL_PATH}" ]]; then
+    echo "${fg[red]}ALERT: fnm symlink missing - recreate shell!$reset_color"
+  fi
+}
+
+add-zsh-hook precmd __fnm_notify_missing
+
 ### gcloud
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/chris/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/chris/google-cloud-sdk/path.zsh.inc'; fi
