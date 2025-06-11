@@ -89,6 +89,7 @@
     "document"
   ],
   "gitlens.codeLens.recentChange.command": "gitlens.diffWithPrevious",
+  "gitlens.launchpad.indicator.enabled": false,
 
   "cSpell.useCustomDecorations": false
 }
