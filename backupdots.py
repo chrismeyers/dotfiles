@@ -70,6 +70,7 @@ def perform_backup():
     for item in _backup_data.get("backup", []):
         name = item.get("name", "Unknown")
         script = item.get("script", None)
+        script_path = script.split(" ")[0]
 
         if script is None:
             log(
@@ -77,8 +78,8 @@ def perform_backup():
                 level=LogLevel.WARN,
             )
             continue
-        elif not os.path.exists(script):
-            log(f"{script} does not exist", level=LogLevel.WARN)
+        elif not os.path.exists(script_path):
+            log(f"{script_path} does not exist", level=LogLevel.WARN)
             continue
 
         log(f"Backing up {name}...", end="", flush=True)

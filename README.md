@@ -55,7 +55,8 @@ options:
 │   └── vscode/
 │       ├── dump.bat
 │       ├── dump.sh*
-│       ├── extensions.txt
+│       ├── extensions.cursor.txt
+│       ├── extensions.vscode.txt
 │       ├── restore.bat
 │       ├── restore.sh*
 │       └── settings.json
@@ -152,6 +153,6 @@ options:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-54 directories, 64 files
+54 directories, 65 files
 ```
 <!-- END TREE -->

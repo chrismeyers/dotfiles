@@ -2,7 +2,8 @@
     "macOS": {
         "backup": [
             { "name": "Homebrew packages", "script": "/Users/chris/dotfiles/macOS/Homebrew/dump.sh" },
-            { "name": "VS Code extensions", "script": "/Users/chris/dotfiles/Common/vscode/dump.sh" }
+            { "name": "VS Code extensions", "script": "/Users/chris/dotfiles/Common/vscode/dump.sh vscode" },
+            { "name": "Cursor extensions", "script": "/Users/chris/dotfiles/Common/vscode/dump.sh cursor" }
         ],
         "files": [
             ["/Users/chris/dotfiles/macOS/bash/.aliases", "/Users/chris/.aliases"],
@@ -18,6 +19,8 @@
 
             ["/Users/chris/dotfiles/Common/vscode/settings.json", "/Users/chris/Library/Application Support/Code/User/settings.json"],
 
+            ["/Users/chris/dotfiles/Common/vscode/settings.json", "/Users/chris/Library/Application Support/Cursor/User/settings.json"],
+
             ["/Users/chris/dotfiles/Common/neovim/nvim", "/Users/chris/.config/nvim"],
 
             ["/Users/chris/dotfiles/macOS/Git/.gitconfig", "/Users/chris/.gitconfig"],
@@ -30,7 +33,7 @@
         "backup": [
             { "name": "GNOME terminal profiles", "script": "/home/chris/dotfiles/Linux/terminals/gnome/dump.sh" },
             { "name": "Tilix terminal profiles", "script": "/home/chris/dotfiles/Linux/terminals/tilix/dump.sh" },
-            { "name": "VS Code extensions", "script": "/home/chris/dotfiles/Common/vscode/dump.sh" }
+            { "name": "VS Code extensions", "script": "/home/chris/dotfiles/Common/vscode/dump.sh vscode" }
         ],
         "files": [
             ["/home/chris/dotfiles/Linux/bash/.aliases", "/home/chris/.aliases"],
@@ -66,7 +69,7 @@
     },
     "Windows": {
         "backup": [
-            { "name": "VS Code extensions", "script": "C:\\Users\\Chris\\dotfiles\\Common\\vscode\\dump.bat" }
+            { "name": "VS Code extensions", "script": "C:\\Users\\Chris\\dotfiles\\Common\\vscode\\dump.bat vscode" }
         ],
         "files": [
             ["C:\\Users\\Chris\\dotfiles\\Common\\vim\\.vimrc", "C:\\Users\\Chris\\.vimrc"],
