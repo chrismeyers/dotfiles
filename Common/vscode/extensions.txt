@@ -6,6 +6,8 @@ dnicolson.binary-plist
 eamodio.gitlens
 enkia.tokyo-night
 esbenp.prettier-vscode
+github.copilot
+github.copilot-chat
 golang.go
 james-yu.latex-workshop
 ms-python.black-formatter

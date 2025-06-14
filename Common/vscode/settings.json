@@ -91,5 +91,7 @@
   "gitlens.codeLens.recentChange.command": "gitlens.diffWithPrevious",
   "gitlens.launchpad.indicator.enabled": false,
 
-  "cSpell.useCustomDecorations": false
+  "cSpell.useCustomDecorations": false,
+
+  "github.copilot.nextEditSuggestions.enabled": true
 }
