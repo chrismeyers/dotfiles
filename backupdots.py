@@ -385,7 +385,7 @@ class LogGutter:
     """Whether or not to include a space between the gutter and message"""
 
 
-def log(message, level=LogLevel.INFO, gutter=LogGutter, end="\n", flush=False):
+def log(message, level=LogLevel.INFO, gutter=LogGutter(), end="\n", flush=False):
     """
     Usage examples:
 
@@ -479,8 +479,7 @@ if __name__ == "__main__":
     arg_parser.add_argument(
         "-t",
         "--tree",
-        help=f"generates a directory tree and prints the output to stdout or injects the "
-        "output into README.md",
+        help="generates a directory tree and prints the output to stdout or injects the output into README.md",
         choices=_tree_modes,
         type=str.lower,
     )
