@@ -52,12 +52,14 @@ options:
 │   │   ├── .gvimrc
 │   │   ├── .ideavimrc
 │   │   └── .vimrc
-│   └── vscode/
-│       ├── dump.bat
-│       ├── dump.sh*
-│       ├── extensions.txt
-│       ├── restore.bat
-│       ├── restore.sh*
+│   ├── vscode/
+│   │   ├── dump.bat
+│   │   ├── dump.sh*
+│   │   ├── extensions.txt
+│   │   ├── restore.bat
+│   │   ├── restore.sh*
+│   │   └── settings.json
+│   └── zed/
 │       └── settings.json
 ├── Linux/
 │   ├── bash/
@@ -152,6 +154,6 @@ options:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-54 directories, 64 files
+55 directories, 65 files
 ```
 <!-- END TREE -->

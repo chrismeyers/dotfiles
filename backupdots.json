@@ -18,6 +18,8 @@
 
             ["/Users/chris/dotfiles/Common/vscode/settings.json", "/Users/chris/Library/Application Support/Code/User/settings.json"],
 
+            ["/Users/chris/dotfiles/Common/zed/settings.json", "/Users/chris/.config/zed/settings.json"],
+
             ["/Users/chris/dotfiles/Common/neovim/nvim", "/Users/chris/.config/nvim"],
 
             ["/Users/chris/dotfiles/macOS/Git/.gitconfig", "/Users/chris/.gitconfig"],
