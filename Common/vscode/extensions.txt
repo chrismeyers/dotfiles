@@ -3,7 +3,6 @@ christian-kohler.npm-intellisense
 christian-kohler.path-intellisense
 dbaeumer.vscode-eslint
 dnicolson.binary-plist
-eamodio.gitlens
 enkia.tokyo-night
 esbenp.prettier-vscode
 github.copilot
