@@ -60,6 +60,8 @@
   "workbench.iconTheme": "vscode-icons",
 
   // Extensions
+  "extensions.ignoreRecommendations": true,
+
   "latex-workshop.view.pdf.viewer": "tab",
   "latex-workshop.latex.recipe.default": "latexmk (xelatex)", // XeLaTeX is used for smaller PDF file sizes
 
