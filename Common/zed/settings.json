@@ -7,16 +7,40 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
-  "vim_mode": true,
+  // Get off my lawn (Telemetry)
   "telemetry": {
     "diagnostics": false,
     "metrics": false
   },
-  "ui_font_size": 14,
+
+  // General editor settings
+  "vim_mode": true,
+  "tab_size": 2,
+  "hard_tabs": false,
   "buffer_font_size": 12,
+  "buffer_font_family": "Hack",
+  "buffer_font_features": {
+    "calt": false
+  },
+
+  // Language overrides
+  "languages": {
+    "JSON": {
+      "format_on_save": "off"
+    },
+    "Python": {
+      "tab_size": 4,
+      "language_servers": ["pyright"],
+      "formatter": { "external": { "command": "black", "arguments": ["-"] } }
+    },
+    "Go": {
+      "tab_size": 4,
+      "hard_tabs": true
+    }
+  },
+
+  // UI settings
+  "ui_font_size": 14,
   "theme": {
     "mode": "system",
     "light": "One Light",
@@ -25,17 +49,27 @@
   "minimap": {
     "show": "always"
   },
-  "buffer_font_family": "Hack",
-  "buffer_font_features": {
-    "calt": false
+  "tabs": {
+    "file_icons": true,
+    "git_status": true,
+    "show_diagnostics": "all"
   },
-  "languages": {
-    "JSON": {
-      "format_on_save": "off"
-    },
-    "Python": {
-      "language_servers": ["pyright"],
-      "formatter": { "external": { "command": "black", "arguments": ["-"] } }
-    }
+
+  // Features
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "journal": {
+    "hour_format": "hour24",
+    "path": "~/.config/zed"
+  },
+
+  // Extensions
+  "auto_install_extensions": {
+    "html": true,
+    "php": true,
+    "toml": true,
+    "latex": true,
+    "tokyo-night": true
   }
 }
