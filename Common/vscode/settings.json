@@ -3,7 +3,6 @@
   "telemetry.telemetryLevel": "off",
   "redhat.telemetry.enabled": false,
   "intelephense.telemetry.enabled": false,
-  "gitlens.telemetry.enabled": false,
 
   // General editor settings (Editor)
   "editor.tabSize": 2,
@@ -24,9 +23,6 @@
 
   // Window settings (Window)
   "window.commandCenter": false,
-
-  // Git settings
-  "git.autoRepositoryDetection": "openEditors",
 
   // Language overrides (Default Configuration Overrides)
   "[go]": {
@@ -90,14 +86,9 @@
 
   "yaml.format.singleQuote": true,
 
-  "gitlens.defaultTimeFormat": "HH:mm",
-  "gitlens.defaultDateFormat": "MMMM Do, YYYY HH:mm",
-  "gitlens.statusBar.enabled": false,
-  "gitlens.codeLens.scopes": [
-    "document"
-  ],
-  "gitlens.codeLens.recentChange.command": "gitlens.diffWithPrevious",
-  "gitlens.launchpad.indicator.enabled": false,
+  "git.blame.editorDecoration.enabled": true,
+  "git.blame.statusBarItem.enabled": false,
+  "git.autoRepositoryDetection": "openEditors",
 
   "cSpell.useCustomDecorations": false
 }
