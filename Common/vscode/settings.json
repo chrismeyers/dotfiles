@@ -66,6 +66,8 @@
   "workbench.iconTheme": "vscode-icons",
 
   // Extensions
+  "extensions.ignoreRecommendations": true,
+
   "go.formatTool": "goimports",
   "go.useLanguageServer": true,
 
