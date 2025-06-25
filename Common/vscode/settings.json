@@ -58,6 +58,7 @@
   "workbench.editor.empty.hint": "hidden",
   "workbench.colorTheme": "Tokyo Night Storm",
   "workbench.iconTheme": "vscode-icons",
+  "workbench.activityBar.location": "top",
 
   // Extensions
   "extensions.ignoreRecommendations": true,
