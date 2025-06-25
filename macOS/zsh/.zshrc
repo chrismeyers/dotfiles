@@ -115,7 +115,7 @@ timezsh () {
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
-fnmu () {
+fnmi () {
   if [ $# -lt 1 ]; then
     echo "Usage: $(basename "$0") version"
     return 1
