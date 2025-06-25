@@ -149,7 +149,7 @@ kctx () {
   esac
 }
 
-fnmu () {
+fnmi () {
   if [ $# -lt 1 ]; then
     echo "Usage: $(basename "$0") version"
     return 1
