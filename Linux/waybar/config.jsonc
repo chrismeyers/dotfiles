@@ -18,7 +18,7 @@
     "modules-right": [
         "mpd",
         "idle_inhibitor",
-        "pulseaudio",
+        "wireplumber",
         "network",
         "power-profiles-daemon",
         "cpu",
@@ -191,6 +191,12 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "wireplumber": {
+        "format": "{volume}% {icon}",
+        "format-muted": "",
+        // "on-click": "helvum",
+        "format-icons": ["", "", ""]
     },
     "custom/media": {
         "format": "{icon} {text}",
