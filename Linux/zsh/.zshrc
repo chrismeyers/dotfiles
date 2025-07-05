@@ -200,3 +200,6 @@ if [ -d "$FNM_PATH" ]; then
 
   add-zsh-hook precmd __fnm_notify_missing
 fi
+
+### Ensure ssh is using GNOME Keyring
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
