@@ -65,59 +65,24 @@ options:
 │   ├── bash/
 │   │   ├── .aliases
 │   │   └── .bashrc
-│   ├── compton/
-│   │   └── compton.conf
 │   ├── dunst/
 │   │   └── dunstrc
-│   ├── fontconfig/
-│   │   └── conf.d/
-│   │       └── 10-symbols.conf
 │   ├── Git/
 │   │   ├── .gitconfig
 │   │   └── .gitignore_global
-│   ├── i3/
-│   │   └── config
-│   ├── i3lock/
-│   │   └── lock.sh*
-│   ├── i3status/
-│   │   └── config
-│   ├── polybar/
-│   │   ├── config
-│   │   └── launch.sh*
-│   ├── rofi/
-│   │   ├── config
-│   │   ├── material.rasi
-│   │   └── sidetab.rasi
-│   ├── stalonetray/
-│   │   └── .stalonetrayrc
+│   ├── hypr/
+│   │   └── hyprland.conf
 │   ├── SublimeText/
 │   │   └── Overrides/
 │   │       └── Preferences (Linux).sublime-settings
-│   ├── systemd/
-│   │   └── i3lock.service
 │   ├── terminals/
-│   │   ├── alacritty/
-│   │   │   └── alacritty.yml
-│   │   ├── gnome/
-│   │   │   ├── Default.dconf
-│   │   │   ├── dump.sh*
-│   │   │   └── load.sh*
-│   │   └── tilix/
-│   │       ├── dump.sh*
-│   │       ├── load.sh*
-│   │       ├── tilix/
-│   │       │   └── schemes/
-│   │       │       └── default_colors.json
-│   │       └── tilix.dconf
-│   ├── Wallpapers/
-│   │   ├── moon_mower.jpg
-│   │   ├── moon_mower.png
-│   │   └── ruby_beach.jpg
-│   ├── xfce4/
-│   │   └── xfconf/
-│   │       └── xfce-perchannel-xml/
-│   │           └── xfce4-power-manager.xml
+│   │   └── ghostty/
+│   │       └── config
+│   ├── waybar/
+│   │   ├── config.jsonc
+│   │   └── style.css
 │   └── zsh/
+│       ├── .zlogin
 │       └── .zshrc
 ├── macOS/
 │   ├── bash/
@@ -154,6 +119,6 @@ options:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-55 directories, 65 files
+39 directories, 46 files
 ```
 <!-- END TREE -->

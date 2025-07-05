@@ -1,6 +1,19 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/chris/.oh-my-zsh"
 
+### Set path variables
+export GOPATH="$HOME/dev/go"
+export PYENV_ROOT="$HOME/.pyenv"
+export FNM_PATH="$HOME/.local/share/fnm"
+export XDG_CONFIG_HOME="$HOME/.config"
+export PATH="/usr/local/bin\
+:/usr/local/sbin
+:$GOPATH/bin\
+:$PYENV_ROOT/bin\
+:$FNM_PATH\
+:$HOME/.local/bin\
+:$PATH"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -85,7 +98,14 @@ git_branch () {
     git_status_color="%{$fg[yellow]%}"
   fi
 
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/%{$git_status_color%}git:\1%{$reset_color%}/"
+  branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/")
+  max_length=25
+
+  if [[ ${#branch} -gt $max_length ]]; then
+    branch="${branch:0:$max_length}\u2026"
+  fi
+
+  echo "[%{$git_status_color%}git:$branch%{$reset_color%}]"
 }
 
 timezsh () {
@@ -93,19 +113,20 @@ timezsh () {
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
-nvmu () {
+fnmi () {
   if [ $# -lt 1 ]; then
     echo "Usage: $(basename "$0") version"
     return 1
   fi
-  nvm install --reinstall-packages-from=current $1
-  nvm alias default $1
+  fnm install $1
+  fnm default $1
+  npm install --global yarn npm-check-updates neovim @vscode/vsce vercel
 }
 
 ### Prompt format:
-###   user on hostname in [pwd] git_branch_and_status
+###   user@hostname[pwd][git_branch_and_status]
 ###    >
-PROMPT='%n on %{$fg[red]%}%m%{$reset_color%} in [%~] $(git_branch)
+PROMPT='%n@%{$fg[red]%}%m%{$reset_color%}[%~]$(git_branch)
  > '
 
 ### Set environment variables
@@ -114,21 +135,6 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 export PYTHONDONTWRITEBYTECODE=1
 export EDITOR="nvim"
 export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
-
-### Set path variables
-export GOPATH="$HOME/dev/go"
-export PYENV_ROOT="$HOME/.pyenv"
-export PYTHONPATH="$HOME/dev/python:$PYTHONPATH"
-export XDG_CONFIG_HOME="$HOME/.config"
-export PATH="$PYENV_ROOT/bin\
-:/usr/lib/dart/bin\
-:/usr/local/go/bin\
-:$GOPATH/bin\
-:$PYENV_ROOT/bin\
-:$HOME/.local/bin\
-:$HOME/.pub-cache/bin\
-:$HOME/.poetry/bin\
-:$PATH"
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -166,14 +172,31 @@ eval "$(pyenv init -)"
 # priority of the version. Running `python` will invoke the first version given
 # to this command. Running `python2` or `python3` will run the first version of
 # 2.X.X or 3.X.X in the version list.
-pyenv global 3.12.2 2.7.18
+pyenv global 3.13.5
 
-### Node Version Manager setup
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+### Fast Node Manager setup
+if [ -d "$FNM_PATH" ]; then
+  eval "$(fnm env --shell zsh)"
 
-# Fixes VTE configuration problem with tilix
-# See: https://gnunn1.github.io/tilix-web/manual/vteconfig/
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-  source /etc/profile.d/vte.sh
+  __fnm_cleanup () {
+    # Disable exit on error for cleanup
+    set +e
+
+    if [ -n "${FNM_MULTISHELL_PATH}" ]; then
+      rm -f "${FNM_MULTISHELL_PATH}"
+      # Remove fnm symlinks older than 7 days
+      find "$(dirname ${FNM_MULTISHELL_PATH})/" -type l -name '*_*' -mtime +7 -delete &>/dev/null
+    fi
+  }
+
+  trap __fnm_cleanup EXIT
+
+  __fnm_notify_missing () {
+    # Notify if __fnm_cleanup deleted a symlink for a shell that's still active
+    if [[ -n "${FNM_MULTISHELL_PATH}" && ! -L "${FNM_MULTISHELL_PATH}" ]]; then
+      echo "${fg[red]}ALERT: fnm symlink missing - recreate shell!$reset_color"
+    fi
+  }
+
+  add-zsh-hook precmd __fnm_notify_missing
 fi

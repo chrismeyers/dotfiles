@@ -10,14 +10,23 @@
 	editor = nvim
 	excludesfile = /home/chris/.gitignore_global
 	autocrlf = input
+[credential]
+	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 [user]
 	name = Chris Meyers
 	email = chris@chrismeyers.net
+        signingkey = /home/chris/.ssh/id_ed25519_git.pub
 [push]
 	default = simple
 [pull]
 	rebase = false
-[credential]
-	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 [init]
 	defaultBranch = main
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[gpg "ssh"]
+	allowedSignersFile = /home/chris/.config/git/allowed-signers

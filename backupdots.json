@@ -29,41 +29,27 @@
         ]
     },
     "Linux": {
-        "backup": [
-            { "name": "GNOME terminal profiles", "script": "/home/chris/dotfiles/Linux/terminals/gnome/dump.sh" },
-            { "name": "Tilix terminal profiles", "script": "/home/chris/dotfiles/Linux/terminals/tilix/dump.sh" },
-            { "name": "VS Code extensions", "script": "/home/chris/dotfiles/Common/vscode/dump.sh" }
-        ],
         "files": [
             ["/home/chris/dotfiles/Linux/bash/.aliases", "/home/chris/.aliases"],
             ["/home/chris/dotfiles/Linux/bash/.bashrc", "/home/chris/.bashrc"],
 
             ["/home/chris/dotfiles/Linux/zsh/.zshrc", "/home/chris/.zshrc"],
+            ["/home/chris/dotfiles/Linux/zsh/.zlogin", "/home/chris/.zlogin"],
 
             ["/home/chris/dotfiles/Common/vim/.vimrc", "/home/chris/.vimrc"],
             ["/home/chris/dotfiles/Common/vim/.gvimrc", "/home/chris/.gvimrc"],
 
             ["/home/chris/dotfiles/Common/tmux/.tmux.conf", "/home/chris/.tmux.conf"],
 
-            ["/home/chris/dotfiles/Linux/stalonetray/.stalonetrayrc", "/home/chris/.stalonetrayrc"],
-
-            ["/home/chris/dotfiles/Common/vscode/settings.json", "/home/chris/.config/Code/User/settings.json"],
-
-            ["/home/chris/dotfiles/Linux/i3", "/home/chris/.config/i3"],
-            ["/home/chris/dotfiles/Linux/i3status", "/home/chris/.config/i3status"],
-            ["/home/chris/dotfiles/Linux/rofi", "/home/chris/.config/rofi"],
-            ["/home/chris/dotfiles/Linux/fontconfig", "/home/chris/.config/fontconfig"],
-            ["/home/chris/dotfiles/Linux/compton", "/home/chris/.config/compton"],
-            ["/home/chris/dotfiles/Linux/polybar", "/home/chris/.config/polybar"],
             ["/home/chris/dotfiles/Common/neovim/nvim", "/home/chris/.config/nvim"],
             ["/home/chris/dotfiles/Linux/dunst", "/home/chris/.config/dunst"],
-            ["/home/chris/dotfiles/Linux/xfce4", "/home/chris/.config/xfce4"],
-            ["/home/chris/dotfiles/Linux/terminals/tilix/tilix", "/home/chris/.config/tilix"],
-
-            ["/home/chris/dotfiles/Linux/Wallpapers", "/home/chris/Pictures/Wallpapers"],
+            ["/home/chris/dotfiles/Linux/hypr", "/home/chris/.config/hypr"],
+            ["/home/chris/dotfiles/Linux/waybar", "/home/chris/.config/waybar"],
 
             ["/home/chris/dotfiles/Linux/Git/.gitconfig", "/home/chris/.gitconfig"],
-            ["/home/chris/dotfiles/Linux/Git/.gitignore_global", "/home/chris/.gitignore_global"]
+            ["/home/chris/dotfiles/Linux/Git/.gitignore_global", "/home/chris/.gitignore_global"],
+
+            ["/home/chris/dotfiles/Linux/terminals/ghostty/config", "/home/chris/.config/ghostty/config"]
         ]
     },
     "Windows": {
