@@ -80,6 +80,7 @@ options:
 │   │       └── config
 │   ├── waybar/
 │   │   ├── config.jsonc
+│   │   ├── power_menu.xml
 │   │   └── style.css
 │   └── zsh/
 │       ├── .zlogin
@@ -119,6 +120,6 @@ options:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-39 directories, 46 files
+39 directories, 47 files
 ```
 <!-- END TREE -->
