@@ -5,7 +5,7 @@
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
+    background-color: rgba(43, 48, 59, 0.75);
     border-bottom: 3px solid rgba(100, 114, 125, 0.5);
     color: #ffffff;
     transition-property: background-color;
@@ -49,10 +49,6 @@ button:hover {
 }
 
 /* you can set a style on hover for any module like this */
-#pulseaudio:hover {
-    background-color: #a37800;
-}
-
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
@@ -72,7 +68,7 @@ button:hover {
     background-color: #eb4d4b;
 }
 
-#mode {
+#workspaces button.active {
     background-color: #64727D;
     box-shadow: inset 0 -3px #ffffff;
 }
@@ -85,17 +81,11 @@ button:hover {
 #temperature,
 #backlight,
 #network,
-#pulseaudio,
 #wireplumber,
-#custom-media,
-#tray,
-#mode,
 #idle_inhibitor,
-#scratchpad,
-#power-profiles-daemon,
-#mpd {
-    padding: 0 10px;
-    color: #ffffff;
+#custom-power {
+    padding: 0 5px;
+    box-shadow: inset 0 -3px #ffffff;
 }
 
 #window,
@@ -114,12 +104,11 @@ button:hover {
 }
 
 #clock {
-    background-color: #64727D;
+    background-color: transparent;
 }
 
 #battery {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: transparent;
 }
 
 #battery.charging, #battery.plugged {
@@ -145,103 +134,52 @@ button:hover {
     animation-direction: alternate;
 }
 
-#power-profiles-daemon {
-    padding-right: 15px;
-}
-
-#power-profiles-daemon.performance {
-    background-color: #f53c3c;
-    color: #ffffff;
-}
-
-#power-profiles-daemon.balanced {
-    background-color: #2980b9;
-    color: #ffffff;
-}
-
-#power-profiles-daemon.power-saver {
-    background-color: #2ecc71;
-    color: #000000;
-}
-
 label:focus {
     background-color: #000000;
 }
 
 #cpu {
-    background-color: #2ecc71;
-    color: #000000;
+    background-color: transparent;
 }
 
 #memory {
-    background-color: #9b59b6;
+    background-color: transparent;
 }
 
 #disk {
-    background-color: #964B00;
+    background-color: transparent;
 }
 
 #backlight {
-    background-color: #90b1b1;
+    background-color: transparent;
 }
 
 #network {
-    background-color: #2980b9;
+    background-color: transparent;
 }
 
 #network.disconnected {
     background-color: #f53c3c;
 }
 
-#pulseaudio,
 #wireplumber {
-    background-color: #f1c40f;
-    color: #000000;
+    background-color: transparent;
 }
 
-#pulseaudio.muted,
 #wireplumber.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
-}
-
-#custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
-}
-
-#custom-media.custom-spotify {
-    background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
+    background-color: transparent;
 }
 
 #temperature {
-    background-color: #f0932b;
+    background-color: transparent;
 }
 
 #temperature.critical {
     background-color: #eb4d4b;
 }
 
-#tray {
-    background-color: #2980b9;
-}
-
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
-}
-
 #idle_inhibitor {
-    background-color: #2d3436;
+    background-color: transparent;
 }
 
 #idle_inhibitor.activated {
@@ -249,72 +187,8 @@ label:focus {
     color: #2d3436;
 }
 
-#mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
-}
-
-#mpd.disconnected {
-    background-color: #f53c3c;
-}
-
-#mpd.stopped {
-    background-color: #90b1b1;
-}
-
-#mpd.paused {
-    background-color: #51a37a;
-}
-
-#language {
-    background: #00b093;
-    color: #740864;
-    padding: 0 5px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state {
-    background: #97e1ad;
-    color: #000000;
-    padding: 0 0px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state > label {
-    padding: 0 5px;
-}
-
-#keyboard-state > label.locked {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad.empty {
-	background-color: transparent;
-}
-
-#privacy {
-    padding: 0;
-}
-
-#privacy-item {
-    padding: 0 5px;
-    color: white;
-}
-
-#privacy-item.screenshare {
-    background-color: #cf5700;
-}
-
-#privacy-item.audio-in {
-    background-color: #1ca000;
-}
-
-#privacy-item.audio-out {
-    background-color: #0069d4;
+#custom-power {
+    font-size: 24px;
+    padding-left: 5px;
+    padding-right: 7px;
 }
