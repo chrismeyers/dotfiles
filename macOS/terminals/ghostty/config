@@ -50,6 +50,7 @@ quit-after-last-window-closed = true
 cursor-style = block
 cursor-style-blink = false
 
+font-size = 14
 font-feature = -calt, -liga, -dlig
 
 title = Ghostty
