@@ -9,17 +9,17 @@ Backup or restore configuration files
 
 options:
   -h, --help            show this help message and exit
-  -p {macOS,Linux,Windows}, --platform {macOS,Linux,Windows}
-                        overrides the current platform to determine which set
-                        of files to use. WARNING: This should only be used if
-                        the determined platform is wrong!
+  -p, --platform {macOS,Linux,Windows}
+                        overrides the current platform to determine which set of
+                        files to use. WARNING: This should only be used if the
+                        determined platform is wrong!
   -b, --backup          perform a backup based on files in the config file
                         (default: backupdots.json)
   -r, --restore         perform a restore based on files in the config file
                         (default: backupdots.json)
   -c, --cleanup         removes *.orig files
   -u, --unlink          removes all symlinks for the given platform
-  -t {print,inject}, --tree {print,inject}
+  -t, --tree {print,inject}
                         generates a directory tree and prints the output to
                         stdout or injects the output into README.md
   --check-platform      checks which platform would be run
@@ -437,7 +437,8 @@ if __name__ == "__main__":
     _platform = PlatformType.UNKNOWN
 
     arg_parser = argparse.ArgumentParser(
-        description="Backup or restore configuration files"
+        description="Backup or restore configuration files",
+        formatter_class=lambda prog: argparse.HelpFormatter(prog, width=80),
     )
 
     arg_parser.add_argument(
