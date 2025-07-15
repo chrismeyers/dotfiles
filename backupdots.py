@@ -45,11 +45,7 @@ def perform_backup():
         source_dir = os.path.dirname(source)
 
         if not os.path.exists(target):
-            log(
-                f"{target} does not exist, skipping",
-                level=LogLevel.WARN,
-                gutter=LogGutter(length=4),
-            )
+            Log.warn(f"{target} does not exist, skipping")
         elif not os.path.exists(source.replace("'", "")) and not os.path.islink(target):
             if not os.path.exists(source_dir):
                 os.makedirs(source_dir, mode=0o755)
@@ -61,7 +57,7 @@ def perform_backup():
                 backup_type = "file"
                 shutil.copy(target, source)
 
-            log(
+            Log.info(
                 f"Copied {backup_type}: {target} to {source_dir}",
                 gutter=LogGutter(str(file_num), 3, True),
             )
@@ -72,25 +68,22 @@ def perform_backup():
         script = item.get("script", None)
 
         if script is None:
-            log(
-                f'Missing script key for "{name}" backup entry',
-                level=LogLevel.WARN,
-            )
+            Log.warn(f'Missing script key for "{name}" backup entry')
             continue
         elif not os.path.exists(script):
-            log(f"{script} does not exist", level=LogLevel.WARN)
+            Log.warn(f"{script} does not exist")
             continue
 
-        log(f"Backing up {name}...", end="", flush=True)
+        Log.info(f"Backing up {name}...", end="", flush=True)
         exit_code = os.system(script)
         if exit_code == 0:
-            log("done")
+            Log.info("done")
             file_num += 1
         else:
-            log(f"script exited with code {exit_code}")
+            Log.info(f"script exited with code {exit_code}")
 
     if file_num == 1:
-        log("Nothing to backup")
+        Log.info("Nothing to backup")
 
 
 def perform_restore():
@@ -100,11 +93,7 @@ def perform_restore():
         target_dir = os.path.dirname(target)
 
         if not os.path.exists(source):
-            log(
-                f"{source} does not exist, skipping",
-                level=LogLevel.WARN,
-                gutter=LogGutter(length=4),
-            )
+            Log.warn(f"{source} does not exist, skipping")
         # Assume that the program isn't installed or the configuration file is
         # not needed if the original path doesn't exist
         elif os.path.exists(target_dir):
@@ -124,28 +113,20 @@ def perform_restore():
                         if _platform == PlatformType.WINDOWS
                         else ""
                     )
-                    log(
-                        f"{str(e).capitalize()}.{more_info}",
-                        level=LogLevel.WARN,
-                        gutter=LogGutter(length=4),
-                    )
+                    Log.warn(f"{str(e).capitalize()}.{more_info}")
                     continue
 
                 link_type = "directory" if os.path.isdir(source) else "file"
-                log(
+                Log.info(
                     f"Linked {link_type}: {target}",
                     gutter=LogGutter(str(file_num), 3, True),
                 )
                 file_num += 1
         else:
-            log(
-                f"{target_dir} does not exist, skipping",
-                level=LogLevel.WARN,
-                gutter=LogGutter(length=4),
-            )
+            Log.warn(f"{target_dir} does not exist, skipping")
 
     if file_num == 1:
-        log("Nothing to restore")
+        Log.info("Nothing to restore")
 
 
 def perform_cleanup():
@@ -170,21 +151,17 @@ def perform_cleanup():
                     if not sudo_command(f"rm -rf {current}"):
                         continue
             else:
-                log(
-                    f"{current} is not a file, symlink, or directory...skipping",
-                    level=LogLevel.WARN,
-                    gutter=LogGutter(length=4),
-                )
+                Log.warn(f"{current} is not a file, symlink, or directory...skipping")
                 continue
 
-            log(
+            Log.info(
                 f"Removed {cleanup_type}: {current}",
                 gutter=LogGutter(str(file_num), 3, True),
             )
             file_num += 1
 
     if file_num == 1:
-        log("Nothing to cleanup")
+        Log.info("Nothing to cleanup")
 
 
 def perform_unlink():
@@ -198,14 +175,14 @@ def perform_unlink():
                 if not sudo_command(f"rm {target}"):
                     continue
 
-            log(
+            Log.info(
                 f'Unlinked {"directory" if os.path.isdir(source) else "file"}: {target}',
                 gutter=LogGutter(str(file_num), 3, True),
             )
             file_num += 1
 
     if file_num == 1:
-        log("Nothing to unlink")
+        Log.info("Nothing to unlink")
 
 
 def perform_tree():
@@ -213,7 +190,7 @@ def perform_tree():
 
     tree = generate_tree()
     if tree_mode == "print":
-        log(tree)
+        Log.info(tree)
     elif tree_mode == "inject":
         inject_tree(tree)
 
@@ -235,7 +212,7 @@ def generate_tree():
     err = err.decode("utf-8")
 
     if err != "":
-        log(err, level=LogLevel.ERROR)
+        Log.error(err)
         sys.exit(1)
 
     out = out.replace("\\", "")
@@ -247,7 +224,7 @@ def inject_tree(tree):
     readme_path = os.path.join(_backup_dir_root, "README.md")
 
     if not os.path.exists(readme_path):
-        log(f"{readme_path} does not exist!", level=LogLevel.ERROR)
+        Log.error(f"{readme_path} does not exist!")
         sys.exit(1)
 
     with open(readme_path, "r") as f_in:
@@ -267,24 +244,21 @@ def inject_tree(tree):
             del readme_lines[begin_index + 1 : end_index]
             readme_lines.insert(begin_index + 1, f"```\n{tree}```\n")
         else:
-            log(
-                "BEGIN and END tags are likely missing from README.md",
-                level=LogLevel.ERROR,
-            )
+            Log.error("BEGIN and END tags are likely missing from README.md")
             sys.exit(1)
 
     with open(readme_path, "w") as f_out:
         for line in readme_lines:
             f_out.write(line)
 
-        log("Updated directory tree in README.md")
+        Log.info("Updated directory tree in README.md")
 
 
 def perform_check_platform():
-    log(f"The current platform is set to {platform_enum_to_string(_platform)}")
+    Log.info(f"The current platform is set to {platform_enum_to_string(_platform)}")
     if _args.platform is not None:
         actual = platform_enum_to_string(determine_platform(True))
-        log(
+        Log.info(
             f"NOTE: The -p/--platform flag is overriding the actual platform of {actual}"
         )
 
@@ -310,11 +284,7 @@ def sudo_command(cmd):
         exit_code = os.system(f"sudo {cmd}")
         success = True if exit_code == 0 else False
     else:
-        log(
-            f"Unable to execute command `{cmd}` as a super user",
-            level=LogLevel.WARN,
-            gutter=LogGutter(length=4),
-        )
+        Log.warn(f"Unable to execute command `{cmd}` as a super user")
 
     return success
 
@@ -338,7 +308,7 @@ def determine_platform(force_actual=False):
         platform_enum = PlatformType.WINDOWS
 
     if platform_enum == PlatformType.UNKNOWN:
-        log(f'Unsupported platform "{platform_str}"', level=LogLevel.ERROR)
+        Log.error(f'Unsupported platform "{platform_str}"')
         sys.exit(1)
 
     return platform_enum
@@ -352,7 +322,7 @@ def platform_enum_to_string(platform_enum):
     elif platform_enum == PlatformType.WINDOWS:
         return "Windows"
     else:
-        log(f"Unsupported platform enum {repr(platform_enum)}", level=LogLevel.ERROR)
+        Log.error(f"Unsupported platform enum {repr(platform_enum)}")
         sys.exit(1)
 
 
@@ -385,48 +355,62 @@ class LogGutter:
     """Whether or not to include a space between the gutter and message"""
 
 
-def log(message, level=LogLevel.INFO, gutter=LogGutter(), end="\n", flush=False):
-    """
-    Usage examples:
+class Log:
+    @staticmethod
+    def _write(message, level=LogLevel.INFO, gutter=LogGutter(), end="\n", flush=False):
+        """
+        Usage examples:
 
-    ### Simple one line message
-    >>> log("test")
-    test
-
-    ### Multi-part message on same line
-    >>> log("start...", end="", flush=True)
-    >>> log("end")
-    start...end
-
-    ### Default level message with a gutter using positional args
-    >>> log("test", gutter=LogGutter("1", 3, True))
-      1 test
-
-    ### Elevated level message with a gutter using kwargs
-    >>> log("test", level=LogLevel.WARN, gutter=LogGutter(content="1", length=3, space=True))
-      1 WARNING: test
-
-    ### Gutter with one argument using kwargs
-    >>> log("test", gutter=LogGutter(length=4))
+        ### Simple one line message
+        >>> _write("test")
         test
-    """
 
-    level_prefix = (
-        "ERROR: "
-        if level == LogLevel.ERROR
-        else "WARNING: " if level == LogLevel.WARN else ""
-    )
+        ### Multi-part message on same line
+        >>> _write("start...", end="", flush=True)
+        >>> _write("end")
+        start...end
 
-    print(
-        f'{str(gutter.content).rjust(gutter.length)}{" " if gutter.space else ""}{level_prefix}{message}',
-        end=end,
-        flush=flush,
-    )
+        ### Default level message with a gutter using positional args
+        >>> _write("test", gutter=LogGutter("1", 3, True))
+        1 test
+
+        ### Elevated level message with a gutter using kwargs
+        >>> _write("test", level=LogLevel.WARN, gutter=LogGutter(content="1", length=3, space=True))
+        1 WARNING: test
+
+        ### Gutter with one argument using kwargs
+        >>> _write("test", gutter=LogGutter(length=4))
+            test
+        """
+
+        level_prefix = (
+            "ERROR: "
+            if level == LogLevel.ERROR
+            else "WARNING: " if level == LogLevel.WARN else ""
+        )
+
+        print(
+            f'{str(gutter.content).rjust(gutter.length)}{" " if gutter.space else ""}{level_prefix}{message}',
+            end=end,
+            flush=flush,
+        )
+
+    @staticmethod
+    def info(message, gutter=LogGutter(), end="\n", flush=False):
+        Log._write(message, level=LogLevel.INFO, gutter=gutter, end=end, flush=flush)
+
+    @staticmethod
+    def warn(message, gutter=LogGutter(), end="\n", flush=False):
+        Log._write(message, level=LogLevel.WARN, gutter=gutter, end=end, flush=flush)
+
+    @staticmethod
+    def error(message, gutter=LogGutter(), end="\n", flush=False):
+        Log._write(message, level=LogLevel.ERROR, gutter=gutter, end=end, flush=flush)
 
 
 if __name__ == "__main__":
     if sys.version_info < (3, 7, 0):
-        log("This script requires Python >= 3.7.0", level=LogLevel.ERROR)
+        Log.error("This script requires Python >= 3.7.0")
         sys.exit(1)
 
     _backup_dir_root = os.path.dirname(os.path.abspath(__file__))
@@ -501,10 +485,7 @@ if __name__ == "__main__":
         _backup_config_file = sanitized_full_path(_backup_dir_root, _args.config_file)
 
     if not os.path.exists(_backup_config_file):
-        log(
-            f'Configuration file "{_backup_config_file}" does not exist',
-            level=LogLevel.ERROR,
-        )
+        Log.error(f'Configuration file "{_backup_config_file}" does not exist')
         sys.exit(1)
 
     with open(_backup_config_file) as f:
@@ -514,9 +495,8 @@ if __name__ == "__main__":
     try:
         _backup_data = _all_backup_data[platform_enum_to_string(_platform)]
     except KeyError:
-        log(
-            f'Configuration file "{_backup_config_file}" does not contain platform {platform_enum_to_string(_platform)}',
-            level=LogLevel.ERROR,
+        Log.error(
+            f'Configuration file "{_backup_config_file}" does not contain platform {platform_enum_to_string(_platform)}'
         )
         sys.exit(1)
 
