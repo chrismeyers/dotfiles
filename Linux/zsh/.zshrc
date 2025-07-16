@@ -151,7 +151,7 @@ alias sz="exec zsh"
 ### Additional aliases
 source $HOME/.aliases
 
-# Mise version manager (Python, Node.js, Ruby, etc.)
+### Mise version manager (Python, Node.js, Ruby, etc.)
 eval "$(mise activate zsh)"
 
 ### Ensure ssh is using GNOME Keyring
