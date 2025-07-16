@@ -8,6 +8,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PYTHONPATH="$HOME/dev/python:$PYTHONPATH"
 export PATH="/opt/homebrew/bin\
 :/opt/homebrew/sbin\
+:/opt/homebrew/opt/sqlite/bin\
 :/usr/local/bin\
 :/usr/local/sbin\
 :$GOPATH/bin\
