@@ -5,7 +5,7 @@ export ZSH="/home/chris/.oh-my-zsh"
 export GOPATH="$HOME/dev/go"
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="/usr/local/bin\
-:/usr/local/sbin
+:/usr/local/sbin\
 :$GOPATH/bin\
 :$HOME/.local/bin\
 :$PATH"
