@@ -6,8 +6,6 @@
         ],
         "files": [
             ["/Users/chris/dotfiles/macOS/bash/.aliases", "/Users/chris/.aliases"],
-            ["/Users/chris/dotfiles/macOS/bash/.bashrc", "/Users/chris/.bashrc"],
-            ["/Users/chris/dotfiles/macOS/bash/.bash_profile", "/Users/chris/.bash_profile"],
 
             ["/Users/chris/dotfiles/macOS/zsh/.zshrc", "/Users/chris/.zshrc"],
 

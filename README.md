@@ -62,8 +62,6 @@ options:
 └── macOS/
     ├── bash/
     │   ├── .aliases
-    │   ├── .bash_profile
-    │   ├── .bashrc
     │   └── scripts/
     │       ├── madoffice.sh*
     │       └── remote.sh*
@@ -95,6 +93,6 @@ options:
     └── zsh/
         └── .zshrc
 
-25 directories, 36 files
+25 directories, 34 files
 ```
 <!-- END TREE -->
