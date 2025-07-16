@@ -63,8 +63,7 @@ options:
 │       └── settings.json
 ├── Linux/
 │   ├── bash/
-│   │   ├── .aliases
-│   │   └── .bashrc
+│   │   └── .aliases
 │   ├── dunst/
 │   │   └── dunstrc
 │   ├── Git/
@@ -87,9 +86,7 @@ options:
 │       └── .zshrc
 ├── macOS/
 │   ├── bash/
-│   │   ├── .aliases
-│   │   ├── .bash_profile
-│   │   └── .bashrc
+│   │   └── .aliases
 │   ├── Git/
 │   │   ├── .gitconfig
 │   │   └── .gitignore_global
@@ -120,6 +117,6 @@ options:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-39 directories, 47 files
+39 directories, 44 files
 ```
 <!-- END TREE -->

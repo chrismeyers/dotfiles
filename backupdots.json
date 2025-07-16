@@ -6,8 +6,6 @@
         ],
         "files": [
             ["/Users/chris/dotfiles/macOS/bash/.aliases", "/Users/chris/.aliases"],
-            ["/Users/chris/dotfiles/macOS/bash/.bashrc", "/Users/chris/.bashrc"],
-            ["/Users/chris/dotfiles/macOS/bash/.bash_profile", "/Users/chris/.bash_profile"],
 
             ["/Users/chris/dotfiles/macOS/zsh/.zshrc", "/Users/chris/.zshrc"],
 
@@ -31,7 +29,6 @@
     "Linux": {
         "files": [
             ["/home/chris/dotfiles/Linux/bash/.aliases", "/home/chris/.aliases"],
-            ["/home/chris/dotfiles/Linux/bash/.bashrc", "/home/chris/.bashrc"],
 
             ["/home/chris/dotfiles/Linux/zsh/.zshrc", "/home/chris/.zshrc"],
             ["/home/chris/dotfiles/Linux/zsh/.zlogin", "/home/chris/.zlogin"],
