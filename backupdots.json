@@ -14,6 +14,10 @@
 
             ["/Users/chris/dotfiles/Common/tmux/.tmux.conf", "/Users/chris/.tmux.conf"],
 
+            ["/Users/chris/dotfiles/Common/mise/.default-gems", "/Users/chris/.default-gems"],
+            ["/Users/chris/dotfiles/Common/mise/.default-npm-packages", "/Users/chris/.default-npm-packages"],
+            ["/Users/chris/dotfiles/Common/mise/.default-python-packages", "/Users/chris/.default-python-packages"],
+
             ["/Users/chris/dotfiles/Common/vscode/settings.json", "/Users/chris/Library/Application Support/Code/User/settings.json"],
 
             ["/Users/chris/dotfiles/Common/zed/settings.json", "/Users/chris/.config/zed/settings.json"],
@@ -37,6 +41,10 @@
             ["/home/chris/dotfiles/Common/vim/.gvimrc", "/home/chris/.gvimrc"],
 
             ["/home/chris/dotfiles/Common/tmux/.tmux.conf", "/home/chris/.tmux.conf"],
+
+            ["/home/chris/dotfiles/Common/mise/.default-gems", "/home/chris/.default-gems"],
+            ["/home/chris/dotfiles/Common/mise/.default-npm-packages", "/home/chris/.default-npm-packages"],
+            ["/home/chris/dotfiles/Common/mise/.default-python-packages", "/home/chris/.default-python-packages"],
 
             ["/home/chris/dotfiles/Common/neovim/nvim", "/home/chris/.config/nvim"],
             ["/home/chris/dotfiles/Linux/dunst", "/home/chris/.config/dunst"],
