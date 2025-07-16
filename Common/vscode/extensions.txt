@@ -1,3 +1,4 @@
+anthropic.claude-code
 bmewburn.vscode-intelephense-client
 casualjim.gotemplate
 chrismeyers.vscode-pretty-json

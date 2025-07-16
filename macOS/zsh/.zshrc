@@ -156,7 +156,7 @@ fnmi () {
   fi
   fnm install $1
   fnm default $1
-  npm install --global yarn npm-check-updates neovim
+  npm install --global yarn npm-check-updates neovim @anthropic-ai/claude-code
 }
 
 ### Prompt format:
