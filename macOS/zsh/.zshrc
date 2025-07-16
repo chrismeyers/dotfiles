@@ -3,9 +3,6 @@ export ZSH="/Users/chris/.oh-my-zsh"
 
 # Set path variables
 export GOPATH="$HOME/dev/go"
-export DENO_INSTALL="$HOME/.deno"
-export BUN_INSTALL="$HOME/.bun"
-export PYENV_ROOT="$HOME/.pyenv"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export FOUNDATION_INFRA_PATH="$HOME/dev/foundation-infra"
@@ -15,11 +12,8 @@ export PATH="/opt/homebrew/bin\
 :/usr/local/bin\
 :/usr/local/sbin\
 :$GOPATH/bin\
-:$DENO_INSTALL/bin\
-:$BUN_INSTALL/bin\
 :$HOME/.composer/vendor/bin\
 :$HOME/.local/bin\
-:$PYENV_ROOT/bin\
 :$ANDROID_SDK_ROOT/emulator\
 :$ANDROID_SDK_ROOT/platform-tools\
 :$PATH"
@@ -150,16 +144,6 @@ kctx () {
   esac
 }
 
-fnmi () {
-  if [ $# -lt 1 ]; then
-    echo "Usage: $(basename "$0") version"
-    return 1
-  fi
-  fnm install $1
-  fnm default $1
-  npm install --global yarn npm-check-updates neovim @anthropic-ai/claude-code
-}
-
 ### Prompt format:
 ###   user@hostname[pwd][current_k8s_context][git_branch_and_status]
 ###    >
@@ -202,46 +186,15 @@ alias sz="exec zsh"
 ### Additional aliases
 source $HOME/.aliases
 
-### Pyenv setup
-eval "$(pyenv init - --no-rehash zsh)"
-
-# Specifies global Python versions. The order of the versions will determine the
-# priority of the version. Running `python` will invoke the first version given
-# to this command. Running `python2` or `python3` will run the first version of
-# 2.X.X or 3.X.X in the version list.
-pyenv global 3.12.4 2.7.18
-
-### Fast Node Manager setup
-eval "$(fnm env --shell zsh)"
-
-__fnm_cleanup () {
-  # Disable exit on error for cleanup
-  set +e
-
-  if [ -n "${FNM_MULTISHELL_PATH}" ]; then
-    rm -f "${FNM_MULTISHELL_PATH}"
-    # Remove fnm symlinks older than 7 days
-    find "$(dirname ${FNM_MULTISHELL_PATH})/" -type l -name '*_*' -mtime +7 -delete &>/dev/null
-  fi
-}
-
-trap __fnm_cleanup EXIT
-
-__fnm_notify_missing () {
-  # Notify if __fnm_cleanup deleted a symlink for a shell that's still active
-  if [[ -n "${FNM_MULTISHELL_PATH}" && ! -L "${FNM_MULTISHELL_PATH}" ]]; then
-    echo "${fg[red]}ALERT: fnm symlink missing - recreate shell!$reset_color"
-  fi
-}
-
-add-zsh-hook precmd __fnm_notify_missing
-
 ### gcloud
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/chris/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/chris/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/chris/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/chris/google-cloud-sdk/completion.zsh.inc'; fi
+
+### Mise version manager (Python, Node.js, Ruby, etc.)
+eval "$(mise activate zsh)"
 
 ### Ensure ssh-agent is running
 if [ -z $(pgrep ssh-agent) ]; then

@@ -15,6 +15,9 @@
 
             ["/Users/chris/dotfiles/Common/tmux/.tmux.conf", "/Users/chris/.tmux.conf"],
 
+            ["/Users/chris/dotfiles/Common/mise/.default-npm-packages", "/Users/chris/.default-npm-packages"],
+            ["/Users/chris/dotfiles/Common/mise/.default-python-packages", "/Users/chris/.default-python-packages"],
+
             ["/Users/chris/dotfiles/Common/vscode/settings.json", "/Users/chris/Library/Application Support/Code/User/settings.json"],
 
             ["/Users/chris/dotfiles/Common/neovim/nvim", "/Users/chris/.config/nvim"],
