@@ -11,6 +11,7 @@ export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export FOUNDATION_INFRA_PATH="$HOME/dev/foundation-infra"
 export PATH="/opt/homebrew/bin\
 :/opt/homebrew/sbin\
+:/opt/homebrew/opt/sqlite/bin\
 :/usr/local/bin\
 :/usr/local/sbin\
 :$GOPATH/bin\
