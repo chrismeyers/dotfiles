@@ -22,8 +22,8 @@
 
             ["/Users/chris/dotfiles/Common/neovim/nvim", "/Users/chris/.config/nvim"],
 
-            ["/Users/chris/dotfiles/macOS/Git/.gitconfig", "/Users/chris/.gitconfig"],
-            ["/Users/chris/dotfiles/macOS/Git/.gitignore_global", "/Users/chris/.gitignore_global"],
+            ["/Users/chris/dotfiles/macOS/Git/.gitconfig", "/Users/chris/.config/git/config"],
+            ["/Users/chris/dotfiles/macOS/Git/.gitignore_global", "/Users/chris/.config/git/ignore"],
 
             ["/Users/chris/dotfiles/macOS/terminals/ghostty/config", "/Users/chris/Library/Application Support/com.mitchellh.ghostty/config"]
         ]
