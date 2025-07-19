@@ -8,14 +8,13 @@
 	updatesubs = submodule update --recursive --remote
 [core]
 	editor = nvim
-	excludesfile = /home/chris/.gitignore_global
 	autocrlf = input
 [credential]
 	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 [user]
 	name = Chris Meyers
 	email = chris@chrismeyers.net
-        signingkey = /home/chris/.ssh/id_ed25519_git.pub
+	signingkey = /home/chris/.ssh/id_ed25519_git.pub
 [push]
 	default = simple
 [pull]

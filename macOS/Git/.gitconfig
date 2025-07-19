@@ -8,7 +8,6 @@
 	updatesubs = submodule update --recursive --remote
 [core]
 	editor = nvim
-	excludesfile = /Users/chris/.gitignore_global
 	autocrlf = input
 [credential]
 	helper = osxkeychain

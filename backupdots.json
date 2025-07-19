@@ -24,8 +24,8 @@
 
             ["/Users/chris/dotfiles/Common/neovim/nvim", "/Users/chris/.config/nvim"],
 
-            ["/Users/chris/dotfiles/macOS/Git/.gitconfig", "/Users/chris/.gitconfig"],
-            ["/Users/chris/dotfiles/macOS/Git/.gitignore_global", "/Users/chris/.gitignore_global"],
+            ["/Users/chris/dotfiles/macOS/Git/.gitconfig", "/Users/chris/.config/git/config"],
+            ["/Users/chris/dotfiles/macOS/Git/.gitignore_global", "/Users/chris/.config/git/ignore"],
 
             ["/Users/chris/dotfiles/macOS/terminals/ghostty/config", "/Users/chris/Library/Application Support/com.mitchellh.ghostty/config"]
         ]
@@ -51,8 +51,8 @@
             ["/home/chris/dotfiles/Linux/hypr", "/home/chris/.config/hypr"],
             ["/home/chris/dotfiles/Linux/waybar", "/home/chris/.config/waybar"],
 
-            ["/home/chris/dotfiles/Linux/Git/.gitconfig", "/home/chris/.gitconfig"],
-            ["/home/chris/dotfiles/Linux/Git/.gitignore_global", "/home/chris/.gitignore_global"],
+            ["/home/chris/dotfiles/Linux/Git/.gitconfig", "/home/chris/.config/git/config"],
+            ["/home/chris/dotfiles/Linux/Git/.gitignore_global", "/home/chris/.config/git/ignore"],
 
             ["/home/chris/dotfiles/Linux/terminals/ghostty/config", "/home/chris/.config/ghostty/config"]
         ]
@@ -70,7 +70,7 @@
 
             ["C:\\Users\\Chris\\dotfiles\\Common\\neovim\\nvim", "C:\\Users\\Chris\\AppData\\Local\\nvim"],
 
-            ["C:\\Users\\Chris\\dotfiles\\Windows\\Git\\.gitconfig", "C:\\Users\\Chris\\.gitconfig"]
+            ["C:\\Users\\Chris\\dotfiles\\Windows\\Git\\.gitconfig", "C:\\Users\\Chris\\.config\\git\\config"]
         ]
     }
 }
