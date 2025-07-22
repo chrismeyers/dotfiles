@@ -41,24 +41,25 @@ from enum import Enum
 def perform_backup():
     """Copies files to dotfiles repo and runs backup scripts"""
     file_num = 1
-    for source, target in _backup_data.get("files", []):
-        source_dir = os.path.dirname(source)
+    for settings in _backup_data.get("files", []):
+        target, source = settings[:2]
 
-        if not os.path.exists(target):
-            Log.warn(f"{target} does not exist, skipping")
-        elif not os.path.exists(source.replace("'", "")) and not os.path.islink(target):
-            if not os.path.exists(source_dir):
-                os.makedirs(source_dir, mode=0o755)
+        target_dir = os.path.dirname(target)
 
-            if os.path.isdir(target):
+        if not os.path.exists(source):
+            Log.warn(f"Source {source} does not exist, skipping")
+        elif not os.path.exists(target.replace("'", "")) and not os.path.islink(source):
+            os.makedirs(target_dir, mode=0o755, exist_ok=True)
+
+            if os.path.isdir(source):
                 backup_type = "directory"
-                shutil.copytree(target, source)
+                shutil.copytree(source, target)
             else:
                 backup_type = "file"
-                shutil.copy(target, source)
+                shutil.copy(source, target)
 
             Log.info(
-                f"Copied {backup_type}: {target} to {source_dir}",
+                f"Copied {backup_type}: {source} to {target}",
                 gutter=LogGutter(str(file_num), 3, True),
             )
             file_num += 1
@@ -89,41 +90,54 @@ def perform_backup():
 def perform_restore():
     """Symlinks files from dotfiles repo to original location"""
     file_num = 1
-    for source, target in _backup_data.get("files", []):
+    for settings in _backup_data.get("files", []):
+        source, target = settings[:2]
+        opts = settings[2] if len(settings) > 2 else {}
+
         target_dir = os.path.dirname(target)
 
         if not os.path.exists(source):
-            Log.warn(f"{source} does not exist, skipping")
-        # Assume that the program isn't installed or the configuration file is
-        # not needed if the original path doesn't exist
-        elif os.path.exists(target_dir):
-            # Make a backup of the file before creating a symlink
-            if os.path.exists(target) and not os.path.islink(target):
-                shutil.move(target, f"{target}.{_backup_file_ext}")
+            Log.warn(f"Source {source} does not exist, skipping")
+            continue
 
-            if not os.path.exists(target):
-                try:
-                    os.symlink(source, target)
-                except PermissionError:
-                    if not sudo_command(f"ln -s {source} {target}"):
-                        continue
-                except OSError as e:
-                    more_info = (
-                        " Try running this command as an administrator"
-                        if _platform == PlatformType.WINDOWS
-                        else ""
-                    )
-                    Log.warn(f"{str(e).capitalize()}.{more_info}")
-                    continue
-
-                link_type = "directory" if os.path.isdir(source) else "file"
-                Log.info(
-                    f"Linked {link_type}: {target}",
-                    gutter=LogGutter(str(file_num), 3, True),
+        if not os.path.exists(target_dir):
+            if opts.get("createDirs", False) == True:
+                os.makedirs(target_dir, mode=0o755, exist_ok=True)
+            else:
+                # The createDirs option should only be enabled for items that do not have
+                # their directory structure created by an external program. If an external
+                # program creates the directory structure, let the program handle it and use
+                # this warning as a reminder to install the program first.
+                Log.warn(
+                    f"Target directory {target_dir} does not exist and createDirs is not enabled, skipping"
                 )
-                file_num += 1
-        else:
-            Log.warn(f"{target_dir} does not exist, skipping")
+                continue
+
+        # Make a backup of the file before creating a symlink
+        if os.path.exists(target) and not os.path.islink(target):
+            shutil.move(target, f"{target}.{_backup_file_ext}")
+
+        if not os.path.exists(target):
+            try:
+                os.symlink(source, target)
+            except PermissionError:
+                if not sudo_command(f"ln -s {source} {target}"):
+                    continue
+            except OSError as e:
+                more_info = (
+                    " Try running this command as an administrator"
+                    if _platform == PlatformType.WINDOWS
+                    else ""
+                )
+                Log.warn(f"{str(e).capitalize()}.{more_info}")
+                continue
+
+            link_type = "directory" if os.path.isdir(source) else "file"
+            Log.info(
+                f"Linked {link_type}: {target}",
+                gutter=LogGutter(str(file_num), 3, True),
+            )
+            file_num += 1
 
     if file_num == 1:
         Log.info("Nothing to restore")
@@ -132,7 +146,9 @@ def perform_restore():
 def perform_cleanup():
     """Removes all *.{_backup_file_ext} files generated from restore"""
     file_num = 1
-    for _, target in _backup_data.get("files", []):
+    for settings in _backup_data.get("files", []):
+        _, target = settings[:2]
+
         current = f"{target}.{_backup_file_ext}"
 
         if os.path.exists(current):
@@ -167,7 +183,9 @@ def perform_cleanup():
 def perform_unlink():
     """Removes all symlinks for the given platform"""
     file_num = 1
-    for source, target in _backup_data.get("files", []):
+    for settings in _backup_data.get("files", []):
+        source, target = settings[:2]
+
         if os.path.exists(target):
             try:
                 os.unlink(target)
