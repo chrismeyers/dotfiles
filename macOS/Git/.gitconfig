@@ -9,6 +9,7 @@
 [core]
 	editor = nvim
 	autocrlf = input
+	whitespace = trailing-space
 [credential]
 	helper = osxkeychain
 [user]
@@ -17,6 +18,7 @@
 	signingkey = /Users/chris/.ssh/id_ed25519_git.pub
 [push]
 	default = simple
+	autoSetupRemote = true
 [pull]
 	rebase = false
 [init]
@@ -27,5 +29,13 @@
 	gpgsign = true
 [tag]
 	gpgsign = true
+	sort = -version:refname
 [gpg "ssh"]
 	allowedSignersFile = /Users/chris/.config/git/allowed-signers
+[status]
+	branch = true
+[rerere]
+	enabled = true
+	autoUpdate = true
+[help]
+	autocorrect = prompt

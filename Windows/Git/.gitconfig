@@ -9,6 +9,7 @@
 [core]
 	autocrlf = true
 	sshCommand = 'C:\\Windows\\System32\\OpenSSH\\ssh.exe'
+	whitespace = trailing-space
 [credential]
 	helper = manager
 [user]
@@ -17,6 +18,7 @@
 	signingkey = C:\\Users\\Chris\\.ssh\\id_ed25519_git.pub
 [push]
 	default = simple
+	autoSetupRemote = true
 [pull]
 	rebase = false
 [init]
@@ -27,6 +29,14 @@
 	gpgsign = true
 [tag]
 	gpgsign = true
+	sort = -version:refname
 [gpg "ssh"]
 	allowedSignersFile = C:\\Users\\Chris\\.config\\git\\allowed-signers.txt
 	program = C:\\Windows\\System32\\OpenSSH\\ssh-keygen.exe
+[status]
+	branch = true
+[rerere]
+	enabled = true
+	autoUpdate = true
+[help]
+	autocorrect = prompt
