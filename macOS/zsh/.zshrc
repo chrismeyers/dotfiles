@@ -128,19 +128,21 @@ k8s_context () {
 }
 
 kctx () {
+  if [ "$#" -eq 0 ]; then
+    kubectl config get-contexts
+    return
+  fi
+
   case $1 in
-  'p')
-    kubectl config use-context m360-prod
-    ;;
-  's')
-    kubectl config use-context m360-stage
-    ;;
-  'prod' | 'stage')
-    kubectl config use-context m360-$1
-    ;;
-  *)
-    kubectl config use-context $1
-    ;;
+    'p' | 'prod')
+      kubectl config use-context production-002
+      ;;
+    's' | 'stage')
+      kubectl config use-context staging-002
+      ;;
+    *)
+      kubectl config use-context $1
+      ;;
   esac
 }
 
