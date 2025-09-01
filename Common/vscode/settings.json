@@ -88,7 +88,5 @@
   "git.blame.statusBarItem.enabled": false,
   "git.autoRepositoryDetection": "openEditors",
 
-  "cSpell.useCustomDecorations": false,
-
-  "github.copilot.nextEditSuggestions.enabled": true
+  "cSpell.useCustomDecorations": false
 }
