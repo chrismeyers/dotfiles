@@ -53,9 +53,9 @@ cursor-style-blink = false
 font-size = 14
 font-feature = -calt, -liga, -dlig
 
-title = Ghostty
+title = " "
 
-theme = tokyonight-storm
+theme = TokyoNight Storm
 
 background-opacity = 0.95
 background-blur = true

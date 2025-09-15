@@ -54,7 +54,7 @@ font-feature = -calt, -liga, -dlig
 
 title = Ghostty
 
-theme = tokyonight-storm
+theme = TokyoNight Storm
 
 background-opacity = 0.95
 background-blur = true
