@@ -59,3 +59,5 @@ theme = TokyoNight Storm
 
 background-opacity = 0.95
 background-blur = true
+
+bell-features = no-title
