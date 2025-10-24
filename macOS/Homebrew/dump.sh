@@ -4,4 +4,4 @@
 cd "$(dirname "$0")"
 
 # Generate a Brewfile
-HOMEBREW_NO_AUTO_UPDATE=1 brew bundle dump --force
+HOMEBREW_NO_AUTO_UPDATE=1 brew bundle dump --formula --cask --tap --force
