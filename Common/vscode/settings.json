@@ -12,6 +12,7 @@
   "editor.minimap.showSlider": "always",
   "editor.suggestSelection": "first",
   "editor.formatOnSave": false,
+  "editor.renderWhitespace": "selection",
 
   // File settings (Files)
   "files.trimTrailingWhitespace": true,
@@ -59,6 +60,9 @@
   "workbench.colorTheme": "Tokyo Night Storm",
   "workbench.iconTheme": "vscode-icons",
   "workbench.activityBar.location": "top",
+  "workbench.colorCustomizations": {
+    "editorWhitespace.foreground": "#a9b1d6"
+  },
 
   // Extensions
   "extensions.ignoreRecommendations": true,
