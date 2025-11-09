@@ -7,6 +7,7 @@ export PYTHONPATH="$HOME/dev/python:$PYTHONPATH"
 export PATH="/opt/homebrew/bin\
 :/opt/homebrew/sbin\
 :/opt/homebrew/opt/sqlite/bin\
+:/opt/homebrew/opt/llvm/bin\
 :/usr/local/bin\
 :/usr/local/sbin\
 :$GOPATH/bin\

@@ -31,6 +31,12 @@
     "editor.tabSize": 4
   },
 
+  "[c][cpp]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-vscode.cpptools",
+    "editor.tabSize": 4
+  },
+
   "[python]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "ms-python.black-formatter",
@@ -72,6 +78,9 @@
 
   "go.formatTool": "goimports",
   "go.useLanguageServer": true,
+
+  "C_Cpp.clang_format_style": "file",
+  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, IndentWidth: 4, UseTab: Never, ColumnLimit: 80, BreakBeforeBraces: Linux }",
 
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
