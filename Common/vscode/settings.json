@@ -80,7 +80,8 @@
   "go.useLanguageServer": true,
 
   "C_Cpp.clang_format_style": "file",
-  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, IndentWidth: 4, UseTab: Never, ColumnLimit: 80, BreakBeforeBraces: Linux }",
+  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, IndentWidth: 4, UseTab: Never, ColumnLimit: 80, BreakBeforeBraces: Linux, AllowShortIfStatementsOnASingleLine: AllIfsAndElse, AllowShortFunctionsOnASingleLine: InlineOnly }",
+  "C_Cpp.autoAddFileAssociations": false,
 
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
