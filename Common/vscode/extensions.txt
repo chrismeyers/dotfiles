@@ -19,7 +19,6 @@ redhat.vscode-commons
 redhat.vscode-yaml
 streetsidesoftware.code-spell-checker
 supermaven.supermaven
-visualstudioexptteam.vscodeintellicode
 vscode-icons-team.vscode-icons
 vscodevim.vim
 xabikos.javascriptsnippets
