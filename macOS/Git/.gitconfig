@@ -31,7 +31,7 @@
 	gpgsign = true
 	sort = -version:refname
 [gpg "ssh"]
-	allowedSignersFile = /Users/chris/.config/git/allowed-signers
+	allowedSignersFile = /Users/chris/.config/git/allowed_signers
 [status]
 	branch = true
 [rerere]
