@@ -31,7 +31,7 @@
 	gpgsign = true
 	sort = -version:refname
 [gpg "ssh"]
-	allowedSignersFile = C:\\Users\\Chris\\.config\\git\\allowed-signers.txt
+	allowedSignersFile = C:\\Users\\Chris\\.config\\git\\allowed_signers.txt
 	program = C:\\Windows\\System32\\OpenSSH\\ssh-keygen.exe
 [status]
 	branch = true
