@@ -157,8 +157,3 @@ source $HOME/.aliases
 
 ### Mise version manager (Python, Node.js, Ruby, etc.)
 eval "$(mise activate zsh)"
-
-### Ensure ssh-agent is running
-if [ -z $(pgrep ssh-agent) ]; then
-  ssh-add --apple-load-keychain 2> /dev/null
-fi

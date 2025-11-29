@@ -153,6 +153,3 @@ source $HOME/.aliases
 
 ### Mise version manager (Python, Node.js, Ruby, etc.)
 eval "$(mise activate zsh)"
-
-### Ensure ssh is using GNOME Keyring
-export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
