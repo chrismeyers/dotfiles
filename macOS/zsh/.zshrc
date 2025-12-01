@@ -125,6 +125,7 @@ export LSCOLORS=ExGxBxDxCxegedabagacad
 export PYTHONDONTWRITEBYTECODE=1
 export EDITOR="nvim"
 export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
+export LESS="-i $LESS"
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
