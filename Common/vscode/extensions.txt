@@ -5,7 +5,6 @@ dbaeumer.vscode-eslint
 dnicolson.binary-plist
 enkia.tokyo-night
 esbenp.prettier-vscode
-github.copilot
 github.copilot-chat
 golang.go
 james-yu.latex-workshop
