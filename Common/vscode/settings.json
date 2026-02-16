@@ -97,5 +97,7 @@
 
   "chat.disableAIFeatures": true,
 
+  "claudeCode.preferredLocation": "panel",
+
   "cSpell.useCustomDecorations": false
 }
