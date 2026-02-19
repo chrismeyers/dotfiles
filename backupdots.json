@@ -14,13 +14,10 @@
 
             ["/Users/chris/dotfiles/Common/tmux/.tmux.conf", "/Users/chris/.tmux.conf"],
 
-            ["/Users/chris/dotfiles/Common/mise/.default-gems", "/Users/chris/.default-gems"],
             ["/Users/chris/dotfiles/Common/mise/.default-npm-packages", "/Users/chris/.default-npm-packages"],
             ["/Users/chris/dotfiles/Common/mise/.default-python-packages", "/Users/chris/.default-python-packages"],
 
             ["/Users/chris/dotfiles/Common/vscode/settings.json", "/Users/chris/Library/Application Support/Code/User/settings.json"],
-
-            ["/Users/chris/dotfiles/Common/zed/settings.json", "/Users/chris/.config/zed/settings.json"],
 
             ["/Users/chris/dotfiles/Common/neovim/nvim", "/Users/chris/.config/nvim"],
 
@@ -28,49 +25,6 @@
             ["/Users/chris/dotfiles/macOS/Git/.gitignore_global", "/Users/chris/.config/git/ignore", { "createDirs": true }],
 
             ["/Users/chris/dotfiles/macOS/terminals/ghostty/config", "/Users/chris/Library/Application Support/com.mitchellh.ghostty/config"]
-        ]
-    },
-    "Linux": {
-        "files": [
-            ["/home/chris/dotfiles/Linux/bash/.aliases", "/home/chris/.aliases"],
-
-            ["/home/chris/dotfiles/Linux/zsh/.zshrc", "/home/chris/.zshrc"],
-            ["/home/chris/dotfiles/Linux/zsh/.zlogin", "/home/chris/.zlogin"],
-
-            ["/home/chris/dotfiles/Common/vim/.vimrc", "/home/chris/.vimrc"],
-            ["/home/chris/dotfiles/Common/vim/.gvimrc", "/home/chris/.gvimrc"],
-
-            ["/home/chris/dotfiles/Common/tmux/.tmux.conf", "/home/chris/.tmux.conf"],
-
-            ["/home/chris/dotfiles/Common/mise/.default-gems", "/home/chris/.default-gems"],
-            ["/home/chris/dotfiles/Common/mise/.default-npm-packages", "/home/chris/.default-npm-packages"],
-            ["/home/chris/dotfiles/Common/mise/.default-python-packages", "/home/chris/.default-python-packages"],
-
-            ["/home/chris/dotfiles/Common/neovim/nvim", "/home/chris/.config/nvim"],
-            ["/home/chris/dotfiles/Linux/dunst", "/home/chris/.config/dunst"],
-            ["/home/chris/dotfiles/Linux/hypr", "/home/chris/.config/hypr"],
-            ["/home/chris/dotfiles/Linux/waybar", "/home/chris/.config/waybar"],
-
-            ["/home/chris/dotfiles/Linux/Git/.gitconfig", "/home/chris/.config/git/config", { "createDirs": true }],
-            ["/home/chris/dotfiles/Linux/Git/.gitignore_global", "/home/chris/.config/git/ignore", { "createDirs": true }],
-
-            ["/home/chris/dotfiles/Linux/terminals/ghostty/config", "/home/chris/.config/ghostty/config"]
-        ]
-    },
-    "Windows": {
-        "backup": [
-            { "name": "VS Code extensions", "script": "C:\\Users\\Chris\\dotfiles\\Common\\vscode\\dump.bat" }
-        ],
-        "files": [
-            ["C:\\Users\\Chris\\dotfiles\\Common\\vim\\.vimrc", "C:\\Users\\Chris\\.vimrc"],
-            ["C:\\Users\\Chris\\dotfiles\\Common\\vim\\.gvimrc", "C:\\Users\\Chris\\.gvimrc"],
-            ["C:\\Users\\Chris\\dotfiles\\Common\\vim\\.ideavimrc", "C:\\Users\\Chris\\.ideavimrc"],
-
-            ["C:\\Users\\Chris\\dotfiles\\Common\\vscode\\settings.json", "C:\\Users\\Chris\\AppData\\Roaming\\Code\\User\\settings.json"],
-
-            ["C:\\Users\\Chris\\dotfiles\\Common\\neovim\\nvim", "C:\\Users\\Chris\\AppData\\Local\\nvim"],
-
-            ["C:\\Users\\Chris\\dotfiles\\Windows\\Git\\.gitconfig", "C:\\Users\\Chris\\.config\\git\\config", { "createDirs": true }]
         ]
     }
 }

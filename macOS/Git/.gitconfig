@@ -14,7 +14,7 @@
 	helper = osxkeychain
 [user]
 	name = Chris Meyers
-	email = chris@chrismeyers.net
+	email = chris.meyers@q3adv.com
 	signingkey = /Users/chris/.ssh/id_ed25519_git.pub
 [push]
 	default = simple

@@ -38,7 +38,6 @@ options:
 │   ├── misc/
 │   │   └── .astylerc
 │   ├── mise/
-│   │   ├── .default-gems
 │   │   ├── .default-npm-packages
 │   │   └── .default-python-packages
 │   ├── neovim/
@@ -65,62 +64,33 @@ options:
 │   │   └── settings.json
 │   └── zed/
 │       └── settings.json
-├── Linux/
-│   ├── bash/
-│   │   └── .aliases
-│   ├── dunst/
-│   │   └── dunstrc
-│   ├── Git/
-│   │   ├── .gitconfig
-│   │   └── .gitignore_global
-│   ├── hypr/
-│   │   └── hyprland.conf
-│   ├── SublimeText/
-│   │   └── Overrides/
-│   │       └── Preferences (Linux).sublime-settings
-│   ├── terminals/
-│   │   └── ghostty/
-│   │       └── config
-│   ├── waybar/
-│   │   ├── config.jsonc
-│   │   ├── power_menu.xml
-│   │   └── style.css
-│   └── zsh/
-│       ├── .zlogin
-│       └── .zshrc
-├── macOS/
-│   ├── bash/
-│   │   └── .aliases
-│   ├── Git/
-│   │   ├── .gitconfig
-│   │   └── .gitignore_global
-│   ├── Homebrew/
-│   │   ├── Brewfile
-│   │   ├── dump.sh*
-│   │   └── restore.sh*
-│   ├── Rectangle/
-│   │   └── RectangleConfig.json
-│   ├── SublimeText/
-│   │   └── Overrides/
-│   │       └── Preferences (OSX).sublime-settings
-│   ├── terminals/
-│   │   ├── alacritty/
-│   │   │   └── alacritty.yml
-│   │   ├── ghostty/
-│   │   │   └── config
-│   │   └── iTermProfiles/
-│   │       └── Default/
-│   │           ├── com.googlecode.iterm2.plist
-│   │           └── iterm2_default.itermcolors
-│   └── zsh/
-│       └── .zshrc
-└── Windows/
+└── macOS/
+    ├── bash/
+    │   └── .aliases
     ├── Git/
-    │   └── .gitconfig
-    └── SublimeText/
-        └── Overrides/
-            └── Preferences (Windows).sublime-settings
+    │   ├── .gitconfig
+    │   └── .gitignore_global
+    ├── Homebrew/
+    │   ├── Brewfile
+    │   ├── dump.sh*
+    │   └── restore.sh*
+    ├── Rectangle/
+    │   └── RectangleConfig.json
+    ├── SublimeText/
+    │   └── Overrides/
+    │       └── Preferences (OSX).sublime-settings
+    ├── terminals/
+    │   ├── alacritty/
+    │   │   └── alacritty.yml
+    │   ├── ghostty/
+    │   │   └── config
+    │   └── iTermProfiles/
+    │       └── Default/
+    │           ├── com.googlecode.iterm2.plist
+    │           └── iterm2_default.itermcolors
+    └── zsh/
+        └── .zshrc
 
-40 directories, 47 files
+25 directories, 32 files
 ```
 <!-- END TREE -->

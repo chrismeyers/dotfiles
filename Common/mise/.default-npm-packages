@@ -1,5 +1,4 @@
 yarn
+pnpm
 npm-check-updates
 neovim
-@vscode/vsce
-vercel
