@@ -31,6 +31,9 @@ vim.opt.smartcase = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
+-- Use system clipboard
+vim.opt.clipboard = "unnamedplus"
+
 -- Always display the status line
 vim.opt.laststatus = 2
 

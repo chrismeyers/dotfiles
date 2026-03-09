@@ -158,3 +158,6 @@ source $HOME/.aliases
 
 ### Mise version manager (Python, Node.js, Ruby, etc.)
 eval "$(mise activate zsh)"
+
+### Prevent printing "Last login: ..." on new terminal sessions
+touch $HOME/.hushlogin
