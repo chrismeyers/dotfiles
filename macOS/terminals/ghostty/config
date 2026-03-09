@@ -42,10 +42,8 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-initial-command = /opt/homebrew/bin/zsh -c "/opt/homebrew/bin/tmux attach || /opt/homebrew/bin/tmux"
-
-window-save-state = always
-quit-after-last-window-closed = true
+bell-features = no-title
+shell-integration-features = no-cursor, ssh-env, ssh-terminfo
 
 cursor-style = block
 cursor-style-blink = false
@@ -53,11 +51,7 @@ cursor-style-blink = false
 font-size = 14
 font-feature = -calt, -liga, -dlig
 
-title = Ghostty
-
 theme = TokyoNight Storm
 
 background-opacity = 0.95
 background-blur = true
-
-bell-features = no-title
