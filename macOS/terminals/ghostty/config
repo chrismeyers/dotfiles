@@ -48,7 +48,6 @@ shell-integration-features = no-cursor, ssh-env, ssh-terminfo
 cursor-style = block
 cursor-style-blink = false
 
-font-size = 14
 font-feature = -calt, -liga, -dlig
 
 theme = TokyoNight Storm
