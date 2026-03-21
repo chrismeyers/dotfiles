@@ -43,6 +43,7 @@
 # resize-overlay-duration = 4s 200ms
 
 bell-features = no-title
+confirm-close-surface = always
 shell-integration-features = no-cursor, ssh-env, ssh-terminfo
 
 cursor-style = block
