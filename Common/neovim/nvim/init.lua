@@ -11,31 +11,32 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Raise a dialog asking to save if a command fails due to unsaved changes
-vim.opt.confirm = true
+vim.o.confirm = true
 
--- Enable line numbers
-vim.opt.number = true
+-- Enable relative line numbers
+vim.o.number = true
+vim.o.relativenumber = true
 
 -- Enable spell check by default
-vim.opt.spell = true
+vim.o.spell = true
 
 -- Hide buffers instead of closing them
-vim.opt.hidden = true
+vim.o.hidden = true
 
 -- Ignore case unless a capital letter is used
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
 -- Open new vertical splits to the right of the current split and new
 -- horizontal splits below the current split
-vim.opt.splitright = true
-vim.opt.splitbelow = true
+vim.o.splitright = true
+vim.o.splitbelow = true
 
 -- Use system clipboard
-vim.opt.clipboard = "unnamedplus"
+vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
 
 -- Always display the status line
-vim.opt.laststatus = 2
+vim.o.laststatus = 2
 
 local stl = '%F '                      -- Full path to the file
 stl = stl .. '%y'                      -- Filetype of the file
@@ -43,8 +44,8 @@ stl = stl .. '[%{&ff}]'                -- Fileformat [unix]/[dos] etc...
 stl = stl .. '%r'                      -- Read-only flag
 stl = stl .. '%m'                      -- Modified flag
 stl = stl .. '%='                      -- Switch to the right side
-stl = stl .. ' Line %l:%c of %L (%P)'  -- Location in file
-vim.opt.statusline = stl
+stl = stl .. ' Line %l:%c/%L (%P)'     -- Location in file
+vim.o.statusline = stl
 
 -- Open file at last cursor position
 vim.api.nvim_create_autocmd('BufRead', {
@@ -68,10 +69,10 @@ vim.api.nvim_create_autocmd('BufRead', {
 })
 
 -- Indentation settings
-vim.opt.smarttab = true
-vim.opt.autoindent = true
-vim.opt.smartindent = true
-vim.opt.breakindent = true
+vim.o.smarttab = true
+vim.o.autoindent = true
+vim.o.smartindent = true
+vim.o.breakindent = true
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = '*',
@@ -91,7 +92,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 -- Enable the mouse everywhere
-vim.opt.mouse = 'a'
+vim.o.mouse = 'a'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
@@ -99,11 +100,12 @@ local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
   local out = vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
-  if vim.v.shell_error ~= 0 then
-    error('Error cloning lazy.nvim:\n' .. out)
-  end
-end ---@diagnostic disable-next-line: undefined-field
-vim.opt.rtp:prepend(lazypath)
+  if vim.v.shell_error ~= 0 then error('Error cloning lazy.nvim:\n' .. out) end
+end
+
+---@type vim.Option
+local rtp = vim.opt.rtp
+rtp:prepend(lazypath)
 
 -- [[ Configure and install plugins ]]
 --
@@ -157,9 +159,7 @@ require('lazy').setup({
 
         -- `cond` is a condition used to determine whether this plugin should be
         -- installed and loaded.
-        cond = function()
-          return vim.fn.executable 'make' == 1
-        end,
+        cond = function() return vim.fn.executable 'make' == 1 end,
       },
       { 'nvim-telescope/telescope-ui-select.nvim' },
     },
@@ -196,31 +196,17 @@ require('lazy').setup({
         -- },
         pickers = {
           find_files = {
-            find_command = {
-              'rg',
-              '--files',
-              '--color=never',
-              '--hidden',
-              '--glob=!**/.git/*',
-            },
+            find_command = { 'rg', '--files', '--color=never', '--hidden', '--glob=!**/.git/*' },
           },
           live_grep = {
-            additional_args = {
-              '--hidden',
-              '--glob=!**/.git/*',
-            },
+            additional_args = { '--hidden', '--glob=!**/.git/*' },
           },
           grep_string = {
-            additional_args = {
-              '--hidden',
-              '--glob=!**/.git/*',
-            },
+            additional_args = { '--hidden', '--glob=!**/.git/*' },
           },
         },
         extensions = {
-          ['ui-select'] = {
-            require('telescope.themes').get_dropdown(),
-          },
+          ['ui-select'] = { require('telescope.themes').get_dropdown() },
         },
       }
 
@@ -234,14 +220,14 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
       vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
-      vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
+      vim.keymap.set({ 'n', 'v' }, '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
-      -- Slightly advanced example of overriding default behavior and theme
+      -- Override default behavior and theme when searching
       vim.keymap.set('n', '<leader>/', function()
         -- You can pass additional configuration to Telescope to change the theme, layout, etc.
         builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
@@ -252,17 +238,20 @@ require('lazy').setup({
 
       -- It's also possible to pass additional configuration options.
       --  See `:help telescope.builtin.live_grep()` for information about particular keys
-      vim.keymap.set('n', '<leader>s/', function()
-        builtin.live_grep {
-          grep_open_files = true,
-          prompt_title = 'Live Grep in Open Files',
-        }
-      end, { desc = '[S]earch [/] in Open Files' })
+      vim.keymap.set(
+        'n',
+        '<leader>s/',
+        function()
+          builtin.live_grep {
+            grep_open_files = true,
+            prompt_title = 'Live Grep in Open Files',
+          }
+        end,
+        { desc = '[S]earch [/] in Open Files' }
+      )
 
       -- Shortcut for searching your Neovim configuration files
-      vim.keymap.set('n', '<leader>sn', function()
-        builtin.find_files { cwd = vim.fn.stdpath 'config' }
-      end, { desc = '[S]earch [N]eovim files' })
+      vim.keymap.set('n', '<leader>sn', function() builtin.find_files { cwd = vim.fn.stdpath 'config' } end, { desc = '[S]earch [N]eovim files' })
     end,
   },
 })
