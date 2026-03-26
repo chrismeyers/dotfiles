@@ -161,3 +161,10 @@ eval "$(mise activate zsh)"
 
 ### Prevent printing "Last login: ..." on new terminal sessions
 touch $HOME/.hushlogin
+
+### gcloud
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/chris/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/chris/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/chris/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/chris/google-cloud-sdk/completion.zsh.inc'; fi
