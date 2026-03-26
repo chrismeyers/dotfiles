@@ -7,7 +7,6 @@ enkia.tokyo-night
 esbenp.prettier-vscode
 github.copilot-chat
 golang.go
-james-yu.latex-workshop
 ms-python.black-formatter
 ms-python.debugpy
 ms-python.python

@@ -31,12 +31,6 @@
     "editor.tabSize": 4
   },
 
-  "[c][cpp]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "ms-vscode.cpptools",
-    "editor.tabSize": 4
-  },
-
   "[python]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "ms-python.black-formatter",
@@ -69,19 +63,13 @@
   "workbench.colorCustomizations": {
     "editorWhitespace.foreground": "#a9b1d6"
   },
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
 
   // Extensions
   "extensions.ignoreRecommendations": true,
 
-  "latex-workshop.view.pdf.viewer": "tab",
-  "latex-workshop.latex.recipe.default": "latexmk (xelatex)", // XeLaTeX is used for smaller PDF file sizes
-
   "go.formatTool": "goimports",
   "go.useLanguageServer": true,
-
-  "C_Cpp.clang_format_style": "file",
-  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, IndentWidth: 4, UseTab: Never, ColumnLimit: 80, BreakBeforeBraces: Linux, AllowShortIfStatementsOnASingleLine: AllIfsAndElse, AllowShortFunctionsOnASingleLine: InlineOnly }",
-  "C_Cpp.autoAddFileAssociations": false,
 
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
