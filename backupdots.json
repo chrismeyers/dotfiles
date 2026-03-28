@@ -6,24 +6,18 @@
         ],
         "files": [
             ["/Users/chris/dotfiles/macOS/bash/.aliases", "/Users/chris/.aliases"],
-
             ["/Users/chris/dotfiles/macOS/zsh/.zshrc", "/Users/chris/.zshrc"],
-
             ["/Users/chris/dotfiles/Common/vim/.vimrc", "/Users/chris/.vimrc"],
             ["/Users/chris/dotfiles/Common/vim/.gvimrc", "/Users/chris/.gvimrc"],
-
             ["/Users/chris/dotfiles/Common/tmux/.tmux.conf", "/Users/chris/.tmux.conf"],
-
             ["/Users/chris/dotfiles/Common/mise/.default-npm-packages", "/Users/chris/.default-npm-packages"],
             ["/Users/chris/dotfiles/Common/mise/.default-python-packages", "/Users/chris/.default-python-packages"],
 
-            ["/Users/chris/dotfiles/Common/vscode/settings.json", "/Users/chris/Library/Application Support/Code/User/settings.json"],
-
-            ["/Users/chris/dotfiles/Common/neovim/nvim", "/Users/chris/.config/nvim"],
-
             ["/Users/chris/dotfiles/macOS/Git/.gitconfig", "/Users/chris/.config/git/config", { "createDirs": true }],
             ["/Users/chris/dotfiles/macOS/Git/.gitignore_global", "/Users/chris/.config/git/ignore", { "createDirs": true }],
+            ["/Users/chris/dotfiles/Common/neovim/nvim", "/Users/chris/.config/nvim", { "createDirs": true }],
 
+            ["/Users/chris/dotfiles/Common/vscode/settings.json", "/Users/chris/Library/Application Support/Code/User/settings.json"],
             ["/Users/chris/dotfiles/macOS/terminals/ghostty/config", "/Users/chris/Library/Application Support/com.mitchellh.ghostty/config"]
         ]
     }
