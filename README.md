@@ -7,7 +7,7 @@ These files are backed up and can be restored using `backupdots.py` in conjuncti
 ```
 usage: backupdots.py [-h] [-p {macOS,Linux,Windows}] [-b] [-r] [-c] [-u]
                      [-t {print,inject}] [--check-platform]
-                     [--config-file CONFIG_FILE]
+                     [--config-file CONFIG_FILE] [--skip-hooks]
 
 Backup or restore configuration files
 
@@ -29,12 +29,16 @@ options:
   --check-platform      checks which platform would be run
   --config-file CONFIG_FILE
                         name of a config file to override backupdots.json
+  --skip-hooks          skips running backup and restore hooks
 ```
 
 <!-- BEGIN TREE -->
 ```
 ./
 ├── Common/
+│   ├── installs/
+│   │   ├── install-homebrew.sh*
+│   │   └── install-oh-my-zsh.sh*
 │   ├── misc/
 │   │   └── .astylerc
 │   ├── mise/
@@ -91,6 +95,6 @@ options:
     └── zsh/
         └── .zshrc
 
-25 directories, 32 files
+26 directories, 34 files
 ```
 <!-- END TREE -->
