@@ -12,5 +12,4 @@ These configuration files target an Arch Linux installation using Hyprland.
 1. Configure pacman installed shells:
     - Add shell path(s) to `/etc/shells`
     - Run `chsh -s /path/to/shell`
-1. Install [Oh My Zsh](https://ohmyz.sh/)
 1. Install Python, Node.js, and Ruby versions using [Mise](https://mise.jdx.dev/)

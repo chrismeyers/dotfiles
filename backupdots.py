@@ -3,7 +3,7 @@
 """
 usage: backupdots.py [-h] [-p {macOS,Linux,Windows}] [-b] [-r] [-c] [-u]
                      [-t {print,inject}] [--check-platform]
-                     [--config-file CONFIG_FILE]
+                     [--config-file CONFIG_FILE] [--skip-hooks]
 
 Backup or restore configuration files
 
@@ -25,6 +25,7 @@ options:
   --check-platform      checks which platform would be run
   --config-file CONFIG_FILE
                         name of a config file to override backupdots.json
+  --skip-hooks          skips running backup and restore hooks
 """
 
 import os
@@ -67,6 +68,10 @@ def perform_backup():
     for item in _backup_data.get("backup", []):
         name = item.get("name", "Unknown")
         script = item.get("script", None)
+
+        if _args.skip_hooks:
+            Log.info(f"Skipping backup hook for {name}...")
+            continue
 
         if script is None:
             Log.warn(f'Missing script key for "{name}" backup entry')
@@ -138,6 +143,29 @@ def perform_restore():
                 gutter=LogGutter(str(file_num), 3, True),
             )
             file_num += 1
+
+    for item in _backup_data.get("restore", []):
+        name = item.get("name", "Unknown")
+        script = item.get("script", None)
+
+        if _args.skip_hooks:
+            Log.info(f"Skipping restore hook for {name}...")
+            continue
+
+        if script is None:
+            Log.warn(f'Missing script key for "{name}" restore entry')
+            continue
+        elif not os.path.exists(script):
+            Log.warn(f"{script} does not exist")
+            continue
+
+        Log.info(f"Restoring {name}...", end="", flush=True)
+        exit_code = os.system(script)
+        if exit_code == 0:
+            Log.info("done")
+            file_num += 1
+        else:
+            Log.info(f"script exited with code {exit_code}")
 
     if file_num == 1:
         Log.info("Nothing to restore")
@@ -495,6 +523,12 @@ if __name__ == "__main__":
 
     arg_parser.add_argument(
         "--config-file", help="name of a config file to override backupdots.json"
+    )
+
+    arg_parser.add_argument(
+        "--skip-hooks",
+        help="skips running backup and restore hooks",
+        action="store_true",
     )
 
     _args = arg_parser.parse_args()

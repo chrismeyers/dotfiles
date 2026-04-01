@@ -4,6 +4,12 @@
             { "name": "Homebrew packages", "script": "/Users/chris/dotfiles/macOS/Homebrew/dump.sh" },
             { "name": "VS Code extensions", "script": "/Users/chris/dotfiles/Common/vscode/dump.sh" }
         ],
+        "restore": [
+            { "name": "Oh My Zsh", "script": "/Users/chris/dotfiles/Common/installs/install-oh-my-zsh.sh" },
+            { "name": "Homebrew", "script": "/Users/chris/dotfiles/Common/installs/install-homebrew.sh" },
+            { "name": "Homebrew packages", "script": "/Users/chris/dotfiles/macOS/Homebrew/restore.sh" },
+            { "name": "VS Code extensions", "script": "/Users/chris/dotfiles/Common/vscode/restore.sh" }
+        ],
         "files": [
             ["/Users/chris/dotfiles/macOS/bash/.aliases", "/Users/chris/.aliases"],
             ["/Users/chris/dotfiles/macOS/zsh/.zshrc", "/Users/chris/.zshrc"],
@@ -24,6 +30,9 @@
         ]
     },
     "Linux": {
+        "restore": [
+            { "name": "Oh My Zsh", "script": "/home/chris/dotfiles/Common/installs/install-oh-my-zsh.sh" }
+        ],
         "files": [
             ["/home/chris/dotfiles/Linux/bash/.aliases", "/home/chris/.aliases"],
             ["/home/chris/dotfiles/Linux/zsh/.zshrc", "/home/chris/.zshrc"],
@@ -47,6 +56,9 @@
     "Windows": {
         "backup": [
             { "name": "VS Code extensions", "script": "C:\\Users\\Chris\\dotfiles\\Common\\vscode\\dump.bat" }
+        ],
+        "restore": [
+            { "name": "VS Code extensions", "script": "C:\\Users\\Chris\\dotfiles\\Common\\vscode\\restore.bat" }
         ],
         "files": [
             ["C:\\Users\\Chris\\dotfiles\\Common\\vim\\.vimrc", "C:\\Users\\Chris\\.vimrc"],
