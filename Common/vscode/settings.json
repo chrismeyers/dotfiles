@@ -91,5 +91,7 @@
 
   "github.copilot.nextEditSuggestions.enabled": true,
 
+  "claudeCode.preferredLocation": "panel",
+
   "cSpell.useCustomDecorations": false
 }

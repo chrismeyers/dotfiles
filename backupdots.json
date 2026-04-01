@@ -7,6 +7,7 @@
         "restore": [
             { "name": "Oh My Zsh", "script": "/Users/chris/dotfiles/Common/installs/install-oh-my-zsh.sh" },
             { "name": "Homebrew", "script": "/Users/chris/dotfiles/Common/installs/install-homebrew.sh" },
+            { "name": "Claude Code", "script": "/Users/chris/dotfiles/Common/installs/install-claude-code.sh" },
             { "name": "Homebrew packages", "script": "/Users/chris/dotfiles/macOS/Homebrew/restore.sh" },
             { "name": "VS Code extensions", "script": "/Users/chris/dotfiles/Common/vscode/restore.sh" }
         ],

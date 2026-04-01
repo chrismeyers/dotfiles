@@ -37,6 +37,7 @@ options:
 ./
 ├── Common/
 │   ├── installs/
+│   │   ├── install-claude-code.sh*
 │   │   ├── install-homebrew.sh*
 │   │   └── install-oh-my-zsh.sh*
 │   ├── misc/
@@ -95,6 +96,6 @@ options:
     └── zsh/
         └── .zshrc
 
-26 directories, 34 files
+26 directories, 35 files
 ```
 <!-- END TREE -->
