@@ -69,6 +69,7 @@
   "workbench.colorCustomizations": {
     "editorWhitespace.foreground": "#a9b1d6"
   },
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
 
   // Extensions
   "extensions.ignoreRecommendations": true,
