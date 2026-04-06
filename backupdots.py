@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-usage: backupdots.py [-h] [-p {macOS,Linux,Windows}] [-b] [-r] [-c] [-u]
+usage: backupdots.py [-h] [-p {Linux,macOS,Windows}] [-b] [-r] [-c] [-u]
                      [-t {print,inject}] [--check-platform]
                      [--config-file CONFIG_FILE] [--skip-hooks]
 
@@ -9,7 +9,7 @@ Backup or restore configuration files
 
 options:
   -h, --help            show this help message and exit
-  -p, --platform {macOS,Linux,Windows}
+  -p, --platform {Linux,macOS,Windows}
                         overrides the current platform to determine which set of
                         files to use. WARNING: This should only be used if the
                         determined platform is wrong!
@@ -301,11 +301,10 @@ def inject_tree(tree):
 
 
 def perform_check_platform():
-    Log.info(f"The current platform is set to {platform_enum_to_string(_platform)}")
+    Log.info(f"The current platform is set to {_platform}")
     if _args.platform is not None:
-        actual = platform_enum_to_string(determine_platform(True))
         Log.info(
-            f"NOTE: The -p/--platform flag is overriding the actual platform of {actual}"
+            f"NOTE: The -p/--platform flag is overriding the actual platform of {determine_platform(True)}"
         )
 
 
@@ -344,6 +343,7 @@ def determine_platform(force_actual=False):
         )
     else:
         platform_str = platform.system()
+
     platform_str = platform_str.lower().strip()
 
     if platform_str == "linux":
@@ -360,23 +360,21 @@ def determine_platform(force_actual=False):
     return platform_enum
 
 
-def platform_enum_to_string(platform_enum):
-    if platform_enum == PlatformType.LINUX:
-        return "Linux"
-    elif platform_enum == PlatformType.MACOS:
-        return "macOS"
-    elif platform_enum == PlatformType.WINDOWS:
-        return "Windows"
-    else:
-        Log.error(f"Unsupported platform enum {repr(platform_enum)}")
-        sys.exit(1)
-
-
 class PlatformType(Enum):
     UNKNOWN = 0
     LINUX = 1
     MACOS = 2
     WINDOWS = 3
+
+    def __str__(self):
+        if self == PlatformType.LINUX:
+            return "Linux"
+        elif self == PlatformType.MACOS:
+            return "macOS"
+        elif self == PlatformType.WINDOWS:
+            return "Windows"
+        else:
+            return "Unknown"
 
 
 class LogLevel(Enum):
@@ -463,7 +461,7 @@ if __name__ == "__main__":
     _backup_config_file = sanitized_full_path(_backup_dir_root, "backupdots.json")
     _backup_file_ext = "orig"
     _tree_modes = ["print", "inject"]
-    _platforms = ["macOS", "Linux", "Windows"]
+    _platforms = [str(p) for p in PlatformType if p != PlatformType.UNKNOWN]
     _platform = PlatformType.UNKNOWN
 
     arg_parser = argparse.ArgumentParser(
@@ -545,10 +543,10 @@ if __name__ == "__main__":
 
     _platform = determine_platform()
     try:
-        _backup_data = _all_backup_data[platform_enum_to_string(_platform)]
+        _backup_data = _all_backup_data[str(_platform)]
     except KeyError:
         Log.error(
-            f'Configuration file "{_backup_config_file}" does not contain platform {platform_enum_to_string(_platform)}'
+            f'Configuration file "{_backup_config_file}" does not contain platform {_platform}'
         )
         sys.exit(1)
 

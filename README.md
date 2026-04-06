@@ -5,7 +5,7 @@ My personal configuration files.
 These files are backed up and can be restored using `backupdots.py` in conjunction with `backupdots.json`.
 
 ```
-usage: backupdots.py [-h] [-p {macOS,Linux,Windows}] [-b] [-r] [-c] [-u]
+usage: backupdots.py [-h] [-p {Linux,macOS,Windows}] [-b] [-r] [-c] [-u]
                      [-t {print,inject}] [--check-platform]
                      [--config-file CONFIG_FILE] [--skip-hooks]
 
@@ -13,7 +13,7 @@ Backup or restore configuration files
 
 options:
   -h, --help            show this help message and exit
-  -p, --platform {macOS,Linux,Windows}
+  -p, --platform {Linux,macOS,Windows}
                         overrides the current platform to determine which set of
                         files to use. WARNING: This should only be used if the
                         determined platform is wrong!
