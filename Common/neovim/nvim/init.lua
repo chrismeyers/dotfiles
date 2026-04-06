@@ -105,15 +105,33 @@ vim.api.nvim_create_user_command(
         .. ' ' .. plugin.spec.name
         .. ' (' .. plugin.rev:sub(1, 7) .. ')\n'
     end)
-
     vim.notify(vim.trim(formatted))
   end,
   { desc = 'List plugins installed with vim.pack' }
 )
 vim.api.nvim_create_user_command(
   'PackUpdate',
-  function() vim.pack.update() end,
-  { desc = 'Update plugins installed with vim.pack' }
+  function(opts)
+    if vim.tbl_isempty(opts.fargs) then
+      vim.pack.update()
+    else
+      vim.pack.update(opts.fargs)
+    end
+  end,
+  {
+    desc = 'Update plugins installed with vim.pack',
+    nargs = '*',
+    complete = function(arg_lead)
+      return vim.iter(vim.pack.get())
+        :filter(function(plugin)
+          return plugin.spec.name:find(arg_lead, 1, true) == 1
+        end)
+        :map(function(plugin)
+          return plugin.spec.name
+        end)
+        :totable()
+    end,
+  }
 )
 vim.api.nvim_create_user_command(
   'PackDelete',
