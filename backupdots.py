@@ -39,10 +39,10 @@ from dataclasses import dataclass
 from enum import Enum
 
 
-def perform_backup():
+def perform_backup(args, backup_data):
     """Copies files to dotfiles repo and runs backup scripts"""
     file_num = 1
-    for settings in _backup_data.get("files", []):
+    for settings in backup_data.get("files", []):
         target, source = settings[:2]
 
         target_dir = os.path.dirname(target)
@@ -65,11 +65,11 @@ def perform_backup():
             )
             file_num += 1
 
-    for item in _backup_data.get("backup", []):
+    for item in backup_data.get("backup", []):
         name = item.get("name", "Unknown")
         script = item.get("script", None)
 
-        if _args.skip_hooks:
+        if args.skip_hooks:
             Log.info(f"Skipping backup hook for {name}...")
             continue
 
@@ -92,10 +92,10 @@ def perform_backup():
         Log.info("Nothing to backup")
 
 
-def perform_restore():
+def perform_restore(args, backup_data, platform, backup_file_ext):
     """Symlinks files from dotfiles repo to original location"""
     file_num = 1
-    for settings in _backup_data.get("files", []):
+    for settings in backup_data.get("files", []):
         source, target = settings[:2]
         opts = settings[2] if len(settings) > 2 else {}
 
@@ -120,18 +120,18 @@ def perform_restore():
 
         # Make a backup of the file before creating a symlink
         if os.path.exists(target) and not os.path.islink(target):
-            shutil.move(target, f"{target}.{_backup_file_ext}")
+            shutil.move(target, f"{target}.{backup_file_ext}")
 
         if not os.path.exists(target):
             try:
                 os.symlink(source, target)
             except PermissionError:
-                if not sudo_command(f"ln -s {source} {target}"):
+                if not sudo_command(f"ln -s {source} {target}", platform):
                     continue
             except OSError as e:
                 more_info = (
                     " Try running this command as an administrator"
-                    if _platform == PlatformType.WINDOWS
+                    if platform == PlatformType.WINDOWS
                     else ""
                 )
                 Log.warn(f"{str(e).capitalize()}.{more_info}")
@@ -144,11 +144,11 @@ def perform_restore():
             )
             file_num += 1
 
-    for item in _backup_data.get("restore", []):
+    for item in backup_data.get("restore", []):
         name = item.get("name", "Unknown")
         script = item.get("script", None)
 
-        if _args.skip_hooks:
+        if args.skip_hooks:
             Log.info(f"Skipping restore hook for {name}...")
             continue
 
@@ -171,13 +171,13 @@ def perform_restore():
         Log.info("Nothing to restore")
 
 
-def perform_cleanup():
-    """Removes all *.{_backup_file_ext} files generated from restore"""
+def perform_cleanup(args, backup_data, platform, backup_file_ext):
+    """Removes all *.{backup_file_ext} files generated from restore"""
     file_num = 1
-    for settings in _backup_data.get("files", []):
+    for settings in backup_data.get("files", []):
         _, target = settings[:2]
 
-        current = f"{target}.{_backup_file_ext}"
+        current = f"{target}.{backup_file_ext}"
 
         if os.path.exists(current):
             if os.path.isfile(current) or os.path.islink(current):
@@ -185,14 +185,14 @@ def perform_cleanup():
                 try:
                     os.remove(current)
                 except PermissionError:
-                    if not sudo_command(f"rm {current}"):
+                    if not sudo_command(f"rm {current}", platform):
                         continue
             elif os.path.isdir(current):
                 cleanup_type = "directory"
                 try:
                     shutil.rmtree(current)
                 except PermissionError:
-                    if not sudo_command(f"rm -rf {current}"):
+                    if not sudo_command(f"rm -rf {current}", platform):
                         continue
             else:
                 Log.warn(f"{current} is not a file, symlink, or directory...skipping")
@@ -208,17 +208,17 @@ def perform_cleanup():
         Log.info("Nothing to cleanup")
 
 
-def perform_unlink():
+def perform_unlink(args, backup_data, platform):
     """Removes all symlinks for the given platform"""
     file_num = 1
-    for settings in _backup_data.get("files", []):
+    for settings in backup_data.get("files", []):
         source, target = settings[:2]
 
         if os.path.exists(target):
             try:
                 os.unlink(target)
             except PermissionError:
-                if not sudo_command(f"rm {target}"):
+                if not sudo_command(f"rm {target}", platform):
                     continue
 
             Log.info(
@@ -231,14 +231,14 @@ def perform_unlink():
         Log.info("Nothing to unlink")
 
 
-def perform_tree():
-    tree_mode = (_args.tree).lower()
+def perform_tree(args, backup_dir_root):
+    tree_mode = (args.tree).lower()
 
     tree = generate_tree()
     if tree_mode == "print":
         Log.info(tree)
     elif tree_mode == "inject":
-        inject_tree(tree)
+        inject_tree(tree, backup_dir_root)
 
 
 def generate_tree():
@@ -266,8 +266,8 @@ def generate_tree():
     return out
 
 
-def inject_tree(tree):
-    readme_path = os.path.join(_backup_dir_root, "README.md")
+def inject_tree(tree, backup_dir_root):
+    readme_path = os.path.join(backup_dir_root, "README.md")
 
     if not os.path.exists(readme_path):
         Log.error(f"{readme_path} does not exist!")
@@ -300,11 +300,11 @@ def inject_tree(tree):
         Log.info("Updated directory tree in README.md")
 
 
-def perform_check_platform():
-    Log.info(f"The current platform is set to {_platform}")
-    if _args.platform is not None:
+def perform_check_platform(args, platform):
+    Log.info(f"The current platform is set to {platform}")
+    if args.platform is not None:
         Log.info(
-            f"NOTE: The -p/--platform flag is overriding the actual platform of {determine_platform(True)}"
+            f"NOTE: The -p/--platform flag is overriding the actual platform of {determine_platform(args, True)}"
         )
 
 
@@ -321,11 +321,11 @@ def sanitized_full_path(dir_location, file_name):
     return os.path.join(sanitized_dir_location, sanitized_file_name)
 
 
-def sudo_command(cmd):
+def sudo_command(cmd, platform):
     success = False
 
     # TODO: Handle permissions error on windows
-    if _platform == PlatformType.LINUX or _platform == PlatformType.MACOS:
+    if platform == PlatformType.LINUX or platform == PlatformType.MACOS:
         exit_code = os.system(f"sudo {cmd}")
         success = True if exit_code == 0 else False
     else:
@@ -334,13 +334,11 @@ def sudo_command(cmd):
     return success
 
 
-def determine_platform(force_actual=False):
+def determine_platform(args, force_actual=False):
     platform_enum = PlatformType.UNKNOWN
 
     if not force_actual:
-        platform_str = (
-            _args.platform if _args.platform is not None else platform.system()
-        )
+        platform_str = args.platform if args.platform is not None else platform.system()
     else:
         platform_str = platform.system()
 
@@ -452,17 +450,13 @@ class Log:
         Log._write(message, level=LogLevel.ERROR, gutter=gutter, end=end, flush=flush)
 
 
-if __name__ == "__main__":
-    if sys.version_info < (3, 7, 0):
-        Log.error("This script requires Python >= 3.7.0")
-        sys.exit(1)
-
-    _backup_dir_root = os.path.dirname(os.path.abspath(__file__))
-    _backup_config_file = sanitized_full_path(_backup_dir_root, "backupdots.json")
-    _backup_file_ext = "orig"
-    _tree_modes = ["print", "inject"]
-    _platforms = [str(p) for p in PlatformType if p != PlatformType.UNKNOWN]
-    _platform = PlatformType.UNKNOWN
+def main():
+    backup_dir_root = os.path.dirname(os.path.abspath(__file__))
+    backup_config_file = sanitized_full_path(backup_dir_root, "backupdots.json")
+    backup_file_ext = "orig"
+    tree_modes = ["print", "inject"]
+    platforms = [str(p) for p in PlatformType if p != PlatformType.UNKNOWN]
+    platform = PlatformType.UNKNOWN
 
     arg_parser = argparse.ArgumentParser(
         description="Backup or restore configuration files",
@@ -474,7 +468,7 @@ if __name__ == "__main__":
         "--platform",
         help="overrides the current platform to determine which set of files to use. "
         "WARNING: This should only be used if the determined platform is wrong!",
-        choices=_platforms,
+        choices=platforms,
     )
 
     arg_parser.add_argument(
@@ -494,7 +488,7 @@ if __name__ == "__main__":
     arg_parser.add_argument(
         "-c",
         "--cleanup",
-        help=f"removes *.{_backup_file_ext} files",
+        help=f"removes *.{backup_file_ext} files",
         action="store_true",
     )
 
@@ -509,7 +503,7 @@ if __name__ == "__main__":
         "-t",
         "--tree",
         help="generates a directory tree and prints the output to stdout or injects the output into README.md",
-        choices=_tree_modes,
+        choices=tree_modes,
         type=str.lower,
     )
 
@@ -529,38 +523,46 @@ if __name__ == "__main__":
         action="store_true",
     )
 
-    _args = arg_parser.parse_args()
+    args = arg_parser.parse_args()
 
-    if _args.config_file:
-        _backup_config_file = sanitized_full_path(_backup_dir_root, _args.config_file)
+    if args.config_file:
+        backup_config_file = sanitized_full_path(backup_dir_root, args.config_file)
 
-    if not os.path.exists(_backup_config_file):
-        Log.error(f'Configuration file "{_backup_config_file}" does not exist')
+    if not os.path.exists(backup_config_file):
+        Log.error(f'Configuration file "{backup_config_file}" does not exist')
         sys.exit(1)
 
-    with open(_backup_config_file) as f:
-        _all_backup_data = json.load(f)
+    with open(backup_config_file) as f:
+        all_backup_data = json.load(f)
 
-    _platform = determine_platform()
+    platform = determine_platform(args)
     try:
-        _backup_data = _all_backup_data[str(_platform)]
+        backup_data = all_backup_data[str(platform)]
     except KeyError:
         Log.error(
-            f'Configuration file "{_backup_config_file}" does not contain platform {_platform}'
+            f'Configuration file "{backup_config_file}" does not contain platform {platform}'
         )
         sys.exit(1)
 
-    if _args.backup:
-        perform_backup()
-    elif _args.restore:
-        perform_restore()
-    elif _args.cleanup:
-        perform_cleanup()
-    elif _args.unlink:
-        perform_unlink()
-    elif _args.tree:
-        perform_tree()
-    elif _args.check_platform:
-        perform_check_platform()
+    if args.backup:
+        perform_backup(args, backup_data)
+    elif args.restore:
+        perform_restore(args, backup_data, platform, backup_file_ext)
+    elif args.cleanup:
+        perform_cleanup(args, backup_data, platform, backup_file_ext)
+    elif args.unlink:
+        perform_unlink(args, backup_data, platform)
+    elif args.tree:
+        perform_tree(args, backup_dir_root)
+    elif args.check_platform:
+        perform_check_platform(args, platform)
     else:
-        perform_backup()
+        perform_backup(args, backup_data)
+
+
+if __name__ == "__main__":
+    if sys.version_info < (3, 7, 0):
+        Log.error("This script requires Python >= 3.7.0")
+        sys.exit(1)
+
+    main()
