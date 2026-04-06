@@ -24,9 +24,10 @@ Track this file in Git for reproducible plugin revisions across machines.
 ### Update Plugins
 
 1. Open Neovim.
-2. Run `:PackUpdate`.
+2. Run `:PackUpdate <plugin-name>` (or multiple names) to update installed plugins.
+If no plugin names are passed then all plugins will be updated.
 3. Review the update buffer.
-4. Confirm with `:w` or cancel with `:q`.
+4. Confirm with `:write` or cancel with `:quit`.
 5. Commit the updated `nvim-pack-lock.json`.
 
 ### Delete Plugins
