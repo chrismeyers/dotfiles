@@ -48,7 +48,7 @@ options:
 │   ├── neovim/
 │   │   └── nvim/
 │   │       ├── init.lua
-│   │       └── lazy-lock.json
+│   │       └── nvim-pack-lock.json
 │   ├── SublimeText/
 │   │   └── UserSettings/
 │   │       ├── Package Control.sublime-settings
