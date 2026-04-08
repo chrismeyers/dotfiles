@@ -92,7 +92,7 @@ def perform_backup(args, backup_data):
         Log.info("Nothing to backup")
 
 
-def perform_restore(args, backup_data, platform, backup_file_ext):
+def perform_restore(args, backup_data, current_platform, backup_file_ext):
     """Symlinks files from dotfiles repo to original location"""
     file_num = 1
     for settings in backup_data.get("files", []):
@@ -126,12 +126,12 @@ def perform_restore(args, backup_data, platform, backup_file_ext):
             try:
                 os.symlink(source, target)
             except PermissionError:
-                if not sudo_command(f"ln -s {source} {target}", platform):
+                if not sudo_command(f"ln -s {source} {target}", current_platform):
                     continue
             except OSError as e:
                 more_info = (
                     " Try running this command as an administrator"
-                    if platform == PlatformType.WINDOWS
+                    if current_platform == PlatformType.WINDOWS
                     else ""
                 )
                 Log.warn(f"{str(e).capitalize()}.{more_info}")
@@ -171,7 +171,7 @@ def perform_restore(args, backup_data, platform, backup_file_ext):
         Log.info("Nothing to restore")
 
 
-def perform_cleanup(args, backup_data, platform, backup_file_ext):
+def perform_cleanup(args, backup_data, current_platform, backup_file_ext):
     """Removes all *.{backup_file_ext} files generated from restore"""
     file_num = 1
     for settings in backup_data.get("files", []):
@@ -185,14 +185,14 @@ def perform_cleanup(args, backup_data, platform, backup_file_ext):
                 try:
                     os.remove(current)
                 except PermissionError:
-                    if not sudo_command(f"rm {current}", platform):
+                    if not sudo_command(f"rm {current}", current_platform):
                         continue
             elif os.path.isdir(current):
                 cleanup_type = "directory"
                 try:
                     shutil.rmtree(current)
                 except PermissionError:
-                    if not sudo_command(f"rm -rf {current}", platform):
+                    if not sudo_command(f"rm -rf {current}", current_platform):
                         continue
             else:
                 Log.warn(f"{current} is not a file, symlink, or directory...skipping")
@@ -208,7 +208,7 @@ def perform_cleanup(args, backup_data, platform, backup_file_ext):
         Log.info("Nothing to cleanup")
 
 
-def perform_unlink(args, backup_data, platform):
+def perform_unlink(args, backup_data, current_platform):
     """Removes all symlinks for the given platform"""
     file_num = 1
     for settings in backup_data.get("files", []):
@@ -218,7 +218,7 @@ def perform_unlink(args, backup_data, platform):
             try:
                 os.unlink(target)
             except PermissionError:
-                if not sudo_command(f"rm {target}", platform):
+                if not sudo_command(f"rm {target}", current_platform):
                     continue
 
             Log.info(
@@ -300,8 +300,8 @@ def inject_tree(tree, backup_dir_root):
         Log.info("Updated directory tree in README.md")
 
 
-def perform_check_platform(args, platform):
-    Log.info(f"The current platform is set to {platform}")
+def perform_check_platform(args, current_platform):
+    Log.info(f"The current platform is set to {current_platform}")
     if args.platform is not None:
         Log.info(
             f"NOTE: The -p/--platform flag is overriding the actual platform of {determine_platform(args, True)}"
@@ -321,11 +321,11 @@ def sanitized_full_path(dir_location, file_name):
     return os.path.join(sanitized_dir_location, sanitized_file_name)
 
 
-def sudo_command(cmd, platform):
+def sudo_command(cmd, current_platform):
     success = False
 
     # TODO: Handle permissions error on windows
-    if platform == PlatformType.LINUX or platform == PlatformType.MACOS:
+    if current_platform == PlatformType.LINUX or current_platform == PlatformType.MACOS:
         exit_code = os.system(f"sudo {cmd}")
         success = True if exit_code == 0 else False
     else:
@@ -456,7 +456,7 @@ def main():
     backup_file_ext = "orig"
     tree_modes = ["print", "inject"]
     platforms = [str(p) for p in PlatformType if p != PlatformType.UNKNOWN]
-    platform = PlatformType.UNKNOWN
+    current_platform = PlatformType.UNKNOWN
 
     arg_parser = argparse.ArgumentParser(
         description="Backup or restore configuration files",
@@ -535,27 +535,27 @@ def main():
     with open(backup_config_file) as f:
         all_backup_data = json.load(f)
 
-    platform = determine_platform(args)
+    current_platform = determine_platform(args)
     try:
-        backup_data = all_backup_data[str(platform)]
+        backup_data = all_backup_data[str(current_platform)]
     except KeyError:
         Log.error(
-            f'Configuration file "{backup_config_file}" does not contain platform {platform}'
+            f'Configuration file "{backup_config_file}" does not contain platform {current_platform}'
         )
         sys.exit(1)
 
     if args.backup:
         perform_backup(args, backup_data)
     elif args.restore:
-        perform_restore(args, backup_data, platform, backup_file_ext)
+        perform_restore(args, backup_data, current_platform, backup_file_ext)
     elif args.cleanup:
-        perform_cleanup(args, backup_data, platform, backup_file_ext)
+        perform_cleanup(args, backup_data, current_platform, backup_file_ext)
     elif args.unlink:
-        perform_unlink(args, backup_data, platform)
+        perform_unlink(args, backup_data, current_platform)
     elif args.tree:
         perform_tree(args, backup_dir_root)
     elif args.check_platform:
-        perform_check_platform(args, platform)
+        perform_check_platform(args, current_platform)
     else:
         perform_backup(args, backup_data)
 
@@ -564,5 +564,4 @@ if __name__ == "__main__":
     if sys.version_info < (3, 7, 0):
         Log.error("This script requires Python >= 3.7.0")
         sys.exit(1)
-
     main()
