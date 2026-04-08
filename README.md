@@ -102,6 +102,8 @@ options:
 │   │   ├── Brewfile
 │   │   ├── dump.sh*
 │   │   └── restore.sh*
+│   ├── installs/
+│   │   └── set-macos-defaults.sh*
 │   ├── Rectangle/
 │   │   └── RectangleConfig.json
 │   ├── SublimeText/
@@ -125,6 +127,6 @@ options:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-41 directories, 49 files
+42 directories, 50 files
 ```
 <!-- END TREE -->
