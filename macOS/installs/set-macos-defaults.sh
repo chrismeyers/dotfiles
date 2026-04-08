@@ -8,7 +8,7 @@ defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1 # check for upd
 defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
 
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true # enable natural scrolling
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false # disable natural scrolling for mouse scroll wheel
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false # enable key repeat instead of accent menu
 defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 25
