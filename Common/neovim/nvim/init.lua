@@ -35,18 +35,6 @@ vim.o.splitbelow = true
 -- Use system clipboard
 vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
 
--- Always display the status line
-vim.o.laststatus = 2
-
-local stl = '%F '                      -- Full path to the file
-stl = stl .. '%y'                      -- Filetype of the file
-stl = stl .. '[%{&ff}]'                -- Fileformat [unix]/[dos] etc...
-stl = stl .. '%r'                      -- Read-only flag
-stl = stl .. '%m'                      -- Modified flag
-stl = stl .. '%='                      -- Switch to the right side
-stl = stl .. ' Line %l:%c/%L (%P)'     -- Location in file
-vim.o.statusline = stl
-
 -- Open file at last cursor position
 vim.api.nvim_create_autocmd('BufRead', {
   callback = function(opts)
