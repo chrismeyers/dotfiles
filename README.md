@@ -79,6 +79,8 @@ options:
     │   ├── Brewfile
     │   ├── dump.sh*
     │   └── restore.sh*
+    ├── installs/
+    │   └── set-macos-defaults.sh*
     ├── Rectangle/
     │   └── RectangleConfig.json
     ├── SublimeText/
@@ -96,6 +98,6 @@ options:
     └── zsh/
         └── .zshrc
 
-26 directories, 35 files
+27 directories, 36 files
 ```
 <!-- END TREE -->
