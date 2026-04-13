@@ -17,6 +17,9 @@ vim.o.confirm = true
 vim.o.number = true
 vim.o.relativenumber = true
 
+-- Always show sign column
+vim.o.signcolumn = 'yes:2'
+
 -- Enable spell check by default
 vim.o.spell = true
 
@@ -145,7 +148,7 @@ vim.api.nvim_create_autocmd('PackChanged', {
     local name, path, kind = ev.data.spec.name, ev.data.path, ev.data.kind
 
     if name == 'telescope-fzf-native.nvim' and (kind == 'install' or kind == 'update') then
-      if vim.fn.executable 'make' ~= 1 then
+      if vim.fn.executable('make') ~= 1 then
         return
       end
 
@@ -157,6 +160,13 @@ vim.api.nvim_create_autocmd('PackChanged', {
         end
       end)
     end
+
+    if name == 'nvim-treesitter' and kind == 'update' then
+      local ok = pcall(vim.cmd, 'TSUpdate')
+      if not ok then
+        vim.notify(':TSUpdate failed!', vim.log.levels.WARN)
+      end
+    end
   end,
 })
 
@@ -166,17 +176,25 @@ vim.pack.add({
   { src = 'https://github.com/nvim-telescope/telescope.nvim' },
   { src = 'https://github.com/nvim-telescope/telescope-ui-select.nvim' },
   { src = 'https://github.com/nvim-telescope/telescope-fzf-native.nvim' },
+  { src = 'https://github.com/lewis6991/gitsigns.nvim' },
+  { src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
+  { src = 'https://github.com/mason-org/mason.nvim' },
+  { src = 'https://github.com/mason-org/mason-lspconfig.nvim' },
+  { src = 'https://github.com/neovim/nvim-lspconfig' },
+  { src = 'https://github.com/saghen/blink.cmp', version = vim.version.range("^1") },
 })
 
-require('tokyonight').setup {
+--- tokyonight.nvim
+require('tokyonight').setup({
   transparent = true,
-}
-vim.cmd.colorscheme 'tokyonight-storm'
+})
+vim.cmd.colorscheme('tokyonight-storm')
 
+--- telescope.nvim
 vim.api.nvim_create_autocmd('VimEnter', {
   once = true,
   callback = function()
-    require('telescope').setup {
+    require('telescope').setup({
       pickers = {
         find_files = {
           find_command = { 'rg', '--files', '--color=never', '--hidden', '--glob=!**/.git/*' },
@@ -191,7 +209,7 @@ vim.api.nvim_create_autocmd('VimEnter', {
       extensions = {
         ['ui-select'] = { require('telescope.themes').get_dropdown() },
       },
-    }
+    })
 
     -- Keep fzf-native optional.
     if vim.fn.executable 'make' == 1 then
@@ -217,10 +235,10 @@ vim.api.nvim_create_autocmd('VimEnter', {
       'n',
       '<leader>/',
       function()
-        builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+        builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({
           winblend = 10,
           previewer = false,
-        })
+        }))
       end,
       { desc = '[/] Fuzzily search in current buffer' }
     )
@@ -231,10 +249,10 @@ vim.api.nvim_create_autocmd('VimEnter', {
       'n',
       '<leader>s/',
       function()
-        builtin.live_grep {
+        builtin.live_grep({
           grep_open_files = true,
           prompt_title = 'Live Grep in Open Files',
-        }
+        })
       end,
       { desc = '[S]earch [/] in Open Files' }
     )
@@ -244,11 +262,83 @@ vim.api.nvim_create_autocmd('VimEnter', {
       'n',
       '<leader>sn',
       function()
-        builtin.find_files {
+        builtin.find_files({
           cwd = vim.fn.stdpath 'config'
-        }
+        })
       end,
       { desc = '[S]earch [N]eovim files' }
     )
   end,
+})
+
+--- gitsigns.nvim
+require('gitsigns').setup({
+  signs = {
+    add = { text = '+' },
+    change = { text = '~' },
+    delete = { text = '_' },
+    topdelete = { text = '‾' },
+    changedelete = { text = '~' },
+  },
+  sign_priority = 20,
+})
+
+--- nvim-treesitter
+require('nvim-treesitter').setup({
+  -- Directory to install parsers and queries to (prepended to `runtimepath` to have priority)
+  install_dir = vim.fn.stdpath('data') .. '/site'
+})
+
+require('nvim-treesitter').install({
+  'bash',
+  'cpp',
+  'css',
+  'go',
+  'html',
+  'javascript',
+  'json',
+  'python',
+  'typescript'
+})
+
+--- mason.nvim + nvim-lspconfig + native vim.lsp
+require("mason").setup()
+require("mason-lspconfig").setup({
+  ensure_installed = {
+    'lua_ls', -- Lua
+    'vtsls',  -- TypeScript/JavaScript
+    'ty',     -- Python
+    'gopls',  -- Go
+    'clangd'  -- C/C++
+  },
+  automatic_enable = true,
+})
+
+vim.lsp.config('lua_ls', {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim" },
+      },
+    },
+  },
+})
+
+vim.lsp.log.set_level('error')
+
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
+
+--- blink.cmp
+require('blink.cmp').setup({
+  keymap = {
+    preset = 'enter',
+    ['<Tab>'] = { 'select_next', 'snippet_forward', 'fallback' },
+    ['<S-Tab>'] = { 'select_prev', 'snippet_backward', 'fallback' },
+  },
+  signature = {
+    enabled = true,
+  },
 })
