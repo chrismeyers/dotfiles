@@ -14,6 +14,7 @@ ms-python.python
 ms-python.vscode-pylance
 ms-vscode.cpptools
 streetsidesoftware.code-spell-checker
+sumneko.lua
 vscode-icons-team.vscode-icons
 vscodevim.vim
 xabikos.javascriptsnippets
