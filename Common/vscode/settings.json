@@ -71,6 +71,8 @@
   "go.formatTool": "goimports",
   "go.useLanguageServer": true,
 
+  "python.languageServer": "Default",
+
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
@@ -79,8 +81,6 @@
     "<C-f>": false
   },
   "vim.smartRelativeLine": true,
-
-  "python.languageServer": "Default",
 
   "prettier.singleQuote": true,
   "prettier.trailingComma": "es5",
