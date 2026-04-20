@@ -104,7 +104,7 @@
   "git.blame.statusBarItem.enabled": false,
   "git.autoRepositoryDetection": "openEditors",
 
-  "github.copilot.nextEditSuggestions.enabled": true,
+  "chat.disableAIFeatures": true,
 
   "cSpell.useCustomDecorations": false
 }
