@@ -4,8 +4,15 @@
 cd "$(dirname "$0")"
 
 # Only trigger an install if there are missing packages.
-mapfile -t installed <<< "$(./dump.sh --file=-)"
-mapfile -t backedup <<< "$(cat ./Brewfile)"
+installed=()
+while IFS= read -r line || [[ -n "$line" ]]; do
+  installed+=("$line")
+done <<< "$(./dump.sh --file=-)"
+
+backedup=()
+while IFS= read -r line || [[ -n "$line" ]]; do
+  backedup+=("$line")
+done <<< "$(cat ./Brewfile)"
 
 missing=false
 for item in "${backedup[@]}"; do

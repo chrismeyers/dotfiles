@@ -95,29 +95,6 @@ def perform_backup(args, backup_data):
 def perform_restore(args, backup_data, current_platform, backup_file_ext):
     """Symlinks files from dotfiles repo to original location"""
     file_num = 1
-    for item in backup_data.get("restore", []):
-        name = item.get("name", "Unknown")
-        script = item.get("script", None)
-
-        if args.skip_hooks:
-            Log.info(f"Skipping restore hook for {name}...")
-            continue
-
-        if script is None:
-            Log.warn(f'Missing script key for "{name}" restore entry')
-            continue
-        elif not os.path.exists(script):
-            Log.warn(f"{script} does not exist")
-            continue
-
-        Log.info(f"Restoring {name}...", end="", flush=True)
-        exit_code = os.system(script)
-        if exit_code == 0:
-            Log.info("done")
-            file_num += 1
-        else:
-            Log.info(f"script exited with code {exit_code}")
-
     for settings in backup_data.get("files", []):
         source, target = settings[:2]
         opts = settings[2] if len(settings) > 2 else {}
@@ -166,6 +143,29 @@ def perform_restore(args, backup_data, current_platform, backup_file_ext):
                 gutter=LogGutter(str(file_num), 3, True),
             )
             file_num += 1
+
+    for item in backup_data.get("restore", []):
+        name = item.get("name", "Unknown")
+        script = item.get("script", None)
+
+        if args.skip_hooks:
+            Log.info(f"Skipping restore hook for {name}...")
+            continue
+
+        if script is None:
+            Log.warn(f'Missing script key for "{name}" restore entry')
+            continue
+        elif not os.path.exists(script):
+            Log.warn(f"{script} does not exist")
+            continue
+
+        Log.info(f"Restoring {name}...", end="", flush=True)
+        exit_code = os.system(script)
+        if exit_code == 0:
+            Log.info("done")
+            file_num += 1
+        else:
+            Log.info(f"script exited with code {exit_code}")
 
     if file_num == 1:
         Log.info("Nothing to restore")

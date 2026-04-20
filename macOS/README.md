@@ -1,6 +1,7 @@
 ## macOS configuration files
 
 1. Restore dotfiles
+    1. Grant Full Disk Access to Terminal.app
     1. Run `./backupdots.py -r --skip-hooks`
     1. Restart the terminal
     1. Run `./backupdots.py -r`

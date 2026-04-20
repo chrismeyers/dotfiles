@@ -4,8 +4,15 @@
 cd "$(dirname "$0")"
 
 # Only trigger an install if there are missing extensions.
-mapfile -t installed <<< "$(code --list-extensions)"
-mapfile -t backedup <<< "$(cat ./extensions.txt)"
+installed=()
+while IFS= read -r line || [[ -n "$line" ]]; do
+  installed+=("$line")
+done <<< "$(code --list-extensions)"
+
+backedup=()
+while IFS= read -r line || [[ -n "$line" ]]; do
+  backedup+=("$line")
+done <<< "$(cat ./extensions.txt)"
 
 missing=false
 for item in "${backedup[@]}"; do
