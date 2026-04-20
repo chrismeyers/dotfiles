@@ -6,6 +6,7 @@
 #   Disable startup chime: Sound > Play sound on startup > Disable
 #   Enable menu bar background: Menu Bar > Show menu bar background > Enable
 #   Set hostname: General > Sharing > Local hostname > Edit...
+#   Require password when screen turns off: Lock Screen > Require password > Immediately
 #
 # Some settings need to be enabled elsewhere:
 #   Allow clipboard history (Spotlight): Command-Space > Command-4 > Allow
@@ -52,8 +53,9 @@ defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool fa
 defaults write com.apple.TextEdit RichText -int 0
 defaults write com.apple.TextEdit NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false
 
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
+# Broken since macOS 10.13, uncomment if it ever gets fixed...
+# defaults write com.apple.screensaver askForPassword -int 1
+# defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 mkdir -p $HOME/Pictures/Screenshots && defaults write com.apple.screencapture location "~/Pictures/Screenshots"
 defaults write com.apple.screencapture show-thumbnail -bool true
