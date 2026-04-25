@@ -36,6 +36,13 @@ options:
 ```
 ./
 ├── Common/
+│   ├── cursor/
+│   │   ├── dump.bat
+│   │   ├── dump.sh*
+│   │   ├── extensions.txt
+│   │   ├── restore.bat
+│   │   ├── restore.sh*
+│   │   └── settings.json
 │   ├── installs/
 │   │   ├── install-homebrew.sh*
 │   │   └── install-oh-my-zsh.sh*
@@ -127,6 +134,6 @@ options:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-42 directories, 50 files
+43 directories, 56 files
 ```
 <!-- END TREE -->

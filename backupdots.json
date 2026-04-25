@@ -2,13 +2,15 @@
     "macOS": {
         "backup": [
             { "name": "Homebrew packages", "script": "/Users/chris/dotfiles/macOS/Homebrew/dump.sh" },
-            { "name": "VS Code extensions", "script": "/Users/chris/dotfiles/Common/vscode/dump.sh" }
+            { "name": "VS Code extensions", "script": "/Users/chris/dotfiles/Common/vscode/dump.sh" },
+            { "name": "Cursor extensions", "script": "/Users/chris/dotfiles/Common/cursor/dump.sh" }
         ],
         "restore": [
             { "name": "Oh My Zsh", "script": "/Users/chris/dotfiles/Common/installs/install-oh-my-zsh.sh" },
             { "name": "Homebrew", "script": "/Users/chris/dotfiles/Common/installs/install-homebrew.sh" },
             { "name": "Homebrew packages", "script": "/Users/chris/dotfiles/macOS/Homebrew/restore.sh" },
             { "name": "VS Code extensions", "script": "/Users/chris/dotfiles/Common/vscode/restore.sh" },
+            { "name": "Cursor extensions", "script": "/Users/chris/dotfiles/Common/cursor/restore.sh" },
             { "name": "macOS defaults", "script": "/Users/chris/dotfiles/macOS/installs/set-macos-defaults.sh" }
         ],
         "files": [
@@ -26,6 +28,7 @@
             ["/Users/chris/dotfiles/Common/neovim/nvim", "/Users/chris/.config/nvim", { "createDirs": true }],
 
             ["/Users/chris/dotfiles/Common/vscode/settings.json", "/Users/chris/Library/Application Support/Code/User/settings.json"],
+            ["/Users/chris/dotfiles/Common/cursor/settings.json", "/Users/chris/Library/Application Support/Cursor/User/settings.json"],
             ["/Users/chris/dotfiles/macOS/terminals/ghostty/config", "/Users/chris/Library/Application Support/com.mitchellh.ghostty/config"]
         ]
     },
@@ -55,10 +58,12 @@
     },
     "Windows": {
         "backup": [
-            { "name": "VS Code extensions", "script": "C:\\Users\\Chris\\dotfiles\\Common\\vscode\\dump.bat" }
+            { "name": "VS Code extensions", "script": "C:\\Users\\Chris\\dotfiles\\Common\\vscode\\dump.bat" },
+            { "name": "Cursor extensions", "script": "C:\\Users\\Chris\\dotfiles\\Common\\cursor\\dump.bat" }
         ],
         "restore": [
-            { "name": "VS Code extensions", "script": "C:\\Users\\Chris\\dotfiles\\Common\\vscode\\restore.bat" }
+            { "name": "VS Code extensions", "script": "C:\\Users\\Chris\\dotfiles\\Common\\vscode\\restore.bat" },
+            { "name": "Cursor extensions", "script": "C:\\Users\\Chris\\dotfiles\\Common\\cursor\\restore.bat" }
         ],
         "files": [
             ["C:\\Users\\Chris\\dotfiles\\Common\\vim\\.vimrc", "C:\\Users\\Chris\\.vimrc"],
@@ -66,6 +71,7 @@
             ["C:\\Users\\Chris\\dotfiles\\Common\\vim\\.ideavimrc", "C:\\Users\\Chris\\.ideavimrc"],
 
             ["C:\\Users\\Chris\\dotfiles\\Common\\vscode\\settings.json", "C:\\Users\\Chris\\AppData\\Roaming\\Code\\User\\settings.json"],
+            ["C:\\Users\\Chris\\dotfiles\\Common\\cursor\\settings.json", "C:\\Users\\Chris\\AppData\\Roaming\\Cursor\\User\\settings.json"],
             ["C:\\Users\\Chris\\dotfiles\\Common\\neovim\\nvim", "C:\\Users\\Chris\\AppData\\Local\\nvim"],
 
             ["C:\\Users\\Chris\\dotfiles\\Windows\\Git\\.gitconfig", "C:\\Users\\Chris\\.config\\git\\config", { "createDirs": true }]
