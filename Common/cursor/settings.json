@@ -82,7 +82,7 @@
 
   "Lua.diagnostics.globals": ["vim"],
 
-  "python.languageServer": "Default",
+  "python.languageServer": "None",
 
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
