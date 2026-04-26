@@ -1,5 +1,6 @@
 anysphere.cpptools
 anysphere.cursorpyright
+charliermarsh.ruff
 chrismeyers.vscode-pretty-json
 christian-kohler.npm-intellisense
 christian-kohler.path-intellisense
@@ -10,7 +11,6 @@ esbenp.prettier-vscode
 golang.go
 james-yu.latex-workshop
 llvm-vs-code-extensions.vscode-clangd
-ms-python.black-formatter
 ms-python.debugpy
 ms-python.python
 ms-vscode.cmake-tools

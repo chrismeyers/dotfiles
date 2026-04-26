@@ -1,3 +1,4 @@
+charliermarsh.ruff
 chrismeyers.vscode-pretty-json
 christian-kohler.npm-intellisense
 christian-kohler.path-intellisense
@@ -8,7 +9,6 @@ esbenp.prettier-vscode
 github.copilot-chat
 golang.go
 james-yu.latex-workshop
-ms-python.black-formatter
 ms-python.debugpy
 ms-python.python
 ms-python.vscode-pylance
