@@ -1,4 +1,5 @@
 anysphere.cursorpyright
+charliermarsh.ruff
 chrismeyers.vscode-pretty-json
 christian-kohler.npm-intellisense
 christian-kohler.path-intellisense
@@ -7,7 +8,6 @@ dnicolson.binary-plist
 enkia.tokyo-night
 esbenp.prettier-vscode
 golang.go
-ms-python.black-formatter
 ms-python.debugpy
 ms-python.python
 streetsidesoftware.code-spell-checker

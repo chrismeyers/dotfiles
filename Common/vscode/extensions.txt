@@ -1,4 +1,5 @@
 anthropic.claude-code
+charliermarsh.ruff
 chrismeyers.vscode-pretty-json
 christian-kohler.npm-intellisense
 christian-kohler.path-intellisense
@@ -8,7 +9,6 @@ enkia.tokyo-night
 esbenp.prettier-vscode
 github.copilot-chat
 golang.go
-ms-python.black-formatter
 ms-python.debugpy
 ms-python.python
 ms-python.vscode-pylance

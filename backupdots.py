@@ -106,7 +106,7 @@ def perform_restore(args, backup_data, current_platform, backup_file_ext):
             continue
 
         if not os.path.exists(target_dir):
-            if opts.get("createDirs", False) == True:
+            if opts.get("createDirs", False):
                 os.makedirs(target_dir, mode=0o755, exist_ok=True)
             else:
                 # The createDirs option should only be enabled for items that do not have
@@ -222,7 +222,7 @@ def perform_unlink(args, backup_data, current_platform):
                     continue
 
             Log.info(
-                f'Unlinked {"directory" if os.path.isdir(source) else "file"}: {target}',
+                f"Unlinked {'directory' if os.path.isdir(source) else 'file'}: {target}",
                 gutter=LogGutter(str(file_num), 3, True),
             )
             file_num += 1
@@ -428,11 +428,13 @@ class Log:
         level_prefix = (
             "ERROR: "
             if level == LogLevel.ERROR
-            else "WARNING: " if level == LogLevel.WARN else ""
+            else "WARNING: "
+            if level == LogLevel.WARN
+            else ""
         )
 
         print(
-            f'{str(gutter.content).rjust(gutter.length)}{" " if gutter.space else ""}{level_prefix}{message}',
+            f"{str(gutter.content).rjust(gutter.length)}{' ' if gutter.space else ''}{level_prefix}{message}",
             end=end,
             flush=flush,
         )
