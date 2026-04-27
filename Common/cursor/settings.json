@@ -1,0 +1,89 @@
+{
+  // General editor settings (Editor)
+  "editor.tabSize": 2,
+  "editor.autoIndent": "full",
+  "editor.insertSpaces": true,
+  "editor.lineNumbers": "on",
+  "editor.fontFamily": "Hack",
+  "editor.fontSize": 12,
+  "editor.minimap.showSlider": "always",
+  "editor.suggestSelection": "first",
+  "editor.formatOnSave": false,
+  "editor.renderWhitespace": "selection",
+
+  // File settings (Files)
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.eol": "\n",
+
+  // Window settings (Window)
+  "window.commandCenter": false,
+
+  // Language overrides (Default Configuration Overrides)
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "golang.go",
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4
+  },
+
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.tabSize": 4
+  },
+
+  "[javascript][typescript][javascriptreact][typescriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[makefile]": {
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4
+  },
+
+  // OS File system interaction (File Explorer)
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+
+  // UI settings (Workbench)
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.colorTheme": "Tokyo Night Storm",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.activityBar.location": "top",
+  "workbench.colorCustomizations": {
+    "editorWhitespace.foreground": "#a9b1d6"
+  },
+
+  // Extensions
+  "extensions.ignoreRecommendations": true,
+
+  "go.formatTool": "goimports",
+  "go.useLanguageServer": true,
+
+  "python.languageServer": "None",
+
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  "vim.smartRelativeLine": true,
+
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+
+  "git.blame.editorDecoration.enabled": true,
+  "git.blame.statusBarItem.enabled": false,
+  "git.autoRepositoryDetection": "openEditors",
+
+  "cSpell.useCustomDecorations": false
+}

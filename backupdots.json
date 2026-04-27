@@ -2,7 +2,8 @@
     "macOS": {
         "backup": [
             { "name": "Homebrew packages", "script": "/Users/chris/dotfiles/macOS/Homebrew/dump.sh" },
-            { "name": "VS Code extensions", "script": "/Users/chris/dotfiles/Common/vscode/dump.sh" }
+            { "name": "VS Code extensions", "script": "/Users/chris/dotfiles/Common/vscode/dump.sh" },
+            { "name": "Cursor extensions", "script": "/Users/chris/dotfiles/Common/cursor/dump.sh" }
         ],
         "restore": [
             { "name": "Oh My Zsh", "script": "/Users/chris/dotfiles/Common/installs/install-oh-my-zsh.sh" },
@@ -10,6 +11,7 @@
             { "name": "Claude Code", "script": "/Users/chris/dotfiles/Common/installs/install-claude-code.sh" },
             { "name": "Homebrew packages", "script": "/Users/chris/dotfiles/macOS/Homebrew/restore.sh" },
             { "name": "VS Code extensions", "script": "/Users/chris/dotfiles/Common/vscode/restore.sh" },
+            { "name": "Cursor extensions", "script": "/Users/chris/dotfiles/Common/cursor/restore.sh" },
             { "name": "macOS defaults", "script": "/Users/chris/dotfiles/macOS/installs/set-macos-defaults.sh" }
         ],
         "files": [
@@ -26,6 +28,7 @@
             ["/Users/chris/dotfiles/Common/neovim/nvim", "/Users/chris/.config/nvim", { "createDirs": true }],
 
             ["/Users/chris/dotfiles/Common/vscode/settings.json", "/Users/chris/Library/Application Support/Code/User/settings.json"],
+            ["/Users/chris/dotfiles/Common/cursor/settings.json", "/Users/chris/Library/Application Support/Cursor/User/settings.json"],
             ["/Users/chris/dotfiles/macOS/terminals/ghostty/config", "/Users/chris/Library/Application Support/com.mitchellh.ghostty/config"]
         ]
     }
