@@ -18,7 +18,7 @@
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
-  "files.eol": "\n",
+  "files.eol": "auto",
 
   // Window settings (Window)
   "window.commandCenter": false,
