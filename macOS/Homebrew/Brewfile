@@ -22,7 +22,7 @@ brew "mise"
 brew "neovim"
 brew "pkgconf"
 brew "xz"
-brew "postgresql@17", link: true
+brew "postgresql@18", link: true
 brew "redis"
 brew "ripgrep"
 brew "rsync"
