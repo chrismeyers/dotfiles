@@ -96,6 +96,7 @@ alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 
 #============= Editors ==============
 alias e='open -e'
+alias c='cursor'
 
 
 #============= Scripts ==============
