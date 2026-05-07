@@ -1,5 +1,6 @@
 anysphere.cpptools
 anysphere.cursorpyright
+anysphere.remote-ssh
 charliermarsh.ruff
 chrismeyers.vscode-pretty-json
 christian-kohler.npm-intellisense
