@@ -100,6 +100,7 @@ vim.api.nvim_create_user_command(
   end,
   { desc = 'List plugins installed with vim.pack' }
 )
+
 vim.api.nvim_create_user_command(
   'PackUpdate',
   function(opts)
@@ -124,6 +125,15 @@ vim.api.nvim_create_user_command(
     end,
   }
 )
+
+vim.api.nvim_create_user_command(
+  'PackSync',
+  function() vim.pack.update(nil, { target = 'lockfile' }) end,
+  {
+    desc = 'Sync plugins installed with vim.pack to nvim-pack-lock.json',
+  }
+)
+
 vim.api.nvim_create_user_command(
   'PackDelete',
   function(opts) vim.pack.del(opts.fargs) end,
@@ -301,7 +311,7 @@ require('nvim-treesitter').install({
   'typescript'
 })
 
---- mason.nvim + nvim-lspconfig + native vim.lsp
+--- mason.nvim/mason-lspconfig.nvim/nvim-lspconfig
 require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {
