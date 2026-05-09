@@ -156,8 +156,9 @@ alias sz="exec zsh"
 ### Additional aliases
 source $HOME/.aliases
 
-### Additional environment variables
+### Additional private environment variables and functions
 if [ -f "$HOME/.mcpenv.sh" ]; then . "$HOME/.mcpenv.sh"; fi
+if [ -f "$HOME/.redisconn.sh" ]; then . "$HOME/.redisconn.sh"; fi
 
 ### Mise version manager (Python, Node.js, Ruby, etc.)
 eval "$(mise activate zsh)"
