@@ -10,7 +10,7 @@
   // Get off my lawn (Telemetry)
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
 
   // General editor settings
@@ -20,48 +20,48 @@
   "buffer_font_size": 12,
   "buffer_font_family": "Hack",
   "buffer_font_features": {
-    "calt": false
+    "calt": false,
+  },
+  "project_panel": {
+    "dock": "left",
+  },
+  "edit_predictions": {
+    "provider": "zed",
+  },
+  "journal": {
+    "hour_format": "hour24",
+    "path": "~/.config/zed",
+  },
+  "auto_signature_help": true,
+
+  // UI settings
+  "ui_font_size": 16,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Tokyo Night Storm",
+  },
+  "minimap": {
+    "show": "always",
+  },
+  "tabs": {
+    "file_icons": true,
+    "git_status": true,
+    "show_diagnostics": "all",
   },
 
   // Language overrides
   "languages": {
     "JSON": {
-      "format_on_save": "off"
+      "format_on_save": "off",
     },
     "Python": {
       "tab_size": 4,
-      "language_servers": ["pyright"],
-      "formatter": { "external": { "command": "black", "arguments": ["-"] } }
     },
     "Go": {
       "tab_size": 4,
-      "hard_tabs": true
-    }
-  },
-
-  // UI settings
-  "ui_font_size": 14,
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "Tokyo Night Storm"
-  },
-  "minimap": {
-    "show": "always"
-  },
-  "tabs": {
-    "file_icons": true,
-    "git_status": true,
-    "show_diagnostics": "all"
-  },
-
-  // Features
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
-  "journal": {
-    "hour_format": "hour24",
-    "path": "~/.config/zed"
+      "hard_tabs": true,
+    },
   },
 
   // Extensions
@@ -70,6 +70,6 @@
     "php": true,
     "toml": true,
     "latex": true,
-    "tokyo-night": true
-  }
+    "tokyo-night": true,
+  },
 }

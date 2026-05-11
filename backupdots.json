@@ -26,6 +26,7 @@
             ["/Users/chris/dotfiles/macOS/Git/.gitconfig", "/Users/chris/.config/git/config", { "createDirs": true }],
             ["/Users/chris/dotfiles/macOS/Git/.gitignore_global", "/Users/chris/.config/git/ignore", { "createDirs": true }],
             ["/Users/chris/dotfiles/Common/neovim/nvim", "/Users/chris/.config/nvim", { "createDirs": true }],
+            ["/Users/chris/dotfiles/Common/zed/settings.json", "/Users/chris/.config/zed/settings.json"],
 
             ["/Users/chris/dotfiles/Common/vscode/settings.json", "/Users/chris/Library/Application Support/Code/User/settings.json"],
             ["/Users/chris/dotfiles/Common/cursor/settings.json", "/Users/chris/Library/Application Support/Cursor/User/settings.json"],
@@ -72,6 +73,7 @@
 
             ["C:\\Users\\Chris\\dotfiles\\Common\\vscode\\settings.json", "C:\\Users\\Chris\\AppData\\Roaming\\Code\\User\\settings.json"],
             ["C:\\Users\\Chris\\dotfiles\\Common\\cursor\\settings.json", "C:\\Users\\Chris\\AppData\\Roaming\\Cursor\\User\\settings.json"],
+            ["C:\\Users\\Chris\\dotfiles\\Common\\zed\\settings.json", "C:\\Users\\Chris\\AppData\\Roaming\\Zed\\settings.json"],
             ["C:\\Users\\Chris\\dotfiles\\Common\\neovim\\nvim", "C:\\Users\\Chris\\AppData\\Local\\nvim"],
 
             ["C:\\Users\\Chris\\dotfiles\\Windows\\Git\\.gitconfig", "C:\\Users\\Chris\\.config\\git\\config", { "createDirs": true }]
