@@ -60,6 +60,7 @@
   "workbench.colorCustomizations": {
     "editorWhitespace.foreground": "#a9b1d6"
   },
+  "workbench.agentsWindowButton.enabled": false,
 
   // Extensions
   "extensions.ignoreRecommendations": true,
