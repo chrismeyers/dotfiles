@@ -67,7 +67,7 @@
   // Extensions
   "auto_install_extensions": {
     "html": true,
-    "php": true,
+    "astro": true,
     "toml": true,
     "latex": true,
     "tokyo-night": true,
