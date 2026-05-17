@@ -1,6 +1,7 @@
 anysphere.cpptools
 anysphere.cursorpyright
 anysphere.remote-ssh
+astro-build.astro-vscode
 charliermarsh.ruff
 chrismeyers.vscode-pretty-json
 christian-kohler.npm-intellisense

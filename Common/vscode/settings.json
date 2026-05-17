@@ -48,6 +48,11 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
+  "[astro]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
