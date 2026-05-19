@@ -6,6 +6,7 @@ export GOPATH="$HOME/dev/go"
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="/usr/local/bin\
 :/usr/local/sbin\
+:/usr/local/go/bin\
 :$GOPATH/bin\
 :$HOME/.local/bin\
 :$PATH"
