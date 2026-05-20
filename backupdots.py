@@ -81,7 +81,7 @@ def perform_backup(args, backup_data):
             continue
 
         Log.info(f"Backing up {name}...", end="", flush=True)
-        exit_code = os.system(script)
+        exit_code = os.system(script)  # ty:ignore[deprecated]
         if exit_code == 0:
             Log.info("done")
             file_num += 1
@@ -160,7 +160,7 @@ def perform_restore(args, backup_data, current_platform, backup_file_ext):
             continue
 
         Log.info(f"Restoring {name}...", end="", flush=True)
-        exit_code = os.system(script)
+        exit_code = os.system(script)  # ty:ignore[deprecated]
         if exit_code == 0:
             Log.info("done")
             file_num += 1
@@ -326,7 +326,7 @@ def sudo_command(cmd, current_platform):
 
     # TODO: Handle permissions error on windows
     if current_platform == PlatformType.LINUX or current_platform == PlatformType.MACOS:
-        exit_code = os.system(f"sudo {cmd}")
+        exit_code = os.system(f"sudo {cmd}")  # ty:ignore[deprecated]
         success = True if exit_code == 0 else False
     else:
         Log.warn(f"Unable to execute command `{cmd}` as a super user")

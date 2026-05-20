@@ -1,3 +1,4 @@
+astral-sh.ty
 astro-build.astro-vscode
 charliermarsh.ruff
 chrismeyers.vscode-pretty-json
