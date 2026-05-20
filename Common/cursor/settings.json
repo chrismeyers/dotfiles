@@ -69,6 +69,8 @@
   "go.useLanguageServer": true,
 
   "python.languageServer": "None",
+  "ty.inlayHints.callArgumentNames": false,
+  "ty.inlayHints.variableTypes": false,
 
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,

@@ -71,7 +71,9 @@
   "go.formatTool": "goimports",
   "go.useLanguageServer": true,
 
-  "python.languageServer": "Default",
+  "python.languageServer": "None",
+  "ty.inlayHints.callArgumentNames": false,
+  "ty.inlayHints.variableTypes": false,
 
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
@@ -90,8 +92,6 @@
   "git.autoRepositoryDetection": "openEditors",
 
   "chat.disableAIFeatures": true,
-
-  "claudeCode.preferredLocation": "panel",
 
   "cSpell.useCustomDecorations": false
 }

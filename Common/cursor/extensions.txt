@@ -1,4 +1,5 @@
 anysphere.cursorpyright
+astral-sh.ty
 charliermarsh.ruff
 chrismeyers.vscode-pretty-json
 christian-kohler.npm-intellisense
