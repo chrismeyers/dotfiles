@@ -363,6 +363,7 @@ require('nvim-treesitter').setup({
 })
 
 require('nvim-treesitter').install({
+  'astro',
   'bash',
   'cpp',
   'css',
@@ -378,11 +379,12 @@ require('nvim-treesitter').install({
 require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {
-    'lua_ls', -- Lua
-    'vtsls',  -- TypeScript/JavaScript
-    'ty',     -- Python
+    'astro',  -- Astro
+    'clangd', -- C/C++
     'gopls',  -- Go
-    'clangd'  -- C/C++
+    'lua_ls', -- Lua
+    'ty',     -- Python
+    'vtsls'   -- TypeScript/JavaScript
   },
   automatic_enable = true,
 })
