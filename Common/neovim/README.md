@@ -21,6 +21,11 @@ Track this file in Git for reproducible plugin revisions across machines.
 1. Run `:PackList` to view installed plugins, active state, and short commit revision.
 1. Optionally review `nvim/init.lua` to see declared plugins in `vim.pack.add(...)`.
 
+### Sync Plugins
+
+1. Open Neovim.
+1. Run `:PackSync` to sync installed plugins with `nvim-pack-lock.json`.
+
 ### Update Plugins
 
 1. Open Neovim.
