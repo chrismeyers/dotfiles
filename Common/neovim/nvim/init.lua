@@ -4,6 +4,9 @@
 -- NOTE: Some settings taken from https://github.com/nvim-lua/kickstart.nvim
 -- ===========================================================================
 
+-- Enable faster startup by caching compiled Lua modules
+vim.loader.enable()
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -176,29 +179,32 @@ vim.api.nvim_create_autocmd("PackChanged", {
   end,
 })
 
-vim.pack.add({
-  { src = "https://github.com/folke/tokyonight.nvim" },
-  { src = "https://github.com/nvim-lua/plenary.nvim" },
-  { src = "https://github.com/nvim-telescope/telescope.nvim" },
-  { src = "https://github.com/nvim-telescope/telescope-ui-select.nvim" },
-  { src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim" },
-  { src = "https://github.com/lewis6991/gitsigns.nvim" },
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-  { src = "https://github.com/mason-org/mason.nvim" },
-  { src = "https://github.com/mason-org/mason-lspconfig.nvim" },
-  { src = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" },
-  { src = "https://github.com/neovim/nvim-lspconfig" },
-  { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("^1") },
-  { src = "https://github.com/stevearc/conform.nvim" },
-})
-
 --- tokyonight.nvim
+vim.pack.add({ "https://github.com/folke/tokyonight.nvim" })
 require("tokyonight").setup({
   transparent = true,
 })
 vim.cmd.colorscheme("tokyonight-storm")
 
+-- which-key.nvim
+vim.pack.add({ "https://github.com/folke/which-key.nvim" })
+require("which-key").setup({
+  delay = 0,
+  spec = {
+    { "<leader>s", group = "[S]earch", mode = { "n", "v" } },
+    { "<leader>t", group = "[T]oggle" },
+    { "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
+    { "gr", group = "LSP Actions", mode = { "n" } },
+  },
+})
+
 --- telescope.nvim
+vim.pack.add({
+  "https://github.com/nvim-telescope/telescope.nvim",
+  "https://github.com/nvim-telescope/telescope-ui-select.nvim",
+  "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
+  "https://github.com/nvim-lua/plenary.nvim",
+})
 vim.api.nvim_create_autocmd("VimEnter", {
   once = true,
   callback = function()
@@ -265,6 +271,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
 })
 
 --- gitsigns.nvim
+vim.pack.add({ "https://github.com/lewis6991/gitsigns.nvim" })
 require("gitsigns").setup({
   signs = {
     add = { text = "+" },
@@ -290,7 +297,7 @@ require("gitsigns").setup({
       else
         gitsigns.nav_hunk("next")
       end
-    end)
+    end, { desc = "Next Git Hunk" })
 
     map("n", "[c", function()
       if vim.wo.diff then
@@ -298,50 +305,44 @@ require("gitsigns").setup({
       else
         gitsigns.nav_hunk("prev")
       end
-    end)
+    end, { desc = "Previous Git Hunk" })
 
     -- Actions
-    map("n", "<leader>hs", gitsigns.stage_hunk)
-    map("n", "<leader>hr", gitsigns.reset_hunk)
-
+    map("n", "<leader>hs", gitsigns.stage_hunk, { desc = "Stage Hunk" })
     map("v", "<leader>hs", function()
       gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-    end)
+    end, { desc = "Stage Hunk" })
+    map("n", "<leader>hS", gitsigns.stage_buffer, { desc = "Stage Buffer" })
 
+    map("n", "<leader>hr", gitsigns.reset_hunk, { desc = "Reset Hunk" })
     map("v", "<leader>hr", function()
       gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
-    end)
+    end, { desc = "Reset Hunk" })
+    map("n", "<leader>hR", gitsigns.reset_buffer, { desc = "Reset Buffer" })
 
-    map("n", "<leader>hS", gitsigns.stage_buffer)
-    map("n", "<leader>hR", gitsigns.reset_buffer)
-    map("n", "<leader>hp", gitsigns.preview_hunk)
-    map("n", "<leader>hi", gitsigns.preview_hunk_inline)
+    map("n", "<leader>hp", gitsigns.preview_hunk, { desc = "Preview Hunk" })
+    map("n", "<leader>hi", gitsigns.preview_hunk_inline, { desc = "Preview Hunk Inline" })
 
     map("n", "<leader>hb", function()
       gitsigns.blame_line({ full = true })
-    end)
+    end, { desc = "Blame Line" })
 
-    map("n", "<leader>hd", gitsigns.diffthis)
-
+    map("n", "<leader>hd", gitsigns.diffthis, { desc = "Diff Index" })
     map("n", "<leader>hD", function()
       gitsigns.diffthis("~")
-    end)
-
-    map("n", "<leader>hQ", function()
-      gitsigns.setqflist("all")
-    end)
-    map("n", "<leader>hq", gitsigns.setqflist)
+    end, { desc = "Diff HEAD~" })
 
     -- Toggles
-    map("n", "<leader>tb", gitsigns.toggle_current_line_blame)
-    map("n", "<leader>tw", gitsigns.toggle_word_diff)
+    map("n", "<leader>tb", gitsigns.toggle_current_line_blame, { desc = "Toggle current line blame" })
+    map("n", "<leader>tw", gitsigns.toggle_word_diff, { desc = "Toggle word diff" })
 
     -- Text object
-    map({ "o", "x" }, "ih", gitsigns.select_hunk)
+    map({ "o", "x" }, "ih", gitsigns.select_hunk, { desc = "Select Git Hunk" })
   end,
 })
 
 --- nvim-treesitter
+vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" })
 require("nvim-treesitter").setup({
   -- Directory to install parsers and queries to (prepended to `runtimepath` to have priority)
   install_dir = vim.fn.stdpath("data") .. "/site",
@@ -360,6 +361,12 @@ require("nvim-treesitter").install({
 })
 
 --- LSP
+vim.pack.add({
+  "https://github.com/mason-org/mason.nvim",
+  "https://github.com/mason-org/mason-lspconfig.nvim",
+  "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
+  "https://github.com/neovim/nvim-lspconfig",
+})
 require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {
@@ -397,6 +404,7 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
 
 --- blink.cmp
+vim.pack.add({ { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("^1") } })
 require("blink.cmp").setup({
   keymap = {
     preset = "enter",
@@ -416,6 +424,7 @@ require("blink.cmp").setup({
 })
 
 -- conform.nvim
+vim.pack.add({ "https://github.com/stevearc/conform.nvim" })
 require("conform").setup({
   formatters_by_ft = {
     astro = { "prettier" },
