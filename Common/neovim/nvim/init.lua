@@ -91,6 +91,13 @@ vim.api.nvim_create_autocmd("FileType", {
 -- Enable the mouse everywhere
 vim.o.mouse = "a"
 
+-- Diagnostics
+vim.diagnostic.config({
+  float = {
+    source = "always",
+  },
+})
+
 -- Plugins
 vim.api.nvim_create_user_command("PackList", function()
   local formatted = "Installed plugins:\n"
@@ -381,10 +388,12 @@ require("mason-lspconfig").setup({
 })
 require("mason-tool-installer").setup({
   ensure_installed = {
-    "goimports", -- Go
-    "prettier", -- TypeScript/JavaScript
-    "ruff", -- Python
-    "stylua", -- Lua
+    "goimports", -- Go formatter
+    "golangci-lint", -- Go linter
+    "luacheck", -- Lua linter
+    "prettier", -- TypeScript/JavaScript formatter
+    "ruff", -- Python formatter + linter
+    "stylua", -- Lua formatter
   },
 })
 
@@ -398,7 +407,7 @@ vim.lsp.config("lua_ls", {
   },
 })
 
-vim.lsp.log.set_level("error")
+vim.lsp.log.set_level("off")
 
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
@@ -448,4 +457,20 @@ require("conform").setup({
     timeout_ms = 500,
     lsp_format = "fallback",
   },
+})
+
+-- nvim-lint
+vim.pack.add({ "https://github.com/mfussenegger/nvim-lint" })
+require("lint").linters_by_ft = {
+  astro = { "eslint" },
+  go = { "golangcilint" },
+  javascript = { "eslint" },
+  lua = { "luacheck" },
+  typescript = { "eslint" },
+}
+
+vim.api.nvim_create_autocmd({ "BufWinEnter", "BufWritePost", "BufReadPost", "InsertLeave" }, {
+  callback = function()
+    require("lint").try_lint(nil, { ignore_errors = true })
+  end,
 })
