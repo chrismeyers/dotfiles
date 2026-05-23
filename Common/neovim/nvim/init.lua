@@ -395,6 +395,14 @@ require("mason-tool-installer").setup({
   },
 })
 
+vim.lsp.config("gopls", {
+  settings = {
+    gopls = {
+      staticcheck = false,
+    },
+  },
+})
+
 vim.lsp.config("lua_ls", {
   settings = {
     Lua = {
