@@ -193,7 +193,7 @@ require("tokyonight").setup({
 })
 vim.cmd.colorscheme("tokyonight-storm")
 
--- which-key.nvim
+--- which-key.nvim
 vim.pack.add({ "https://github.com/folke/which-key.nvim" })
 require("which-key").setup({
   delay = 0,
@@ -387,19 +387,10 @@ require("mason-lspconfig").setup({
 require("mason-tool-installer").setup({
   ensure_installed = {
     "goimports", -- Go formatter
-    "golangci-lint", -- Go linter
     "luacheck", -- Lua linter
     "prettier", -- TypeScript/JavaScript formatter
     "ruff", -- Python formatter + linter
     "stylua", -- Lua formatter
-  },
-})
-
-vim.lsp.config("gopls", {
-  settings = {
-    gopls = {
-      staticcheck = false,
-    },
   },
 })
 
@@ -416,9 +407,10 @@ vim.lsp.config("lua_ls", {
 vim.lsp.log.set_level("off")
 
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open Diagnostic Float" })
+vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open Diagnostic List" })
+vim.keymap.set("n", "<leader>.", vim.lsp.buf.code_action, { desc = "LSP Code Action" })
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous Diagnostic" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next Diagnostic" })
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open Diagnostic List" })
 
 --- blink.cmp
 vim.pack.add({ { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("^1") } })
@@ -440,7 +432,7 @@ require("blink.cmp").setup({
   },
 })
 
--- conform.nvim
+--- conform.nvim
 vim.pack.add({ "https://github.com/stevearc/conform.nvim" })
 require("conform").setup({
   formatters_by_ft = {
@@ -465,11 +457,10 @@ require("conform").setup({
   },
 })
 
--- nvim-lint
+--- nvim-lint
 vim.pack.add({ "https://github.com/mfussenegger/nvim-lint" })
 require("lint").linters_by_ft = {
   astro = { "eslint" },
-  go = { "golangcilint" },
   javascript = { "eslint" },
   lua = { "luacheck" },
   typescript = { "eslint" },
