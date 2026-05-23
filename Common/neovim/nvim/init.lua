@@ -98,6 +98,18 @@ vim.diagnostic.config({
   },
 })
 
+-- Keymaps
+vim.keymap.set("n", "<leader>jp", function()
+  if vim.fn.executable("jq") == 1 then
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes([[ggVG! jq<CR><C-l>]], true, false, true), "nx", false)
+  end
+end, { desc = "JSON Prettify" })
+vim.keymap.set("n", "<leader>ju", function()
+  if vim.fn.executable("jq") == 1 then
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes([[ggVG! jq -c<CR><C-l>]], true, false, true), "nx", false)
+  end
+end, { desc = "JSON Uglify" })
+
 -- Plugins
 vim.api.nvim_create_user_command("PackList", function()
   local formatted = "Installed plugins:\n"
