@@ -28,13 +28,13 @@ options:
   --skip-hooks          skips running backup and restore hooks
 """
 
-import os
-import sys
-import platform
-import json
 import argparse
+import json
+import os
+import platform
 import shutil
 import subprocess
+import sys
 from dataclasses import dataclass
 from enum import Enum
 
@@ -171,7 +171,7 @@ def perform_restore(args, backup_data, current_platform, backup_file_ext):
         Log.info("Nothing to restore")
 
 
-def perform_cleanup(args, backup_data, current_platform, backup_file_ext):
+def perform_cleanup(_args, backup_data, current_platform, backup_file_ext):
     """Removes all *.{backup_file_ext} files generated from restore"""
     file_num = 1
     for settings in backup_data.get("files", []):
@@ -208,7 +208,7 @@ def perform_cleanup(args, backup_data, current_platform, backup_file_ext):
         Log.info("Nothing to cleanup")
 
 
-def perform_unlink(args, backup_data, current_platform):
+def perform_unlink(_args, backup_data, current_platform):
     """Removes all symlinks for the given platform"""
     file_num = 1
     for settings in backup_data.get("files", []):
@@ -458,7 +458,6 @@ def main():
     backup_file_ext = "orig"
     tree_modes = ["print", "inject"]
     platforms = [str(p) for p in PlatformType if p != PlatformType.UNKNOWN]
-    current_platform = PlatformType.UNKNOWN
 
     arg_parser = argparse.ArgumentParser(
         description="Backup or restore configuration files",
