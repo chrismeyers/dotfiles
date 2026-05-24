@@ -89,7 +89,7 @@
   "latex-workshop.view.pdf.viewer": "tab",
   "latex-workshop.latex.recipe.default": "latexmk (xelatex)", // XeLaTeX is used for smaller PDF file sizes
 
-  "Lua.diagnostics.globals": ["vim"],
+  "Lua.diagnostics.globals": ["vim", "hl"],
 
   "python.languageServer": "None",
   "ty.inlayHints.callArgumentNames": false,

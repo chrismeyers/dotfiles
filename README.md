@@ -85,7 +85,8 @@ options:
 │   │   ├── .gitconfig
 │   │   └── .gitignore_global
 │   ├── hypr/
-│   │   └── hyprland.conf
+│   │   ├── hyprland.conf
+│   │   └── hyprland.lua
 │   ├── SublimeText/
 │   │   └── Overrides/
 │   │       └── Preferences (Linux).sublime-settings
@@ -134,6 +135,6 @@ options:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-43 directories, 56 files
+43 directories, 57 files
 ```
 <!-- END TREE -->
