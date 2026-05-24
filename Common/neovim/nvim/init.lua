@@ -70,6 +70,19 @@ vim.o.smarttab = true
 vim.o.autoindent = true
 vim.o.smartindent = true
 vim.o.breakindent = true
+vim.o.list = false
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣", space = "·" }
+
+vim.api.nvim_create_autocmd("ModeChanged", {
+  callback = function()
+    local mode = vim.v.event.new_mode
+    if mode == "v" or mode == "V" or mode == "\x16" then
+      vim.opt_local.list = true
+    else
+      vim.opt_local.list = false
+    end
+  end,
+})
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "*",
@@ -204,6 +217,9 @@ require("tokyonight").setup({
   transparent = true,
 })
 vim.cmd.colorscheme("tokyonight-storm")
+vim.api.nvim_set_hl(0, "Whitespace", { fg = "#A9B1D6" })
+vim.api.nvim_set_hl(0, "NonText", { fg = "#A9B1D6" })
+vim.api.nvim_set_hl(0, "SpellBad", { sp = "#00FFFF", undercurl = true })
 
 --- which-key.nvim
 vim.pack.add({ "https://github.com/folke/which-key.nvim" })
