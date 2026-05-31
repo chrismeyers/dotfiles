@@ -44,6 +44,7 @@ options:
 │   │   ├── restore.sh*
 │   │   └── settings.json
 │   ├── installs/
+│   │   ├── install-cursor-cli.sh*
 │   │   ├── install-homebrew.sh*
 │   │   └── install-oh-my-zsh.sh*
 │   ├── misc/
@@ -134,6 +135,6 @@ options:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-43 directories, 56 files
+43 directories, 57 files
 ```
 <!-- END TREE -->
