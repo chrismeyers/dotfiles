@@ -81,7 +81,7 @@ def perform_backup(args, backup_data):
             continue
 
         Log.info(f"Backing up {name}...", end="", flush=True)
-        exit_code = os.system(script)  # ty:ignore[deprecated]
+        exit_code = os.system(script)  # type:ignore[ty:deprecated]
         if exit_code == 0:
             Log.info("done")
             file_num += 1
@@ -160,7 +160,7 @@ def perform_restore(args, backup_data, current_platform, backup_file_ext):
             continue
 
         Log.info(f"Restoring {name}...", end="", flush=True)
-        exit_code = os.system(script)  # ty:ignore[deprecated]
+        exit_code = os.system(script)  # type:ignore[ty:deprecated]
         if exit_code == 0:
             Log.info("done")
             file_num += 1
