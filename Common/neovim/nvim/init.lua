@@ -515,3 +515,37 @@ vim.api.nvim_create_autocmd({ "BufWinEnter", "BufWritePost", "BufReadPost", "Ins
     require("lint").try_lint(nil, { ignore_errors = true })
   end,
 })
+
+--- LaTeX
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = "*.tex",
+  callback = function(ev)
+    -- The \documentclass[]{} root indicator should be near the top of the file
+    local lines = vim.api.nvim_buf_get_lines(0, 0, 10, false)
+    local re = "\\\\documentclass\\s*\\(\\[[^]]*\\]\\s*\\)\\?\\s*{[^}]\\+}"
+    if not vim.regex(re):match_str(table.concat(lines, "\n")) then
+      return
+    end
+
+    if vim.fn.executable("xelatex") ~= 1 or vim.fn.executable("xdvipdfmx") ~= 1 then
+      return
+    end
+
+    vim.system({
+      "xelatex",
+      "-no-pdf",
+      "-synctex=1",
+      "-interaction=nonstopmode",
+      "-file-line-error",
+      "-recorder",
+      "-output-directory=" .. vim.fs.dirname(ev.match),
+      ev.match,
+    })
+
+    vim.system({ "xdvipdfmx", "-E", "-o", ev.match:gsub("%.tex", "%.pdf"), ev.match:gsub("%.tex", "%.xdv") })
+
+    vim.defer_fn(function()
+      vim.notify("Successfully generated LaTeX PDF")
+    end, 100)
+  end,
+})
