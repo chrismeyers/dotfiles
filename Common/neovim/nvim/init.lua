@@ -434,7 +434,17 @@ vim.lsp.config("lua_ls", {
   },
 })
 
-vim.lsp.log.set_level("off")
+vim.lsp.config("ty", {
+  settings = {
+    ty = {
+      completions = {
+        completeFunctionParentheses = true,
+      },
+    },
+  },
+})
+
+vim.lsp.log.set_level(vim.log.levels.OFF)
 
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open Diagnostic Float" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open Diagnostic List" })
@@ -460,7 +470,7 @@ require("blink.cmp").setup({
   completion = {
     accept = {
       auto_brackets = {
-        enabled = false,
+        enabled = true,
       },
     },
   },
