@@ -114,14 +114,20 @@ vim.diagnostic.config({
 -- Keymaps
 vim.keymap.set("n", "<leader>jp", function()
   if vim.fn.executable("jq") == 1 then
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes([[ggVG! jq<CR><C-l>]], true, false, true), "nx", false)
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes([[ggVG!jq<CR><C-l>]], true, false, true), "nx", false)
   end
-end, { desc = "JSON Prettify" })
+end, { desc = "Prettify" })
 vim.keymap.set("n", "<leader>ju", function()
   if vim.fn.executable("jq") == 1 then
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes([[ggVG! jq -c<CR><C-l>]], true, false, true), "nx", false)
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes([[ggVG!jq -c<CR><C-l>]], true, false, true), "nx", false)
   end
-end, { desc = "JSON Uglify" })
+end, { desc = "Uglify" })
+
+vim.keymap.set("n", "<leader>Qo", "<cmd>copen<CR>", { desc = "Open list" })
+vim.keymap.set("n", "<leader>Qc", "<cmd>cclose<CR>", { desc = "Close list" })
+vim.keymap.set("n", "<leader>QC", function()
+  vim.fn.setqflist({}, "r")
+end, { desc = "Clear list" })
 
 -- Plugins
 vim.api.nvim_create_user_command("PackList", function()
@@ -186,21 +192,7 @@ end, {
 
 vim.api.nvim_create_autocmd("PackChanged", {
   callback = function(ev)
-    local name, path, kind = ev.data.spec.name, ev.data.path, ev.data.kind
-
-    if name == "telescope-fzf-native.nvim" and (kind == "install" or kind == "update") then
-      if vim.fn.executable("make") ~= 1 then
-        return
-      end
-
-      vim.system({ "make" }, { cwd = path }, function(obj)
-        if obj.code ~= 0 then
-          vim.schedule(function()
-            vim.notify("telescope-fzf-native.nvim build failed:\n" .. (obj.stderr or ""), vim.log.levels.WARN)
-          end)
-        end
-      end)
-    end
+    local name, kind = ev.data.spec.name, ev.data.kind
 
     if name == "nvim-treesitter" and kind == "update" then
       local ok = pcall(vim.cmd, "TSUpdate")
@@ -229,76 +221,35 @@ require("which-key").setup({
     { "<leader>s", group = "[S]earch", mode = { "n", "v" } },
     { "<leader>t", group = "[T]oggle" },
     { "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
+    { "<leader>j", group = "[J]SON", mode = { "n", "v" } },
+    { "<leader>Q", group = "[Q]uickfix List", mode = { "n", "v" } },
     { "gr", group = "LSP Actions", mode = { "n" } },
   },
 })
 
---- telescope.nvim
-vim.pack.add({
-  "https://github.com/nvim-telescope/telescope.nvim",
-  "https://github.com/nvim-telescope/telescope-ui-select.nvim",
-  "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
-  "https://github.com/nvim-lua/plenary.nvim",
-})
+--- fzf-lua
+vim.pack.add({ "https://github.com/ibhagwan/fzf-lua" })
 vim.api.nvim_create_autocmd("VimEnter", {
   once = true,
   callback = function()
-    require("telescope").setup({
-      pickers = {
-        find_files = {
-          find_command = { "rg", "--files", "--color=never", "--hidden", "--glob=!**/.git/*" },
-        },
-        live_grep = {
-          additional_args = { "--hidden", "--glob=!**/.git/*" },
-        },
-        grep_string = {
-          additional_args = { "--hidden", "--glob=!**/.git/*" },
-        },
-      },
-      extensions = {
-        ["ui-select"] = { require("telescope.themes").get_dropdown() },
-      },
-    })
+    local fzf = require("fzf-lua")
 
-    -- Keep fzf-native optional.
-    if vim.fn.executable("make") == 1 then
-      pcall(require("telescope").load_extension, "fzf")
-    end
-    pcall(require("telescope").load_extension, "ui-select")
+    fzf.setup()
+    fzf.register_ui_select()
 
-    -- See `:help telescope.builtin`
-    local builtin = require("telescope.builtin")
-    vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
-    vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
-    vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
-    vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
-    vim.keymap.set({ "n", "v" }, "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
-    vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
-    vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
-    vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
-    vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-    vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
-
-    -- Override default behavior and theme when searching
-    vim.keymap.set("n", "<leader>/", function()
-      builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-        winblend = 10,
-        previewer = false,
-      }))
-    end, { desc = "[/] Fuzzily search in current buffer" })
-
-    -- It's also possible to pass additional configuration options.
-    --  See `:help telescope.builtin.live_grep()` for information about particular keys
-    vim.keymap.set("n", "<leader>s/", function()
-      builtin.live_grep({
-        grep_open_files = true,
-        prompt_title = "Live Grep in Open Files",
-      })
-    end, { desc = "[S]earch [/] in Open Files" })
-
-    -- Shortcut for searching your Neovim configuration files
+    vim.keymap.set("n", "<leader>sh", fzf.helptags, { desc = "[S]earch [H]elp" })
+    vim.keymap.set("n", "<leader>sk", fzf.keymaps, { desc = "[S]earch [K]eymaps" })
+    vim.keymap.set("n", "<leader>sf", fzf.files, { desc = "[S]earch [F]iles" })
+    vim.keymap.set("n", "<leader>ss", fzf.builtin, { desc = "[S]earch [S]elect fzf" })
+    vim.keymap.set({ "n", "v" }, "<leader>sw", fzf.grep_cword, { desc = "[S]earch current [W]ord" })
+    vim.keymap.set("n", "<leader>sg", fzf.live_grep, { desc = "[S]earch by [G]rep" })
+    vim.keymap.set("n", "<leader>sd", fzf.diagnostics_workspace, { desc = "[S]earch [D]iagnostics" })
+    vim.keymap.set("n", "<leader>sr", fzf.resume, { desc = "[S]earch [R]esume" })
+    vim.keymap.set("n", "<leader>s.", fzf.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
+    vim.keymap.set("n", "<leader><leader>", fzf.buffers, { desc = "[ ] Find existing buffers" })
+    vim.keymap.set("n", "<leader>/", fzf.grep_curbuf, { desc = "[/] Fuzzily search in current buffer" })
     vim.keymap.set("n", "<leader>sn", function()
-      builtin.find_files({
+      fzf.files({
         cwd = vim.fn.stdpath("config"),
       })
     end, { desc = "[S]earch [N]eovim files" })

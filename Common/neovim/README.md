@@ -42,13 +42,6 @@ If no plugin names are passed then all plugins will be updated.
 1. Run `:PackDelete <plugin-name>` (or multiple names) to remove installed plugins.
 1. Commit any changes to `nvim/init.lua` and `nvim-pack-lock.json`.
 
-### Optional telescope-fzf-native Build
-
-`nvim-telescope/telescope-fzf-native.nvim` is optional.
-
-If `make` exists, build runs automatically on `PackChanged` install/update events.
-If build fails or `make` is unavailable, Telescope still works without this extension.
-
 ### Installing on Windows
 
 Update versions below as necessary.
