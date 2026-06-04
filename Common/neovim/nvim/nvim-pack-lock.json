@@ -9,6 +9,10 @@
       "rev": "619363c30309d29ffa631e67c8183f2a72caa373",
       "src": "https://github.com/stevearc/conform.nvim"
     },
+    "fzf-lua": {
+      "rev": "988416cc782dfe28bff3f0da9b8c943b236cd86a",
+      "src": "https://github.com/ibhagwan/fzf-lua"
+    },
     "gitsigns.nvim": {
       "rev": "dd3f588bacbeb041be6facf1742e42097f62165d",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
@@ -36,22 +40,6 @@
     "nvim-treesitter": {
       "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
-    },
-    "plenary.nvim": {
-      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
-      "src": "https://github.com/nvim-lua/plenary.nvim"
-    },
-    "telescope-fzf-native.nvim": {
-      "rev": "b25b749b9db64d375d782094e2b9dce53ad53a40",
-      "src": "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
-    },
-    "telescope-ui-select.nvim": {
-      "rev": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2",
-      "src": "https://github.com/nvim-telescope/telescope-ui-select.nvim"
-    },
-    "telescope.nvim": {
-      "rev": "7d324792b7943e4aa16ad007212e6acc6f9fe335",
-      "src": "https://github.com/nvim-telescope/telescope.nvim"
     },
     "tokyonight.nvim": {
       "rev": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",
