@@ -52,7 +52,8 @@ options:
 │   ├── mise/
 │   │   ├── .default-gems
 │   │   ├── .default-npm-packages
-│   │   └── .default-python-packages
+│   │   ├── .default-python-packages
+│   │   └── config.toml
 │   ├── neovim/
 │   │   └── nvim/
 │   │       ├── init.lua
@@ -135,6 +136,6 @@ options:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-43 directories, 57 files
+43 directories, 58 files
 ```
 <!-- END TREE -->

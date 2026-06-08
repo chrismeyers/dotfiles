@@ -1,0 +1,12 @@
+[tools]
+go = "1"
+node = "24"
+python = "3"
+ruby = "4"
+
+[settings]
+experimental = true
+
+[settings.go]
+set_gobin = false
+set_goroot = false

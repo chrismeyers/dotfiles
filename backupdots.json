@@ -27,6 +27,7 @@
             ["/Users/chris/dotfiles/macOS/Git/.gitconfig", "/Users/chris/.config/git/config", { "createDirs": true }],
             ["/Users/chris/dotfiles/macOS/Git/.gitignore_global", "/Users/chris/.config/git/ignore", { "createDirs": true }],
             ["/Users/chris/dotfiles/Common/neovim/nvim", "/Users/chris/.config/nvim", { "createDirs": true }],
+            ["/Users/chris/dotfiles/Common/mise/config.toml", "/Users/chris/.config/mise/config.toml", { "createDirs": true }],
 
             ["/Users/chris/dotfiles/Common/vscode/settings.json", "/Users/chris/Library/Application Support/Code/User/settings.json"],
             ["/Users/chris/dotfiles/Common/cursor/settings.json", "/Users/chris/Library/Application Support/Cursor/User/settings.json"],
@@ -51,6 +52,7 @@
             ["/home/chris/dotfiles/Linux/Git/.gitconfig", "/home/chris/.config/git/config", { "createDirs": true }],
             ["/home/chris/dotfiles/Linux/Git/.gitignore_global", "/home/chris/.config/git/ignore", { "createDirs": true }],
             ["/home/chris/dotfiles/Common/neovim/nvim", "/home/chris/.config/nvim", { "createDirs": true }],
+            ["/home/chris/dotfiles/Common/mise/config.toml", "/home/chris/.config/mise/config.toml", { "createDirs": true }],
             ["/home/chris/dotfiles/Linux/dunst", "/home/chris/.config/dunst", { "createDirs": true }],
             ["/home/chris/dotfiles/Linux/hypr", "/home/chris/.config/hypr", { "createDirs": true }],
             ["/home/chris/dotfiles/Linux/waybar", "/home/chris/.config/waybar", { "createDirs": true }],
