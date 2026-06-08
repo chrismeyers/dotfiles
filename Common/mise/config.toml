@@ -1,0 +1,12 @@
+[tools]
+go = "1"
+node = "24"
+python = "3"
+
+[settings]
+idiomatic_version_file_enable_tools = []
+experimental = true
+
+[settings.go]
+set_gobin = false
+set_goroot = false

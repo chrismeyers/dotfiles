@@ -51,7 +51,8 @@ options:
 │   │   └── .astylerc
 │   ├── mise/
 │   │   ├── .default-npm-packages
-│   │   └── .default-python-packages
+│   │   ├── .default-python-packages
+│   │   └── config.toml
 │   ├── neovim/
 │   │   └── nvim/
 │   │       ├── init.lua
@@ -105,6 +106,6 @@ options:
     └── zsh/
         └── .zshrc
 
-28 directories, 42 files
+28 directories, 43 files
 ```
 <!-- END TREE -->
