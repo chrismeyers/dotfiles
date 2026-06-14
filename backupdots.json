@@ -36,7 +36,8 @@
     },
     "Linux": {
         "restore": [
-            { "name": "Oh My Zsh", "script": "/home/chris/dotfiles/Common/installs/install-oh-my-zsh.sh" }
+            { "name": "Oh My Zsh", "script": "/home/chris/dotfiles/Common/installs/install-oh-my-zsh.sh" },
+            { "name": "Mise", "script": "/home/chris/dotfiles/Common/installs/install-mise.sh" }
         ],
         "files": [
             ["/home/chris/dotfiles/Linux/bash/.aliases", "/home/chris/.aliases"],

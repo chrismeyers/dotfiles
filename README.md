@@ -46,6 +46,7 @@ options:
 │   ├── installs/
 │   │   ├── install-cursor-cli.sh*
 │   │   ├── install-homebrew.sh*
+│   │   ├── install-mise.sh*
 │   │   └── install-oh-my-zsh.sh*
 │   ├── misc/
 │   │   └── .astylerc
@@ -136,6 +137,6 @@ options:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-43 directories, 58 files
+43 directories, 59 files
 ```
 <!-- END TREE -->
