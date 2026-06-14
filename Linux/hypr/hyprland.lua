@@ -20,7 +20,7 @@ hl.monitor({
 local terminal = "ghostty"
 local fileManager = "thunar"
 local menu = "wofi --show drun"
-local browser = "zen"
+local browser = "brave-origin"
 local screenshot = "grim"
 
 -------------------
