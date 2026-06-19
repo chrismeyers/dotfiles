@@ -8,7 +8,6 @@ dbaeumer.vscode-eslint
 dnicolson.binary-plist
 enkia.tokyo-night
 esbenp.prettier-vscode
-github.copilot-chat
 golang.go
 james-yu.latex-workshop
 ms-python.debugpy
