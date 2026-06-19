@@ -131,8 +131,12 @@ end, { desc = "Clear list" })
 
 -- Plugins
 vim.api.nvim_create_user_command("PackList", function()
-  local formatted = "Installed plugins:\n"
-  vim.iter(vim.pack.get()):each(function(plugin)
+  local plugins = vim.pack.get()
+  local num_plugins = vim.iter(plugins):fold(0, function(acc)
+    return acc + 1
+  end)
+  local formatted = num_plugins .. " plugin" .. (num_plugins > 1 and "s" or "") .. " installed:\n"
+  vim.iter(plugins):each(function(plugin)
     formatted = formatted
       .. (plugin.active and "  [✓]" or "  [✗]")
       .. " "
