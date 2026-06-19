@@ -467,6 +467,17 @@ vim.api.nvim_create_autocmd({ "BufWinEnter", "BufWritePost", "BufReadPost", "Ins
   end,
 })
 
+--- oil.nvim
+vim.pack.add({ "https://github.com/stevearc/oil.nvim" })
+require("oil").setup({
+  columns = { "permissions", "size", "mtime" },
+  win_options = { spell = true },
+  skip_confirm_for_simple_edits = true,
+  view_options = { show_hidden = true },
+})
+
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
 --- LaTeX
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "*.tex",
