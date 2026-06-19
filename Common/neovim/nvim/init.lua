@@ -208,10 +208,15 @@ vim.pack.add({ "https://github.com/folke/tokyonight.nvim" })
 require("tokyonight").setup({
   transparent = true,
 })
+
 vim.cmd.colorscheme("tokyonight-storm")
 vim.api.nvim_set_hl(0, "Whitespace", { fg = "#A9B1D6" })
 vim.api.nvim_set_hl(0, "NonText", { fg = "#A9B1D6" })
 vim.api.nvim_set_hl(0, "SpellBad", { sp = "#00FFFF", undercurl = true })
+
+--- mini.icons
+vim.pack.add({ "https://github.com/nvim-mini/mini.icons" })
+require("mini.icons").setup()
 
 --- which-key.nvim
 vim.pack.add({ "https://github.com/folke/which-key.nvim" })
@@ -229,6 +234,7 @@ require("which-key").setup({
 
 --- fzf-lua
 vim.pack.add({ "https://github.com/ibhagwan/fzf-lua" })
+
 vim.api.nvim_create_autocmd("VimEnter", {
   once = true,
   callback = function()
@@ -452,6 +458,7 @@ require("conform").setup({
 
 --- nvim-lint
 vim.pack.add({ "https://github.com/mfussenegger/nvim-lint" })
+
 require("lint").linters_by_ft = {
   astro = { "eslint" },
   javascript = { "eslint" },
@@ -468,8 +475,7 @@ vim.api.nvim_create_autocmd({ "BufWinEnter", "BufWritePost", "BufReadPost", "Ins
 --- oil.nvim
 vim.pack.add({ "https://github.com/stevearc/oil.nvim" })
 require("oil").setup({
-  columns = { "permissions", "size", "mtime" },
-  win_options = { spell = true },
+  columns = { "permissions", "size", "mtime", "icon" },
   skip_confirm_for_simple_edits = true,
   view_options = { show_hidden = true },
 })
