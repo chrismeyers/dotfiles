@@ -518,18 +518,28 @@ vim.api.nvim_create_autocmd("BufWritePost", {
       return
     end
 
-    vim.system({
-      "xelatex",
-      "-no-pdf",
-      "-synctex=1",
-      "-interaction=nonstopmode",
-      "-file-line-error",
-      "-recorder",
-      "-output-directory=" .. vim.fs.dirname(ev.match),
-      ev.match,
-    })
+    local result = vim
+      .system(
+        { "xelatex", "-no-pdf", "-synctex=1", "-interaction=nonstopmode", "-file-line-error", "-recorder", ev.match },
+        { text = true, cwd = vim.fs.dirname(ev.match) }
+      )
+      :wait()
 
-    vim.system({ "xdvipdfmx", "-E", "-o", ev.match:gsub("%.tex", "%.pdf"), ev.match:gsub("%.tex", "%.xdv") })
+    if result.code ~= 0 then
+      vim.notify("xelatex failed: " .. result.stderr)
+      return
+    end
+
+    local input_file = ev.match:gsub("%.tex", "%.xdv")
+    local output_file = ev.match:gsub("%.tex", "%.pdf")
+    result = vim
+      .system({ "xdvipdfmx", "-E", "-o", output_file, input_file }, { text = true, vim.fs.dirname(ev.match) })
+      :wait()
+
+    if result.code ~= 0 then
+      vim.notify("xdvipdfmx failed: " .. result.stderr)
+      return
+    end
 
     vim.defer_fn(function()
       vim.notify("Successfully generated LaTeX PDF")
