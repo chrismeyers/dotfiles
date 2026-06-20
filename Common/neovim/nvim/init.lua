@@ -73,17 +73,6 @@ vim.o.breakindent = true
 vim.o.list = false
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣", space = "·" }
 
-vim.api.nvim_create_autocmd("ModeChanged", {
-  callback = function()
-    local mode = vim.v.event.new_mode
-    if mode == "v" or mode == "V" or mode == "\x16" then
-      vim.opt_local.list = true
-    else
-      vim.opt_local.list = false
-    end
-  end,
-})
-
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "*",
   command = "set expandtab shiftwidth=2 softtabstop=2",
@@ -128,6 +117,10 @@ vim.keymap.set({ "n", "v" }, "<leader>Qc", "<cmd>cclose<CR>", { desc = "Close li
 vim.keymap.set({ "n", "v" }, "<leader>QC", function()
   vim.fn.setqflist({}, "r")
 end, { desc = "Clear list" })
+
+vim.keymap.set("n", "<leader>l", function()
+  vim.o.list = not vim.o.list
+end, { desc = "Toggle list mode" })
 
 -- Plugins
 vim.api.nvim_create_user_command("PackList", function()
