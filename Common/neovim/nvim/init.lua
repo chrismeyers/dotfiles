@@ -254,7 +254,6 @@ vim.api.nvim_create_autocmd("VimEnter", {
     vim.keymap.set({ "n", "v" }, "<leader>sw", fzf.grep_cword, { desc = "[S]earch current [W]ord" })
     vim.keymap.set("n", "<leader>sg", fzf.live_grep, { desc = "[S]earch by [G]rep" })
     vim.keymap.set("n", "<leader>sd", fzf.diagnostics_workspace, { desc = "[S]earch [D]iagnostics" })
-    vim.keymap.set("n", "<leader>sr", fzf.resume, { desc = "[S]earch [R]esume" })
     vim.keymap.set("n", "<leader>s.", fzf.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
     vim.keymap.set("n", "<leader><leader>", fzf.buffers, { desc = "[ ] Find existing buffers" })
     vim.keymap.set("n", "<leader>/", fzf.grep_curbuf, { desc = "[/] Fuzzily search in current buffer" })
@@ -270,6 +269,22 @@ vim.api.nvim_create_autocmd("VimEnter", {
     vim.keymap.set("n", "gri", fzf.lsp_implementations, { desc = "Go to implementation" })
     vim.keymap.set("n", "grt", fzf.lsp_typedefs, { desc = "Go to type definition" })
     vim.keymap.set("n", "gO", fzf.lsp_document_symbols, { desc = "Document symbols" })
+  end,
+})
+
+--- grug-far.nvim (find and replace)
+vim.pack.add({ "https://github.com/MagicDuck/grug-far.nvim" })
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  once = true,
+  callback = function()
+    local far = require("grug-far")
+
+    far.setup()
+
+    vim.keymap.set({ "n", "v" }, "<leader>sr", function()
+      far.open({ visualSelectionUsage = "auto-detect" })
+    end, { desc = "[S]earch and [R]eplace" })
   end,
 })
 
