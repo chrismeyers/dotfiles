@@ -123,9 +123,9 @@ vim.keymap.set("n", "<leader>ju", function()
   end
 end, { desc = "Uglify" })
 
-vim.keymap.set("n", "<leader>Qo", "<cmd>copen<CR>", { desc = "Open list" })
-vim.keymap.set("n", "<leader>Qc", "<cmd>cclose<CR>", { desc = "Close list" })
-vim.keymap.set("n", "<leader>QC", function()
+vim.keymap.set({ "n", "v" }, "<leader>Qo", "<cmd>copen<CR>", { desc = "Open list" })
+vim.keymap.set({ "n", "v" }, "<leader>Qc", "<cmd>cclose<CR>", { desc = "Close list" })
+vim.keymap.set({ "n", "v" }, "<leader>QC", function()
   vim.fn.setqflist({}, "r")
 end, { desc = "Clear list" })
 
@@ -263,6 +263,13 @@ vim.api.nvim_create_autocmd("VimEnter", {
         cwd = vim.fn.stdpath("config"),
       })
     end, { desc = "[S]earch [N]eovim files" })
+
+    vim.keymap.set("n", "grr", fzf.lsp_incoming_calls, { desc = "Find references" })
+    vim.keymap.set("n", "grd", fzf.lsp_definitions, { desc = "Go to definition" })
+    vim.keymap.set("n", "grD", fzf.lsp_declarations, { desc = "Go to declaration" })
+    vim.keymap.set("n", "gri", fzf.lsp_implementations, { desc = "Go to implementation" })
+    vim.keymap.set("n", "grt", fzf.lsp_typedefs, { desc = "Go to type definition" })
+    vim.keymap.set("n", "gO", fzf.lsp_document_symbols, { desc = "Document symbols" })
   end,
 })
 
