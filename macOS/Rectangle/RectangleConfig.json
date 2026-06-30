@@ -52,6 +52,15 @@
     "cycleSizesIsChanged" : {
       "bool" : false
     },
+    "cyclingOverlapMaxCascade" : {
+      "int" : 1
+    },
+    "cyclingOverlapOffset" : {
+      "int" : 0
+    },
+    "cyclingOverlapOffsetSize" : {
+      "float" : 11
+    },
     "disabledApps" : {
       "string" : "[]"
     },
@@ -133,6 +142,9 @@
     "moveCursorAcrossDisplays" : {
       "int" : 0
     },
+    "moveFixedSizeToEdge" : {
+      "int" : 0
+    },
     "notifiedOfProblemApps" : {
       "bool" : false
     },
@@ -175,10 +187,10 @@
     "shortEdgeSnapAreaSize" : {
       "float" : 145
     },
-    "showAllActionsInMenu" : {
+    "showAdditionalSizesInMenu" : {
       "int" : 0
     },
-    "showEighthsInMenu" : {
+    "showAllActionsInMenu" : {
       "int" : 0
     },
     "sixthsSnapArea" : {
@@ -276,6 +288,10 @@
       "keyCode" : 1,
       "modifierFlags" : 786432
     },
+    "centerTwoThirds" : {
+      "keyCode" : 15,
+      "modifierFlags" : 786432
+    },
     "firstThird" : {
       "keyCode" : 0,
       "modifierFlags" : 786432
@@ -349,5 +365,5 @@
       "modifierFlags" : 786432
     }
   },
-  "version" : "100"
+  "version" : "102"
 }
