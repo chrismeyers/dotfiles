@@ -111,7 +111,5 @@
   "git.blame.statusBarItem.enabled": false,
   "git.autoRepositoryDetection": "openEditors",
 
-  "chat.disableAIFeatures": true,
-
   "cSpell.useCustomDecorations": false
 }
