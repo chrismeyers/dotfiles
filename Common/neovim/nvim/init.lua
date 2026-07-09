@@ -394,6 +394,8 @@ require("mason-tool-installer").setup({
   ensure_installed = {
     "goimports", -- Go formatter
     "luacheck", -- Lua linter
+    "oxfmt", -- TypeScript/JavaScript formatter
+    "oxlint", -- TypeScript/JavaScript linter
     "prettier", -- TypeScript/JavaScript formatter
     "ruff", -- Python formatter + linter
     "stylua", -- Lua formatter
@@ -458,10 +460,10 @@ require("conform").setup({
   formatters_by_ft = {
     astro = { "prettier" },
     go = { "goimports" },
-    javascript = { "prettier" },
+    javascript = { "oxfmt", "prettier", stop_after_first = true },
     lua = { "stylua" },
     python = { "ruff_format", "ruff_fix", "ruff_organize_imports" },
-    typescript = { "prettier" },
+    typescript = { "oxfmt", "prettier", stop_after_first = true },
   },
   formatters = {
     prettier = {
@@ -481,10 +483,10 @@ require("conform").setup({
 vim.pack.add({ "https://github.com/mfussenegger/nvim-lint" })
 
 require("lint").linters_by_ft = {
-  astro = { "eslint" },
-  javascript = { "eslint" },
+  astro = { "oxlint", "eslint" },
+  javascript = { "oxlint", "eslint" },
   lua = { "luacheck" },
-  typescript = { "eslint" },
+  typescript = { "oxlint", "eslint" },
 }
 
 vim.api.nvim_create_autocmd({ "BufWinEnter", "BufWritePost", "BufReadPost", "InsertLeave" }, {
