@@ -45,7 +45,11 @@
 
   "[javascript][typescript][javascriptreact][typescriptreact]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "oxc.oxc-vscode"
+    "editor.defaultFormatter": "chrismeyers.vscode-formatter-fallback",
+    "formatterFallback.formatters": [
+      "oxc.oxc-vscode",
+      "esbenp.prettier-vscode"
+    ]
   },
 
   "[astro]": {
@@ -54,7 +58,7 @@
   },
 
   "[json]": {
-    "editor.defaultFormatter": "oxc.oxc-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
   "[makefile]": {
