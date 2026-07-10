@@ -19,6 +19,7 @@
 
   // Window settings (Window)
   "window.commandCenter": false,
+  "window.autoDetectColorScheme": false,
 
   // Language overrides (Default Configuration Overrides)
   "[go]": {
