@@ -1,7 +1,6 @@
 astral-sh.ty
 astro-build.astro-vscode
 charliermarsh.ruff
-chrismeyers.vscode-formatter-fallback
 chrismeyers.vscode-pretty-json
 christian-kohler.npm-intellisense
 christian-kohler.path-intellisense
