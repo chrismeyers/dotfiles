@@ -1,8 +1,8 @@
 {
-  // Get off my lawn (Telemetry)
+  // Telemetry
   "telemetry.telemetryLevel": "off",
 
-  // General editor settings (Editor)
+  // Editor
   "editor.tabSize": 2,
   "editor.autoIndent": "full",
   "editor.insertSpaces": true,
@@ -14,16 +14,16 @@
   "editor.formatOnSave": false,
   "editor.renderWhitespace": "selection",
 
-  // File settings (Files)
+  // Files
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.eol": "auto",
 
-  // Window settings (Window)
+  // Window
   "window.commandCenter": false,
 
-  // Language overrides (Default Configuration Overrides)
+  // Language overrides
   "[go]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "golang.go",
@@ -37,7 +37,7 @@
     "editor.tabSize": 4
   },
 
-  "[javascript][typescript][javascriptreact][typescriptreact]": {
+  "[javascript][javascriptreact][typescript][typescriptreact]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -51,11 +51,11 @@
     "editor.tabSize": 4
   },
 
-  // OS File system interaction (File Explorer)
+  // File Explorer
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
 
-  // UI settings (Workbench)
+  // Workbench
   "workbench.editor.empty.hint": "hidden",
   "workbench.colorTheme": "Tokyo Night Storm",
   "workbench.iconTheme": "vscode-icons",
@@ -64,6 +64,9 @@
     "editorWhitespace.foreground": "#a9b1d6"
   },
   "workbench.secondarySideBar.defaultVisibility": "hidden",
+
+  // Chat
+  "chat.titleBar.openInAgentsWindow.enabled": false,
 
   // Extensions
   "extensions.ignoreRecommendations": true,
@@ -90,8 +93,6 @@
   "git.blame.editorDecoration.enabled": true,
   "git.blame.statusBarItem.enabled": false,
   "git.autoRepositoryDetection": "openEditors",
-
-  "chat.disableAIFeatures": true,
 
   "cSpell.useCustomDecorations": false
 }
