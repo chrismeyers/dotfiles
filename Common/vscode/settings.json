@@ -31,7 +31,13 @@
     "editor.tabSize": 4
   },
 
-  "[c][cpp]": {
+  "[c]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-vscode.cpptools",
+    "editor.tabSize": 4
+  },
+
+  "[cpp]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "ms-vscode.cpptools",
     "editor.tabSize": 4
@@ -43,9 +49,40 @@
     "editor.tabSize": 4
   },
 
-  "[javascript][javascriptreact][typescript][typescriptreact]": {
+  "[javascript]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "oxc.oxc-vscode"
+    "editor.defaultFormatter": "chrismeyers.vscode-formatter-fallback",
+    "formatterFallback.formatters": [
+      "oxc.oxc-vscode",
+      "esbenp.prettier-vscode"
+    ]
+  },
+
+  "[javascriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "chrismeyers.vscode-formatter-fallback",
+    "formatterFallback.formatters": [
+      "oxc.oxc-vscode",
+      "esbenp.prettier-vscode"
+    ]
+  },
+
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "chrismeyers.vscode-formatter-fallback",
+    "formatterFallback.formatters": [
+      "oxc.oxc-vscode",
+      "esbenp.prettier-vscode"
+    ]
+  },
+
+  "[typescriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "chrismeyers.vscode-formatter-fallback",
+    "formatterFallback.formatters": [
+      "oxc.oxc-vscode",
+      "esbenp.prettier-vscode"
+    ]
   },
 
   "[astro]": {
