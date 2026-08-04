@@ -394,8 +394,6 @@ require("mason-tool-installer").setup({
   ensure_installed = {
     "goimports", -- Go formatter
     "luacheck", -- Lua linter
-    "oxfmt", -- TypeScript/JavaScript formatter
-    "oxlint", -- TypeScript/JavaScript linter
     "prettier", -- TypeScript/JavaScript formatter
     "ruff", -- Python formatter + linter
     "stylua", -- Lua formatter
