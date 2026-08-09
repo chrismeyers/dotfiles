@@ -41,8 +41,6 @@ options:
 │   │   ├── install-homebrew.sh*
 │   │   ├── install-mise.sh*
 │   │   └── install-oh-my-zsh.sh*
-│   ├── misc/
-│   │   └── .astylerc
 │   ├── mise/
 │   │   ├── .default-gems
 │   │   ├── .default-npm-packages
@@ -130,6 +128,6 @@ options:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-42 directories, 53 files
+41 directories, 52 files
 ```
 <!-- END TREE -->
