@@ -236,6 +236,104 @@ vim.api.nvim_create_autocmd("VimEnter", {
   once = true,
   callback = function()
     local fzf = require("fzf-lua")
+    local path = require("fzf-lua.path")
+    local fzf_utils = require("fzf-lua.utils")
+    local make_entry = require("fzf-lua.make_entry")
+    local grep_rg_opts = require("fzf-lua.defaults").defaults.grep.rg_opts
+
+    local function grep_literal_query(opts)
+      local query = opts.last_query
+      if query == nil or query == "" then
+        query = fzf.get_last_query()
+      end
+      if query == nil or query == "" then
+        query = opts.search or ""
+      end
+      if opts.rg_glob and query ~= "" then
+        query = make_entry.glob_parse(query, opts) or query
+      end
+      return query
+    end
+
+    local function replace_at(line, old, new, col)
+      local start = (col and col > 0) and col or 1
+      local idx = line:find(old, start, true) or line:find(old, 1, true)
+      if not idx then
+        return nil
+      end
+      return line:sub(1, idx - 1) .. new .. line:sub(idx + #old)
+    end
+
+    local function replace_selected_matches(selected, opts)
+      local entries = vim.deepcopy(selected or {})
+      local search = grep_literal_query(opts)
+
+      vim.schedule(function()
+        pcall(vim.cmd.stopinsert)
+        if search == "" then
+          vim.notify("No search query to replace", vim.log.levels.WARN)
+          return
+        end
+        if #entries == 0 then
+          vim.notify("No matches to replace", vim.log.levels.WARN)
+          return
+        end
+
+        local replacement = fzf_utils.input(string.format("Replace %d selected match(es) with: ", #entries), search)
+        if replacement == nil then
+          return
+        end
+
+        local replace_all = false
+        local replaced = 0
+        local seen = {}
+
+        for _, sel in ipairs(entries) do
+          local entry = path.entry_to_file(sel, opts)
+          local filepath = entry.path or entry.bufname
+          local line_idx = entry.line or 0
+          local key = string.format("%s:%d:%d", filepath or "", line_idx, entry.col or 0)
+          if filepath and line_idx > 0 and not seen[key] then
+            seen[key] = true
+            local bufnr = vim.fn.bufadd(filepath)
+            vim.fn.bufload(bufnr)
+            local line = vim.api.nvim_buf_get_lines(bufnr, line_idx - 1, line_idx, false)[1]
+            local new_line = line and replace_at(line, search, replacement, entry.col)
+            if new_line then
+              local apply = replace_all
+              if not replace_all then
+                local choice = fzf_utils.confirm(
+                  string.format("%s:%d\n%s\n→ %s", filepath, line_idx, line, new_line),
+                  "&Yes\n&No\n&All\n&Quit",
+                  1
+                )
+                if choice == 0 or choice == 4 then
+                  break
+                elseif choice == 1 then
+                  apply = true
+                elseif choice == 3 then
+                  replace_all = true
+                  apply = true
+                end
+              end
+              if apply then
+                vim.api.nvim_buf_set_lines(bufnr, line_idx - 1, line_idx, false, { new_line })
+                pcall(vim.api.nvim_buf_call, bufnr, function()
+                  vim.cmd("silent! noautocmd update")
+                end)
+                replaced = replaced + 1
+              end
+            end
+          end
+        end
+
+        if replaced == 0 then
+          vim.notify("No selected matches contained: " .. search, vim.log.levels.WARN)
+        else
+          vim.notify(string.format("Replaced %d match(es)", replaced))
+        end
+      end)
+    end
 
     fzf.setup()
     fzf.register_ui_select()
@@ -246,6 +344,19 @@ vim.api.nvim_create_autocmd("VimEnter", {
     vim.keymap.set("n", "<leader>ss", fzf.builtin, { desc = "[S]earch [S]elect fzf" })
     vim.keymap.set({ "n", "v" }, "<leader>sw", fzf.grep_cword, { desc = "[S]earch current [W]ord" })
     vim.keymap.set("n", "<leader>sg", fzf.live_grep, { desc = "[S]earch by [G]rep" })
+    vim.keymap.set("n", "<leader>sr", function()
+      fzf.live_grep({
+        winopts = { title = " Find and Replace " },
+        rg_opts = "--fixed-strings " .. grep_rg_opts,
+        actions = {
+          ["enter"] = {
+            fn = replace_selected_matches,
+            header = "replace",
+          },
+          ["ctrl-g"] = false,
+        },
+      })
+    end, { desc = "[S]earch and [R]eplace" })
     vim.keymap.set("n", "<leader>sd", fzf.diagnostics_workspace, { desc = "[S]earch [D]iagnostics" })
     vim.keymap.set("n", "<leader>s.", fzf.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
     vim.keymap.set("n", "<leader><leader>", fzf.buffers, { desc = "[ ] Find existing buffers" })
@@ -262,22 +373,6 @@ vim.api.nvim_create_autocmd("VimEnter", {
     vim.keymap.set("n", "gri", fzf.lsp_implementations, { desc = "Go to implementation" })
     vim.keymap.set("n", "grt", fzf.lsp_typedefs, { desc = "Go to type definition" })
     vim.keymap.set("n", "gO", fzf.lsp_document_symbols, { desc = "Document symbols" })
-  end,
-})
-
---- grug-far.nvim (find and replace)
-vim.pack.add({ "https://github.com/MagicDuck/grug-far.nvim" })
-
-vim.api.nvim_create_autocmd("VimEnter", {
-  once = true,
-  callback = function()
-    local far = require("grug-far")
-
-    far.setup()
-
-    vim.keymap.set({ "n", "v" }, "<leader>sr", function()
-      far.open({ visualSelectionUsage = "auto-detect" })
-    end, { desc = "[S]earch and [R]eplace" })
   end,
 })
 
