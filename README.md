@@ -47,8 +47,6 @@ options:
 │   │   ├── install-claude-code.sh*
 │   │   ├── install-homebrew.sh*
 │   │   └── install-oh-my-zsh.sh*
-│   ├── misc/
-│   │   └── .astylerc
 │   ├── mise/
 │   │   ├── .default-npm-packages
 │   │   ├── .default-python-packages
@@ -106,6 +104,6 @@ options:
     └── zsh/
         └── .zshrc
 
-28 directories, 43 files
+27 directories, 42 files
 ```
 <!-- END TREE -->
