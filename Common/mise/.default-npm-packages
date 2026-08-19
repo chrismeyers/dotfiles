@@ -2,3 +2,4 @@ neovim
 pnpm
 npm-check-updates
 @hubspot/cli
+@stripe/cli
