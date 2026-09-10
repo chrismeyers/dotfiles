@@ -37,7 +37,7 @@ options:
 ./
 ├── Common/
 │   ├── installs/
-│   │   ├── install-cursor-cli.sh*
+│   │   ├── install-claude-code.sh*
 │   │   ├── install-homebrew.sh*
 │   │   ├── install-mise.sh*
 │   │   └── install-oh-my-zsh.sh*
