@@ -551,7 +551,7 @@ require("blink.cmp").setup({
 vim.pack.add({ "https://github.com/stevearc/conform.nvim" })
 require("conform").setup({
   formatters_by_ft = {
-    astro = { "prettier" },
+    astro = { "oxfmt", "prettier", stop_after_first = true },
     go = { "goimports" },
     javascript = { "oxfmt", "prettier", stop_after_first = true },
     lua = { "stylua" },
