@@ -36,13 +36,6 @@ options:
 ```
 ./
 ├── Common/
-│   ├── cursor/
-│   │   ├── dump.bat
-│   │   ├── dump.sh*
-│   │   ├── extensions.txt
-│   │   ├── restore.bat
-│   │   ├── restore.sh*
-│   │   └── settings.json
 │   ├── installs/
 │   │   ├── install-claude-code.sh*
 │   │   ├── install-homebrew.sh*
@@ -104,6 +97,6 @@ options:
     └── zsh/
         └── .zshrc
 
-27 directories, 42 files
+26 directories, 36 files
 ```
 <!-- END TREE -->
