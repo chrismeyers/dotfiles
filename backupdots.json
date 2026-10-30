@@ -26,6 +26,7 @@
             ["/Users/chris/dotfiles/macOS/Git/.gitignore_global", "/Users/chris/.config/git/ignore", { "createDirs": true }],
             ["/Users/chris/dotfiles/Common/neovim/nvim", "/Users/chris/.config/nvim", { "createDirs": true }],
             ["/Users/chris/dotfiles/Common/mise/config.toml", "/Users/chris/.config/mise/config.toml", { "createDirs": true }],
+            ["/Users/chris/dotfiles/macOS/terminals/rex/init.lua", "/Users/chris/.config/rex/init.lua", { "createDirs": true }],
 
             ["/Users/chris/dotfiles/Common/vscode/settings.json", "/Users/chris/Library/Application Support/Code/User/settings.json"],
             ["/Users/chris/dotfiles/macOS/terminals/ghostty/config", "/Users/chris/Library/Application Support/com.mitchellh.ghostty/config"]

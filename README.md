@@ -115,10 +115,12 @@ options:
 │   │   │   └── alacritty.yml
 │   │   ├── ghostty/
 │   │   │   └── config
-│   │   └── iTermProfiles/
-│   │       └── Default/
-│   │           ├── com.googlecode.iterm2.plist
-│   │           └── iterm2_default.itermcolors
+│   │   ├── iTermProfiles/
+│   │   │   └── Default/
+│   │   │       ├── com.googlecode.iterm2.plist
+│   │   │       └── iterm2_default.itermcolors
+│   │   └── rex/
+│   │       └── init.lua
 │   └── zsh/
 │       └── .zshrc
 └── Windows/
@@ -128,6 +130,6 @@ options:
         └── Overrides/
             └── Preferences (Windows).sublime-settings
 
-41 directories, 52 files
+42 directories, 53 files
 ```
 <!-- END TREE -->
