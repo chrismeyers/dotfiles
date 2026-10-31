@@ -70,7 +70,7 @@ options:
 │   │   └── .aliases
 │   ├── dunst/
 │   │   └── dunstrc
-│   ├── Git/
+│   ├── git/
 │   │   ├── .gitconfig
 │   │   └── .gitignore_global
 │   ├── hypr/
@@ -88,24 +88,24 @@ options:
 ├── macOS/
 │   ├── bash/
 │   │   └── .aliases
-│   ├── Git/
+│   ├── git/
 │   │   ├── .gitconfig
 │   │   └── .gitignore_global
-│   ├── Homebrew/
+│   ├── homebrew/
 │   │   ├── Brewfile
 │   │   ├── dump.sh*
 │   │   └── restore.sh*
 │   ├── installs/
 │   │   └── set-macos-defaults.sh*
-│   ├── Rectangle/
+│   ├── rectangle/
 │   │   └── RectangleConfig.json
 │   ├── terminals/
 │   │   ├── alacritty/
 │   │   │   └── alacritty.yml
 │   │   ├── ghostty/
 │   │   │   └── config
-│   │   ├── iTermProfiles/
-│   │   │   └── Default/
+│   │   ├── iterm2/
+│   │   │   └── default/
 │   │   │       ├── com.googlecode.iterm2.plist
 │   │   │       └── iterm2_default.itermcolors
 │   │   └── rex/
@@ -113,7 +113,7 @@ options:
 │   └── zsh/
 │       └── .zshrc
 └── Windows/
-    └── Git/
+    └── git/
         └── .gitconfig
 
 34 directories, 47 files
