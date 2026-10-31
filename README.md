@@ -50,11 +50,6 @@ options:
 │   │   └── nvim/
 │   │       ├── init.lua
 │   │       └── nvim-pack-lock.json
-│   ├── SublimeText/
-│   │   └── UserSettings/
-│   │       ├── Package Control.sublime-settings
-│   │       ├── Preferences.sublime-settings
-│   │       └── Python.sublime-settings
 │   ├── tmux/
 │   │   └── .tmux.conf
 │   ├── vim/
@@ -80,9 +75,6 @@ options:
 │   │   └── .gitignore_global
 │   ├── hypr/
 │   │   └── hyprland.lua
-│   ├── SublimeText/
-│   │   └── Overrides/
-│   │       └── Preferences (Linux).sublime-settings
 │   ├── terminals/
 │   │   └── ghostty/
 │   │       └── config
@@ -107,9 +99,6 @@ options:
 │   │   └── set-macos-defaults.sh*
 │   ├── Rectangle/
 │   │   └── RectangleConfig.json
-│   ├── SublimeText/
-│   │   └── Overrides/
-│   │       └── Preferences (OSX).sublime-settings
 │   ├── terminals/
 │   │   ├── alacritty/
 │   │   │   └── alacritty.yml
@@ -124,12 +113,9 @@ options:
 │   └── zsh/
 │       └── .zshrc
 └── Windows/
-    ├── Git/
-    │   └── .gitconfig
-    └── SublimeText/
-        └── Overrides/
-            └── Preferences (Windows).sublime-settings
+    └── Git/
+        └── .gitconfig
 
-42 directories, 53 files
+34 directories, 47 files
 ```
 <!-- END TREE -->
