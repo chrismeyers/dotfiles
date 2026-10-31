@@ -48,11 +48,6 @@ options:
 │   │   └── nvim/
 │   │       ├── init.lua
 │   │       └── nvim-pack-lock.json
-│   ├── SublimeText/
-│   │   └── UserSettings/
-│   │       ├── Package Control.sublime-settings
-│   │       ├── Preferences.sublime-settings
-│   │       └── Python.sublime-settings
 │   ├── tmux/
 │   │   └── .tmux.conf
 │   ├── vim/
@@ -82,9 +77,6 @@ options:
     │   └── set-macos-defaults.sh*
     ├── Rectangle/
     │   └── RectangleConfig.json
-    ├── SublimeText/
-    │   └── Overrides/
-    │       └── Preferences (OSX).sublime-settings
     ├── terminals/
     │   ├── alacritty/
     │   │   └── alacritty.yml
@@ -97,6 +89,6 @@ options:
     └── zsh/
         └── .zshrc
 
-26 directories, 36 files
+22 directories, 32 files
 ```
 <!-- END TREE -->
