@@ -81,7 +81,7 @@ def perform_backup(args, backup_data):
             continue
 
         Log.info(f"Backing up {name}...", end="", flush=True)
-        exit_code = os.system(script)  # type:ignore[ty:deprecated]
+        exit_code = os.system(script)
         if exit_code == 0:
             Log.info("done")
             file_num += 1
@@ -160,7 +160,7 @@ def perform_restore(args, backup_data, current_platform, backup_file_ext):
             continue
 
         Log.info(f"Restoring {name}...", end="", flush=True)
-        exit_code = os.system(script)  # type:ignore[ty:deprecated]
+        exit_code = os.system(script)
         if exit_code == 0:
             Log.info("done")
             file_num += 1
@@ -242,9 +242,7 @@ def perform_tree(args, backup_dir_root):
 
 
 def generate_tree():
-    ignored = "|".join(
-        [".git", ".gitignore", ".gitmodules", "backupdots.*", "README.md"]
-    )
+    ignored = ".git|.gitignore|.gitmodules|backupdots.*|README.md"
 
     p = subprocess.Popen(
         f"tree -a -F --gitignore -I '{ignored}'",
@@ -326,8 +324,8 @@ def sudo_command(cmd, current_platform):
 
     # TODO: Handle permissions error on windows
     if current_platform == PlatformType.LINUX or current_platform == PlatformType.MACOS:
-        exit_code = os.system(f"sudo {cmd}")  # ty:ignore[deprecated]
-        success = True if exit_code == 0 else False
+        exit_code = os.system(f"sudo {cmd}")
+        success = exit_code == 0
     else:
         Log.warn(f"Unable to execute command `{cmd}` as a super user")
 
@@ -397,9 +395,12 @@ class LogGutter:
     """Whether or not to include a space between the gutter and message"""
 
 
+DEFAULT_GUTTER = LogGutter()
+
+
 class Log:
     @staticmethod
-    def _write(message, level=LogLevel.INFO, gutter=LogGutter(), end="\n", flush=False):
+    def _write(message, level=LogLevel.INFO, gutter=LogGutter, end="\n", flush=False):
         """
         Usage examples:
 
@@ -440,15 +441,15 @@ class Log:
         )
 
     @staticmethod
-    def info(message, gutter=LogGutter(), end="\n", flush=False):
+    def info(message, gutter=DEFAULT_GUTTER, end="\n", flush=False):
         Log._write(message, level=LogLevel.INFO, gutter=gutter, end=end, flush=flush)
 
     @staticmethod
-    def warn(message, gutter=LogGutter(), end="\n", flush=False):
+    def warn(message, gutter=DEFAULT_GUTTER, end="\n", flush=False):
         Log._write(message, level=LogLevel.WARN, gutter=gutter, end=end, flush=flush)
 
     @staticmethod
-    def error(message, gutter=LogGutter(), end="\n", flush=False):
+    def error(message, gutter=DEFAULT_GUTTER, end="\n", flush=False):
         Log._write(message, level=LogLevel.ERROR, gutter=gutter, end=end, flush=flush)
 
 
@@ -562,7 +563,4 @@ def main():
 
 
 if __name__ == "__main__":
-    if sys.version_info < (3, 7, 0):
-        Log.error("This script requires Python >= 3.7.0")
-        sys.exit(1)
     main()
